@@ -1,0 +1,73 @@
+
+models/weapons/shotgun/w_shotgun2
+{
+		ricochet
+		//noShadows
+		unsmoothedTangents
+        	    diffusemap	 models/weapons/shotgun/shotgun2.jpg
+                  {
+ 		  blend bumpmap
+          map  addnormals(models/weapons/shotgun/shotgun2_local.jpg, heightmap(models/weapons/shotgun/shotgun2_h.jpg, 5 ) ) 		  
+     	}	
+		    specularmap	 models/weapons/shotgun/shotgun2_s.jpg
+{
+  	    	blend gl_dst_color, gl_one
+        	cubeMap env/gen1
+		texgen  reflect
+    	}         
+}
+
+models/weapons/shotgun/shotgun2
+{
+		//noShadows
+                noselfShadow
+		unsmoothedTangents
+        	diffusemap	models/weapons/shotgun/shotgun2.jpg
+
+		{
+ 		  blend bumpmap
+          map  addnormals(models/weapons/shotgun/shotgun2_local.jpg, heightmap(models/weapons/shotgun/shotgun2_h.jpg, 5 ) )
+ 		  
+     	}	
+           specularmap	 models/weapons/shotgun/shotgun2_s.jpg
+
+{
+  	    	blend gl_dst_color, gl_one
+        	cubeMap env/gen1
+		texgen  reflect
+    	}           
+}
+
+models/weapons/shotgun/w_shotgun2_invis
+{
+		//noShadows
+                noselfShadow
+		unsmoothedTangents
+                translucent
+
+    bumpmap      models/weapons/shotgun/shotgun2_local.jpg
+
+	{
+		blend specularmap
+		map	models/invis_s.tga
+		translate	time * 0 , time * 0.6
+	}
+
+}
+
+models/weapons/shotgun/shotgun2_invis
+{
+		noShadows
+                noselfShadow
+		unsmoothedTangents
+	        translucent
+
+    bumpmap models/weapons/shotgun/shotgun2_local.jpg
+
+	{
+		blend specularmap
+		map	models/invis_s.tga
+		translate	time * 0 , time * 0.6
+	}
+
+}
