@@ -160,7 +160,7 @@ entityDef	damage_bullet_pistol {
 
 	"knockback"			"1"
 	
-	"gib"				"1"
+	"gib"				"0"
 	
 	
 	"smoke_wound_flesh"	"burstysquirt.prt"

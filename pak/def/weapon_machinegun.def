@@ -159,7 +159,7 @@ entityDef damage_bullet_machinegun {
 
 	"dv_time"			"100"
 
-	"gib"				"1"
+	"gib"				"0"
 	"smoke_wound_flesh"	"burstysquirt.prt"
 	
 }

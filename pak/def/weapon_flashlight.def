@@ -115,7 +115,7 @@ entityDef	damage_flashlight {
 	"blob_size"			"400"
 	"blob_offset_x"		"400"
 
-	"gib"				"1"
+	"gib"				"0"
 	"smoke_wound_flesh"	"burstysquirt.prt"
 	
 	"knockback"			"20"

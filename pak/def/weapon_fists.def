@@ -83,7 +83,7 @@ entityDef damage_fists {
 	"knockback"			"20"
 	"push"				"20000"
 
-	"gib"				"1"
+	"gib"				"0"
 	"smoke_wound_flesh"	"burstysquirt.prt"
 	"mtr_wound_flesh"	"textures/decals/hurt02"
 
