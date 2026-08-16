@@ -469,7 +469,7 @@ entityDef monster_zsec_pistol_slowfire {
 
 
 entityDef	damage_bullet_zsec_pistol {
-	"damage"						"8"
+	"damage"						"6"
 	"kickDir"						"1 0 0"
 
 	"mtr_blob"						"genericDamage"

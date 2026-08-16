@@ -44,7 +44,7 @@ entityDef weapon_chaingun {
 
 	"inv_name"					"Chaingun"
 	"inv_weapon"				"weapon_chaingun"
-	"inv_ammo_belt"				"30"
+	"inv_ammo_belt"				"180"
 	"inv_item"					"5"
 	"icon"						"guis/assets/hud/wpn_11"
 

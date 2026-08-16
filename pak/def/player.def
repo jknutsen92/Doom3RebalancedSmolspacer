@@ -757,15 +757,15 @@ entityDef player_base {
 	"weapon15_toggle"					"0"
 	"weapon15_allowempty"				"0"
 
-	"max_ammo_shells"					"320"
-	"max_ammo_bullets"					"360"
-	"max_ammo_rockets"					"96"
+	"max_ammo_shells"					"72"
+	"max_ammo_bullets"					"144"
+	"max_ammo_rockets"					"48"
 	"max_ammo_cells"					"500"
-	"max_ammo_grenades"					"50"
+	"max_ammo_grenades"					"36"
 	"max_ammo_souls"					"5"							// number of kills required to charge the soul cube
 	"max_ammo_bfg"						"32"
-	"max_ammo_clip"						"600"
-	"max_ammo_belt"						"600"
+	"max_ammo_clip"						"400"
+	"max_ammo_belt"						"900"
 	
 	// default weapons
 	// seperate multiple weapons with commas (no spaces).
