@@ -163,25 +163,25 @@ void player::Torso_Idle() {
 	eachFrame {
            if ( (sys.getcvar ( "g_skill" ) == "0") | (sys.getcvar ( "g_skill" ) == "1") )
              {
-			  if ( sys.getcvar ( "g_armorProtection" ) != "0.7")
+			  if ( sys.getcvar ( "g_armorProtection" ) != "0.85")
 			  {
-              sys.setcvar( "g_armorProtection", "0.7" );
+              sys.setcvar( "g_armorProtection", "0.85" );
 			  }
 			  if ( sys.getcvar ( "g_damageScale" ) != "2")
 			  {
-				  sys.setcvar( "g_damageScale", "1.5" );
+				  sys.setcvar( "g_damageScale", "2" );
 			  }
              }
            else
            if ( sys.getcvar ( "g_skill" ) == "2")
              {
-			  if ( sys.getcvar ( "g_armorProtection" ) != "0.7")
+			  if ( sys.getcvar ( "g_armorProtection" ) != "0.85")
 			  {
-              sys.setcvar( "g_armorProtection", "0.7" );
+              sys.setcvar( "g_armorProtection", "0.85" );
 			  }
-			  if ( sys.getcvar ( "g_damageScale" ) != "3")
+			  if ( sys.getcvar ( "g_damageScale" ) != "4")
 			  {
-              sys.setcvar( "g_damageScale", "3" );
+              sys.setcvar( "g_damageScale", "4" );
 			  }
 			}
 		if ( AI_TELEPORT ) {
