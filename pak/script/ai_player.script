@@ -160,30 +160,12 @@ void player::Torso_Teleport() {
 void player::Torso_Idle() {
 	playCycle( ANIMCHANNEL_TORSO, "idle" );
 
+	if ( sys.getcvar( "ss_damageModel" ) == "1" ) {
+		sys.setcvar( "g_armorProtection", "0.7" );
+		sys.setcvar( "g_damageScale", "4" );
+	}
+
 	eachFrame {
-           if ( (sys.getcvar ( "g_skill" ) == "0") | (sys.getcvar ( "g_skill" ) == "1") )
-             {
-			  if ( sys.getcvar ( "g_armorProtection" ) != "0.95")
-			  {
-              sys.setcvar( "g_armorProtection", "0.95" );
-			  }
-			  if ( sys.getcvar ( "g_damageScale" ) != "2")
-			  {
-				  sys.setcvar( "g_damageScale", "2" );
-			  }
-             }
-           else
-           if ( sys.getcvar ( "g_skill" ) == "2")
-             {
-			  if ( sys.getcvar ( "g_armorProtection" ) != "0.95")
-			  {
-              sys.setcvar( "g_armorProtection", "0.95" );
-			  }
-			  if ( sys.getcvar ( "g_damageScale" ) != "5")
-			  {
-              sys.setcvar( "g_damageScale", "5" );
-			  }
-			}
 		if ( AI_TELEPORT ) {
 			animState( ANIMCHANNEL_TORSO, "Torso_Teleport", 0 );
 		}
@@ -200,6 +182,7 @@ void player::Torso_Idle() {
 }
 
 void player::Torso_Pain() {
+	entity curPlayer = $player1;
 	string animname;
 	float nextpain;
 	float currenttime;
@@ -217,7 +200,6 @@ void player::Torso_Pain() {
 		}
 		waitFrame();
 	}
-	
 	finishAction( "pain" );
 	animState( ANIMCHANNEL_TORSO, "Torso_Idle", 4 );
 }
