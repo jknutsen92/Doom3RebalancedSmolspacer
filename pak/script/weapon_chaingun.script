@@ -4,7 +4,7 @@ weapon_chaingun.script
 
 ***********************************************************************/
 
-#define CHAINGUN_FIRE_SKIPFRAMES	3
+#define CHAINGUN_FIRE_SKIPFRAMES	2
 #define CHAINGUN_LOWAMMO			10
 #define CHAINGUN_NUMPROJECTILES		1
 #define	CHAINGUN_BARREL_SPEED		( 60 * ( GAME_FPS / CHAINGUN_FIRE_SKIPFRAMES ) )

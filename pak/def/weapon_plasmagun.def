@@ -88,7 +88,7 @@ entityDef weapon_plasmagun {
 	"nozzleFxFade"				"100"
 	"nozzleGlowColor"			"0.18 0.70 0.82"
 	"nozzleGlowOffset"			"-6 2 1"
-	"nozzleGlowRadius"			"8"
+	"nozzleGlowRadius"			"16"
 	"mtr_nozzleGlowShader"		"lights/plasmaglow"
 	
 	//"snd_acquire"				"sound_weapon_acquire"
@@ -202,15 +202,16 @@ entityDef projectile_plasmablast {
 
 	"model_detonate"			"plasmaimpact.prt"
 
-//	"mtr_light_shader"			""
-//	"light_color"				"0 0 0.8"
-//	"light_radius"				"160"
-//	"light_offset"				"-8 0 0"
+	// "mtr_light_shader"			""
+	// "light_color"				"0 0 0.8"
+	// "light_radius"				"160"
+	// "light_offset"				"-8 0 0"
 
-//	"mtr_explode_light_shader"	"muzzleflash"
-//	"explode_light_color"		"0 0 1"
-//	"explode_light_radius"		"160"
-//	"explode_light_fadetime"	"0.25"
+	"mtr_light_shader"			"muzzleflash"
+	"mtr_explode_light_shader"	"muzzleflash"
+	"explode_light_color"		"0 0 1"
+	"explode_light_radius"		"240"
+	"explode_light_fadetime"	"0.5"
 
 	"snd_fly"					"plasma_flight"					// sound effect while in the air
 	"snd_explode"				"plasma_impact"
