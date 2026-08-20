@@ -17,7 +17,7 @@ weapon_pistol.script
 #define PISTOL_RELOAD_TO_IDLE	4
 
 // smolspacer
-float pistol_ammo_clip;
+float pistol_ammo_clip = 12;
 
 object weapon_pistol : weapon_base {
 	float		next_attack;
@@ -35,20 +35,13 @@ object weapon_pistol : weapon_base {
 void weapon_pistol::init() {
 	next_attack = 0;
 	spread		= getFloatKey( "spread" );
-	pistol_ammo_clip = clipSize();
 	weaponState( "Raise", 0 );
 }
 
 void weapon_pistol::Raise() {
 	// smolspacer - Match ammo in clip to that of the flashlight pistol
-	float ammoDiff = pistol_ammo_clip - ammoInClip();
-	if (ammoDiff < 0) {
-		useAmmo(abs(ammoDiff));
-	}
-	else if (ammoDiff > 0) {
-		addToClip(abs(ammoDiff));
-	}
-	
+	setClip(pistol_ammo_clip);
+
 	weaponRising();
 
 	playAnim( ANIMCHANNEL_ALL, "raise" );

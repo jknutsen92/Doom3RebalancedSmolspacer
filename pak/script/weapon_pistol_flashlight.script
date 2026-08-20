@@ -53,13 +53,7 @@ void weapon_pistol_flashlight::init() {
 
 void weapon_pistol_flashlight::Raise() {
 	// smolspacer - Match ammo in clip to that of the flashlight pistol
-	float ammoDiff = pistol_ammo_clip - ammoInClip();
-	if (ammoDiff < 0) {
-		useAmmo(abs(ammoDiff));
-	}
-	else if (ammoDiff > 0) {
-		addToClip(abs(ammoDiff));
-	}
+	setClip(pistol_ammo_clip);
 	
 	weaponRising();
 
