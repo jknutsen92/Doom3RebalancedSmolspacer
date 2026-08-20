@@ -4,7 +4,7 @@ weapon_pistol_flashlight.script
 
 ***********************************************************************/
 
-#define PISTOL_FIRERATE			0.5
+#define PISTOL_FIRERATE			0.4
 #define PISTOL_LOWAMMO			4
 #define PISTOL_NUMPROJECTILES	1
 
