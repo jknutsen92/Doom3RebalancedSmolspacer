@@ -1,10 +1,10 @@
 /***********************************************************************
 
-weapon_pistol.script
+weapon_pistol_flashlight.script
 
 ***********************************************************************/
 
-#define PISTOL_FIRERATE			0.3
+#define PISTOL_FIRERATE			0.5
 #define PISTOL_LOWAMMO			4
 #define PISTOL_NUMPROJECTILES	1
 
@@ -14,14 +14,19 @@ weapon_pistol.script
 #define	PISTOL_IDLE_TO_RELOAD	3
 #define PISTOL_RAISE_TO_IDLE	3
 #define PISTOL_FIRE_TO_IDLE		4
-#define PISTOL_RELOAD_TO_IDLE	4
+#define PISTOL_RELOAD_TO_IDLE	2
 
-// smolspacer
-float pistol_ammo_clip;
+// by capri91
+// by capri91
 
-object weapon_pistol : weapon_base {
+object weapon_pistol_flashlight : weapon_base {
 	float		next_attack;
 	float		spread;
+
+	// by capri91
+	float		intensity;
+	// by capri91
+	
 	void		init();
 	
 	void		Lower();
@@ -32,14 +37,21 @@ object weapon_pistol : weapon_base {
 	void		ExitCinematic();
 };
 
-void weapon_pistol::init() {
+void weapon_pistol_flashlight::init() {
 	next_attack = 0;
 	spread		= getFloatKey( "spread" );
-	pistol_ammo_clip = clipSize();
 	weaponState( "Raise", 0 );
+
+	// by capri91
+	//global_flashlight_intensity = 1.0;
+	intensity = 1.0;
+	setLightParm( 3, 1.0 );
+	setShaderParm( 3, 1.0 );
+	flashlight( true );
+	// by capri91
 }
 
-void weapon_pistol::Raise() {
+void weapon_pistol_flashlight::Raise() {
 	// smolspacer - Match ammo in clip to that of the flashlight pistol
 	float ammoDiff = pistol_ammo_clip - ammoInClip();
 	if (ammoDiff < 0) {
@@ -51,12 +63,16 @@ void weapon_pistol::Raise() {
 	
 	weaponRising();
 
+	// by capri91
+	flashlight( true );
+	// by capri91
+
 	playAnim( ANIMCHANNEL_ALL, "raise" );
 	waitUntil( animDone( ANIMCHANNEL_ALL, PISTOL_RAISE_TO_IDLE ) );
 	weaponState( "Idle", PISTOL_RAISE_TO_IDLE );
 }
 
-void weapon_pistol::Lower() {
+void weapon_pistol_flashlight::Lower() {
 	// smolspacer
 	pistol_ammo_clip = ammoInClip();
 
@@ -68,7 +84,7 @@ void weapon_pistol::Lower() {
 	weaponState( "Raise", 0 );
 }
 
-void weapon_pistol::Idle() {
+void weapon_pistol_flashlight::Idle() {
 	float currentTime;
 	float ammoClip;
 	float avail;
@@ -110,7 +126,7 @@ void weapon_pistol::Idle() {
 	}
 }
 
-void weapon_pistol::Fire() {
+void weapon_pistol_flashlight::Fire() {
 	float ammoClip;
 
 	next_attack = sys.getTime() + PISTOL_FIRERATE;
@@ -119,14 +135,14 @@ void weapon_pistol::Fire() {
 	if ( ammoClip == PISTOL_LOWAMMO ) {
 		startSound( "snd_lowammo", SND_CHANNEL_ITEM, true );
 	}
-
+	
 	launchProjectiles( PISTOL_NUMPROJECTILES, spread, 0, 1.0, 1.0 );
 	playAnim( ANIMCHANNEL_ALL, "fire" );
 	waitUntil( animDone( ANIMCHANNEL_ALL, PISTOL_FIRE_TO_IDLE ) );
 	weaponState( "Idle", PISTOL_FIRE_TO_IDLE );
 }
 
-void weapon_pistol::Reload() {
+void weapon_pistol_flashlight::Reload() {
 	weaponReloading();
 	playAnim( ANIMCHANNEL_ALL, "reload" );
 	waitUntil( animDone( ANIMCHANNEL_ALL, PISTOL_RELOAD_TO_IDLE ) );
@@ -134,7 +150,12 @@ void weapon_pistol::Reload() {
 	weaponState( "Idle", PISTOL_RELOAD_TO_IDLE );
 }
 
-void weapon_pistol::ExitCinematic() {
+void weapon_pistol_flashlight::ExitCinematic() {
 	next_attack = 0;
+
+	// by capri91
+	flashlight( true );
+	// by capri91
+
 	weaponState( "Idle", 0 );
 }

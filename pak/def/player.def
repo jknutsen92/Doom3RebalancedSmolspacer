@@ -739,11 +739,11 @@ entityDef player_base {
 	"weapon12_toggle"					"0"
 	"weapon12_allowempty"				"1"
 	
-	"def_weapon13"						""	
+	"def_weapon13"						"weapon_pistol_flashlight"	
 	"weapon13_best"						"0"
-	"weapon13_cycle"					"0"
-	"weapon13_toggle"					"0"
-	"weapon13_allowempty"				"0"
+	"weapon13_cycle"					"1"
+	"weapon13_toggle"					"1"
+	"weapon13_allowempty"				"1"
 	
 	"def_weapon14"						""
 	"weapon14_best"						"0"
@@ -770,8 +770,8 @@ entityDef player_base {
 	// default weapons
 	// seperate multiple weapons with commas (no spaces).
 	// NOTE: default ammo must be specified explicitly.
-	"weapon"							"weapon_fists,weapon_pistol,weapon_flashlight,weapon_pda"
-	"weapon_nightmare"					"weapon_fists,weapon_pistol,weapon_flashlight,weapon_pda,weapon_soulcube"
+	"weapon"							"weapon_fists,weapon_pistol,weapon_flashlight,weapon_pistol_flashlight,weapon_pda"
+	"weapon_nightmare"					"weapon_fists,weapon_pistol,weapon_flashlight,weapon_pistol_flashlight,weapon_pda,weapon_soulcube"
 	"current_weapon"					"0"
 	
 	"pm_jumpheight"						"48"

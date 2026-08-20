@@ -90,7 +90,7 @@ entityDef weapon_shotgun {
 	"snd_respawn"				"sound_weapon_respawn"
 	"skin_invisible"			"skins/shotgun_invis"
 	
-	"spread"					"15"
+	"spread"					"17"
 }
 
 entityDef moveable_item_shotgun {

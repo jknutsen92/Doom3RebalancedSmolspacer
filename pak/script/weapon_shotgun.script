@@ -7,7 +7,7 @@ weapon_shotgun.script
 #define SHOTGUN_FIRERATE		0.8
 #define SHOTGUN_LOWAMMO			1
 #define SHOTGUN_RELOADRATE		1
-#define	SHOTGUN_NUMPROJECTILES	13
+#define	SHOTGUN_NUMPROJECTILES	14
 
 // blend times
 #define SHOTGUN_IDLE_TO_IDLE	0
