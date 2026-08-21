@@ -3,8 +3,8 @@ commandline "anim models/weapons/pistol/fred/cycles/reload_empty.ma -dest models
 
 numFrames 53
 numJoints 46
-frameRate 2
-numAnimatedComponents 24
+frameRate 24
+numAnimatedComponents 73
 
 hierarchy {
 	"origin"	-1 0 0	//

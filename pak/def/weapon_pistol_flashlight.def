@@ -2,15 +2,15 @@
 
 	weapon_pistol.def
 
-	anim fire2					models/md5/weapons/pistol_view/fire2.md5anim {
+	anim fire2					models/md5/weapons/pistol_flashlight_view/fire2.md5anim {
 		frame 1					sound_weapon player_pistol_fire
 	}
 	
-	anim fire3 					models/md5/weapons/pistol_view/fire3.md5anim {
+	anim fire3 					models/md5/weapons/pistol_flashlight_view/fire3.md5anim {
 		frame 1					sound_weapon player_pistol_fire
 	}
 	
-	anim fire4 					models/md5/weapons/pistol_view/fire4.md5anim {
+	anim fire4 					models/md5/weapons/pistol_flashlight_view/fire4.md5anim {
 		frame 1					sound_weapon player_pistol_fire
 	}
 
@@ -19,7 +19,7 @@
 
 export fred {
 	// view model pistol
-	options -prefix PISTOL_ -keep barrel eject flash -parent flash Bod -parent barrel Bar -parent Ext eject -parent Bar Bod -parent eject Bod -parent Bod Rhand1 -parent Luparm1 Rloarm1 -parent Cli Bod -parent Trig Bod -rename origin blah -sourcedir models/weapons/pistol/fred/cycles -destdir models/md5/weapons/pistol_view
+	options -prefix PISTOL_ -keep barrel eject flash -parent flash Bod -parent barrel Bar -parent Ext eject -parent Bar Bod -parent eject Bod -parent Bod Rhand1 -parent Luparm1 Rloarm1 -parent Cli Bod -parent Trig Bod -rename origin blah -sourcedir models/weapons/pistol/fred/cycles -destdir models/md5/weapons/pistol_flashlight_view
 
 	mesh	idle.ma -dest viewpistol
 	anim	idle.ma
@@ -29,7 +29,7 @@ export fred {
 	anim	fire3.ma
 	anim	fire4.ma
 	anim	put_away.ma
-	//anim	models/weapons/pistol/fred/cycles/raise3.ma -dest models/md5/weapons/pistol_view/raise3
+	//anim	models/weapons/pistol/fred/cycles/raise3.ma -dest models/md5/weapons/pistol_flashlight_view/raise3
 	anim	raise.ma
 	anim	reload_empty.ma
 	anim	reload_empty.ma -range 1 14 -dest empty_reload_start
@@ -120,13 +120,13 @@ model worldmodel_pistol {
 }
 
 model viewmodel_pistol {
-	mesh						models/md5/weapons/pistol_view/viewpistol.md5mesh
+	mesh						models/md5/weapons/pistol_flashlight_view/viewpistol.md5mesh
 	
-	anim raise 					models/md5/weapons/pistol_view/raise.md5anim {
+	anim raise 					models/md5/weapons/pistol_flashlight_view/raise.md5anim {
 		frame 7					sound_body player_pistol_raise_01
 	}
-	anim idle					models/md5/weapons/pistol_view/idle.md5anim
-	anim idle_empty				models/md5/weapons/pistol_view/idle_empty.md5anim
+	anim idle					models/md5/weapons/pistol_flashlight_view/idle.md5anim
+	anim idle_empty				models/md5/weapons/pistol_flashlight_view/idle_empty.md5anim
 	
 	anim fire1					models/md5/weapons/pistol_flashlight_view/fire1.md5anim {
 		frame 1					sound_weapon player_pistol_fire
@@ -142,5 +142,5 @@ model viewmodel_pistol {
 		frame 1					sound_body player_pistol_empty
 	}
 
-	anim putaway 				models/md5/weapons/pistol_view/put_away.md5anim
+	anim putaway 				models/md5/weapons/pistol_flashlight_view/put_away.md5anim
 }
