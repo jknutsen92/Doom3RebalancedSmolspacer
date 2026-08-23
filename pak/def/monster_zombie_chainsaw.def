@@ -187,4 +187,6 @@ entityDef monster_zombie_chainsaw {
 	"snd_thud"						"monster_zombie_fat_thud"
 	"snd_pull"						"monster_zombie_chainsaw_pull"
 	"snd_release"					"monster_zombie_chainsaw_release"
+
+	"chainsawArmorDropRate"			"3"
 }

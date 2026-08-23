@@ -5,7 +5,7 @@ weapon_chainsaw.script
 ***********************************************************************/
 
 #define CHAINSAW_FIRERATE			0.1
-#define ARMOR_TICK_RATE				0.5			// smolspacer
+#define ARMOR_TICK_RATE				0.85			// smolspacer
 
 // blend times
 #define CHAINSAW_IDLE_TO_LOWER		4
@@ -78,6 +78,7 @@ void weapon_chainsaw::Idle() {
 void weapon_chainsaw::Fire() {
 	float currentTime;
 	float isDamaging;
+	float chainsawArmorDropRate = 0;
 	entity lastMeleeTarget;
 	entity owner = getOwner();
 	playAnim( ANIMCHANNEL_ALL, "melee_start" );
@@ -96,8 +97,11 @@ void weapon_chainsaw::Fire() {
 			if ( isDamaging && currentTime >= next_armor_tick ) {
 				lastMeleeTarget = getLastMeleeTarget();
 				next_armor_tick = currentTime + ARMOR_TICK_RATE;
-				owner.addArmor(lastMeleeTarget.getIntKey("chainsawArmorDropRate"));
-				startSound("snd_armor_gain", SND_CHANNEL_ANY, false);
+				chainsawArmorDropRate = lastMeleeTarget.getIntKey("chainsawArmorDropRate");
+				if ( chainsawArmorDropRate > 0 ) {
+					owner.addArmor(chainsawArmorDropRate);
+					startSound("snd_armor_gain", SND_CHANNEL_ANY, false);
+				}
 			}
 			// smolspacer
 			next_attack = currentTime + CHAINSAW_FIRERATE;

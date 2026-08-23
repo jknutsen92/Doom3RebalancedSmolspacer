@@ -214,6 +214,8 @@ entityDef monster_demon_hellknight {
 	"snd_footstep"					"monster_demon_hellknight_footstep"
 	"snd_deepfs"					"hellknight_deepfs"
 	"snd_burn"						"monster_demon_hellknight_burn"
+
+	"chainsawArmorDropRate"			"5"
 }
 
 model delta1_hellknight {

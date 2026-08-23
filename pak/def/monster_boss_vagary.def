@@ -206,6 +206,7 @@ entityDef monster_boss_vagary {
 	"snd_step"						"monster_demon_vagary_step"
 	"snd_melee"						"monster_zombie_commando_melee_miss"
 	"snd_burn"						"monster_demon_tick_burn"
+	"chainsawArmorDropRate"			"5"
 }
 
 entityDef melee_vagLeftClaw {

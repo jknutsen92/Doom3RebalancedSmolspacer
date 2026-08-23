@@ -837,6 +837,8 @@ entityDef monster_zombie_commando_cgun {
 	"flashTime"						"0.15"
 	"flashColor"					"1 0.8 0.4"
 	"flashRadius"					"120"
+
+	"chainsawArmorDropRate"			"3"
 }
 
 entityDef projectile_zombie_commando_cgun {

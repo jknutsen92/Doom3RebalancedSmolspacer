@@ -204,6 +204,8 @@ entityDef monster_zombie_maint {
 	"snd_swipe"						"monster_zombie_maint_swipe"
 
 	"skin_dropGib"					"skins/monsters/zombies/zmaintb_gib"
+
+	"chainsawArmorDropRate"			"1"
 }
 
 entityDef monster_zombie_maint2 {

@@ -243,6 +243,8 @@ entityDef monster_zombie_fat {
 	"snd_bounce"					"ragdoll_impact"
 
 	"skin_dropGib"					"skins/monsters/zombies/zfatgib.skin"
+
+	"chainsawArmorDropRate"			"1"
 }
 
 

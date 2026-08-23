@@ -323,6 +323,8 @@ entityDef monster_zsec_shield {
 	"flashTime"						"0.15"
 	"flashColor"					"1 0.8 0.4"
 	"flashRadius"					"120"
+
+	"chainsawArmorDropRate"			"2"
 }
 
 entityDef	damage_bullet_zsec_shield {

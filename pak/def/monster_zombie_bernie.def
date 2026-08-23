@@ -180,4 +180,5 @@ entityDef monster_zombie_bernie {
 	"snd_swipe"						"monster_zombie_maint_swipe"
 	"snd_ambient"					"monster_zombie_ambient_burn"
 
+	"chainsawArmorDropRate"			"1"
 }

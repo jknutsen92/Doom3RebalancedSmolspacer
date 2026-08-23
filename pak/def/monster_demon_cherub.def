@@ -173,6 +173,8 @@ entityDef monster_demon_cherub {
 	"snd_flutter"					"monster_demon_cherub_flutter" 
 	"snd_ambient"					"monster_demon_cherub_ambient"
 	"snd_burn"						"monster_demon_tick_burn"
+
+	"chainsawArmorDropRate"			"3"
 }
 
 entityDef melee_cherubLeftClaw {

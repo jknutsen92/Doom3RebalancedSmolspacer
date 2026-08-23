@@ -184,6 +184,8 @@ entityDef monster_demon_wraith {
 	"snd_fade_in"					"monster_demon_wraith_fade_in"
 	"snd_fade_out"					"monster_demon_wraith_fade_out"
 	"snd_burn"						"monster_demon_tick_burn"
+
+	"chainsawArmorDropRate"			"1"
 }
 
 entityDef wraith_spawneffect {

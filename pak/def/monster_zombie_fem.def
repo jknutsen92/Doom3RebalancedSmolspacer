@@ -202,6 +202,7 @@ entityDef char_poppy {
 	"def_dropGibItem8"				"moveable_item_pelvis_pork"
 	"dropGibItem8Joint"				"Hips"
 
+	"chainsawArmorDropRate"			"1"
 }
 
 

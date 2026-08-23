@@ -261,6 +261,8 @@ entityDef monster_zombie_sawyer {
 	"snd_csattack_3"				"monster_zombie_chainsaw_attack3"
 	"snd_csidle"					"monster_zombie_chainsaw_idle"
 	"snd_death"						"bernie_death"
+
+	"chainsawArmorDropRate"			"3"
 }
 
 entityDef melee_zombie_chainsaw {

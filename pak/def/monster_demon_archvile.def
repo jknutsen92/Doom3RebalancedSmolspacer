@@ -209,6 +209,8 @@ entityDef monster_demon_archvile {
 	// these keys aren't actually used, but just for the game to precache the entitydefs	
 	"def_attack1"					"archvile_incinerate"
 	"def_attack2"					"archvile_flamewall_2.prt"
+
+	"chainsawArmorDropRate"			"5"
 }
 
 entityDef melee_archLeftClaw {

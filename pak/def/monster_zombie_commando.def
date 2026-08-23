@@ -242,6 +242,8 @@ entityDef monster_zombie_commando {
 
 	// For Precache, include entitydefs that are referenced in script
 	"def_tentacle"					"melee_commandoTentacle"
+
+	"chainsawArmorDropRate"			"3"
 }
 
 entityDef melee_commando_right {

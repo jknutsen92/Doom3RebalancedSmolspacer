@@ -546,4 +546,6 @@ entityDef projectile_bullet_zsec_pistol {
 	"explode_light_color"			"0 0 0"
 	"explode_light_radius"			"0"
 	"explode_light_fadetime"		"0"
+
+	"chainsawArmorDropRate"			"2"
 }

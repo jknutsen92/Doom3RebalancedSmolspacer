@@ -130,4 +130,6 @@ entityDef monster_zombie_morgue {
 	"snd_death"						"zombie_morgue_death"
 	"snd_thud"						"monster_zombie_maint_thud"
 	"snd_swipe"						"monster_zombie_maint_swipe"
+
+	"chainsawArmorDropRate"			"1"
 }

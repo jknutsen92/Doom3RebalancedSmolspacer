@@ -128,6 +128,8 @@ entityDef monster_flying_cacodemon {
 	"fx_teleport1"					"fx/teleporter1_fly.fx"
 	"fx_teleport2"					"fx/teleporter2_fly.fx"
 	"fx_teleport3"					"fx/teleporter3_fly.fx"
+
+	"chainsawArmorDropRate"			"3"
 }
 
 entityDef damage_cacodemon_fireball {

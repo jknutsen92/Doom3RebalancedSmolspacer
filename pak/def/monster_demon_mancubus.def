@@ -190,6 +190,8 @@ entityDef monster_demon_mancubus {
 	"snd_death"						"monster_demon_mancubus_die"
 	"snd_footstep"					"monster_demon_mancubus_step"
 	"snd_burn"						"monster_demon_mancubus_burn"
+
+	"chainsawArmorDropRate"			"5"
 }
 
 entityDef damage_mancubusblast {

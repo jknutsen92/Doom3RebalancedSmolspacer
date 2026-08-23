@@ -419,6 +419,8 @@ entityDef monster_demon_imp {
 	"snd_attackmissile"				"monster_demon_imp_fireball_throw"
 	"snd_alert_idle"				"monster_demon_imp_alert_idle"
 	"snd_burn"						"monster_demon_archvile_burn"
+
+	"chainsawArmorDropRate"			"3"
 }
 
 model monster_demon_imp_crawler {

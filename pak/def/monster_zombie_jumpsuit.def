@@ -152,6 +152,8 @@ entityDef monster_zombie_jumpsuit_old {
 	"snd_melee_attack_3"			"monster_zombie_fat_attackmelee_3"
 	"snd_thud"						"monster_zombie_fat_thud"
 	"skin_dropGib"					"skins/models/monsters/zjumpgib.skin"
+
+	"chainsawArmorDropRate"			"1"
 }
 
 
