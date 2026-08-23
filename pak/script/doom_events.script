@@ -750,6 +750,9 @@ scriptEvent	float	ammoInClip();
 // smolspacer - sets ammo in clip to a defined value
 scriptEvent void 	setClip( float amount );
 
+// smolspacer - gets the entity that the player most recently hit with a melee
+scriptEvent entity 	getLastMeleeTarget();
+
 // number of shots left in inventory
 scriptEvent	float	ammoAvailable();
 
@@ -970,6 +973,12 @@ scriptEvent string	getPreviousWeapon();
 
 // Selects the weapon the player is holding.
 scriptEvent void	selectWeapon( string weapon );
+
+// Gives item to player (similar to give console command)
+scriptEvent void 	giveItem( string itemName );			// smolspacer
+
+// Adds armor to the player's inventory (can be negative to subtract)
+scriptEvent void 	addArmor( float amount );				// smolspacer
 
 // Returns the entity for the player's weapon
 scriptEvent entity	getWeaponEntity();

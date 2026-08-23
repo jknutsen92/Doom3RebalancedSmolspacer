@@ -96,6 +96,7 @@ entityDef weapon_chainsaw {
 	"snd_csattack"				"monster_zombie_chainsaw_attack1"
 	"snd_csidle"				"monster_zombie_chainsaw_idle"
 	"snd_putaway"				"player_chainsaw_putaway"
+	"snd_armor_gain"			"sound_shard_acquire"
 	
 	"skin_invisible"			"skins/chainsaw_invis"
 }

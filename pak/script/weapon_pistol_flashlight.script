@@ -53,7 +53,7 @@ void weapon_pistol_flashlight::init() {
 
 void weapon_pistol_flashlight::Raise() {
 	// smolspacer - Match ammo in clip to that of the flashlight pistol
-	setClip(pistol_ammo_clip);
+	setClip(g_pistol_clip_remaining);
 	
 	weaponRising();
 
@@ -68,7 +68,7 @@ void weapon_pistol_flashlight::Raise() {
 
 void weapon_pistol_flashlight::Lower() {
 	// smolspacer
-	pistol_ammo_clip = ammoInClip();
+	g_pistol_clip_remaining = ammoInClip();
 
 	weaponLowering();
 	playAnim( ANIMCHANNEL_ALL, "putaway" );

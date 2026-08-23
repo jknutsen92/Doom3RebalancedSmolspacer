@@ -17,7 +17,7 @@ weapon_pistol.script
 #define PISTOL_RELOAD_TO_IDLE	4
 
 // smolspacer
-float pistol_ammo_clip = 12;
+float g_pistol_clip_remaining = 12;
 
 object weapon_pistol : weapon_base {
 	float		next_attack;
@@ -40,7 +40,7 @@ void weapon_pistol::init() {
 
 void weapon_pistol::Raise() {
 	// smolspacer - Match ammo in clip to that of the flashlight pistol
-	setClip(pistol_ammo_clip);
+	setClip(g_pistol_clip_remaining);
 
 	weaponRising();
 
@@ -51,7 +51,7 @@ void weapon_pistol::Raise() {
 
 void weapon_pistol::Lower() {
 	// smolspacer
-	pistol_ammo_clip = ammoInClip();
+	g_pistol_clip_remaining = ammoInClip();
 
 	weaponLowering();
 	playAnim( ANIMCHANNEL_ALL, "putaway" );

@@ -5,6 +5,7 @@ weapon_chainsaw.script
 ***********************************************************************/
 
 #define CHAINSAW_FIRERATE			0.1
+#define ARMOR_TICK_RATE				0.5			// smolspacer
 
 // blend times
 #define CHAINSAW_IDLE_TO_LOWER		4
@@ -14,6 +15,7 @@ weapon_chainsaw.script
 
 object weapon_chainsaw : weapon_base {
 	float		next_attack;
+	float 		next_armor_tick;
 	
 	void		init();
 	
@@ -26,6 +28,7 @@ object weapon_chainsaw : weapon_base {
 
 void weapon_chainsaw::init() {
 	next_attack = 0;
+	next_armor_tick = 0;
 	weaponState( "Raise", 0 );
 }
 
@@ -74,6 +77,9 @@ void weapon_chainsaw::Idle() {
 
 void weapon_chainsaw::Fire() {
 	float currentTime;
+	float isDamaging;
+	entity lastMeleeTarget;
+	entity owner = getOwner();
 	playAnim( ANIMCHANNEL_ALL, "melee_start" );
 	melee();
 	startSound( "snd_startattack", SND_CHANNEL_WEAPON, false );
@@ -85,7 +91,15 @@ void weapon_chainsaw::Fire() {
 	while ( WEAPON_ATTACK ) {
 		currentTime = sys.getTime();
 		if ( currentTime >= next_attack ) {
-			melee();
+			// smolspacer
+			isDamaging = melee();
+			if ( isDamaging && currentTime >= next_armor_tick ) {
+				lastMeleeTarget = getLastMeleeTarget();
+				next_armor_tick = currentTime + ARMOR_TICK_RATE;
+				owner.addArmor(lastMeleeTarget.getIntKey("chainsawArmorDropRate"));
+				startSound("snd_armor_gain", SND_CHANNEL_ANY, false);
+			}
+			// smolspacer
 			next_attack = currentTime + CHAINSAW_FIRERATE;
 		}
 		waitFrame();
@@ -95,6 +109,7 @@ void weapon_chainsaw::Fire() {
 	waitUntil( animDone( ANIMCHANNEL_ALL, 0 ) );
 	weaponState( "Idle", CHAINSAW_FIRE_TO_IDLE );
 }
+
 
 void weapon_chainsaw::ExitCinematic() {
 	next_attack = 0;
