@@ -103,7 +103,9 @@ entityDef weapon_pistol_flashlight {
 	
 	"skin_invisible"			"skins/pistol_invis"
 	
-	"spread"					"0"
+	"spread"					"1"
+	"recoilTime"				"200"
+	"recoilAngles"				"-1.00 -0.5 0"
 }
 
 model worldmodel_pistol {

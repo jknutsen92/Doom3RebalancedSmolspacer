@@ -176,7 +176,7 @@ entityDef monster_zombie_commando {
 	"use_aas"						"aas48"
 	"team"							"1"
 	"rank"							"1"
-	"health"						"170"
+	"health"						"340"
 	"melee_range"					"40"
 	"turn_rate"						"360"
 	"chatter_min"					"3"
@@ -247,7 +247,7 @@ entityDef monster_zombie_commando {
 }
 
 entityDef melee_commando_right {
-	"damage"						"12"
+	"damage"						"9"
 	"kickDir"						"0 1 0"
 	
 	//"mtr_blob"						"genericDamage"
@@ -273,7 +273,7 @@ entityDef melee_commando_right {
 }
 
 entityDef melee_commando_left {
-	"damage"						"12"
+	"damage"						"9"
 	"kickDir"						"0 -1 0"
 	
 	//"mtr_blob"						"genericDamage"
@@ -299,7 +299,7 @@ entityDef melee_commando_left {
 }
 
 entityDef melee_commando_push {
-	"damage"						"12"
+	"damage"						"9"
 	"kickDir"						"1 0 1"
 	
 	//"mtr_blob"						"genericDamage"
@@ -325,7 +325,7 @@ entityDef melee_commando_push {
 }
 
 entityDef melee_commandoTentacle {
-	"damage"						"12"
+	"damage"						"11"
 	"melee_bone"					"joint13"
 
 	"kickDir"						"1 0 0"
