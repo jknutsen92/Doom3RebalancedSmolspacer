@@ -57,7 +57,7 @@ entityDef weapon_pistol_flashlight {
 	"spawnclass"				"idItem"
 	"size"						"32 32 32"
 	"model"						"models/weapons/pistol/w_pistol.lwo"
-	"model_view" 				"viewmodel_pistol"
+	"model_view" 				"viewmodel_pistol_flashlight"
 	"model_world" 				"worldmodel_pistol"
 	"joint_attach"				"PISTOL_ATTACHER"
 	"def_dropItem"				"moveable_item_pistol"
@@ -121,8 +121,8 @@ model worldmodel_pistol {
 	anim noammo					models/md5/weapons/pistol_world/pistol_idle.md5anim
 }
 
-model viewmodel_pistol {
-	mesh						models/md5/weapons/pistol_flashlight_view/viewpistol.md5mesh
+model viewmodel_pistol_flashlight {
+	mesh						models/md5/weapons/pistol_flashlight_view/viewpistol_flashlight.md5mesh
 	
 	anim raise 					models/md5/weapons/pistol_flashlight_view/raise.md5anim {
 		frame 7					sound_body player_pistol_raise_01
@@ -133,16 +133,20 @@ model viewmodel_pistol {
 	anim fire1					models/md5/weapons/pistol_flashlight_view/fire1.md5anim {
 		frame 1					sound_weapon player_pistol_fire
 	}
-	
-	
 		
 	anim reload 				models/md5/weapons/pistol_flashlight_view/reload_empty.md5anim {
 		frame 1					sound_weapon player_pistol_reload
 	}
-	
+
+	anim reload_noempty 		models/md5/weapons/pistol_flashlight_view/reload_noempty.md5anim {
+		frame 1					sound_weapon player_pistol_reload
+	}
+
 	anim noammo 				models/md5/weapons/pistol_flashlight_view/empty_reload_start.md5anim {
 		frame 1					sound_body player_pistol_empty
 	}
+
+	anim reload_start 			models/md5/weapons/pistol_flashlight_view/noempty_reload_start.md5anim
 
 	anim putaway 				models/md5/weapons/pistol_flashlight_view/put_away.md5anim
 }
