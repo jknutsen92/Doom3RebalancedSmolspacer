@@ -201,7 +201,7 @@ entityDef damage_explosion {
 }
 
 entityDef damage_explodingbarrel {
-	"damage"						"120"		// base "300"
+	"damage"						"300"		// base "300"
 	"radius"						"140"
 	"push"							"2000"
 	"knockback"						"100"

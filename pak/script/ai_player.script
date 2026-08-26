@@ -10,6 +10,10 @@ object player : player_base {
 	weapon_base weapon;
 	boolean		weapon_changed;
 	boolean		start_fire;
+
+	string		damageScale;
+	string 		armorProtection;
+	string		armorStripScale;
 	
 	void		init();
 
@@ -63,6 +67,28 @@ player::init
 =====================
 */
 void player::init() {
+	// Set scaling for damage and armor based on difficulty. Will be updated 
+	string g_skill = sys.getcvar("g_skill");
+	if (g_skill == "0") {					// Recruit
+		damageScale = "1.0";
+		armorProtection = "0.95";
+		armorStripScale = "0.6";
+	}
+	else if (g_skill == "1") {			// Marine
+		damageScale = "1.75";
+		armorProtection = "0.85";
+		armorStripScale = "1.0";
+	}
+	else if (g_skill == "2") {			// Veteran
+		damageScale = "2.5";
+		armorProtection = "0.7";
+		armorStripScale = "1.5";	
+	}
+	else if (g_skill == "3") {			// Nightmare
+		damageScale = "2.5";
+		armorProtection = "0.7";
+		armorStripScale = "1.5";
+	}
 	weapon_changed = false;
 	start_fire = false;
 	animState( ANIMCHANNEL_TORSO, "Torso_Idle", 0 );
@@ -160,9 +186,11 @@ void player::Torso_Teleport() {
 void player::Torso_Idle() {
 	playCycle( ANIMCHANNEL_TORSO, "idle" );
 
+	// TODO: Get rid of this dumb crap eventually
 	if ( sys.getcvar( "ss_damageModel" ) == "1" ) {
-		sys.setcvar( "g_armorProtection", "0.7" );
-		sys.setcvar( "g_damageScale", "2.5" );
+		sys.setcvar( "g_armorProtection", armorProtection );
+		sys.setcvar( "g_damageScale", damageScale );
+		sys.setcvar( "g_armorStripScale", armorStripScale );
 	}
 
 	eachFrame {
