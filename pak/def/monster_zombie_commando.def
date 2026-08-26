@@ -176,7 +176,7 @@ entityDef monster_zombie_commando {
 	"use_aas"						"aas48"
 	"team"							"1"
 	"rank"							"1"
-	"health"						"340"
+	"health"						"225"
 	"melee_range"					"40"
 	"turn_rate"						"360"
 	"chatter_min"					"3"
@@ -243,7 +243,7 @@ entityDef monster_zombie_commando {
 	// For Precache, include entitydefs that are referenced in script
 	"def_tentacle"					"melee_commandoTentacle"
 
-	"chainsawArmorDropRate"			"3"
+	"armorGibs"			"3"
 }
 
 entityDef melee_commando_right {

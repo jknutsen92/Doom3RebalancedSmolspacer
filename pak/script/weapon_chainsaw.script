@@ -78,7 +78,7 @@ void weapon_chainsaw::Idle() {
 void weapon_chainsaw::Fire() {
 	float currentTime;
 	float isDamaging;
-	float chainsawArmorDropRate = 0;
+	float armorGibs = 0;
 	entity lastMeleeTarget;
 	entity owner = getOwner();
 	playAnim( ANIMCHANNEL_ALL, "melee_start" );
@@ -97,9 +97,9 @@ void weapon_chainsaw::Fire() {
 			if ( isDamaging && currentTime >= next_armor_tick ) {
 				lastMeleeTarget = getLastMeleeTarget();
 				next_armor_tick = currentTime + ARMOR_TICK_RATE;
-				chainsawArmorDropRate = lastMeleeTarget.getIntKey("chainsawArmorDropRate");
-				if ( chainsawArmorDropRate > 0 ) {
-					owner.addArmor(chainsawArmorDropRate);
+				armorGibs = lastMeleeTarget.getIntKey("armorGibs");
+				if ( armorGibs > 0 ) {
+					owner.addArmor(armorGibs);
 					startSound("snd_armor_gain", SND_CHANNEL_ANY, false);
 				}
 			}

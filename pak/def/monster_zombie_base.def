@@ -58,7 +58,7 @@ entityDef zombie_default {
 	"dropGibItem9Joint"			"Headcontrol"
 	"dropGibItem9Offset"		"0 0 16"
 
-	"chainsawArmorDropRate"			"1"
+	"armorGibs"			"1"
 }
 
 export fred {

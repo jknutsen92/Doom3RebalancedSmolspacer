@@ -166,5 +166,5 @@ entityDef monster_zombie_boney {
 	"snd_swipe"						"monster_zombie_maint_swipe"
 	"snd_footdrag"					"bernie_footdrag"
 
-	"chainsawArmorDropRate"			"2"
+	"armorGibs"			"2"
 }

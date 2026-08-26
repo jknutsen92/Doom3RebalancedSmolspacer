@@ -205,7 +205,7 @@ entityDef monster_zombie_maint {
 
 	"skin_dropGib"					"skins/monsters/zombies/zmaintb_gib"
 
-	"chainsawArmorDropRate"			"1"
+	"armorGibs"			"1"
 }
 
 entityDef monster_zombie_maint2 {

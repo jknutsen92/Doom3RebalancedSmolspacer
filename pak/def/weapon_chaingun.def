@@ -44,7 +44,7 @@ entityDef weapon_chaingun {
 
 	"inv_name"					"Chaingun"
 	"inv_weapon"				"weapon_chaingun"
-	"inv_ammo_belt"				"180"
+	"inv_ammo_belt"				"90"
 	"inv_item"					"5"
 	"icon"						"guis/assets/hud/wpn_11"
 
@@ -216,7 +216,7 @@ entityDef projectile_chaingunbullet {
 }
 
 entityDef	damage_bullet_chaingun {
-	"damage"			"20"
+	"damage"			"15"
 	"kickDir"			"1 0 0"
 
 	"mtr_blob"			"genericDamage"
@@ -224,7 +224,7 @@ entityDef	damage_bullet_chaingun {
 	"blob_size"			"400"
 	"blob_offset_x"		"400"
 
-	"knockback"			"1"
+	"knockback"			"2"
 	
 	"gib"				"1"
 	"smoke_wound_flesh"	"bloodwound.ptr"

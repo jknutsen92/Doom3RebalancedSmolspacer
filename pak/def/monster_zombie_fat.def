@@ -244,7 +244,7 @@ entityDef monster_zombie_fat {
 
 	"skin_dropGib"					"skins/monsters/zombies/zfatgib.skin"
 
-	"chainsawArmorDropRate"			"1"
+	"armorGibs"			"1"
 }
 
 

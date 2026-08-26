@@ -264,7 +264,7 @@ entityDef monster_demon_revenant {
 	"snd_death"						"monster_demon_revenant_die"
 	"snd_burn"						"monster_demon_revenant_burn"
 
-	"chainsawArmorDropRate"			"3"
+	"armorGibs"			"3"
 }
 
 entityDef damage_RevRocket {

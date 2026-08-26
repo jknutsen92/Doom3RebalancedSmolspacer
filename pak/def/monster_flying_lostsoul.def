@@ -95,7 +95,7 @@ entityDef monster_flying_lostsoul {
 	"fx_teleport2"					"fx/teleporter2_fly.fx"
 	"fx_teleport3"					"fx/teleporter3_fly.fx"
 
-	"chainsawArmorDropRate"			"3"
+	"armorGibs"			"3"
 	
 }
 

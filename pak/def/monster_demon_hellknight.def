@@ -215,7 +215,7 @@ entityDef monster_demon_hellknight {
 	"snd_deepfs"					"hellknight_deepfs"
 	"snd_burn"						"monster_demon_hellknight_burn"
 
-	"chainsawArmorDropRate"			"5"
+	"armorGibs"			"5"
 }
 
 model delta1_hellknight {
@@ -230,7 +230,7 @@ entityDef delta1_hellknight {
 }
 
 entityDef damage_fireball_hellknight {
-	"damage"						"30"
+	"damage"						"25"
 	"kickDir"						"1 0 0"
 
 	"mtr_blob"						"genericDamage"
@@ -249,7 +249,7 @@ entityDef damage_fireball_hellknight {
  
 
 entityDef damage_fireball_hellknight_splash {
-	"damage"						"45"
+	"damage"						"15"
 	"radius"						"120"
 }
 
@@ -323,7 +323,7 @@ entityDef melee_hellknightLeftClaw {
 	"kickDir"						"0 -1 0"
 
 	// damage parameters
-	"damage"						"25"
+	"damage"						"20"
 
 	"mtr_blob"						"leftSlash"
 	"blob_time"						"300"
@@ -346,7 +346,7 @@ entityDef melee_hellknightRightClaw {
 	"kickDir"						"0 1 0"
 
 
-	"damage"						"25"
+	"damage"						"20"
 
 	"mtr_blob"						"rightSlash"
 	"blob_time"						"300"
@@ -366,7 +366,7 @@ entityDef melee_hellknightRightClaw {
 
 
 entityDef melee_hellknight_bite {
-	"damage"						"30"
+	"damage"						"25"
 	"kickDir"						"1 0 0"
 
 	"snd_hit"						"monster_demon_hellknight_melee_2"

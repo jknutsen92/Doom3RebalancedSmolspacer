@@ -753,7 +753,7 @@ entityDef monster_zombie_commando_cgun {
 	"use_aas"						"aas48"
 	"team"							"1"
 	"rank"							"1"
-	"health"						"300"
+	"health"						"225"
 	"def_projectile"				"projectile_zombie_commando_cgun"
 	"attack_cone"					"70"
 	"attack_accuracy"				"2"
@@ -838,7 +838,7 @@ entityDef monster_zombie_commando_cgun {
 	"flashColor"					"1 0.8 0.4"
 	"flashRadius"					"120"
 
-	"chainsawArmorDropRate"			"3"
+	"armorGibs"			"3"
 }
 
 entityDef projectile_zombie_commando_cgun {
