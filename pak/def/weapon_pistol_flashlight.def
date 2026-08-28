@@ -123,6 +123,7 @@ model worldmodel_pistol {
 
 model viewmodel_pistol_flashlight {
 	mesh						models/md5/weapons/pistol_flashlight_view/viewpistol_flashlight.md5mesh
+	offset 						(1 2 0)
 	
 	anim raise 					models/md5/weapons/pistol_flashlight_view/raise.md5anim {
 		frame 7					sound_body player_pistol_raise_01
