@@ -48,8 +48,12 @@ void weapon_pistol_flashlight::Raise() {
 	
 	weaponRising();
 
-	// TODO: Add a check for AmmoInClip, if empty do an empty raise
-	playAnim( ANIMCHANNEL_ALL, "raise" );
+	if (ammoInClip() > 0) {						// smolspacer
+		playAnim( ANIMCHANNEL_ALL, "raise" );
+	}
+	else {
+		playAnim( ANIMCHANNEL_ALL, "raise_empty" );
+	}
 	waitUntil( animDone( ANIMCHANNEL_ALL, PISTOL_FLASHLIGHT_RAISE_TO_IDLE ) );
 	flashlight( true );
 	weaponState( "Idle", PISTOL_FLASHLIGHT_RAISE_TO_IDLE );
@@ -60,7 +64,13 @@ void weapon_pistol_flashlight::Lower() {
 	g_pistol_clip_remaining = ammoInClip();
 
 	weaponLowering();
-	playAnim( ANIMCHANNEL_ALL, "putaway" );
+	if (ammoInClip() > 0) {						// smolspacer
+		playAnim( ANIMCHANNEL_ALL, "putaway" );
+	}
+	else {
+		playAnim( ANIMCHANNEL_ALL, "putaway_empty" );
+
+	}
 	waitUntil( animDone( ANIMCHANNEL_ALL, 0 ) );
 	weaponHolstered();
 	waitUntil( WEAPON_RAISEWEAPON );

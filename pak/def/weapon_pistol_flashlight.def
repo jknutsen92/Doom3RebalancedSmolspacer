@@ -129,6 +129,10 @@ model viewmodel_pistol_flashlight {
 	anim raise 					models/md5/weapons/pistol_flashlight_view/raise.md5anim {
 		frame 7					sound_body player_pistol_raise_01
 	}
+
+	anim raise_empty			models/md5/weapons/pistol_flashlight_view/raise_empty.md5anim {
+		frame 1					sound_weapon fist_raise
+	}
 	
 	anim idle					models/md5/weapons/pistol_flashlight_view/idle.md5anim
 
@@ -153,5 +157,11 @@ model viewmodel_pistol_flashlight {
 		frame 36				sound_weapon player_pistol_reload_clip_in
 	}
 
-	anim putaway 				models/md5/weapons/pistol_flashlight_view/put_away.md5anim
+	anim putaway 				models/md5/weapons/pistol_flashlight_view/put_away.md5anim {
+		frame 6					sound_weapon fist_raise
+	}
+
+	anim putaway_empty			models/md5/weapons/pistol_flashlight_view/put_away_empty.md5anim {
+		frame 6					sound_weapon fist_raise
+	}
 }
