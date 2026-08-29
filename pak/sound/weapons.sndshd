@@ -815,6 +815,30 @@ player_pistol_reload {
 	sound/weapons/pistol/pistol_reload_01.wav
 }
 
+player_pistol_reload_clip_in {
+	minDistance	10
+	maxDistance	30
+	volume		5
+
+	sound/weapons/pistol/pistol_reload_clip_in.wav
+}
+
+player_pistol_reload_clip_out {
+	minDistance	10
+	maxDistance	30
+	volume		5
+
+	sound/weapons/pistol/pistol_reload_clip_out.wav
+}
+
+player_pistol_reload_slide_rack {
+	minDistance	10
+	maxDistance	30
+	volume		5
+
+	sound/weapons/pistol/pistol_reload_slide_rack.wav
+}
+
 player_pistol_empty {
 	minDistance	10
 	maxDistance	30

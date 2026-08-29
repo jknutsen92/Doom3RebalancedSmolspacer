@@ -90,10 +90,14 @@ void weapon_pistol_flashlight::Idle() {
 		if ( ( currentTime >= next_attack ) && WEAPON_ATTACK ) {
 			if ( ammoClip > 0 ) {
 				weaponState( "Fire", PISTOL_FLASHLIGHT_IDLE_TO_FIRE );
-			} else if ( ammoAvailable() > 0 ) {
-				if ( autoReload() ) {
-					netReload();
-					weaponState( "Reload", PISTOL_FLASHLIGHT_IDLE_TO_RELOAD );
+			} else {
+				startSound("snd_pistol_empty", SND_CHANNEL_WEAPON, true);
+				next_attack = sys.getTime() + PISTOL_FLASHLIGHT_FIRERATE;
+				if ( ammoAvailable() > 0 ) {
+					if ( autoReload() ) {
+						netReload();
+						weaponState( "Reload", PISTOL_FLASHLIGHT_IDLE_TO_RELOAD );
+					}
 				}
 			}
 		}
@@ -120,14 +124,24 @@ void weapon_pistol_flashlight::Fire() {
 	}
 	
 	launchProjectiles( PISTOL_FLASHLIGHT_NUMPROJECTILES, spread, 0, 1.0, 1.0 );
-	playAnim( ANIMCHANNEL_ALL, "fire" );
+	if ( ammoClip > 1 )	{		// smolspacer
+		playAnim( ANIMCHANNEL_ALL, "fire" );
+	}
+	else if (ammoClip == 1) {
+		playAnim( ANIMCHANNEL_ALL, "fire1_to_empty");
+	}
 	waitUntil( animDone( ANIMCHANNEL_ALL, PISTOL_FLASHLIGHT_FIRE_TO_IDLE ) );
 	weaponState( "Idle", PISTOL_FLASHLIGHT_FIRE_TO_IDLE );
 }
 
 void weapon_pistol_flashlight::Reload() {
 	weaponReloading();
-	playAnim( ANIMCHANNEL_ALL, "reload" );
+	if (ammoInClip() > 0) {				// smolspacer
+		playAnim( ANIMCHANNEL_ALL, "reload_noempty" );
+	}
+	else {
+		playAnim( ANIMCHANNEL_ALL, "reload_empty" );
+	}
 	waitUntil( animDone( ANIMCHANNEL_ALL, PISTOL_FLASHLIGHT_RELOAD_TO_IDLE ) );
 	addToClip( clipSize() );
 	weaponState( "Idle", PISTOL_FLASHLIGHT_RELOAD_TO_IDLE );
@@ -135,10 +149,6 @@ void weapon_pistol_flashlight::Reload() {
 
 void weapon_pistol_flashlight::ExitCinematic() {
 	next_attack = 0;
-
-	// by capri91
-	flashlight( true );
-	// by capri91
-
+	flashlight( true );			// by capri91
 	weaponState( "Idle", 0 );
 }

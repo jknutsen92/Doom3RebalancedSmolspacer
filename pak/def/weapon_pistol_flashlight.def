@@ -100,6 +100,7 @@ entityDef weapon_pistol_flashlight {
 	
 	"snd_acquire"				"sound_weapon_acquire"
 	"snd_respawn"				"sound_weapon_respawn"
+	"snd_pistol_empty"			"player_pistol_empty"
 	
 	"skin_invisible"			"skins/pistol_invis"
 	
@@ -128,7 +129,9 @@ model viewmodel_pistol_flashlight {
 	anim raise 					models/md5/weapons/pistol_flashlight_view/raise.md5anim {
 		frame 7					sound_body player_pistol_raise_01
 	}
+	
 	anim idle					models/md5/weapons/pistol_flashlight_view/idle.md5anim
+
 	anim idle_empty				models/md5/weapons/pistol_flashlight_view/idle_empty.md5anim
 	
 	anim fire1					models/md5/weapons/pistol_flashlight_view/fire1.md5anim {
@@ -140,20 +143,15 @@ model viewmodel_pistol_flashlight {
 	}
 		
 	anim reload_empty 				models/md5/weapons/pistol_flashlight_view/reload_empty.md5anim {
-		frame 1					sound_weapon player_pistol_reload
+		frame 13					sound_weapon player_pistol_reload_clip_out
+		frame 36					sound_weapon player_pistol_reload_clip_in
+		frame 49					sound_weapon player_pistol_reload_slide_rack
 	}
 
 	anim reload_noempty 		models/md5/weapons/pistol_flashlight_view/reload_noempty.md5anim {
-		frame 1					sound_weapon player_pistol_reload
+		frame 13				sound_weapon player_pistol_reload_clip_out
+		frame 36				sound_weapon player_pistol_reload_clip_in
 	}
-
-	anim noammo 				models/md5/weapons/pistol_flashlight_view/empty_reload_start.md5anim {
-		frame 1					sound_body player_pistol_empty
-	}
-
-	anim reload_start_noempty 	models/md5/weapons/pistol_flashlight_view/noempty_reload_start.md5anim
-
-	anim reload_start_empty 	models/md5/weapons/pistol_flashlight_view/empty_reload_start.md5anim
 
 	anim putaway 				models/md5/weapons/pistol_flashlight_view/put_away.md5anim
 }
