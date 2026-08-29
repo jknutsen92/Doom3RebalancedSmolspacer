@@ -12,20 +12,15 @@ weapon_pistol_flashlight.script
 #define PISTOL_FLASHLIGHT_IDLE_TO_LOWER	2
 #define PISTOL_FLASHLIGHT_IDLE_TO_FIRE		1
 #define	PISTOL_FLASHLIGHT_IDLE_TO_RELOAD	3
-#define PISTOL_FLASHLIGHT_RAISE_TO_IDLE	3
-#define PISTOL_FLASHLIGHT_FIRE_TO_IDLE		4
-#define PISTOL_FLASHLIGHT_RELOAD_TO_IDLE	2
-
-// by capri91
-// by capri91
+#define PISTOL_FLASHLIGHT_RAISE_TO_IDLE	2
+#define PISTOL_FLASHLIGHT_FIRE_TO_IDLE		3
+#define PISTOL_FLASHLIGHT_RELOAD_TO_IDLE	1
 
 object weapon_pistol_flashlight : weapon_base {
 	float		next_attack;
 	float		spread;
 
-	// by capri91
-	float		intensity;
-	// by capri91
+	float		intensity;		// Credit to capri91 for ductape mod logic concept
 	
 	void		init();
 	
@@ -42,13 +37,9 @@ void weapon_pistol_flashlight::init() {
 	spread		= getFloatKey( "spread" );
 	weaponState( "Raise", 0 );
 
-	// by capri91
-	//global_flashlight_intensity = 1.0;
 	intensity = 1.0;
 	setLightParm( 3, 1.0 );
 	setShaderParm( 3, 1.0 );
-	flashlight( true );
-	// by capri91
 }
 
 void weapon_pistol_flashlight::Raise() {
@@ -57,12 +48,10 @@ void weapon_pistol_flashlight::Raise() {
 	
 	weaponRising();
 
-	// by capri91
-	flashlight( true );
-	// by capri91
-
+	// TODO: Add a check for AmmoInClip, if empty do an empty raise
 	playAnim( ANIMCHANNEL_ALL, "raise" );
 	waitUntil( animDone( ANIMCHANNEL_ALL, PISTOL_FLASHLIGHT_RAISE_TO_IDLE ) );
+	flashlight( true );
 	weaponState( "Idle", PISTOL_FLASHLIGHT_RAISE_TO_IDLE );
 }
 

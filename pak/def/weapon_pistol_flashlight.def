@@ -104,8 +104,8 @@ entityDef weapon_pistol_flashlight {
 	"skin_invisible"			"skins/pistol_invis"
 	
 	"spread"					"1"
-	"recoilTime"				"200"
-	"recoilAngles"				"-1.00 -0.5 0"
+	"recoilTime"				"250"
+	"recoilAngles"				"-2 -0.75 0"
 }
 
 model worldmodel_pistol {
@@ -134,8 +134,12 @@ model viewmodel_pistol_flashlight {
 	anim fire1					models/md5/weapons/pistol_flashlight_view/fire1.md5anim {
 		frame 1					sound_weapon player_pistol_fire
 	}
+
+	anim fire1_to_empty			models/md5/weapons/pistol_flashlight_view/fire1_to_empty.md5anim {
+		frame 1					sound_weapon player_pistol_fire
+	}
 		
-	anim reload 				models/md5/weapons/pistol_flashlight_view/reload_empty.md5anim {
+	anim reload_empty 				models/md5/weapons/pistol_flashlight_view/reload_empty.md5anim {
 		frame 1					sound_weapon player_pistol_reload
 	}
 
@@ -147,7 +151,9 @@ model viewmodel_pistol_flashlight {
 		frame 1					sound_body player_pistol_empty
 	}
 
-	anim reload_start 			models/md5/weapons/pistol_flashlight_view/noempty_reload_start.md5anim
+	anim reload_start_noempty 	models/md5/weapons/pistol_flashlight_view/noempty_reload_start.md5anim
+
+	anim reload_start_empty 	models/md5/weapons/pistol_flashlight_view/empty_reload_start.md5anim
 
 	anim putaway 				models/md5/weapons/pistol_flashlight_view/put_away.md5anim
 }
