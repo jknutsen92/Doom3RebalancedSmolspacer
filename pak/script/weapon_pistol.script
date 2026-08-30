@@ -121,7 +121,7 @@ void weapon_pistol::Fire() {
 
 void weapon_pistol::Reload() {
 	weaponReloading();
-	playAnim( ANIMCHANNEL_ALL, "reload" );
+	playAnim( ANIMCHANNEL_ALL, "reload_noempty" );
 	waitUntil( animDone( ANIMCHANNEL_ALL, PISTOL_RELOAD_TO_IDLE ) );
 	addToClip( clipSize() );
 	weaponState( "Idle", PISTOL_RELOAD_TO_IDLE );

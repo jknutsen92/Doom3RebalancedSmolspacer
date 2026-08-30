@@ -136,14 +136,9 @@ model viewmodel_pistol {
 		frame 1					sound_weapon player_pistol_fire
 	}
 	
-	
-		
-	anim reload 				models/md5/weapons/pistol_view/reload_empty.md5anim {
-		frame 1					sound_weapon player_pistol_reload
-	}
-	
-	anim noammo 				models/md5/weapons/pistol_view/empty_reload_start.md5anim {
-		frame 1					sound_body player_pistol_empty
+	anim reload_noempty 		models/md5/weapons/pistol_view/reload_noempty.md5anim {
+		frame 13				sound_weapon player_pistol_reload_clip_out
+		frame 23 				sound_weapon player_pistol_reload_clip_in
 	}
 
 	anim putaway 				models/md5/weapons/pistol_view/put_away.md5anim
