@@ -14,9 +14,6 @@ weapon_flashlight.script
 
 #define	FLASHLIGHT_MIN_SKIN_INTENSITY	0.2
 
-// for dimming flashlight during plasma discharges in alphalabs2
-float global_flashlight_intensity = 1.0;
-
 object weapon_flashlight : weapon_base {
 	boolean		on;
 	float		intensity;

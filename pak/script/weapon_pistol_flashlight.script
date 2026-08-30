@@ -16,11 +16,13 @@ weapon_pistol_flashlight.script
 #define PISTOL_FLASHLIGHT_FIRE_TO_IDLE		3
 #define PISTOL_FLASHLIGHT_RELOAD_TO_IDLE	1
 
+float global_flashlight_intensity = 1.0;		// for dimming flashlight during plasma discharges in alphalabs2
+
 object weapon_pistol_flashlight : weapon_base {
 	float		next_attack;
 	float		spread;
 
-	float		intensity;		// Credit to capri91 for ductape mod logic concept
+	float		intensity;						// Credit to capri91 for ductape mod logic concept
 	
 	void		init();
 	
@@ -39,7 +41,6 @@ void weapon_pistol_flashlight::init() {
 	spread		= getFloatKey( "spread" );
 	weaponState( "Raise", 0 );
 
-	global_flashlight_intensity = 1.0;
 	intensity = 1.0;
 	setLightParm( 3, 1.0 );
 	setShaderParm( 3, 1.0 );
@@ -65,8 +66,8 @@ void weapon_pistol_flashlight::Raise() {
 	else {
 		playAnim( ANIMCHANNEL_ALL, "raise_empty" );
 	}
-	waitUntil( animDone( ANIMCHANNEL_ALL, PISTOL_FLASHLIGHT_RAISE_TO_IDLE ) );
 	flashlight( true );
+	waitUntil( animDone( ANIMCHANNEL_ALL, PISTOL_FLASHLIGHT_RAISE_TO_IDLE ) );
 	weaponState( "Idle", PISTOL_FLASHLIGHT_RAISE_TO_IDLE );
 }
 
