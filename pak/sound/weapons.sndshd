@@ -1010,7 +1010,7 @@ player_machinegun_mech {
 player_machinegun_fire {
 	minDistance	5
 	maxDistance	30
-	volume	14
+	volume	5
 
 	sound/dane/Machine_Gun_Shot_V2/MACHGUN_SHOT_1v2.wav
 	sound/dane/Machine_Gun_Shot_V2/MACHGUN_SHOT_2v2.wav

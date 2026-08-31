@@ -137,7 +137,7 @@ entityDef monster_boss_vagary {
 	"use_aas"						"aas96"
 	"team"							"1"
 	"rank"							"2"
-	"health"						"1300"
+	"health"						"2000"
 	"melee_range"					"64"
 	"attack_cone"					"70"
 	"attack_accuracy"				"0"
