@@ -43,8 +43,12 @@ void weapon_pistol::Raise() {
 	setClip(g_pistol_clip_remaining);
 
 	weaponRising();
-
-	playAnim( ANIMCHANNEL_ALL, "raise" );
+	if (ammoInClip() > 0) {						// smolspacer
+		playAnim( ANIMCHANNEL_ALL, "raise" );
+	}
+	else {
+		playAnim( ANIMCHANNEL_ALL, "raise_empty" );
+	}
 	waitUntil( animDone( ANIMCHANNEL_ALL, PISTOL_RAISE_TO_IDLE ) );
 	weaponState( "Idle", PISTOL_RAISE_TO_IDLE );
 }
@@ -54,7 +58,12 @@ void weapon_pistol::Lower() {
 	g_pistol_clip_remaining = ammoInClip();
 
 	weaponLowering();
-	playAnim( ANIMCHANNEL_ALL, "putaway" );
+	if (ammoInClip() > 0) {
+		playAnim( ANIMCHANNEL_ALL, "putaway" );
+	}
+	else {
+		playAnim( ANIMCHANNEL_ALL, "putaway_empty" );
+	}
 	waitUntil( animDone( ANIMCHANNEL_ALL, 0 ) );
 	weaponHolstered();
 	waitUntil( WEAPON_RAISEWEAPON );
@@ -84,7 +93,10 @@ void weapon_pistol::Idle() {
 		if ( ( currentTime >= next_attack ) && WEAPON_ATTACK ) {
 			if ( ammoClip > 0 ) {
 				weaponState( "Fire", PISTOL_IDLE_TO_FIRE );
-			} else if ( ammoAvailable() > 0 ) {
+			} 
+			else if ( ammoAvailable() > 0 ) {
+				startSound("snd_pistol_empty", SND_CHANNEL_WEAPON, true);
+				next_attack = sys.getTime() + PISTOL_FIRERATE;
 				if ( autoReload() ) {
 					netReload();
 					weaponState( "Reload", PISTOL_IDLE_TO_RELOAD );
@@ -114,14 +126,24 @@ void weapon_pistol::Fire() {
 	}
 
 	launchProjectiles( PISTOL_NUMPROJECTILES, spread, 0, 1.0, 1.0 );
-	playAnim( ANIMCHANNEL_ALL, "fire" );
+	if (ammoInClip() > 1) {						// smolspacer
+		playAnim( ANIMCHANNEL_ALL, "fire" );
+	}
+	else {
+		playAnim( ANIMCHANNEL_ALL, "fire1_to_empty" );
+	}
 	waitUntil( animDone( ANIMCHANNEL_ALL, PISTOL_FIRE_TO_IDLE ) );
 	weaponState( "Idle", PISTOL_FIRE_TO_IDLE );
 }
 
 void weapon_pistol::Reload() {
 	weaponReloading();
-	playAnim( ANIMCHANNEL_ALL, "reload_noempty" );
+	if (ammoInClip() > 0) {
+		playAnim( ANIMCHANNEL_ALL, "reload_noempty" );
+	}
+	else {
+		playAnim( ANIMCHANNEL_ALL, "reload_empty" );
+	}
 	waitUntil( animDone( ANIMCHANNEL_ALL, PISTOL_RELOAD_TO_IDLE ) );
 	addToClip( clipSize() );
 	weaponState( "Idle", PISTOL_RELOAD_TO_IDLE );

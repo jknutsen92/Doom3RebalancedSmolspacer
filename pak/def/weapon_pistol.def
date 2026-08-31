@@ -96,6 +96,7 @@ entityDef weapon_pistol {
 	
 	"snd_acquire"				"sound_weapon_acquire"
 	"snd_respawn"				"sound_weapon_respawn"
+	"snd_pistol_empty"			"player_pistol_empty"
 	
 	"skin_invisible"			"skins/pistol_invis"
 	
@@ -125,14 +126,24 @@ model worldmodel_pistol {
 
 model viewmodel_pistol {
 	mesh						models/md5/weapons/pistol_view/viewpistol.md5mesh
+	offset						(2 2 0)
 	
 	anim raise 					models/md5/weapons/pistol_view/raise.md5anim {
 		frame 7					sound_body player_pistol_raise_01
 	}
+
+	anim raise_empty 			models/md5/weapons/pistol_view/raise_empty.md5anim {
+		frame 1					sound_weapon fist_raise
+	}
+
 	anim idle					models/md5/weapons/pistol_view/idle.md5anim
 	anim idle_empty				models/md5/weapons/pistol_view/idle_empty.md5anim
 	
 	anim fire1					models/md5/weapons/pistol_view/fire1.md5anim {
+		frame 1					sound_weapon player_pistol_fire
+	}
+
+	anim fire1_to_empty 		models/md5/weapons/pistol_view/fire1_to_empty.md5anim {
 		frame 1					sound_weapon player_pistol_fire
 	}
 	
@@ -141,7 +152,19 @@ model viewmodel_pistol {
 		frame 23 				sound_weapon player_pistol_reload_clip_in
 	}
 
-	anim putaway 				models/md5/weapons/pistol_view/put_away.md5anim
+	anim reload_empty			models/md5/weapons/pistol_view/reload_empty.md5anim {
+		frame 13				sound_weapon player_pistol_reload_clip_out
+		frame 23 				sound_weapon player_pistol_reload_clip_in
+		frame 35 				sound_weapon player_pistol_reload_slide_rack
+	}
+
+	anim putaway 				models/md5/weapons/pistol_view/put_away.md5anim {
+		frame 6					sound_weapon fist_raise
+	}
+
+	anim putaway_empty			models/md5/weapons/pistol_view/put_away_empty.md5anim {
+		frame 6					sound_weapon fist_raise
+	}
 }
 
 entityDef	damage_bullet_pistol {
