@@ -208,7 +208,7 @@ windowDef Desktop {
 	}
 
 	onNamedEvent Air {
-		if ( "AirWin::visible" != 1 ) {
+		if ( "AirWin::visible" == 1 ) {
 			set "AirWin::visible" "0" ;
 			transition "RadioWin::rect" "146 400 128 64" "135 435 128 64" "100" ;
 		}
