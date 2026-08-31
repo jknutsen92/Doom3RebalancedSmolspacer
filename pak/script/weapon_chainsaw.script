@@ -16,6 +16,8 @@ weapon_chainsaw.script
 object weapon_chainsaw : weapon_base {
 	float		next_attack;
 	float 		next_armor_tick;
+	entity 		owner;
+	float 		max_armor;
 	
 	void		init();
 	
@@ -38,6 +40,8 @@ void weapon_chainsaw::destroy() {
 }
 
 void weapon_chainsaw::Raise() {
+	owner = getOwner();
+	max_armor = owner.getIntKey("maxarmor");
 	weaponRising();
 	playAnim( ANIMCHANNEL_ALL, "raise" );
 	waitUntil( animDone( ANIMCHANNEL_ALL, CHAINSAW_RAISE_TO_IDLE ) );
@@ -80,7 +84,6 @@ void weapon_chainsaw::Fire() {
 	float isDamaging;
 	float armorGibs = 0;
 	entity lastMeleeTarget;
-	entity owner = getOwner();
 	playAnim( ANIMCHANNEL_ALL, "melee_start" );
 	melee();
 	startSound( "snd_startattack", SND_CHANNEL_WEAPON, false );
@@ -98,7 +101,7 @@ void weapon_chainsaw::Fire() {
 				lastMeleeTarget = getLastMeleeTarget();
 				next_armor_tick = currentTime + ARMOR_TICK_RATE;
 				armorGibs = lastMeleeTarget.getIntKey("armorGibs");
-				if ( armorGibs > 0 ) {
+				if ( armorGibs > 0 && owner.getArmor() < max_armor ) {
 					owner.addArmor(armorGibs);
 					startSound("snd_armor_gain", SND_CHANNEL_ANY, false);
 				}

@@ -74,20 +74,25 @@ void player::init() {
 		armorProtection = "0.95";
 		armorStripScale = "0.6";
 	}
-	else if (g_skill == "1") {			// Marine
+	else if (g_skill == "1") {				// Marine
 		damageScale = "1.75";
 		armorProtection = "0.85";
 		armorStripScale = "1.0";
 	}
-	else if (g_skill == "2") {			// Veteran
+	else if (g_skill == "2") {				// Veteran
 		damageScale = "2.5";
 		armorProtection = "0.7";
 		armorStripScale = "1.5";	
 	}
-	else if (g_skill == "3") {			// Nightmare
+	else if (g_skill == "3") {				// Nightmare
 		damageScale = "2.5";
 		armorProtection = "0.7";
 		armorStripScale = "1.5";
+	}
+	if ( sys.getcvar( "ss_damageModel" ) == "1" ) {
+		sys.setcvar( "g_armorProtection", armorProtection );
+		sys.setcvar( "g_damageScale", damageScale );
+		sys.setcvar( "g_armorStripScale", armorStripScale );
 	}
 	weapon_changed = false;
 	start_fire = false;
@@ -185,13 +190,6 @@ void player::Torso_Teleport() {
 
 void player::Torso_Idle() {
 	playCycle( ANIMCHANNEL_TORSO, "idle" );
-
-	// TODO: Get rid of this dumb crap eventually
-	if ( sys.getcvar( "ss_damageModel" ) == "1" ) {
-		sys.setcvar( "g_armorProtection", armorProtection );
-		sys.setcvar( "g_damageScale", damageScale );
-		sys.setcvar( "g_armorStripScale", armorStripScale );
-	}
 
 	eachFrame {
 		if ( AI_TELEPORT ) {

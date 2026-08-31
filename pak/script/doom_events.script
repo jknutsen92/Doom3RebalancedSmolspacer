@@ -980,6 +980,12 @@ scriptEvent void 	giveItem( string itemName );			// smolspacer
 // Adds armor to the player's inventory (can be negative to subtract)
 scriptEvent void 	addArmor( float amount );				// smolspacer
 
+// Gets the value of the player's current armor
+scriptEvent float 	getArmor(); 							// smolspacer
+
+// Gets the value of the player's armor cap
+scriptEvent float	getMaxArmor();							// smolspacer
+
 // Returns the entity for the player's weapon
 scriptEvent entity	getWeaponEntity();
 
