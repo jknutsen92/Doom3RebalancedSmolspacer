@@ -107,6 +107,12 @@ entityDef weapon_pistol_flashlight {
 	"spread"					"1"
 	"recoilTime"				"250"
 	"recoilAngles"				"-2 -0.75 0"
+
+	// Flashlight materials
+	"skin_on"					"skins/models/weapons/flashlight_on"
+	"skin_on_invis"				"skins/models/weapons/flashlight_on_invis"
+	"skin_off"					"skins/models/weapons/flashlight_off"
+	"skin_off_invis"			"skins/models/weapons/flashlight_off_invis"
 }
 
 model worldmodel_pistol {
@@ -164,4 +170,30 @@ model viewmodel_pistol_flashlight {
 	anim putaway_empty			models/md5/weapons/pistol_flashlight_view/put_away_empty.md5anim {
 		frame 6					sound_weapon fist_raise
 	}
+}
+
+skin skins/models/weapons/flashlight_off {
+	models/items/flashlight/flare textures/common/nodraw
+	models/items/flashlight/beam1 textures/common/nodraw
+	models/items/flashlight/flare2 textures/common/nodraw
+	models/items/flashlight/beam2 textures/common/nodraw
+	models/items/flashlight/bulb textures/common/nodraw
+}
+
+skin skins/models/weapons/flashlight_off_invis {
+	models/items/flashlight/flashlight2 models/items/flashlight/flashlight2_invis
+	models/characters/player/arm2	models/characters/player/arm2_invis
+	models/items/flashlight/flare textures/common/nodraw
+	models/items/flashlight/beam1 textures/common/nodraw
+	models/items/flashlight/flare2 textures/common/nodraw
+	models/items/flashlight/beam2 textures/common/nodraw
+	models/items/flashlight/bulb textures/common/nodraw
+}
+
+skin skins/models/weapons/flashlight_on {
+}
+
+skin skins/models/weapons/flashlight_on_invis {
+	models/items/flashlight/flashlight2 models/items/flashlight/flashlight2_invis
+	models/characters/player/arm2	models/characters/player/arm2_invis
 }

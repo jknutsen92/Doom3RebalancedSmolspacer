@@ -264,5 +264,3 @@ skin skins/models/weapons/flashlight_on_invis {
 	models/items/flashlight/flashlight2 models/items/flashlight/flashlight2_invis
 	models/characters/player/arm2	models/characters/player/arm2_invis
 }
-
-

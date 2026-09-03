@@ -182313,10 +182313,3 @@ patchDef2
 }
 }
 }
-// entity 2545
-{
-"classname" "weapon_pistol_flashlight"
-"name" "weapon_pistol_flashlight_1"
-"origin" "3279.36 -1296.17 265.204"
-"rotation" "1 0 0 0 0.0986182 -0.995125 0 0.995125 0.0986182"
-}
