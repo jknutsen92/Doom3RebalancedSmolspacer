@@ -97,7 +97,7 @@ entityDef weapon_chaingun {
 	"def_ejectBrass"			"debris_brass"
 	"ejectBrassDelay"			"10"
 	
-	"spread"					"5"
+	"spread"					"3"
 }
 
 entityDef moveable_item_chaingun {

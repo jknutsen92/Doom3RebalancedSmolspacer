@@ -4,7 +4,7 @@ weapon_pistol.script
 
 ***********************************************************************/
 
-#define PISTOL_FIRERATE			0.3
+#define PISTOL_FIRERATE			0.25
 #define PISTOL_LOWAMMO			4
 #define PISTOL_NUMPROJECTILES	1
 
