@@ -7,6 +7,9 @@
 // Define the types of ammo that are used in the game.
 // This entityDef is required by the game code.
 // Up to 16 ammo types can be defined.
+
+
+// smolspacer - these are all the base values that are scaled by the new g_itemValueScale cvar
 entityDef ammo_types {
 	"ammo_none"				"0"
 	"ammo_shells"			"1"

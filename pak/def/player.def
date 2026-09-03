@@ -757,8 +757,8 @@ entityDef player_base {
 	"weapon15_toggle"					"0"
 	"weapon15_allowempty"				"0"
 
-	"max_ammo_shells"					"72"
-	"max_ammo_bullets"					"144"
+	"max_ammo_shells"					"72"						// smolspacer
+	"max_ammo_bullets"					"144"						// base values are scaled by the g_maxAmmoScale cvar
 	"max_ammo_rockets"					"48"
 	"max_ammo_cells"					"500"
 	"max_ammo_grenades"					"36"

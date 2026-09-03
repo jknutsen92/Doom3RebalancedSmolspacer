@@ -703,7 +703,7 @@ windowDef Desktop {
 			set	"ammovalue3::visible" "0" ;
 		}
 		if ("gui::weapon13" == 2) { 					// smolspacer - pistol+flashlight
-			resetTime "WeapIcon1" "0" ; 
+			resetTime "WeapIcon13" "0" ; 
 			set	"weapon0::matcolor" "0 0.6 0.6 0.4" ;
 			set	"weapon1::matcolor" "0 0.6 0.6 0.9" ;
 			set	"weapon2::matcolor" "0 0.6 0.6 0.4" ;
@@ -1462,7 +1462,7 @@ windowDef Desktop {
 		rect	544 ,471 ,10 ,6 
 		background	"guis/assets/hud/weapons"
 		matcolor	0, 0.6, 0.6, 0.4
-		visible	("gui::weapon1" != 0)
+		visible	("gui::weapon13" != 0)
 	}
 	windowDef Weapon2 {
 		rect	553 ,471 ,10 ,6 
@@ -1578,14 +1578,14 @@ windowDef Desktop {
 	windowDef WeapIcon13 {							// smolspacer - pistol + flashlight
 		visible		1
 		rect		580, 405, 32, 32 
-		background	"guis/assets/hud/icons/pistolw"
+		background	"guis/assets/hud/icons/pistol_flashlight"
 		matcolor	1, 1, 1 ,0
 		visible	("gui::weapon13" == 2)
 		notime		1
 
 		onTime 0 {
 			transition "matcolor" "0.7 1 1 0.7" "0.3 0.6 0.6 0" "1000" "1" "0" ;
-			set "weapname::text" "#str_06780" ;
+			set "weapname::text" "#str_07239" ;
 			resetTime "weapname" "0" ;
 		}
 	}
@@ -3536,7 +3536,7 @@ windowDef Desktop {
 		font		"fonts/bank"
 	}
 	windowDef WeapName13Large {				// smolspacer - pistol + flashlight
-		text	"#str_06780"
+		text	"#str_07239"
 		rect	301 ,273 ,220 ,20 
 		forecolor	0.6, 1, 0.9, 0
 		visible	1
