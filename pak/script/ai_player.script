@@ -88,8 +88,8 @@ void player::init() {
 		damageScale = "2.5";
 		armorProtection = "0.7";
 		armorStripScale = "1.5";	
-		maxAmmoScale = "1.0"
-		itemValueScale = "1.0"
+		maxAmmoScale = "1.0";
+		itemValueScale = "1.0";
 	}
 	else if (g_skill == "3") {				// Nightmare
 		damageScale = "2.5";
