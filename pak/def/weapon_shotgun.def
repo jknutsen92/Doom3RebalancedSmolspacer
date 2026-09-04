@@ -224,8 +224,8 @@ entityDef projectile_bullet_shotgun {
 	"scale"						"0.1"
 	"noshadows"					"1"
 								
-	"snd_flesh"					"bullet_impact_flesh"
-	"snd_metal"					"bullet_impact_metal"
+	"snd_flesh"					"shotgun_impact_flesh"
+	"snd_metal"					"shotgun_impact_metal"
 	"snd_stone"					"bullet_impact_stone"
 	"snd_wood"					"bullet_impact_wood"
 	"snd_cardboard"				"bullet_impact_cardboard"

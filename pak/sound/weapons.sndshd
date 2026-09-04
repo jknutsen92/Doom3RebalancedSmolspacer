@@ -322,7 +322,7 @@ bullet_ricochet {
 bullet_impact_metal {
 	minDistance	1
 	maxDistance	25
-	volume		-3
+	volume -3
 
 	
 	sound/weapons/impacts/bullet_metal/metalimpact_02.wav
@@ -425,9 +425,7 @@ bullet_impact_flesh {
 shotgun_impact_metal {
 	minDistance	1
 	maxDistance	20
-	//volume		-5
-	// smolspacer
-	volume 		-8
+	volume		-5
 
 	sound/weapons/impacts/shotgun_metal/impact_02.wav
 	sound/weapons/impacts/shotgun_metal/impact_07.wav
@@ -799,7 +797,7 @@ monster_pistol_fire {
 player_pistol_fire {
 	minDistance	10
 	maxDistance	30
-	volume		13
+	volume		8
 
 	sound/weapons/pistol/pistol_shot_02a.wav
 	sound/weapons/pistol/pistol_shot_03a.wav
@@ -880,7 +878,7 @@ monster_shotgun_fire {
 player_shotgun_fire {
 	minDistance	10
 	maxDistance	30
-	volume		9
+	volume		11
 	no_dups
 
 	sound/weapons/shotgun/wetfire.wav
@@ -900,7 +898,7 @@ player_shotgun_fire {
 player_shotgun_pump  {
 	minDistance	10
 	maxDistance	30
-	volume		0
+	volume		-2
 	
 	sound/weapons/shotgun/shotgun_cock_01.wav
 }
@@ -999,7 +997,7 @@ monster_machinegun_fire {
 player_machinegun_mech {
 	minDistance	5
 	maxDistance	30
-	volume	4
+	volume	4				// 4 smolspacer
 
 	sound/weapons/machinegun/mg_mech_01.wav
 	sound/weapons/machinegun/mg_mech_02.wav
@@ -1010,7 +1008,7 @@ player_machinegun_mech {
 player_machinegun_fire {
 	minDistance	5
 	maxDistance	30
-	volume	5
+	volume	4				// 14 smolspacer
 
 	sound/dane/Machine_Gun_Shot_V2/MACHGUN_SHOT_1v2.wav
 	sound/dane/Machine_Gun_Shot_V2/MACHGUN_SHOT_2v2.wav
@@ -1271,7 +1269,7 @@ player_chaingun_winddown {
 player_chaingun_lowammo {
 	minDistance	10
 	maxDistance	30
-	volume	 	12
+	volume	 	-3 				// 12 smolspacer
 	sound/weapons/chaingung/lowammo.wav
 }
 
@@ -1281,7 +1279,7 @@ player_chaingun_fire {
 	maxDistance	30
 	//volume	3
 	// smolspacer
-	volume 		5
+	volume 		13
 	unclamped
 
 	sound/dane/Chain_Gun_Shot_V3/CHAINGUN_SHOT_1v3.wav
