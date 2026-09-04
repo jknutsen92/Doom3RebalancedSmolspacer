@@ -61,13 +61,13 @@ entityDef weapon_chaingun {
 	"flashColor"				"1 0.8 0.4"
 	"flashRadius"				"220"
 	"silent_fire"				"0"
-	"muzzle_kick_time"			".1"
+	"muzzle_kick_time"			".12"
 	"muzzle_kick_maxtime"		"1.2"
 	//"muzzle_kick_angles"		"-4 -5 -10"
 	//"muzzle_kick_offset"		"1 1 2"
 	"muzzle_kick_angles"		"0 0 -5"
 	"muzzle_kick_offset"		"0 0 2"
-	"recoilTime"				"100"
+	"recoilTime"				"110"
 	"recoilAngles"				"-1 0 0"
 
 	"hide_time"					"0.3"								// time to hide weapon when talking to npcs or looking at guis
@@ -79,8 +79,8 @@ entityDef weapon_chaingun {
 	"weaponOffsetTime"			"400"
 	"weaponOffsetScale"			"0.005"
 
-	"smoke_wound_metal"				"bulletricochet.prt"
-	"smoke_wound_ricochet"			"bulletricochet.prt"
+	"smoke_wound_metal"			"bulletricochet.prt"
+	"smoke_wound_ricochet"		"bulletricochet.prt"
 
 	"smoke_muzzle"				"cgmuzzlesmoke.prt"
 
@@ -216,7 +216,7 @@ entityDef projectile_chaingunbullet {
 }
 
 entityDef	damage_bullet_chaingun {
-	"damage"			"15"
+	"damage"			"17"
 	"kickDir"			"1 0 0"
 
 	"mtr_blob"			"genericDamage"
