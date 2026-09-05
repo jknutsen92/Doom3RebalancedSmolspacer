@@ -444,8 +444,10 @@ shotgun_impact_metal {
 shotgun_impact_flesh {
 	minDistance	1
 	maxDistance	20
-	volume		0
-
+	volume		10
+	
+	sound/weapons/impacts/bullet_flesh/fleshimpact_01.wav
+	sound/weapons/impacts/bullet_flesh/fleshimpact_02.wav
 	sound/weapons/impacts/bullet_flesh/fleshimpact_04.wav
 	sound/weapons/impacts/bullet_flesh/fleshimpact_05.wav
 	sound/weapons/impacts/bullet_flesh/fleshimpact_07.wav
@@ -797,7 +799,7 @@ monster_pistol_fire {
 player_pistol_fire {
 	minDistance	10
 	maxDistance	30
-	volume		8
+	volume		10
 
 	sound/weapons/pistol/pistol_shot_02a.wav
 	sound/weapons/pistol/pistol_shot_03a.wav
@@ -1049,7 +1051,7 @@ player_machinegun_putaway  {
 player_machinegun_lowammo  {
 	minDistance	10
 	maxDistance	30
-	volume	 	12
+	volume	 	7
 	private
 	
 	sound/weapons/machinegun/lowammo3.wav
@@ -1253,7 +1255,7 @@ player_chaingun_acquire {
 player_chaingun_windup {
 	minDistance	5
 	maxDistance	30
-	volume	10
+	volume	5
 	
 	sound/weapons/chaingun/cg_windup_mix_01.wav
 }
@@ -1261,7 +1263,7 @@ player_chaingun_windup {
 player_chaingun_winddown {
 	minDistance	5
 	maxDistance	30
-	volume	10
+	volume	5
 	
 	sound/weapons/chaingun/cg_winddown_mix_01.wav
 }
@@ -1269,7 +1271,7 @@ player_chaingun_winddown {
 player_chaingun_lowammo {
 	minDistance	10
 	maxDistance	30
-	volume	 	-3 				// 12 smolspacer
+	volume	 	-5 				// 12 smolspacer
 	sound/weapons/chaingung/lowammo.wav
 }
 

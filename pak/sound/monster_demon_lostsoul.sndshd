@@ -1,7 +1,7 @@
 monster_demon_lostsoul_charge {
-	minDistance	1
+	minDistance	10
 	maxDistance	35
-	volume		3
+	volume		9
 	unclamped
 	looping
 	no_dups

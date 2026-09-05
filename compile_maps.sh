@@ -13,8 +13,8 @@ doom3_game_dir='/home/jeffrey/.steam/steam/steamapps/common/Doom 3'
 # Copy map from the dark radiant dir to mod dir
 cp -f "$darkradiant_dir/$1.map" "$mod_map_dir/"
 
-# Archive and export map to game directory
-./install.sh
+# Export map to game directory
+./dev_deploy.sh
 
 # Compile the map
 "$doom3_game_dir/dhewm3" +dmap game/$1 +quit
@@ -23,4 +23,4 @@ cp -f "$darkradiant_dir/$1.map" "$mod_map_dir/"
 mv $doom3_map_dir/$1.* $mod_map_dir/
 
 # Re-export the compiled map
-./install.sh
+./dev_deploy.sh

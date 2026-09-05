@@ -763,7 +763,7 @@ entityDef player_base {
 	"max_ammo_cells"					"500"
 	"max_ammo_grenades"					"36"
 	"max_ammo_souls"					"5"							// number of kills required to charge the soul cube
-	"max_ammo_bfg"						"32"
+	"max_ammo_bfg"						"24"
 	"max_ammo_clip"						"400"
 	"max_ammo_belt"						"900"
 	

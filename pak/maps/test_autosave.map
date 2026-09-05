@@ -1,0 +1,206 @@
+Version 2
+// entity 0
+{
+"classname" "worldspawn"
+// primitive 0
+{
+brushDef3
+{
+( 0 0 1 -216.3193664550781 ) ( ( 0.015625 0 0 ) ( 0 0.0078125 0 ) ) "textures/enpro/enwall22b" 0 0 0
+( 0 1 0 -480 ) ( ( 0.015625 0 0 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/enpro/enwall22b" 0 0 0
+( 1 0 0 -800 ) ( ( 0.015625 0 0 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/enpro/enwall22b" 0 0 0
+( 0 -1 0 -608 ) ( ( 0.015625 0 -7.105427357601002e-15 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/enpro/enwall22b" 0 0 0
+( -1 0 0 -832 ) ( ( 0.015625 0 0 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/enpro/enwall22b" 0 0 0
+( 0 0 -1 184.3193664550781 ) ( ( 0.015625 0 0 ) ( 0 0.0078125 0 ) ) "textures/enpro/enwall22b" 0 0 0
+}
+}
+// primitive 1
+{
+brushDef3
+{
+( 0 0 1 -184.3193664550781 ) ( ( 0.0078125 0 -0.75 ) ( 0 0.0078125 0 ) ) "textures/enpro/enwall18e" 0 0 0
+( 0 1 0 -512 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/enpro/enwall18e" 0 0 0
+( 1 0 0 -800 ) ( ( 0.0078125 0 -0.5 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/enpro/enwall18e" 0 0 0
+( 0 0 -1 -39.68063354492188 ) ( ( 0.0078125 0 -0.75 ) ( 0 0.0078125 0 ) ) "textures/enpro/enwall18e" 0 0 0
+( -1 0 0 -832 ) ( ( 0.0078125 0 -0.5 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/enpro/enwall18e" 0 0 0
+( 0 -1 0 480 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/enpro/enwall18e" 0 0 0
+}
+}
+// primitive 2
+{
+brushDef3
+{
+( 0 0 1 -184.3193664550781 ) ( ( 0.0078125 0 -0.75 ) ( 0 0.0078125 0.25 ) ) "textures/enpro/enwall18e" 0 0 0
+( 0 1 0 -480 ) ( ( 0.0078125 0 -0.25 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/enpro/enwall18e" 0 0 0
+( 1 0 0 -832 ) ( ( 0.007812499999999998 0 -0.75 ) ( 0 0.007812499999999998 0.7599802017211914 ) ) "textures/enpro/enwall18e" 0 0 0
+( 0 0 -1 -39.68063354492188 ) ( ( 0.0078125 0 -0.75 ) ( 0 0.0078125 0.75 ) ) "textures/enpro/enwall18e" 0 0 0
+( 0 -1 0 -608 ) ( ( 0.0078125 0 -0.75 ) ( 0 0.007812499999999998 0.7599802017211914 ) ) "textures/enpro/enwall18e" 0 0 0
+( -1 0 0 800 ) ( ( 0.007812499999999998 0 -0.25 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/enpro/enwall18e" 0 0 0
+}
+}
+// primitive 3
+{
+brushDef3
+{
+( 0 1 0 -480 ) ( ( 0.0078125 0 -8.881784197001252e-16 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/mcity/mchangar12_scale" 0 0 0
+( 1 0 0 -800 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/mcity/mchangar12_scale" 0 0 0
+( 0 0 -1 -71.68063354492188 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/mcity/mchangar12_scale" 0 0 0
+( 0 -1 0 -608 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/mcity/mchangar12_scale" 0 0 0
+( -1 0 0 -832 ) ( ( 0.0078125 0 -0.25 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/mcity/mchangar12_scale" 0 0 0
+( 0 0 1 39.68063354492188 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/mcity/mchangar12_scale" 0 0 0
+}
+}
+// primitive 4
+{
+brushDef3
+{
+( 0 0 1 -184.3193664550781 ) ( ( 0.0078125 0 -0.75 ) ( 0 0.0078125 3.064215547965432e-14 ) ) "textures/enpro/enwall18e" 0 0 0
+( 1 0 0 -800 ) ( ( 0.0078125 0 0 ) ( 0 0.007812499999999998 0.7599802017211914 ) ) "textures/enpro/enwall18e" 0 0 0
+( 0 0 -1 -39.68063354492188 ) ( ( 0.0078125 0 -0.75 ) ( 0 0.0078125 0 ) ) "textures/enpro/enwall18e" 0 0 0
+( 0 -1 0 -640 ) ( ( 0.0078125 0 -4.440892098500626e-16 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/enpro/enwall18e" 0 0 0
+( -1 0 0 -832 ) ( ( 0.0078125 0 -0.25 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/enpro/enwall18e" 0 0 0
+( 0 1 0 608 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/enpro/enwall18e" 0 0 0
+}
+}
+// primitive 5
+{
+brushDef3
+{
+( 0 0 1 -184.3193664550781 ) ( ( 0.0078125 0 -0.75 ) ( 0 0.0078125 0.75 ) ) "textures/enpro/enwall18e" 0 0 0
+( 0 1 0 -480 ) ( ( 0.0078125 0 -0.75 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/enpro/enwall18e" 0 0 0
+( 0 0 -1 -39.68063354492188 ) ( ( 0.007812499999999998 0 -0.75 ) ( 0 0.0078125 0.25 ) ) "textures/enpro/enwall18e" 0 0 0
+( 0 -1 0 -608 ) ( ( 0.0078125 0 -0.25 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/enpro/enwall18e" 0 0 0
+( -1 0 0 -864 ) ( ( 0.0078125 0 -0.25 ) ( 0 0.007812500000000003 0.7599802017211914 ) ) "textures/enpro/enwall18e" 0 0 0
+( 1 0 0 832 ) ( ( 0.0078125 0 -0.75 ) ( 0 0.0078125 0.7599802017211914 ) ) "textures/enpro/enwall18e" 0 0 0
+}
+}
+}
+// entity 1
+{
+"classname" "info_player_start"
+"name" "info_player_start_1"
+"angle" "90.000000"
+"origin" "-192 -160 -34.7927"
+}
+// entity 2
+{
+"classname" "light"
+"name" "light_1"
+"" "-"
+"_color" "1.000 1.000 1.000"
+"light_center" "0 0 0"
+"light_radius" "287 282 413"
+"origin" "-540.563 195.608 176.88"
+}
+// entity 3
+{
+"classname" "trigger_once"
+"name" "trigger_once_1"
+"model" "trigger_once_1"
+"origin" "-13.5229 -29.9446 -24"
+// primitive 0
+{
+brushDef3
+{
+( 0 0 1 -16.35455703735352 ) ( ( 0.06249999999999999 0 0.8715361805358834 ) ( 0 0.0625 -0.1548170215807545 ) ) "textures/common/trigonce" 0 0 0
+( 0 1 0 -48.00002111142586 ) ( ( 0.06249999999999999 0 0.1548170215807538 ) ( 0 0.0625 0.7610797882080077 ) ) "textures/common/trigonce" 0 0 0
+( 1 0 0 -47.99997234529206 ) ( ( 0.0625 0 0.8715361805358839 ) ( 0 0.0625 0.7610797882080075 ) ) "textures/common/trigonce" 0 0 0
+( 0 0 -1 -15.64544296264648 ) ( ( 0.0625 0 0.8715361805358838 ) ( 0 0.06249999999999999 0.1548170215807538 ) ) "textures/common/trigonce" 0 0 0
+( 0 -1 0 -47.99997888857414 ) ( ( 0.06249999999999999 0 -0.1548170215807545 ) ( 0 0.0625 0.7610797882080078 ) ) "textures/common/trigonce" 0 0 0
+( -1 0 0 -48.00002765470794 ) ( ( 0.0625 0 -0.8715361805358837 ) ( 0 0.0625 0.7610797882080076 ) ) "textures/common/trigonce" 0 0 0
+}
+}
+}
+// entity 4
+{
+"classname" "monster_demon_trite"
+"name" "monster_demon_trite_1"
+"anim" "downpipe"
+"hide" "1"
+"origin" "128 -128 26.6508"
+"rotation" "1 0 0 0 1 0 0 0 1"
+"target" "trigger_once_1"
+"trigger" "trigger_once_1"
+"trigger_anim" "downpipe"
+}
+// entity 5
+{
+"classname" "item_armor_security"
+"name" "item_armor_security_1"
+"origin" "-13.2525 -30.5899 -33.5021"
+"rotation" "1 0 0 0 1 0 0 0 1"
+}
+// entity 6
+{
+"classname" "underground_tunnel_imp"
+"name" "underground_tunnel_imp_1"
+"origin" "128 81.2122 -38.2561"
+"rotation" "1 0 0 0 1 0 0 0 1"
+}
+// entity 7
+{
+"classname" "light"
+"name" "light_2"
+"" "-"
+"_color" "1.000 1.000 1.000"
+"light_center" "0 0 0"
+"light_radius" "287 282 413"
+"origin" "-540.563 -316.392 176.88"
+}
+// entity 8
+{
+"classname" "light"
+"name" "light_3"
+"" "-"
+"_color" "1.000 1.000 1.000"
+"light_center" "0 0 0"
+"light_radius" "287 282 413"
+"origin" "35.437 195.608 176.88"
+}
+// entity 9
+{
+"classname" "light"
+"name" "light_4"
+"" "-"
+"_color" "1.000 1.000 1.000"
+"light_center" "0 0 0"
+"light_radius" "287 282 413"
+"origin" "35.437 -316.392 176.88"
+}
+// entity 10
+{
+"classname" "light"
+"name" "light_5"
+"" "-"
+"_color" "1.000 1.000 1.000"
+"light_center" "0 0 0"
+"light_radius" "287 282 413"
+"origin" "483.437 195.608 176.88"
+}
+// entity 11
+{
+"classname" "light"
+"name" "light_6"
+"" "-"
+"_color" "1.000 1.000 1.000"
+"light_center" "0 0 0"
+"light_radius" "287 282 413"
+"origin" "515.437 -316.392 176.88"
+}
+// entity 12
+{
+"classname" "light"
+"name" "light_7"
+"" "-"
+"_color" "1.000 1.000 1.000"
+"light_center" "0 0 0"
+"light_radius" "287 282 413"
+"origin" "-540.563 195.608 176.88"
+}
+// entity 13
+{
+"classname" "monster_demon_trite"
+"name" "monster_demon_trite_2"
+"origin" "508.44 96 0"
+"rotation" "1 0 0 0 1 0 0 0 1"
+}
