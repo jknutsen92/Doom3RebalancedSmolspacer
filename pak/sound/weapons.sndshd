@@ -999,7 +999,7 @@ monster_machinegun_fire {
 player_machinegun_mech {
 	minDistance	5
 	maxDistance	30
-	volume	4				// 4 smolspacer
+	volume	3				// 4 smolspacer
 
 	sound/weapons/machinegun/mg_mech_01.wav
 	sound/weapons/machinegun/mg_mech_02.wav
@@ -1010,7 +1010,7 @@ player_machinegun_mech {
 player_machinegun_fire {
 	minDistance	5
 	maxDistance	30
-	volume	4				// 14 smolspacer
+	volume	3				// 14 smolspacer
 
 	sound/dane/Machine_Gun_Shot_V2/MACHGUN_SHOT_1v2.wav
 	sound/dane/Machine_Gun_Shot_V2/MACHGUN_SHOT_2v2.wav
