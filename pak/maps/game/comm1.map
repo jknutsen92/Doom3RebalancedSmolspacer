@@ -167102,9 +167102,9 @@ brushDef3
 "name" "trigger_once_1"
 "model" "trigger_once_1"
 "origin" "-2912 5056 -80"
-"target0" "monster_demon_trite_1"
-"target1" "monster_demon_trite_3"
-"target2" "monster_demon_trite_2"
+"target0" "monster_demon_trite_4"
+"target1" "monster_demon_trite_5"
+"target2" "trigger_relay_1"
 // primitive 0
 {
 brushDef3
@@ -167122,71 +167122,60 @@ brushDef3
 {
 "classname" "monster_demon_trite"
 "name" "monster_demon_trite_1"
+"anim" "sight1"
 "attack_path" "1"
 "blockedRadius" "0"
+"enemy" "player1"
 "hide" "1"
 "ignore_lostcombat" "1"
 "ignore_obstacles" "1"
-"melee_range" "60"
 "no_explode" "1"
 "origin" "-3178.05 4849.87 -96"
 "rotation" "0.668205 0.743978 0 -0.743978 0.668205 0 0 0 1"
-"target0" "path_corner_6"
-"target1" "path_corner_6"
+"target0" "path_jump_2"
 "trigger_anim" "floorcrack"
-"walk_on_sight" "1"
-"enemy" "player1"
-"wait" "3"
+"wait" "5"
 }
 // entity 2297
 {
 "classname" "monster_demon_trite"
 "name" "monster_demon_trite_2"
+"anim" "sight1"
 "attack_path" "1"
 "blockedRadius" "0"
+"enemy" "player1"
 "hide" "1"
 "ignore_lostcombat" "1"
 "ignore_obstacles" "1"
-"melee_range" "60"
 "no_explode" "1"
 "origin" "-2725.2 4857.96 -96"
 "rotation" "-0.823106 0.567889 0 -0.567889 -0.823106 0 0 0 1"
-"target0" "path_corner_19"
+"target0" "path_jump_3"
 "trigger_anim" "floorcrack"
-"enemy" "player1"
-"wait" "1"
+"wait" "3"
 }
 // entity 2298
 {
 "classname" "monster_demon_trite"
 "name" "monster_demon_trite_3"
+"anim" "sight1"
+"attack_path" "1"
 "blockedRadius" "5"
 "enemy" "player1"
 "hide" "1"
 "ignore_lostcombat" "1"
 "ignore_obstacles" "1"
-"melee_range" "60"
 "no_explode" "1"
 "origin" "-2908.02 4763.8 -96"
 "rotation" "0.140544 0.990075 0 -0.990075 0.140544 0 0 0 1"
+"target1" "path_jump_1"
 "trigger_anim" "floorcrack"
 }
 // entity 2299
 {
-"classname" "path_corner"
-"name" "path_corner_6"
-"origin" "-2977.4 4859.52 -96"
-}
-// entity 2300
-{
-"classname" "path_corner"
-"name" "path_corner_19"
-"origin" "-2844.49 4859.52 -96"
-}
-// entity 2301
-{
 "classname" "monster_demon_trite"
-"name" "monster_demon_trite_4"
+"name" "monster_demon_trite_5"
+"anim" "sight1"
 "blockedRadius" "5"
 "enemy" "player1"
 "hide" "1"
@@ -167194,7 +167183,51 @@ brushDef3
 "ignore_obstacles" "1"
 "melee_range" "60"
 "no_explode" "1"
-"origin" "-2813.58 5073.88 -96"
-"rotation" "-0.995678 -0.0928756 0 0.0928756 -0.995678 0 0 0 1"
-"trigger_anim" "floorcrack"
+"origin" "-2913.75 5097.18 -96"
+"rotation" "-0.0520325 -0.998646 0 0.998646 -0.0520325 0 0 0 1"
+"trigger_anim" "downpipe"
+"wait" "0"
+}
+// entity 2300
+{
+"classname" "path_jump"
+"name" "path_jump_1"
+"angle" "90.000000"
+"origin" "-2912 4820.16 -86.9873"
+"target0" "path_attack_1"
+}
+// entity 2301
+{
+"classname" "path_attack"
+"name" "path_attack_1"
+"angle" "90.000000"
+"origin" "-2912 4927.44 -85.3194"
+}
+// entity 2302
+{
+"classname" "trigger_relay"
+"name" "trigger_relay_1"
+"delay" "2"
+"origin" "-2980.59 5122.38 -63.6131"
+"target0" "monster_demon_trite_2"
+"target1" "monster_demon_trite_3"
+"target2" "monster_demon_trite_1"
+}
+// entity 2303
+{
+"classname" "path_jump"
+"name" "path_jump_2"
+"angle" "56.462898"
+"origin" "-2969.72 4838.89 -85.6651"
+"target0" "path_attack_2"
+"target1" "path_attack_1"
+}
+// entity 2304
+{
+"classname" "path_jump"
+"name" "path_jump_3"
+"angle" "113.113060"
+"origin" "-2870.88 4841.41 -85.6651"
+"target0" "path_attack_3"
+"target1" "path_attack_1"
 }
