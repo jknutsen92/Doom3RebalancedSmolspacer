@@ -1,0 +1,7 @@
+monster_default_headshot {
+    minDistance     5
+    maxDistance     30
+    volume          10
+
+    sound/monsters/default/fleshy_crunch.wav
+}

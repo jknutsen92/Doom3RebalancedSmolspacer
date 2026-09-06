@@ -129,7 +129,8 @@ entityDef monster_flying_cacodemon {
 	"fx_teleport2"					"fx/teleporter2_fly.fx"
 	"fx_teleport3"					"fx/teleporter3_fly.fx"
 
-	"armorGibs"			"3"
+	"armorGibs"						"3"
+	"headshot_weakness"				"0"
 }
 
 entityDef damage_cacodemon_fireball {

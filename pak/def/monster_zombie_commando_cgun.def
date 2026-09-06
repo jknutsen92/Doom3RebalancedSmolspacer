@@ -838,7 +838,9 @@ entityDef monster_zombie_commando_cgun {
 	"flashColor"					"1 0.8 0.4"
 	"flashRadius"					"120"
 
-	"armorGibs"			"3"
+	"armorGibs"						"3"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }
 
 entityDef projectile_zombie_commando_cgun {

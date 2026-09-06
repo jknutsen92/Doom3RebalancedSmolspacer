@@ -180,5 +180,7 @@ entityDef monster_zombie_bernie {
 	"snd_swipe"						"monster_zombie_maint_swipe"
 	"snd_ambient"					"monster_zombie_ambient_burn"
 
-	"armorGibs"			"1"
+	"armorGibs"						"1"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }

@@ -215,7 +215,9 @@ entityDef monster_demon_hellknight {
 	"snd_deepfs"					"hellknight_deepfs"
 	"snd_burn"						"monster_demon_hellknight_burn"
 
-	"armorGibs"			"5"
+	"armorGibs"						"5"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }
 
 model delta1_hellknight {

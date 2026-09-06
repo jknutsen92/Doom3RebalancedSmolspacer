@@ -187,5 +187,7 @@ entityDef monster_default {
 	"fx_teleport2"								"fx/teleporter2.fx"
 	"fx_teleport3"								"fx/teleporter3.fx"
 
-	"armorGibs"						"0"
+	"armorGibs"									"0"
+	"snd_headshot"								"monster_default_headshot"
+	"headshot_weakness"							"1"
 }

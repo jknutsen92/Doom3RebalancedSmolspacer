@@ -420,7 +420,9 @@ entityDef monster_demon_imp {
 	"snd_alert_idle"				"monster_demon_imp_alert_idle"
 	"snd_burn"						"monster_demon_archvile_burn"
 
-	"armorGibs"			"3"
+	"armorGibs"						"3"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }
 
 model monster_demon_imp_crawler {

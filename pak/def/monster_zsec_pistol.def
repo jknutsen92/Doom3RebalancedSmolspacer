@@ -446,6 +446,10 @@ entityDef monster_zsec_pistol {
 	"flashTime"						"0.15"
 	"flashColor"					"1 0.8 0.4"
 	"flashRadius"					"120"
+
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
+	"armorGibs"						"2"
 }
 
 model model_monster_zsec_pistol_slowfire {
@@ -546,6 +550,4 @@ entityDef projectile_bullet_zsec_pistol {
 	"explode_light_color"			"0 0 0"
 	"explode_light_radius"			"0"
 	"explode_light_fadetime"		"0"
-
-	"armorGibs"			"2"
 }

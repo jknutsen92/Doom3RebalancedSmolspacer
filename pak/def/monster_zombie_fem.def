@@ -202,7 +202,9 @@ entityDef char_poppy {
 	"def_dropGibItem8"				"moveable_item_pelvis_pork"
 	"dropGibItem8Joint"				"Hips"
 
-	"armorGibs"			"1"
+	"armorGibs"						"1"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }
 
 

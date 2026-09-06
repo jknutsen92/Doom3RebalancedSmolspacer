@@ -244,7 +244,9 @@ entityDef monster_zombie_fat {
 
 	"skin_dropGib"					"skins/monsters/zombies/zfatgib.skin"
 
-	"armorGibs"			"1"
+	"armorGibs"						"1"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }
 
 

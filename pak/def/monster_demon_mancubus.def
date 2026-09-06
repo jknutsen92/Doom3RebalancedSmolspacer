@@ -191,7 +191,9 @@ entityDef monster_demon_mancubus {
 	"snd_footstep"					"monster_demon_mancubus_step"
 	"snd_burn"						"monster_demon_mancubus_burn"
 
-	"armorGibs"			"5"
+	"armorGibs"						"5"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }
 
 entityDef damage_mancubusblast {

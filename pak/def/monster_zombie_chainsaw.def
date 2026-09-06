@@ -188,5 +188,7 @@ entityDef monster_zombie_chainsaw {
 	"snd_pull"						"monster_zombie_chainsaw_pull"
 	"snd_release"					"monster_zombie_chainsaw_release"
 
-	"armorGibs"			"3"
+	"armorGibs"						"3"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }

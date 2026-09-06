@@ -221,7 +221,7 @@ entityDef monster_demon_pinky {
 	"snd_breath"					"monster_demon_pinky_breath"
 	"snd_burn"						"monster_demon_tick_burn"
 
-	"armorGibs"			"3"
+	"armorGibs"						"3"
 }
 
 entityDef melee_pinky_back {

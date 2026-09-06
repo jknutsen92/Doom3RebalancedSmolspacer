@@ -333,6 +333,10 @@ entityDef monster_zsec_shotgun {
 	"flashTime"						"0.15"
 	"flashColor"					"1 0.8 0.4"
 	"flashRadius"					"240"
+
+	"armorGibs"						"3"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }
 
 entityDef damage_bullet_zsec_shotgun {
@@ -413,6 +417,4 @@ entityDef projectile_bullet_zsec_shotgun {
 	"explode_light_color"			"0 0 0"
 	"explode_light_radius"			"0"
 	"explode_light_fadetime"		"0"
-
-	"armorGibs"			"3"
 }

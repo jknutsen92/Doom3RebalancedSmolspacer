@@ -597,7 +597,9 @@ entityDef monster_zsec_machinegun {
 	"flashColor"					"1 0.8 0.4"
 	"flashRadius"					"120"
 
-	"armorGibs"			"3"
+	"armorGibs"						"3"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }
 
 entityDef damage_bullet_zsec_machinegun {

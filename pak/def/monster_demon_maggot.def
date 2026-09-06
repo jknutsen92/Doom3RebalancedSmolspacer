@@ -264,7 +264,9 @@ entityDef monster_demon_maggot {
 	"snd_death"						"monster_demon_maggot_die"
 	"snd_burn"						"monster_demon_tick_burn"
 
-	"armorGibs"			"2"
+	"armorGibs"						"2"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }
 
 entityDef melee_magLeftClaw {

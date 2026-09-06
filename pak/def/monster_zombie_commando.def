@@ -243,7 +243,9 @@ entityDef monster_zombie_commando {
 	// For Precache, include entitydefs that are referenced in script
 	"def_tentacle"					"melee_commandoTentacle"
 
-	"armorGibs"			"3"
+	"armorGibs"						"3"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }
 
 entityDef melee_commando_right {

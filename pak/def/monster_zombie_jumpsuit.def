@@ -153,7 +153,9 @@ entityDef monster_zombie_jumpsuit_old {
 	"snd_thud"						"monster_zombie_fat_thud"
 	"skin_dropGib"					"skins/models/monsters/zjumpgib.skin"
 
-	"armorGibs"			"1"
+	"armorGibs"						"1"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }
 
 

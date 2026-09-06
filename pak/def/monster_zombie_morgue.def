@@ -131,5 +131,7 @@ entityDef monster_zombie_morgue {
 	"snd_thud"						"monster_zombie_maint_thud"
 	"snd_swipe"						"monster_zombie_maint_swipe"
 
-	"armorGibs"			"1"
+	"armorGibs"						"1"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }

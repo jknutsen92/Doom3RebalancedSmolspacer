@@ -473,7 +473,8 @@ entityDef monster_demon_trite {
 	"snd_enddrop"					"monster_demon_trite_enddrop"
 	"snd_burn"						"trite_deathsplat"
 
-	"armorGibs"			"2"
+	"armorGibs"						"2"
+	"headshot_weakness"				"0"
 }
 
 entityDef	melee_triteLeapAttack {

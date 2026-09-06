@@ -205,7 +205,9 @@ entityDef monster_zombie_maint {
 
 	"skin_dropGib"					"skins/monsters/zombies/zmaintb_gib"
 
-	"armorGibs"			"1"
+	"armorGibs"						"1"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }
 
 entityDef monster_zombie_maint2 {

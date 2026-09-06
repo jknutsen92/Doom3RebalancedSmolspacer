@@ -95,8 +95,9 @@ entityDef monster_flying_lostsoul {
 	"fx_teleport2"					"fx/teleporter2_fly.fx"
 	"fx_teleport3"					"fx/teleporter3_fly.fx"
 
-	"armorGibs"			"3"
-	
+	"armorGibs"						"3"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }
 
 entityDef melee_lostsoul {

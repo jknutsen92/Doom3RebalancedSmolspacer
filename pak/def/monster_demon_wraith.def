@@ -185,7 +185,9 @@ entityDef monster_demon_wraith {
 	"snd_fade_out"					"monster_demon_wraith_fade_out"
 	"snd_burn"						"monster_demon_tick_burn"
 
-	"armorGibs"			"1"
+	"armorGibs"						"1"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }
 
 entityDef wraith_spawneffect {

@@ -174,7 +174,9 @@ entityDef monster_demon_cherub {
 	"snd_ambient"					"monster_demon_cherub_ambient"
 	"snd_burn"						"monster_demon_tick_burn"
 
-	"armorGibs"			"3"
+	"armorGibs"						"3"
+	"snd_headshot"					"monster_default_headshot"
+	"headshot_weakness"				"1"
 }
 
 entityDef melee_cherubLeftClaw {
