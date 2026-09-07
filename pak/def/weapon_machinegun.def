@@ -136,7 +136,7 @@ model viewmodel_machinegun {
 }
 
 entityDef damage_bullet_machinegun {
-	"damage"			"9"
+	"damage"			"6"
 	"kickDir"			"1 0 0"
 
 	"mtr_blob"			"genericDamage"
@@ -232,4 +232,6 @@ entityDef projectile_bullet_machinegun {
 	"snd_liquid"				"bullet_impact_liquid"
 	"snd_plastic"				"small_plastic"
 	//"snd_impact"				"bullet_impact_metal"
+
+	"weakpoint_bonus"			"1"					// smolspacer - 1 bonus from headshots + feedback
 }

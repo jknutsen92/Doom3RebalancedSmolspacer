@@ -232,6 +232,8 @@ entityDef projectile_bfg {
 	"snd_explode2"				"player_bfg_2explode"
 	"snd_explode3"				"player_bfg_3explode"
 	"snd_explode4"				"player_bfg_4explode"
+
+	"weakpoint_bonus"			"0"					// smolspacer - 1 bonus from headshots + feedback
 }
 
 // used by Campbell in cinematics

@@ -151,10 +151,10 @@ model viewmodel_plasmagun {
 }
 
 entityDef	damage_plasmablast {
-	"damage"					"16"
+	"damage"					"11"					// "16" smolspacer
 	"smoke_wound_flesh"			"bloodwound.prt"
 	"gib"						"1"
-	
+	"heat"						"5"
 }
 
 entityDef projectile_plasmablast {
@@ -168,7 +168,7 @@ entityDef projectile_plasmablast {
 
 	"launchFromBarrel"			"1"
 	"health"					"0"					// amount of damage projectile can take if damaged (0 means it can't be destroyed)
-	"velocity"					"700 0 0"			// how fast the projectile leaves the gun (or distance if fuse is 0)
+	"velocity"					"1000 0 0"			// how fast the projectile leaves the gun (or distance if fuse is 0)
 	"random_shader_spin"		"1"					// sets shader parm 5 which if appropriate the projectile shader will use this as an alternating spin
 	"angular_velocity"			"0 0 0"				// how the projectile is rotating when it leaves the gun
 	"thrust"					"0"					// the rate of acceleration (always in the direction of the projectiles model)
@@ -214,6 +214,8 @@ entityDef projectile_plasmablast {
 
 	"snd_fly"					"plasma_flight"					// sound effect while in the air
 	"snd_explode"				"plasma_impact"
+
+	"weakpoint_bonus"			"0"						// smolspacer - 1 bonus from headshots + feedback
 }
 
 /*

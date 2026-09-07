@@ -211,8 +211,10 @@ entityDef projectile_chaingunbullet {
 	"snd_liquid"				"bullet_impact_liquid"
 	"snd_plastic"				"small_plastic"
 	"snd_ricochet"				"bullet_ricochet"
-//	"snd_impact"				""			// we need a much smaller impact sound for the chaingun bullet  "bullet_impact_metal"
+//	"snd_impact"				""					// we need a much smaller impact sound for the chaingun bullet  "bullet_impact_metal"
 	"snd_tracer"				"bullet_flight"
+
+	"weakpoint_bonus"			"1"					// smolspacer - 1 bonus from headshots + feedback	"weakpoint_bonus"			"1"
 }
 
 entityDef	damage_bullet_chaingun {

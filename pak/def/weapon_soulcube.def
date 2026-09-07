@@ -194,4 +194,6 @@ entityDef projectile_soulblast {
 	"explode_light_color"		"0 0 1"
 	"explode_light_radius"		"160"
 	"explode_light_fadetime"	"0.25"
+
+ 	"weakpoint_bonus"			"0"					// smolspacer - 1 bonus from headshots + feedback
 }

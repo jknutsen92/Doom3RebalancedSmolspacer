@@ -222,4 +222,6 @@ entityDef projectile_grenade {
 	"snd_bounce"				"player_handgrenade_bounce"
 	"snd_explode"				"rocket_impact"
 	"snd_throw"					"player_handgrenade_throw"	// For precache -- referenced in the script
+
+	"weakpoint_bonus"			"0"					// smolspacer - 1 bonus from headshots + feedback
 }

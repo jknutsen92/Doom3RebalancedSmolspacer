@@ -190,6 +190,8 @@ entityDef projectile_rocket {
 
 	"snd_fly"					"rocket_flight"					// sound effect while in the air
 	"snd_explode"				"rocket_impact"
+
+	"weakpoint_bonus"			"1"								// smolspacer - 1 bonus from headshots + feedback
 }
 
 entityDef damage_rocketDirect {
