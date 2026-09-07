@@ -45,3 +45,19 @@ headshot_rocket_metal {
 
     sound/monsters/default/headshot/rocket_metal.wav
 }
+
+headshot_shotgun_flesh {
+    minDistance     5
+    maxDistance     30
+    volume          0
+
+    sound/monsters/default/headshot/auto_flesh.wav
+}
+
+headshot_shotgun_metal {
+    minDistance     5
+    maxDistance     30
+    volume          0
+
+    sound/monsters/default/headshot/auto_metal.wav
+}

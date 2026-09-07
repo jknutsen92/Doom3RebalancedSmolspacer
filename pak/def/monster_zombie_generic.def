@@ -198,6 +198,7 @@ entityDef monster_zombie_base {
 	"armorGibs"						"1"
 	"headshot_weakness"				"1"
 	"snd_headshot_pistol"			"headshot_pistol_flesh"
+	"snd_headshot_shotgun"			"headshot_shotgun_flesh"
 	"snd_headshot_machinegun"		"headshot_auto_flesh"
 	"snd_headshot_chaingun"			"headshot_auto_flesh"
 	"snd_headshot_rocket"			"headshot_rocket_flesh"

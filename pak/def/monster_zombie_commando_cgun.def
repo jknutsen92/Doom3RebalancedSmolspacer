@@ -841,6 +841,7 @@ entityDef monster_zombie_commando_cgun {
 	"armorGibs"						"3"
 	"headshot_weakness"				"1"
 	"snd_headshot_pistol"			"headshot_pistol_metal"
+	"snd_headshot_shotgun"			"headshot_shotgun_metal"
 	"snd_headshot_machinegun"		"headshot_auto_metal"
 	"snd_headshot_chaingun"			"headshot_auto_metal"
 	"snd_headshot_rocket"			"headshot_rocket_metal"
