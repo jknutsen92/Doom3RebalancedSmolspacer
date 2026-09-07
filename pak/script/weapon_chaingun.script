@@ -150,14 +150,12 @@ void weapon_chaingun::Idle() {
 		}
 		ammoClip = ammoInClip();
 		if ( WEAPON_ATTACK ) {
-			if ( ammoClip > 0 ) {
-				weaponState( "Fire", CHAINGUN_IDLE_TO_FIRE );
-			} else if ( ammoAvailable() > 0 ) {
-				if ( autoReload() ) {
-					netReload();
-					weaponState( "Reload", CHAINGUN_IDLE_TO_RELOAD );
-				}
+			// smolspacer - dry firing logic preserves auto reload behavior
+			if ((ammoClip <= 0) && (ammoAvailable() > 0) && autoReload()) {
+				netReload();
+				weaponState( "Reload", CHAINGUN_IDLE_TO_RELOAD );
 			}
+			weaponState( "Fire", CHAINGUN_IDLE_TO_FIRE );
 		}
 		if ( WEAPON_RELOAD && ( ammoAvailable() > ammoClip ) && ( ammoClip < clip_size ) ) {
 			netReload();
@@ -186,12 +184,15 @@ void weapon_chaingun::Fire() {
 		
 	startSound( "snd_spin", SND_CHANNEL_BODY3, false );
 	ammoClip = ammoInClip();
-	while( WEAPON_ATTACK && !WEAPON_RELOAD && ( ammoClip > 0 ) ) {
-		launchProjectiles( CHAINGUN_NUMPROJECTILES, spread, 0, 1.0, 1.0 );
-		startSound( "snd_fire", SND_CHANNEL_WEAPON, false );
-		ammoClip = ammoInClip();
-		if ( ammoClip == CHAINGUN_LOWAMMO ) {
-			startSound( "snd_lowammo", SND_CHANNEL_ITEM, false );
+	while( WEAPON_ATTACK && !WEAPON_RELOAD ) {
+		// smolspacer - dry fire logic
+		if ( ammoClip > 0 ) {
+			launchProjectiles( CHAINGUN_NUMPROJECTILES, spread, 0, 1.0, 1.0 );
+			startSound( "snd_fire", SND_CHANNEL_WEAPON, false );
+			ammoClip = ammoInClip();
+			if ( ammoClip == CHAINGUN_LOWAMMO ) {
+				startSound( "snd_lowammo", SND_CHANNEL_ITEM, false );
+			}
 		}
 
 		// skip frames
