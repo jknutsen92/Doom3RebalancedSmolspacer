@@ -206,8 +206,11 @@ entityDef monster_zombie_maint {
 	"skin_dropGib"					"skins/monsters/zombies/zmaintb_gib"
 
 	"armorGibs"						"1"
-	"snd_headshot"					"monster_default_headshot"
 	"headshot_weakness"				"1"
+	"snd_headshot_pistol"			"headshot_pistol_flesh"
+	"snd_headshot_machinegun"		"headshot_auto_flesh"
+	"snd_headshot_chaingun"			"headshot_auto_flesh"
+	"snd_headshot_rocket"			"headshot_rocket_flesh"
 }
 
 entityDef monster_zombie_maint2 {

@@ -99,6 +99,10 @@ entityDef monster_flying_lostsoul {
 	"armorGibs"						"3"
 	"snd_headshot"					"monster_default_headshot"
 	"headshot_weakness"				"1"
+	"snd_headshot_pistol"			""							// fix this
+	"snd_headshot_machinegun"		""
+	"snd_headshot_chaingun"			""
+	"snd_headshot_rocket"			""
 }
 
 entityDef melee_lostsoul {

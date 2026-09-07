@@ -839,8 +839,11 @@ entityDef monster_zombie_commando_cgun {
 	"flashRadius"					"120"
 
 	"armorGibs"						"3"
-	"snd_headshot"					"monster_default_headshot"
 	"headshot_weakness"				"1"
+	"snd_headshot_pistol"			"headshot_pistol_metal"
+	"snd_headshot_machinegun"		"headshot_auto_metal"
+	"snd_headshot_chaingun"			"headshot_auto_metal"
+	"snd_headshot_rocket"			"headshot_rocket_metal"
 }
 
 entityDef projectile_zombie_commando_cgun {

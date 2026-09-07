@@ -263,8 +263,11 @@ entityDef monster_zombie_sawyer {
 	"snd_death"						"bernie_death"
 
 	"armorGibs"						"3"
-	"snd_headshot"					"monster_default_headshot"
 	"headshot_weakness"				"1"
+	"snd_headshot_pistol"			"headshot_pistol_flesh"
+	"snd_headshot_machinegun"		"headshot_auto_flesh"
+	"snd_headshot_chaingun"			"headshot_auto_flesh"
+	"snd_headshot_rocket"			"headshot_rocket_flesh"
 }
 
 entityDef melee_zombie_chainsaw {

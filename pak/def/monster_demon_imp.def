@@ -421,8 +421,11 @@ entityDef monster_demon_imp {
 	"snd_burn"						"monster_demon_archvile_burn"
 
 	"armorGibs"						"3"
-	"snd_headshot"					"monster_default_headshot"
 	"headshot_weakness"				"1"
+	"snd_headshot_pistol"			"headshot_pistol_flesh"
+	"snd_headshot_machinegun"		"headshot_auto_flesh"
+	"snd_headshot_chaingun"			"headshot_auto_flesh"
+	"snd_headshot_rocket"			"headshot_rocket_flesh"
 }
 
 model monster_demon_imp_crawler {

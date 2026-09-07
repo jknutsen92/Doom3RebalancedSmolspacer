@@ -1,7 +1,47 @@
-monster_default_headshot {
+headshot_pistol_flesh {
     minDistance     5
     maxDistance     30
     volume          10
 
-    sound/monsters/default/fleshy_crunch.wav
+    sound/monsters/default/headshot/pistol_flesh.wav
+}
+
+headshot_pistol_metal {
+    minDistance     5
+    maxDistance     30
+    volume          0
+
+    sound/monsters/default/headshot/pistol_metal.wav
+}
+
+headshot_auto_flesh {
+    minDistance     5
+    maxDistance     30
+    volume          0
+
+    sound/monsters/default/headshot/auto_flesh.wav
+}
+
+headshot_auto_metal {
+    minDistance     5
+    maxDistance     30
+    volume          0
+
+    sound/monsters/default/headshot/auto_metal.wav
+}
+
+headshot_rocket_flesh {
+    minDistance     5
+    maxDistance     30
+    volume          0
+
+    sound/monsters/default/headshot/rocket_flesh.wav
+}
+
+headshot_rocket_metal {
+    minDistance     5
+    maxDistance     30
+    volume          0
+
+    sound/monsters/default/headshot/rocket_metal.wav
 }

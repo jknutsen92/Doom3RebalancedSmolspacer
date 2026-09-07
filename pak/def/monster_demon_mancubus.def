@@ -192,8 +192,11 @@ entityDef monster_demon_mancubus {
 	"snd_burn"						"monster_demon_mancubus_burn"
 
 	"armorGibs"						"5"
-	"snd_headshot"					"monster_default_headshot"
 	"headshot_weakness"				"1"
+	"snd_headshot_pistol"			"headshot_pistol_flesh"
+	"snd_headshot_machinegun"		"headshot_auto_flesh"
+	"snd_headshot_chaingun"			"headshot_auto_flesh"
+	"snd_headshot_rocket"			"headshot_rocket_flesh"
 }
 
 entityDef damage_mancubusblast {

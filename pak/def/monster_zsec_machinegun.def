@@ -598,8 +598,11 @@ entityDef monster_zsec_machinegun {
 	"flashRadius"					"120"
 
 	"armorGibs"						"3"
-	"snd_headshot"					"monster_default_headshot"
 	"headshot_weakness"				"1"
+	"snd_headshot_pistol"			"headshot_pistol_metal"
+	"snd_headshot_machinegun"		"headshot_auto_metal"
+	"snd_headshot_chaingun"			"headshot_auto_metal"
+	"snd_headshot_rocket"			"headshot_rocket_metal"
 }
 
 entityDef damage_bullet_zsec_machinegun {
