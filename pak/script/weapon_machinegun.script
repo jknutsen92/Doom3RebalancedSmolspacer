@@ -76,7 +76,10 @@ void weapon_machinegun::Idle() {
 		if ( ( currentTime >= next_attack ) && WEAPON_ATTACK ) {
 			if ( ammoClip > 0 ) {
 				weaponState( "Fire", MACHINEGUN_IDLE_TO_FIRE );
-			} else if ( ammoAvailable() > 0 ) {
+			} 
+			else if ( ammoAvailable() > 0) {
+				startSound("snd_noammo", SND_CHANNEL_WEAPON, true);
+				next_attack = currentTime + MACHINEGUN_FIRERATE;
 				if ( autoReload() ) {
 					netReload();
 					weaponState( "Reload", MACHINEGUN_IDLE_TO_RELOAD );

@@ -80,6 +80,7 @@ entityDef weapon_rocketlauncher {
 
 	"snd_acquire"				"sound_weapon_acquire"
 	"snd_respawn"				"sound_weapon_respawn"
+	"snd_noammo"				"player_rocketlauncher_dryfire"
 	
 	"skin_1"					"models/weapons/0rox.skin"
 	"skin_2"					"models/weapons/1rox.skin"

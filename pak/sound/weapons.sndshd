@@ -1232,7 +1232,7 @@ player_rocketlauncher_dryfire {
 	maxDistance	10
 	volume		3
 
-	sound/dane/ROCKET_LAUNCHER/ROCKET_LAUNCHER_DRY FIRE.wav
+	sound/weapons/rocketlauncher/dryfire.wav
 
 //	sound/ed/rocketlauncher/dryfire.wav
 

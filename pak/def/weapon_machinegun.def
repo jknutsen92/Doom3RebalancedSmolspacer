@@ -91,6 +91,7 @@ entityDef weapon_machinegun {
 	"snd_respawn"				"sound_weapon_respawn"
 	"snd_lowammo" 				"player_machinegun_lowammo"
 	"snd_glass"					"bullet_impact_glass"
+	"snd_noammo"				"player_machinegun_empty"
 	"skin_invisible"			"skins/machinegun_invis"
 	
 	"spread"					"1"
