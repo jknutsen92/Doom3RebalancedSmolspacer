@@ -136,7 +136,7 @@ model viewmodel_machinegun {
 }
 
 entityDef damage_bullet_machinegun {
-	"damage"			"6"
+	"damage"			"7"
 	"kickDir"			"1 0 0"
 
 	"mtr_blob"			"genericDamage"

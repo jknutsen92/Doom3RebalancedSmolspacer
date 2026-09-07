@@ -262,5 +262,5 @@ entityDef projectile_bullet_pistol {
 	"explode_light_radius"		"0"
 	"explode_light_fadetime"	"0"
 
-	"weakpoint_bonus"			"1"					// smolspacer - 1 bonus from headshots + feedback
+	"weakpoint_bonus"			"1.5"					// smolspacer - 1 bonus from headshots + feedback
 }

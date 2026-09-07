@@ -55,7 +55,7 @@ entityDef weapon_chaingun {
 	"def_projectile"			"projectile_chaingunbullet"
 	"ammoType"					"ammo_belt"
 	"ammoRequired"				"1"
-	"clipSize"					"90"
+	"clipSize"					"120"
 	"lowAmmo"					"10"
 	"mtr_flashShader"			"muzzleflash"
 	"flashColor"				"1 0.8 0.4"
@@ -218,7 +218,7 @@ entityDef projectile_chaingunbullet {
 }
 
 entityDef	damage_bullet_chaingun {
-	"damage"			"17"
+	"damage"			"16"
 	"kickDir"			"1 0 0"
 
 	"mtr_blob"			"genericDamage"

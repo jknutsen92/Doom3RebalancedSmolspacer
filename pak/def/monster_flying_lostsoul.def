@@ -75,6 +75,7 @@ entityDef monster_flying_lostsoul {
 	"bone_flytilt"					"Head"
 
 	"damage_zone head"				"*Head"
+	"damage_scale head"				"1"
 
 	"smokeparticleSystem"			"lost_flame1"
 	"smokeparticleSystem2"			"lost_flame2-lost_flame1"
