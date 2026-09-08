@@ -135,6 +135,9 @@ entityDef char_poppy {
 	"melee_range"					"32"
 	"mass"							"125"
 	"head_look"						"1"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"15"
+	"smoke_heatblast"				"bfg_barrel.prt-chest"
 
 	"skin"							"skins/poppy.skin"
 

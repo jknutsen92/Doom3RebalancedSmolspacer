@@ -223,9 +223,12 @@ entityDef monster_demon_revenant {
 	"ragdoll"						"monster_demon_revenant2"
 	"bone_focus"					"Head"
 	"mass"   						"250"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"15"
+	"smoke_heatblast"				"bfg_barrel.prt-waist"
 	
 	"burnaway"						"0.50"
-	"smoke_burnParticleSystem"			"burn_imp.prt-waist"
+	"smoke_burnParticleSystem"		"burn_imp.prt-waist"
 	
 	"look_min"						"-90 -125 0"
 	"look_max"						"25 125 0"

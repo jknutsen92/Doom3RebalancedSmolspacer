@@ -166,6 +166,7 @@ entityDef monster_boss_cyberdemon {
 	"combat_chatter_min"			"2"
 	"combat_chatter_max"			"4"
 	"af_push_moveables"				"1"
+	"plasma_heatable"				"0"
 	
 	"def_kickdamage"				"melee_cyberdemon_kick"
 	

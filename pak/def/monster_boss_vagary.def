@@ -145,6 +145,9 @@ entityDef monster_boss_vagary {
 	"mass"							"600"
 	"smoke_burnParticleSystem"		"burn_manc.prt-body"
 	"burnaway"						"0.50"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"50"
+	"smoke_heatblast"				"bfg_barrel.prt-body"
 
 	"look_min"						"-90 -125 0"
 	"look_max"						"25 125 0"

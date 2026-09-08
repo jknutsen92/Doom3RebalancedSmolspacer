@@ -1144,9 +1144,10 @@ plasma_impact {
 }
 
 plasma_heat_blast {
-	minDistance	1
-	maxDistance	50
+	minDistance	10
+	maxDistance	60
 	volume		17
+	unclamped
 
 	sound/weapons/plasmagun/heat_blast.wav
 }

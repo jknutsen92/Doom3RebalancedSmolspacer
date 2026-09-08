@@ -138,6 +138,9 @@ entityDef monster_zombie_base {
 
 	"turn_rate"						"360"
 	"mass"							"150"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"15"
+	"smoke_heatblast"				"bfg_barrel.prt-chest"
 	
 	"burnaway"						"1.5"
 

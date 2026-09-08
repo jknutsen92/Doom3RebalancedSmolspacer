@@ -272,6 +272,10 @@ entityDef monster_zsec_shield {
 	"smoke_weapon"					"cgsmoke.smoke"
 	"smoke_wound_metal"				"bulletricochet.prt"
 	"smoke_wound_ricochet"			"bulletricochet.prt"
+	"mass"							"250"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"10"
+	"smoke_heatblast"				"bfg_barrel.prt-chest"
 	
 	"damage_zone head"				"*loneckcontrol"
 	"damage_zone chest"				"*Waist -*Rshldr -*Lshldr -*loneckcontrol -*shield"

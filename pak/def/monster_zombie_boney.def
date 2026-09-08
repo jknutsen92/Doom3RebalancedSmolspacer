@@ -128,6 +128,9 @@ entityDef monster_zombie_boney {
 	"attack_cone"					"70"
 	"attack_accuracy"				"0"
 	"mass"							"200"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"15"
+	"smoke_heatblast"				"bfg_barrel.prt-chest"
 
 	"skin"							"skins/monsters/zombies/boney.skin"
 	"skin_dropGib"					"skins/monsters/zombies/boneygib.skin"

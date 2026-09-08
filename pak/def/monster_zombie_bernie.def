@@ -122,6 +122,9 @@ entityDef monster_zombie_bernie {
 	"attack_cone"					"70"
 	"attack_accuracy"				"0"
 	"mass"							"200"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"75"									// He's on fire	-smolspacer
+	"smoke_heatblast"				"bfg_barrel.prt-chest"
 
 	"look_min"						"-90 -125 0"
 	"look_max"						"25 125 0"
@@ -163,8 +166,8 @@ entityDef monster_zombie_bernie {
 	"smokeParticleSystem2"			"Flametrap"
 	"smokeParticleSystem3"			"Flamehead"
 	"smokeParticleSystem4"			"Flamewrist"
-	//"smokeParticleSystem5"			"Flamehips"
-	//"smokeParticleSystem6"			"Flamepelvis"
+	//"smokeParticleSystem5"		"Flamehips"
+	//"smokeParticleSystem6"		"Flamepelvis"
 
 	"snd_sight"						"bernie_sight"
 	"snd_footstep"					"monster_zombie_commando_footstep"

@@ -555,6 +555,10 @@ entityDef monster_zsec_machinegun {
 	"smoke_wound_metal"				"bulletricochet.prt"
 	"smoke_wound_ricochet"			"bulletricochet.prt"
 	"run_attack"					"1"					// allow shooting while running
+	"mass"							"200"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"15"
+	"smoke_heatblast"				"bfg_barrel.prt-chest"
 
 	"ragdoll"						"monster_zombie_security_machinegun"
 

@@ -107,8 +107,11 @@ entityDef monster_demon_sentry {
 	"smoke_weapon"					"cgsmoke.smoke"
 	"mass"							"250"
 	"burnaway"						"0.50"
-	"smoke_burnParticleSystem"			"burn_imp.prt-hips"
+	"smoke_burnParticleSystem"		"burn_imp.prt-hips"
 	"smoke_wound_metal"				"bulletricochet.prt"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"10"
+	"smoke_heatblast"				"bfg_barrel.prt-hips"
 
 	"ik_numLegs"					"4"
 	"ik_footSize"					"0"

@@ -107,6 +107,9 @@ entityDef monster_zombie_jumpsuit_old {
 	"anim"							"idle1"
 	"mass"							"150"
 	"bleed"							"1"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"15"
+	"smoke_heatblast"				"bfg_barrel.prt-chest"
 
 	"blockedRadius"					"15"
 	"blockedMoveTime"				"500"

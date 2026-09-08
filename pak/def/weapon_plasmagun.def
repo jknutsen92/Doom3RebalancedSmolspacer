@@ -42,7 +42,7 @@ entityDef weapon_plasmagun {
 	"editor_mins"				"-16 -16 0"
 	"editor_maxs"				"16 16 32"
 	"editor_usage"				"Plasma Gun"
-	"editor_rotatable"		"1"
+	"editor_rotatable"			"1"
 
 	"spawnclass"				"idItem"
 	"size"						"32 32 32"
@@ -152,7 +152,7 @@ model viewmodel_plasmagun {
 }
 
 entityDef	damage_plasmablast {
-	"damage"					"11"					// "16" smolspacer
+	"damage"					"10"					// "16" smolspacer
 	"smoke_wound_flesh"			"bloodwound.prt"
 	"gib"						"1"
 }
@@ -216,7 +216,7 @@ entityDef projectile_plasmablast {
 	"snd_explode"				"plasma_impact"
 
 	"weakpoint_bonus"			"0"						// smolspacer - 1 bonus from headshots + feedback
-	"heat"						"25"
+	"heat"						"30"
 }
 
 /*

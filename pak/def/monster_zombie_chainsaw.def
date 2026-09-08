@@ -158,6 +158,9 @@ entityDef monster_zombie_chainsaw {
 	"skin_dropGib"					"skins/models/monsters/zjumpgib.skin"
 
 	"mass"							"150"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"15"
+	"smoke_heatblast"				"bfg_barrel.prt-chest"
 
 	"damage_zone head"				"*loneckcontrol"
 	"damage_zone chest"				"*Waist -*loneckcontrol"

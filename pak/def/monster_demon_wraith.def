@@ -165,6 +165,9 @@ entityDef monster_demon_wraith {
 	"damage_zone right_arm"			"*Rshldr"
 	"damage_scale head"				"2"
 	"mass"   						"250"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"25"
+	"smoke_heatblast"				"bfg_barrel.prt-root"
 	
 	"burnaway"						"0.50"
 	"smoke_burnParticleSystem"		"burn_imp.prt-root"

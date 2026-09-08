@@ -94,6 +94,9 @@ entityDef monster_flying_cacodemon {
 	"fly_pitch_scale"				"45"
 	"fly_pitch_max"					"15"
 	"mass"							"800"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"20"
+	"smoke_heatblast"				"bfg_barrel.prt-Head"
 	
 	"bone_flytilt"					"Body2"
 
@@ -105,7 +108,7 @@ entityDef monster_flying_cacodemon {
 	"useBoneAxis"					"1"
 
 	"burnaway"						"0.25"
-	"smoke_burnParticleSystem"			"burn_imp.prt-Head"
+	"smoke_burnParticleSystem"		"burn_imp.prt-Head"
 	
 	"damage_zone head"				"*Head -*LeftSide -*RightSide"
 	//"damage_zone chest"			"*Waist -*Rshldr -*Lshldr -*Neck"

@@ -178,6 +178,9 @@ entityDef monster_demon_pinky {
 	"health"						"220"
 	"melee_range"					"60"
 	"mass"							"300"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"10"						// Maybe he has a hard time cooling down because of the machinery
+	"smoke_heatblast"				"bfg_barrel.prt-waist"
 
 	"look_min"						"-90 -125 0"
 	"look_max"						"25 125 0"

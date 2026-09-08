@@ -192,6 +192,9 @@ entityDef monster_zombie_sawyer {
 	"attack_cone"					"70"
 	"attack_accuracy"				"0"
 	"mass"							"200"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"15"
+	"smoke_heatblast"				"bfg_barrel.prt-chest"
 	
 	"chatter_min"					"2"
 	"chatter_max"					"6"

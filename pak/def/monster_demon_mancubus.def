@@ -162,12 +162,14 @@ entityDef monster_demon_mancubus {
 	"damage_zone legs"				"*Lupleg *Rupleg origin"
 	"damage_scale head"				"1.25"				// "1.5" smolspacer
 	"mass"   						"800"
-	"heat_decay_rate"				"50"
+	"heat_decay_rate"				"30"
+	"plasma_heatable"				"1"
+	"smoke_heatblast"				"bfg_barrel.prt-waist"
 	
 	"smoke_wound_metal"				"bulletricochet.prt"
 	"smoke_wound_ricochet"			"bulletricochet.prt"
 	"burnaway"						"0.50"
-	"smoke_burnParticleSystem"			"burn_manc.prt-waist"
+	"smoke_burnParticleSystem"		"burn_manc.prt-waist"
 
 	"ik_numLegs"					"2"
 	"ik_footSize"					"4"

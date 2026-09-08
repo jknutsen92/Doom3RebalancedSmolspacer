@@ -184,6 +184,9 @@ entityDef monster_zombie_commando {
 	"chatter_combat_min"			"3"
 	"chatter_combat_max"			"6"
 	"mass"							"250"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"30"
+	"smoke_heatblast"				"bfg_barrel.prt-chest"
 	
 	"burnaway"						"0.50"
 	"smoke_burnParticleSystem"		"burn_imp.prt-chest"

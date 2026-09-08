@@ -92,6 +92,9 @@ entityDef monster_boss_sabaoth {
 	"damage_scale legs"					"0.75"
 	"mass"   							"99999999"
 	"pain_threshold"					"50"
+	"plasma_heatable"					"1"
+	"heat_decay_rate"					"100"
+	"smoke_heatblast"					"bfg_barrel.prt-chest"
 	
 	"mtr_flashShader"					"muzzleflash"
 	"flashTime"							"0.15"

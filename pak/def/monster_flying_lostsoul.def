@@ -71,6 +71,9 @@ entityDef monster_flying_lostsoul {
 	"fly_roll_scale"				"90"
 	"fly_pitch_scale"				"45"
 	"fly_pitch_max"					"30"
+	"plasma_heatable"				"0"							// They are literally on fire, I think they are cool being hot -smolspacer
+	//"heat_decay_rate"				"10"
+	//"smoke_heatblast"				"bfg_barrel.prt-chest"
 	
 	"bone_flytilt"					"Head"
 

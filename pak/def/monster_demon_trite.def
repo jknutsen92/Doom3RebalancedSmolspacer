@@ -408,7 +408,9 @@ entityDef monster_demon_trite {
 	"chatter_combat_max"			"7"
 	"turn_rate"						"360"
 	"mass"							"50"
-	"heat_decay_rate"				"5"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"10"
+	"smoke_heatblast"				"bfg_barrel.prt-mouth"
 
 	"blockedRadius"					"25"
 	"blockedMoveTime"				"750"
@@ -418,7 +420,7 @@ entityDef monster_demon_trite {
 	"def_explode_damage"			"damage_trite_explode"
 		
 	"burnaway"						".01"
-	"smoke_burnParticleSystem"			"trite_burst.prt-mouth"
+	"smoke_burnParticleSystem"		"trite_burst.prt-mouth"
 	
 	"ik_numLegs"					"6"
 	"ik_footSize"					"0"

@@ -163,6 +163,9 @@ entityDef monster_zombie_maint {
 	"melee_range"					"32"
 	"walk_on_sight"					"1"
 	"mass"							"150"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"15"
+	"smoke_heatblast"				"bfg_barrel.prt-chest"
 
 	"model"							"monster_zombie_maint"
 	"ragdoll"						"monster_zombie_maint"

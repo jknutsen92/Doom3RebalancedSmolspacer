@@ -189,6 +189,9 @@ entityDef monster_zombie_fat {
 	"melee_range"					"32"
 	"walk_on_sight"					"1"
 	"mass"							"200"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"10"
+	"smoke_heatblast"				"bfg_barrel.prt-chest"
 	
 	"blockedRadius"					"10"
 	"blockedMoveTime"				"1200"
