@@ -364,6 +364,7 @@ entityDef monster_zsec_pistol {
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"15"
 	"smoke_heatblast"				"bfg_barrel.prt-chest"
+//	"mtr_heat_shader"				"textures/base_door/doorlight"
 
 	"bone_focus"					"headcontrol"
 	"bone_leftEye"					"Leyeaim"
