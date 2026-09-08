@@ -375,6 +375,7 @@ entityDef monster_demon_imp {
 	"offsetModel"					"-8 0 0"
 	"anim"							"idle1"
 	"mass"							"200"
+	"heat_decay_rate"				"10"
 
 	"burnaway"						".5"
 	"smoke_burnParticleSystem"			"burn_imp.prt-chest"

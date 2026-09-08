@@ -407,6 +407,8 @@ entityDef monster_demon_trite {
 	"chatter_combat_min"			"3"
 	"chatter_combat_max"			"7"
 	"turn_rate"						"360"
+	"mass"							"50"
+	"heat_decay_rate"				"5"
 
 	"blockedRadius"					"25"
 	"blockedMoveTime"				"750"

@@ -155,7 +155,6 @@ entityDef	damage_plasmablast {
 	"damage"					"11"					// "16" smolspacer
 	"smoke_wound_flesh"			"bloodwound.prt"
 	"gib"						"1"
-	"heat"						"5"
 }
 
 entityDef projectile_plasmablast {
@@ -217,6 +216,7 @@ entityDef projectile_plasmablast {
 	"snd_explode"				"plasma_impact"
 
 	"weakpoint_bonus"			"0"						// smolspacer - 1 bonus from headshots + feedback
+	"heat"						"25"
 }
 
 /*

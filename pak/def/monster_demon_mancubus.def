@@ -162,6 +162,7 @@ entityDef monster_demon_mancubus {
 	"damage_zone legs"				"*Lupleg *Rupleg origin"
 	"damage_scale head"				"1.25"				// "1.5" smolspacer
 	"mass"   						"800"
+	"heat_decay_rate"				"50"
 	
 	"smoke_wound_metal"				"bulletricochet.prt"
 	"smoke_wound_ricochet"			"bulletricochet.prt"
