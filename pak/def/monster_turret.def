@@ -124,7 +124,7 @@ entityDef projectile_bullet_turret {
 	"mass"							"2"
 	"gravity"						"0"
 	"fuse"							"4"
-	"plasma_heatable"				"0"								// The world is a great heat sink
+	"plasma_heatable"				"0"								// The world is a great heat sink -smolpacer
 	"heat_decay_rate"				"10"
 	"smoke_heatblast"				"bfg_barrel.prt-chest"
 
