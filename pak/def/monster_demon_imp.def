@@ -378,6 +378,7 @@ entityDef monster_demon_imp {
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"10"
 	"smoke_heatblast"				"bfg_barrel.prt-chest"
+	"skin_heated"					"skins/models/monsters/imp_heated.skin"
 
 	"burnaway"						".5"
 	"smoke_burnParticleSystem"		"burn_imp.prt-chest"
@@ -675,12 +676,8 @@ entityDef projectile_impfireball {
 	"debris_count"					"3"
 	"def_debris"					"debris_largeshrapnel"
 	"def_shrapnel"					"debris_shrapnel"
-	
-	"mtr_light_shader"				"lights/impflyflash"
-	"light_color"					"0.9 0.7 0.05"
-	"light_radius"					"160"
-	"light_offset"					"0 0 0"
 
+	
 
 	"mtr_explode_light_shader"		"lights/impflash"
 	"explode_light_color"			"3.6 3.0 0.5"

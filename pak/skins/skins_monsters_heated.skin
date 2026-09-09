@@ -1,0 +1,11 @@
+skin skins/models/monsters/imp_heated {
+	models/monsters/imp/imp                         models/monsters/imp/imp_heated
+}
+
+skin skins/monsters/zombies/zsecurity_pistol_heated {
+	models/characters/male_npc/security/security    models/characters/male_npc/security/dsecurity_heated
+
+	models/monsters/zsecurity/zsheild               textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass         textures/common/nodraw
+	models/monsters/skeleton/skeleton01             textures/common/nodraw
+}

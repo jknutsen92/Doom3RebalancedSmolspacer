@@ -1,0 +1,41 @@
+// heatHaze.vfp
+// ambientLight.vfp
+
+models/monsters/imp/imp_heated
+{
+	unsmoothedTangents
+	noselfshadow
+	flesh
+    collision
+    blendlight
+	renderbump      -size 512 512 -aa 3 models/monsters/imp/imp_local.tga models/monsters/imp/work/imp_hp.lwo
+	bumpmap	        addnormals (models/monsters/imp/imp_local, heightmap (models/monsters/imp/imp_bmp.tga, 6) )
+	specularmap	    models/monsters/imp/imp_s
+    diffusemap      models/monsters/imp/imp_d
+    {
+        blend   add
+        color   0.5 * parm11, 0, 0.1 * parm11, 1
+        map     lights/fullambient.tga
+    }
+}
+
+models/characters/male_npc/security/dsecurity_heated
+{
+    unsmoothedTangents
+    noselfShadow
+    blendlight
+    flesh
+    collision
+    diffusemap	  models/characters/male_npc/security/dsecurity.tga
+    // {
+    //     blend bumpmap
+    //     map  addnormals(models/characters/male_npc/security/security_local.tga, heightmap(models/characters/male_npc/security/security_h.tga, 5 ) )
+        
+    // }
+    specularmap	models/characters/male_npc/security/dsecurity_s.tga
+    {
+        blend   add
+        color   0.5 * parm12, 0, 0.1 * parm11, 1
+        map     lights/fullambient.tga
+    }
+}
