@@ -175,7 +175,7 @@ entityDef monster_demon_pinky {
 	"use_aas"						"aas96"
 	"team"							"1"
 	"rank"							"1"
-	"health"						"220"
+	"health"						"440"
 	"melee_range"					"60"
 	"mass"							"300"
 	"plasma_heatable"				"1"
@@ -225,6 +225,7 @@ entityDef monster_demon_pinky {
 	"snd_burn"						"monster_demon_tick_burn"
 
 	"armorGibs"						"3"
+	"headshot_weakness"				"0"
 }
 
 entityDef melee_pinky_back {

@@ -1,0 +1,8 @@
+lights/heatglow {
+    noshadows
+    {
+        forceHighQuality
+        map     lights/falloff_exp2
+        color   0.5 * parm11, 0, 0.1 * parm11, 1
+    }
+}

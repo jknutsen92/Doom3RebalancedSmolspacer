@@ -8,6 +8,7 @@ models/monsters/imp/imp_heated
 	flesh
     collision
     blendlight
+    ambientLight
 	renderbump      -size 512 512 -aa 3 models/monsters/imp/imp_local.tga models/monsters/imp/work/imp_hp.lwo
 	bumpmap	        addnormals (models/monsters/imp/imp_local, heightmap (models/monsters/imp/imp_bmp.tga, 6) )
 	specularmap	    models/monsters/imp/imp_s

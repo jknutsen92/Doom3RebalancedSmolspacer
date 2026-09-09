@@ -157,6 +157,13 @@ entityDef	damage_plasmablast {
 	"gib"						"1"
 }
 
+entityDef	damage_heatblast {
+	"damage"					"20"			// Base values
+	"radius"					"10"			// these will be scaled according to mass
+	"push"						"100"
+	"gib"						"1"
+}
+
 entityDef projectile_plasmablast {
 	"spawnclass"				"idProjectile"
 	"mins"						"-6 -6 -4"
