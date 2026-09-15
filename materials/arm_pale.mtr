@@ -1,0 +1,15 @@
+world_arms_pale
+{
+        noselfShadow
+	//noShadows
+		clamp
+
+
+        	diffusemap	models/arms/arm_pale.jpg
+		{
+ 		  blend bumpmap
+          map  addnormals(models/characters/player/arm2_local.jpg, heightmap(models/characters/player/arm2_h.jpg, 3 ) )
+ 		  
+     	}
+                  specularmap	models/characters/player/arm2_s.jpg
+}
