@@ -1,0 +1,17 @@
+plasma_heat_blast {
+	minDistance	5
+	maxDistance	20
+	volume		17
+	unclamped
+
+	sound/weapons/plasmagun/heat_blast.wav
+}
+
+heat_sizzle {
+	minDistance	1
+	maxDistance	10
+	volume		0
+    looping
+	
+	sound/heat/heat_sizzle.wav
+}

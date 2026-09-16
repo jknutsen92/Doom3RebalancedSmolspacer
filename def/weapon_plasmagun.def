@@ -152,9 +152,15 @@ model viewmodel_plasmagun {
 }
 
 entityDef	damage_plasmablast {
-	"damage"					"10"					// "16" smolspacer
+	"damage"					"8"					// "16" smolspacer
 	"smoke_wound_flesh"			"bloodwound.prt"
-	"gib"						"1"
+	"gib"						"0"
+}
+
+entityDef	damage_plasma_splash {
+	"damage"					"2"
+	"radius"					"25"
+	"gib"						"0"
 }
 
 entityDef	damage_heatblast {
@@ -172,6 +178,7 @@ entityDef projectile_plasmablast {
 	"model" 					"models/particles/plasma_bolt/plasma_bolt.lwo"
 
 	"def_damage"				"damage_plasmablast"
+	"def_splash_damage"			"damage_plasma_splash"
 
 	"launchFromBarrel"			"1"
 	"health"					"0"					// amount of damage projectile can take if damaged (0 means it can't be destroyed)

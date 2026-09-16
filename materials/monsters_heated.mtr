@@ -6,9 +6,6 @@ models/monsters/imp/imp_heated
 	unsmoothedTangents
 	noselfshadow
 	flesh
-    collision
-    blendlight
-    ambientLight
 	renderbump      -size 512 512 -aa 3 models/monsters/imp/imp_local.tga models/monsters/imp/work/imp_hp.lwo
 	bumpmap	        addnormals (models/monsters/imp/imp_local, heightmap (models/monsters/imp/imp_bmp.tga, 6) )
 	specularmap	    models/monsters/imp/imp_s
@@ -18,6 +15,26 @@ models/monsters/imp/imp_heated
         color   0.5 * parm11, 0, 0.1 * parm11, 1
         map     lights/fullambient.tga
     }
+    	{	// burning corpse effect
+		if	parm7			// only when dead
+		
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/imp/imp_dis.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 0.3 * (time - parm7)
+	}
+	{	// burning corpse effect
+		if parm7			// only when dead
+
+		// draw the fire burn at a negative polygonOffset, so it is behind the other stages
+		privatePolygonOffset	-1		// stage-only polygon offset
+        blend add	
+        blend gl_one, gl_zero
+		
+		map models/monsters/imp/imp_dis.tga	// replace this with a monster-specific texture
+		alphaTest 0.3 * (time - parm7)
+	}
 }
 
 models/characters/male_npc/security/dsecurity_heated
