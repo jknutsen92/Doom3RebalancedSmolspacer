@@ -410,7 +410,8 @@ entityDef monster_demon_trite {
 	"mass"							"50"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"10"
-	"smoke_heatblast"				"bfg_barrel.prt-mouth"
+	"skin_heated"					"skins/models/monsters/trite_heated.skin"
+	"heatblast_fx"					"fx/heatblast.fx"
 
 	"blockedRadius"					"25"
 	"blockedMoveTime"				"750"

@@ -164,7 +164,8 @@ entityDef monster_demon_mancubus {
 	"mass"   						"800"
 	"heat_decay_rate"				"30"
 	"plasma_heatable"				"1"
-	"smoke_heatblast"				"bfg_barrel.prt-waist"
+	"skin_heated"					"skins/models/monsters/mancubus_heated.skin"
+	"heatblast_fx"					"fx/heatblast.fx"
 	
 	"smoke_wound_metal"				"bulletricochet.prt"
 	"smoke_wound_ricochet"			"bulletricochet.prt"

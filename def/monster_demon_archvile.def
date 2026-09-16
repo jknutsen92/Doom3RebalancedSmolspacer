@@ -177,7 +177,8 @@ entityDef monster_demon_archvile {
 	"mass"   						"350"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"15"
-	"smoke_heatblast"				"bfg_barrel.prt-chest"
+	"skin_heated"					"skins/models/monsters/archvile_heated.skin"
+	"heatblast_fx"					"fx/heatblast.fx"
 
 	"ik_numLegs"					"2"
 	"ik_footSize"					"4"

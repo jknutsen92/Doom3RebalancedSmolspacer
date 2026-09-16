@@ -169,7 +169,8 @@ entityDef monster_demon_hellknight {
 	"pain_threshold"				"25"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"20"
-	"smoke_heatblast"				"bfg_barrel.prt-chest"
+	"skin_heated"					"skins/models/monsters/hellknight_heated.skin"
+	"heatblast_fx"					"fx/heatblast.fx"
 	
 	"burnaway"						"0.50"
 	"smoke_burnParticleSystem"		"burn_imp.prt-chest"

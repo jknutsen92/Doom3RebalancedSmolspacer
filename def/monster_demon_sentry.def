@@ -111,7 +111,8 @@ entityDef monster_demon_sentry {
 	"smoke_wound_metal"				"bulletricochet.prt"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"10"
-	"smoke_heatblast"				"bfg_barrel.prt-hips"
+	"skin_heated"					"skins/models/monsters/sentry_heated.skin"
+	"heatblast_fx"					"fx/heatblast.fx"
 
 	"ik_numLegs"					"4"
 	"ik_footSize"					"0"

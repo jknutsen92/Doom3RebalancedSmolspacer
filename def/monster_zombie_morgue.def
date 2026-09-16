@@ -80,7 +80,8 @@ entityDef monster_zombie_morgue {
 	"mass"							"200"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"15"
-	"smoke_heatblast"				"bfg_barrel.prt-chest"
+	"skin_heated"					"skins/monsters/zombies/morgue_heated.skin"
+	"heatblast_fx"					"fx/heatblast.fx"
 
 	"skin"							"skins/monsters/zombies/morgue.skin"
 	"skin_dropGib"					"skins/monsters/zombies/morguegib.skin"

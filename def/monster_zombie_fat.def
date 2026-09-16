@@ -191,7 +191,8 @@ entityDef monster_zombie_fat {
 	"mass"							"200"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"10"
-	"smoke_heatblast"				"bfg_barrel.prt-chest"
+	"skin_heated"					"skins/monsters/zombies/zfat_heated.skin"
+	"heatblast_fx"					"fx/heatblast.fx"
 	
 	"blockedRadius"					"10"
 	"blockedMoveTime"				"1200"

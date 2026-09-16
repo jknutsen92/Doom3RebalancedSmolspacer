@@ -167,7 +167,8 @@ entityDef monster_demon_wraith {
 	"mass"   						"250"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"25"
-	"smoke_heatblast"				"bfg_barrel.prt-root"
+	"skin_heated"					"skins/models/monsters/wraith_heated.skin"
+	"heatblast_fx"					"fx/heatblast.fx"
 	
 	"burnaway"						"0.50"
 	"smoke_burnParticleSystem"		"burn_imp.prt-root"

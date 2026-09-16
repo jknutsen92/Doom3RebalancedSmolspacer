@@ -150,9 +150,9 @@ entityDef monster_demon_cherub {
 	"smoke_burnParticleSystem"		"burn_imp.prt-chest"
 	"mass"							"100"
 	"plasma_heatable"				"1"
-	"heat_decay_rate"				"20"
-	"smoke_heatblast"				"bfg_barrel.prt-chest"
-	
+	"skin_heated"					"skins/models/monsters/cherub_heated.skin"
+	"heatblast_fx"					"fx/heatblast.fx"
+
 	"chatter_combat_min"			"1"
 	"chatter_combat_max"			"3"
 

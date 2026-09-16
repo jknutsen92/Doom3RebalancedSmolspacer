@@ -297,7 +297,8 @@ entityDef monster_zsec_shotgun {
 	"mass"							"200"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"15"
-	"smoke_heatblast"				"bfg_barrel.prt-chest"
+	"skin_heated"					"skins/monsters/zombies/zsecurity_shotgun_heated.skin"
+	"heatblast_fx"					"fx/heatblast.fx"
 
 	"skin_dropGib"					"skins/monsters/zombies/securitygib.skin"
 	"def_dropGibItem1"				"moveable_item_head_pork"

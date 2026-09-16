@@ -93,10 +93,11 @@ entityDef monster_flying_cacodemon {
 	"fly_roll_scale"				"100"
 	"fly_pitch_scale"				"45"
 	"fly_pitch_max"					"15"
-	"mass"							"800"
+	"mass"							"600"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"20"
-	"smoke_heatblast"				"bfg_barrel.prt-Head"
+	"skin_heated"					"skins/models/monsters/cacodemon_heated.skin"
+	"heatblast_fx"					"fx/heatblast.fx"
 	
 	"bone_flytilt"					"Body2"
 

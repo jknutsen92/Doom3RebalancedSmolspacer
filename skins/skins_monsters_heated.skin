@@ -1,11 +1,150 @@
-skin skins/models/monsters/imp_heated {
-	models/monsters/imp/imp                         models/monsters/imp/imp_heated
+// monster_boss_vagary.def
+skin skins/models/monsters/vagary_heated {
+	models/monsters/vagary/vagary					models/monsters/vagary/vagary_heated
 }
 
-skin skins/monsters/zombies/zsecurity_pistol_heated {
-	models/characters/male_npc/security/security    models/characters/male_npc/security/dsecurity_heated
+// monster_demon_archvile.def
+skin skins/models/monsters/archvile_heated {
+	models/monsters/archvile/archvile2				models/monsters/archvile/archvile2_heated
+}
 
+// monster_demon_cherub.def
+skin skins/models/monsters/cherub_heated {
+	models/monsters/cherub/cherub					models/monsters/cherub/cherub_heated
+}
+
+// monster_demon_hellknight.def
+skin skins/models/monsters/hellknight_heated {
+	models/monsters/hellknight/hellknight			models/monsters/hellknight/hellknight_heated
+}
+
+// monster_demon_imp.def
+skin skins/models/monsters/imp_heated {
+	models/monsters/imp/imp                   		models/monsters/imp/imp_heated
+}
+
+// monster_demon_maggot.def
+skin skins/models/monsters/maggot_heated {
+	models/monsters/maggot/maggot3					models/monsters/maggot/maggot3_heated
+}
+
+// monster_demon_mancubus.def
+skin skins/models/monsters/mancubus_heated {
+	models/monsters/mancubus/mancubus				models/monsters/mancubus/mancubus_heated
+}
+
+// monster_demon_pinky.def
+skin skins/models/monsters/pinky_heated {
+	models/monsters/pinky/pinky						models/monsters/pinky/pinky_heated
+	models/monsters/pinky/pinky_metal				models/monsters/pinky/pinky_metal_heated
+}
+
+// monster_demon_revenant.def
+skin skins/models/monsters/revenant_heated {
+	models/monsters/revenant/revenant				models/monsters/revenant/revenant_heated
+	models/monsters/revenant/revenant2				models/monsters/revenant/revenant2_heated
+}
+
+// monster_demon_sentry.def
+skin skins/models/monsters/sentry_heated {
+	models/monsters/sentry/sentry					models/monsters/sentry/sentry_heated
+}
+
+// monster_demon_trite.def
+skin skins/models/monsters/trite_heated {
+	models/monsters/trite/trite						models/monsters/trite/trite_heated
+}
+
+// monster_demon_wraith.def
+skin skins/models/monsters/wraith_heated {
+	models/monsters/wraith/wraith					models/monsters/wraith/wraith_heated
+}
+
+// monster_flying_cacodemon.def
+skin skins/models/monsters/cacodemon_heated {
+	models/monsters/cacodemon/cacodemon				models/monsters/cacodemon/cacodemon_heated
+}
+
+// monster_zombie_bernie.def
+skin skins/monsters/zombies/bernie_heated {
+	models/monsters/zombie/bernie/bernie			models/monsters/zombie/bernie/bernie_heated
+	models/monsters/skeleton/skeleton01 			textures/common/nodraw
+}
+
+// monster_zombie_boney.def
+skin skins/monsters/zombies/boney_heated {
+	models/monsters/zombie/boney/boney				models/monsters/zombie/boney/boney_heated
+	models/monsters/skeleton/skeleton01 			textures/common/nodraw
+}
+
+// monster_zombie_commando.def
+skin skins/monsters/zombies/commando_heated {
+	models/monsters/zombie/commando/com1_d			models/monsters/zombie/commando/com1_d_heated
+}
+
+// monster_zombie_fat.def
+skin skins/monsters/zombies/zfat_heated {
+	models/monsters/zombie/fatty/fatty				models/monsters/zombie/fatty/fatty_heated
+}
+
+// monster_zombie_jumpsuit.def
+skin skins/monsters/zombies/jumpsuit_heated {
+	models/characters/male_npc/jumpsuit/jumpsuit 	models/characters/male_npc/jumpsuit/djumpsuit
+}
+
+// monster_zombie_maint.def
+skin skins/monsters/zombies/zmaint_heated {
+	models/monsters/zombie/zombie01/zhead02 		models/monsters/zombie/zombie01/zhead02_heated
+	models/monsters/zombie/zombie01/ztorso01 		models/monsters/zombie/zombie01/ztorso01_heated
+	models/monsters/zombie/zombie01/zarms01 		models/monsters/zombie/zombie01/zarms01_heated
+	models/monsters/zombie/zombie01/zlegs01 		models/monsters/zombie/zombie01/zlegs01_heated
+	models/monsters/skeleton/skeleton01 			textures/common/nodraw
+	models/monsters/zombie/zombie01/zback01 		textures/common/nodraw
+}
+
+// monster_zombie_morgue.def
+skin skins/monsters/zombies/morgue_heated {
+	models/monsters/zombie/morgue/morgue			models/monsters/zombie/morgue/morgue_heated
+}
+
+// monster_zombie_sawyer.def
+skin skins/monsters/zombies/sawyer_heated {
+	models/monsters/zombie/sawyer/sawyer			models/monsters/zombie/sawyer/sawyer_heated
+	models/monsters/skeleton/skeleton01 			textures/common/nodraw
+}
+
+// monster_zsec_machinegun.def
+skin skins/monsters/zombies/zsecurity_machinegun_heated {
+	models/characters/male_npc/security/security 	models/characters/male_npc/security/dsecurity_heated
+	models/weapons/pistol/w_pistol 					textures/common/nodraw
+	models/weapons/shotgun/w_shotgun2 				textures/common/nodraw
+	models/monsters/zsecurity/zsheild 				textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass 		textures/common/nodraw
+	models/monsters/skeleton/skeleton01 			textures/common/nodraw
+}
+
+// monster_zsec_pistol.def
+skin skins/monsters/zombies/zsecurity_pistol_heated {
+	models/characters/male_npc/security/dsecurity   models/characters/male_npc/security/dsecurity_heated
 	models/monsters/zsecurity/zsheild               textures/common/nodraw
 	models/monsters/zsecurity/zsheild_glass         textures/common/nodraw
 	models/monsters/skeleton/skeleton01             textures/common/nodraw
+}
+
+// monster_zsec_shield.def
+skin skins/monsters/zombies/zsecurity_helmet_pistol_shield_heated {
+	models/characters/male_npc/security/security 	models/characters/male_npc/security/dsecurity_heated
+	models/weapons/shotgun/w_shotgun2 				textures/common/nodraw
+	models/weapons/machinegun/w_machinegun 			textures/common/nodraw
+	models/monsters/skeleton/skeleton01 			textures/common/nodraw
+}
+
+// monster_zsec_shotgun.def
+skin skins/monsters/zombies/zsecurity_shotgun_heated {
+	models/characters/male_npc/security/security 	models/characters/male_npc/security/dsecurity_heated
+	models/weapons/pistol/w_pistol 					textures/common/nodraw
+	models/weapons/machinegun/w_machinegun 			textures/common/nodraw
+	models/monsters/zsecurity/zsheild 				textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass 		textures/common/nodraw
+	models/monsters/skeleton/skeleton01 			textures/common/nodraw
 }
