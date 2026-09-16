@@ -193,7 +193,7 @@ entityDef monster_zombie_sawyer {
 	"attack_accuracy"				"0"
 	"mass"							"200"
 	"plasma_heatable"				"1"
-	"heat_decay_rate"				"15"
+	"heat_decay_rate"				"50"
 	"skin_heated"					"skins/monsters/zombies/sawyer_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 	

@@ -80,6 +80,13 @@ skin skins/monsters/zombies/boney_heated {
 // monster_zombie_commando.def
 skin skins/monsters/zombies/commando_heated {
 	models/monsters/zombie/commando/com1_d			models/monsters/zombie/commando/com1_d_heated
+	models/monsters/tentacle/dp_tentacle			models/monsters/tentacle/dp_tentacle_heated
+}
+
+skin skins/monsters/zombies/commando_cgun_heated {
+	models/monsters/zombie/commando/com1_d			models/monsters/zombie/commando/com1_d_heated
+	models/weapons/chaingun/band					models/weapons/chaingun/band_heated
+	models/weapons/chaingun/w_chaingun				models/weapons/chaingun/w_chaingun_heated
 }
 
 // monster_zombie_fat.def

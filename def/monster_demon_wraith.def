@@ -166,7 +166,7 @@ entityDef monster_demon_wraith {
 	"damage_scale head"				"2"
 	"mass"   						"250"
 	"plasma_heatable"				"1"
-	"heat_decay_rate"				"25"
+	"heat_decay_rate"				"80"
 	"skin_heated"					"skins/models/monsters/wraith_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 	

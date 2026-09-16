@@ -218,7 +218,7 @@ entityDef projectile_chaingunbullet {
 }
 
 entityDef	damage_bullet_chaingun {
-	"damage"			"16"
+	"damage"			"15"
 	"kickDir"			"1 0 0"
 
 	"mtr_blob"			"genericDamage"

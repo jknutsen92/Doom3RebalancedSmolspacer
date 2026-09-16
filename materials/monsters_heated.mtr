@@ -17,7 +17,7 @@ models/monsters/vagary/vagary_heated
 		blend	gl_zero, gl_one			// don't draw anything
 		
 		map models/monsters/vagary/vagary_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.05 + 0.3 * (time - parm7)
+		alphaTest 0.05 + 3.6 * (time - parm7)
 	}
 	{	// burning corpse effect
 		if parm7			// only when dead
@@ -28,7 +28,7 @@ models/monsters/vagary/vagary_heated
         blend gl_one, gl_zero
 		
 		map models/monsters/vagary/vagary_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.3 * (time - parm7)
+		alphaTest 3.6 * (time - parm7)
 	}
 	renderbump  -size 1024 1024 -trace 0.1 -colorMap -aa 2  models/monsters/vagary/vagary_local.tga models/monsters/vagary/vagary_hi.lwo
 	diffusemap	models/monsters/vagary/vagary.tga
@@ -55,7 +55,7 @@ models/monsters/archvile/archvile2_heated {
 		blend	gl_zero, gl_one			// don't draw anything
 		
 		map models/monsters/archvile/archvile2_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.05 + 0.3 * (time - parm7)
+		alphaTest 0.05 + 3.6 * (time - parm7)
 	}
 	{	// burning corpse effect
 		if parm7			// only when dead
@@ -66,7 +66,7 @@ models/monsters/archvile/archvile2_heated {
       	blend gl_one, gl_zero
 		
 		map models/monsters/archvile/archvile2_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.3 * (time - parm7)
+		alphaTest 3.6 * (time - parm7)
 	}
     diffusemap	    models/monsters/archvile/archvile2.tga
     bumpmap		addnormals(models/monsters/archvile/archvile2_local.tga, heightmap(models/monsters/archvile/archvile2_h.tga, 3) )
@@ -87,7 +87,7 @@ models/monsters/cherub/cherub_heated
 		blend	gl_zero, gl_one			// don't draw anything
 		
 		map models/monsters/cherub/cherub2_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.05 + 0.3 * (time - parm7)
+		alphaTest 0.05 + 3.6 * (time - parm7)
 	}
 	{	// burning corpse effect
 		if parm7			// only when dead
@@ -98,7 +98,7 @@ models/monsters/cherub/cherub_heated
         blend gl_one, gl_zero
 		
 		map models/monsters/cherub/cherub2_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.3 * (time - parm7)
+		alphaTest 3.6 * (time - parm7)
 	}
     diffusemap	    models/monsters/cherub/cherub.tga
     bumpmap		addnormals(models/monsters/cherub/cherub_local.tga, heightmap(models/monsters/cherub/cherub_h.tga, 4) )
@@ -125,7 +125,7 @@ models/monsters/hellknight/hellknight_heated
 		blend	gl_zero, gl_one			// don't draw anything
 		
 		map models/monsters/hellknight/hellknight_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.05 + 0.3 * (time - parm7)
+		alphaTest 0.05 + 3.6 * (time - parm7)
 	}
 	{	// burning corpse effect
 		if parm7			// only when dead
@@ -136,7 +136,7 @@ models/monsters/hellknight/hellknight_heated
         blend gl_one, gl_zero
 		
 		map models/monsters/hellknight/hellknight_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.3 * (time - parm7)
+		alphaTest 3.6 * (time - parm7)
 	}
     diffusemap	    models/monsters/hellknight/hellknight.tga
     bumpmap		addnormals(models/monsters/hellknight/hellknight_local.tga, heightmap(models/monsters/hellknight/hellknight_h.tga, 10 ) )
@@ -170,7 +170,7 @@ models/monsters/imp/imp_heated
 		blend	gl_zero, gl_one			// don't draw anything
 		
 		map models/monsters/imp/imp_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.05 + 0.3 * (time - parm7)
+		alphaTest 0.05 + 3.6 * (time - parm7)
 	}
 	{	// burning corpse effect
 		if parm7			// only when dead
@@ -181,7 +181,7 @@ models/monsters/imp/imp_heated
         blend gl_one, gl_zero
 		
 		map models/monsters/imp/imp_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.3 * (time - parm7)
+		alphaTest 3.6 * (time - parm7)
 	}
 }
 
@@ -201,7 +201,7 @@ models/monsters/maggot/maggot3_heated
 		blend	gl_zero, gl_one			// don't draw anything
 		
 		map models/monsters/maggot/maggot3_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.05 + 0.3 * (time - parm7)
+		alphaTest 0.05 + 3.6 * (time - parm7)
 	}
 	{	// burning corpse effect
 		if parm7			// only when dead
@@ -212,7 +212,7 @@ models/monsters/maggot/maggot3_heated
         blend gl_one, gl_zero
 		
 		map models/monsters/maggot/maggot3_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.3 * (time - parm7)
+		alphaTest 3.6 * (time - parm7)
 	}
     diffusemap	    models/monsters/maggot/maggot3_d.tga
     bumpmap		addnormals(models/monsters/maggot/maggot3_local.tga, heightmap(models/monsters/maggot/maggot3_h.tga, 9 ) )
@@ -238,7 +238,7 @@ models/monsters/mancubus/mancubus_heated
 		blend	gl_zero, gl_one			// don't draw anything
 		
 		map models/monsters/mancubus/mancubus_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.05 + 0.3 * (time - parm7)
+		alphaTest 0.05 + 3.6 * (time - parm7)
 	}
 	{	// burning corpse effect
 		if parm7			// only when dead
@@ -249,7 +249,7 @@ models/monsters/mancubus/mancubus_heated
         blend gl_one, gl_zero
 		
 		map models/monsters/mancubus/mancubus_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.3 * (time - parm7)
+		alphaTest 3.6 * (time - parm7)
 	}
 	forceOverlays
 	diffusemap models/monsters/mancubus/mancubus.tga
@@ -276,7 +276,7 @@ models/monsters/pinky/pinky_metal_heated
 		blend	gl_zero, gl_one			// don't draw anything
 		
 		map models/monsters/pinky/pinky_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.05 + 0.3 * (time - parm7)
+		alphaTest 0.05 + 3.6 * (time - parm7)
 	}
 	{	// burning corpse effect
 		if parm7			// only when dead
@@ -287,7 +287,7 @@ models/monsters/pinky/pinky_metal_heated
         blend gl_one, gl_zero
 		
 		map models/monsters/pinky/pinky_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.3 * (time - parm7)
+		alphaTest 3.6 * (time - parm7)
 	}
 	bumpmap	addnormals( models/monsters/pinky/pinky_local.tga, heightmap( models/monsters/pinky/pinky_b.tga, 9 ) )
 	diffusemap	models/monsters/pinky/pinky_d.tga	
@@ -313,7 +313,7 @@ models/monsters/pinky/pinky_heated
 		blend	gl_zero, gl_one			// don't draw anything
 		
 		map models/monsters/pinky/pinky_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.05 + 0.3 * (time - parm7)
+		alphaTest 0.05 + 3.6 * (time - parm7)
 	}
 	{	// burning corpse effect
 		if parm7			// only when dead
@@ -324,7 +324,7 @@ models/monsters/pinky/pinky_heated
         blend gl_one, gl_zero
 		
 		map models/monsters/pinky/pinky_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.3 * (time - parm7)
+		alphaTest 3.6 * (time - parm7)
 	}
 	forceOverlays
 	bumpmap	addnormals( models/monsters/pinky/pinky_local.tga, heightmap( models/monsters/pinky/pinky_b.tga, 4 ) )
@@ -351,7 +351,7 @@ models/monsters/revenant/revenant_heated
 		blend	gl_zero, gl_one			// don't draw anything
 		
 		map models/monsters/revenant/revenant_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.05 + 0.3 * (time - parm7)
+		alphaTest 0.05 + 3.6 * (time - parm7)
 	}
 	{	// burning corpse effect
 		if parm7			// only when dead
@@ -362,7 +362,7 @@ models/monsters/revenant/revenant_heated
 		blend gl_one, gl_zero
 		
 		map models/monsters/revenant/revenant_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.3 * (time - parm7)
+		alphaTest 3.6 * (time - parm7)
 	}	
     diffusemap	models/monsters/revenant/revenant.tga
     bumpmap		addnormals(models/monsters/revenant/revenant_local.tga, heightmap(models/monsters/revenant/revenant_h.tga, 2 ) )
@@ -403,6 +403,7 @@ models/monsters/revenant/revenant2_heated
         //rgb		rev2table[ time * .1 ]
     }
 	{
+        if ( parm7 == 0 )
         blend   add
         color   0.5 * parm11, 0, 0.1 * parm11, 1
         map     lights/fullambient.tga
@@ -468,7 +469,7 @@ models/monsters/wraith/wraith_heated
 		blend	gl_zero, gl_one			// don't draw anything
 		
 		map models/monsters/wraith/wraith_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.05 + 0.3 * (time - parm7)
+		alphaTest 0.05 + 3.6 * (time - parm7)
 	}
 	{	// burning corpse effect
 		if parm7			// only when dead
@@ -479,7 +480,7 @@ models/monsters/wraith/wraith_heated
 		blend gl_one, gl_zero
 		
 		map models/monsters/wraith/wraith_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.3 * (time - parm7)
+		alphaTest 3.6 * (time - parm7)
 	}
     diffusemap	   models/monsters/wraith/wraith.tga
     bumpmap		addnormals(models/monsters/wraith/wraith_local.tga, heightmap(models/monsters/wraith/wraith_h.tga, 3 ) )
@@ -507,7 +508,7 @@ models/monsters/cacodemon/cacodemon_heated
 		blend	gl_zero, gl_one			// don't draw anything
 		
 		map models/monsters/cacodemon/cacodemon_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.05 + 0.3 * (time - parm7)
+		alphaTest 0.05 + 3.6 * (time - parm7)
 	}
 	{	// burning corpse effect
 		if parm7			// only when dead
@@ -518,7 +519,7 @@ models/monsters/cacodemon/cacodemon_heated
 		blend gl_one, gl_zero
 		
 		map models/monsters/cacodemon/cacodemon_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.3 * (time - parm7)
+		alphaTest 3.6 * (time - parm7)
 	}	
 	{
 		blend	bumpmap
@@ -611,7 +612,7 @@ models/monsters/zombie/commando/com1_d_heated
 		blend	gl_zero, gl_one			// don't draw anything
 		
 		map models/monsters/zombie/commando/com1_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.05 + 0.3 * (time - parm7)
+		alphaTest 0.05 + 3.6 * (time - parm7)
 	}
 	{	// burning corpse effect
 		if parm7			// only when dead
@@ -622,7 +623,7 @@ models/monsters/zombie/commando/com1_d_heated
 		blend gl_one, gl_zero
 		
 		map models/monsters/zombie/commando/com1_dis.tga	// replace this with a monster-specific texture
-		alphaTest 0.3 * (time - parm7)
+		alphaTest 3.6 * (time - parm7)
 	}	
     diffusemap	models/monsters/zombie/commando/com1_d.tga
     bumpmap		addnormals( models/monsters/zombie/commando/com1_local.tga, heightmap( models/monsters/zombie/commando/com1_h.tga, 7 ) )
@@ -631,6 +632,90 @@ models/monsters/zombie/commando/com1_d_heated
         blend   add
         color   0.5 * parm11, 0, 0.1 * parm11, 1
         map     lights/fullambient.tga
+    }
+}
+
+models/monsters/tentacle/dp_tentacle_heated
+{
+    noSelfShadow
+	clamp
+	flesh
+	{	// burning corpse effect
+		if	parm7			// only when dead
+		
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/tentacle/dp_tentacle_dis.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 3.6 * (time - parm7)
+	}
+	{	// burning corpse effect
+		if parm7			// only when dead
+
+		// draw the fire burn at a negative polygonOffset, so it is behind the other stages
+		privatePolygonOffset	-1		// stage-only polygon offset
+	      blend add	
+      	blend gl_one, gl_zero
+		
+		map models/monsters/tentacle/dp_tentacle_dis.tga	// replace this with a monster-specific texture
+		alphaTest 3.6 * (time - parm7)
+	}
+	renderbump  -size 128 256  -aa 2  models/monsters/tentacle/dp_tentacle_local.tga models/monsters/tentacle/dp_tentacle_hi.lwo
+    diffusemap	models/monsters/tentacle/dp_tentacle.tga
+	bumpmap		addnormals( models/monsters/tentacle/dp_tentacle_local.tga, heightmap( models/monsters/tentacle/dp_tentacle_h.tga, 7 ) )
+    specularmap	models/monsters/tentacle/dp_tentacle_s.tga
+	{
+        blend   add
+        color   0.5 * parm11, 0, 0.1 * parm11, 1
+        map     lights/fullambient.tga
+    }
+}
+
+models/weapons/chaingun/band_heated
+{
+	noshadows
+	noselfShadow
+    transluscent
+	{       
+        if (parm7 == 0)
+      	blend	    diffuseMap 
+		map	        models/weapons/chaingun/band.tga
+		alphaTest   .5
+	}   		
+    {
+        if (parm7 == 0)
+        blend       bumpmap
+        map         models/weapons/chaingun/band_local.tga
+    }
+    {
+        if (parm7 == 0)
+        blend       specularmap
+        map         models/weapons/chaingun/band_s.tga
+    }
+}
+
+
+models/weapons/chaingun/w_chaingun_heated
+{
+	ricochet
+    noselfShadow
+	unsmoothedTangents
+    transluscent
+	renderbump  -size 512 512 -colorMap -aa 2  models/weapons/chaingun/w_chaingun_local.tga models/weapons/chaingun/w_chaingun_hi.lwo
+    {
+        if (parm7 == 0)
+        blend   diffusemap
+        map     models/weapons/chaingun/w_chaingun.tga
+    }
+    {
+        if (parm7 == 0)
+        blend   bumpmap
+        map     models/weapons/chaingun/w_chaingun_local.tga
+    }
+    {
+        if (parm7 == 0)
+        blend   specularmap
+        map     models/weapons/chaingun/w_chaingun_s.tga
     }
 }
 

@@ -362,7 +362,7 @@ entityDef monster_zsec_pistol {
 	"turn_rate"						"360"
 	"mass"							"150"
 	"plasma_heatable"				"1"
-	"heat_decay_rate"				"15"
+	"heat_decay_rate"				"20"
 	"smoke_heatblast"				"bfg_barrel.prt-chest"
 	"skin_heated"					"skins/monsters/zombies/zsecurity_pistol_heated.skin"
 

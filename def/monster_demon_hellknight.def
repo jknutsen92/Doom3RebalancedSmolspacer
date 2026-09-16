@@ -168,7 +168,7 @@ entityDef monster_demon_hellknight {
 	"mass"							"600"
 	"pain_threshold"				"25"
 	"plasma_heatable"				"1"
-	"heat_decay_rate"				"20"
+	"heat_decay_rate"				"105"
 	"skin_heated"					"skins/models/monsters/hellknight_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 	
