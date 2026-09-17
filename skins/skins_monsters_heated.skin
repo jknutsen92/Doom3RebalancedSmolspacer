@@ -83,12 +83,6 @@ skin skins/monsters/zombies/commando_heated {
 	models/monsters/tentacle/dp_tentacle			models/monsters/tentacle/dp_tentacle_heated
 }
 
-skin skins/monsters/zombies/commando_cgun_heated {
-	models/monsters/zombie/commando/com1_d			models/monsters/zombie/commando/com1_d_heated
-	models/weapons/chaingun/band					models/weapons/chaingun/band_heated
-	models/weapons/chaingun/w_chaingun				models/weapons/chaingun/w_chaingun_heated
-}
-
 // monster_zombie_fat.def
 skin skins/monsters/zombies/zfat_heated {
 	models/monsters/zombie/fatty/fatty				models/monsters/zombie/fatty/fatty_heated
@@ -132,7 +126,9 @@ skin skins/monsters/zombies/zsecurity_machinegun_heated {
 
 // monster_zsec_pistol.def
 skin skins/monsters/zombies/zsecurity_pistol_heated {
-	models/characters/male_npc/security/dsecurity   models/characters/male_npc/security/dsecurity_heated
+	models/characters/male_npc/security/dsecurity   textures/common/nodraw //models/characters/male_npc/security/dsecurity_heated
+	models/monsters/zsecurity/zsechead4				models/monsters/zsecurity/zsechead4_heated // textures/common/nodraw //models/monsters/zsecurity/zsechead4_heated
+	models/monsters/zsecurity/zsechead				textures/common/nodraw
 	models/monsters/zsecurity/zsheild               textures/common/nodraw
 	models/monsters/zsecurity/zsheild_glass         textures/common/nodraw
 	models/monsters/skeleton/skeleton01             textures/common/nodraw

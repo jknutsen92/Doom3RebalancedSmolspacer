@@ -152547,7 +152547,7 @@ patchDef2
 "s_mindistance" "5.000000"
 "s_omni" "1"
 "s_shader" "sound/stingers/mc2_flamesting.wav"
-"s_volume" "15"
+"s_volume" "0"
 "s_waitfortrigger" "1"
 }
 // entity 2398

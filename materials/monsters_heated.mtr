@@ -671,54 +671,6 @@ models/monsters/tentacle/dp_tentacle_heated
     }
 }
 
-models/weapons/chaingun/band_heated
-{
-	noshadows
-	noselfShadow
-    transluscent
-	{       
-        if (parm7 == 0)
-      	blend	    diffuseMap 
-		map	        models/weapons/chaingun/band.tga
-		alphaTest   .5
-	}   		
-    {
-        if (parm7 == 0)
-        blend       bumpmap
-        map         models/weapons/chaingun/band_local.tga
-    }
-    {
-        if (parm7 == 0)
-        blend       specularmap
-        map         models/weapons/chaingun/band_s.tga
-    }
-}
-
-
-models/weapons/chaingun/w_chaingun_heated
-{
-	ricochet
-    noselfShadow
-	unsmoothedTangents
-    transluscent
-	renderbump  -size 512 512 -colorMap -aa 2  models/weapons/chaingun/w_chaingun_local.tga models/weapons/chaingun/w_chaingun_hi.lwo
-    {
-        if (parm7 == 0)
-        blend   diffusemap
-        map     models/weapons/chaingun/w_chaingun.tga
-    }
-    {
-        if (parm7 == 0)
-        blend   bumpmap
-        map     models/weapons/chaingun/w_chaingun_local.tga
-    }
-    {
-        if (parm7 == 0)
-        blend   specularmap
-        map     models/weapons/chaingun/w_chaingun_s.tga
-    }
-}
-
 // monster_zombie_fat.def
 models/monsters/zombie/fatty/fatty_heated
 {
@@ -911,7 +863,6 @@ models/characters/male_npc/security/dsecurity_heated
     {
         blend   add
         color   0.5 * parm11, 0, 0.1 * parm11, 1
-        // color   1, 0, 0.4, 1
         map     lights/fullambient.tga
     }
     diffusemap	  models/characters/male_npc/security/dsecurity.tga
@@ -921,6 +872,26 @@ models/characters/male_npc/security/dsecurity_heated
         
     }
     specularmap	models/characters/male_npc/security/dsecurity_s.tga
+}
+
+models/monsters/zsecurity/zsechead4_heated
+{
+    noselfShadow
+	flesh
+	clamp
+	renderbump  -size 512 512 -trace 0.07 -colorMap -aa 2  models/monsters/zsecurity/zsechead4_local.tga models/monsters/zsecurity/zsechead4_hi.lwo
+	diffusemap	    models/monsters/zsecurity/zsechead4.tga
+	{
+		blend bumpmap
+		map  addnormals(models/monsters/zsecurity/zsechead4_local.tga, heightmap(models/monsters/zsecurity/zsechead4_h.tga, 8 ) )
+		
+	}
+	specularmap		models/monsters/zsecurity/zsechead4_s.tga
+    {
+        blend   add
+        color   0.5 * parm11, 0, 0.1 * parm11, 1
+        map     lights/fullambient.tga
+    }
 }
 
 // monster_zsec_shield.def
