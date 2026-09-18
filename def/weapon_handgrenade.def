@@ -138,7 +138,7 @@ entityDef damage_grenadeDirect {
 
 entityDef damage_grenadeSplash {
 	"damage"					"150"
-	"radius"					"175"
+	"radius"					"225"
 	"knockback"					"80"
 	"push"						"10000"
 	"attackerDamageScale"		"0.2"
