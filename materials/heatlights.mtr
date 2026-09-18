@@ -6,7 +6,6 @@ lights/heatglow {
         forceHighQuality
         map     lights/falloff_exp2.tga
         color   0.9 * parm11, 0, 0.3 * parm11, 1
-        // color 0.9, 0, 0.3, 1
         zeroclamp
     }
 }

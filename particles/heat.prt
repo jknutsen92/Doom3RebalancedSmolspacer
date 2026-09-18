@@ -71,7 +71,7 @@ particle particle_heatblast
 		direction 			cone 0.000
 		orientation 		view
 		speed 				"0.000"
-		size 				"0.000" to "250.000"
+		size 				"0.000" to "175.000"
 		aspect 				"1.000"
 		rotation 			"7.000" to "0.000"
 		randomDistribution 	1
@@ -95,7 +95,7 @@ particle particle_heatblast
 		direction 			cone 0.000
 		orientation 		view
 		speed 				"0.000"
-		size 				"39.500" to "400.000"
+		size 				"39.500" to "250.000"
 		aspect 				"1.000"
 		rotation 			"100.000" to "91.000"
 		randomDistribution 	1
@@ -105,7 +105,7 @@ particle particle_heatblast
 		fadeIndex 			0.000
 		color 				1.000 0.000 0.440 1.000
 		fadeColor 			0.000 0.000 0.000 1.000
-		offset 				0.000 0.000 50.000
+		offset 				0.000 0.000 0.000
 		gravity 			world -10.000
 	}
 

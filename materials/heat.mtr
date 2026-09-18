@@ -1,0 +1,15 @@
+textures/haze/heat {
+	noSelfShadow
+	noshadows
+	twosided
+	translucent
+	sort decal
+	{
+		program		heatHazeWithMaskAndVertex.vfp
+		vertexParm		0		1				                        // texture scrolling
+		vertexParm		1		1				                        // magnitude of the distortion
+		fragmentMap		0		_currentRender
+		fragmentMap     1       textures/hell/lava1_local.tga           // the normal map for distortion
+		fragmentMap		2       textures/particles/vpring1_alpha.tga    // the distortion blend map
+	}	
+}

@@ -1,0 +1,84 @@
+particle heatglow_haze
+{
+	{
+		count 				1
+		material 			textures/haze/heat
+		time 				0.500
+		cycles 				0.000
+		timeOffset 			0.000
+		bunching 			0.000
+		distribution 		rect 1.000 1.000 1.000
+		direction 			cone 31.000
+		orientation 		view
+		speed 				"0.000"
+		size 				"100.000" to "150.000"
+		aspect 				"1.000"
+		rotation 			"130.500" to "0.000"
+		randomDistribution 	1
+		boundsExpansion 	0.000
+		fadeIn 				0.100
+		fadeOut 			0.250
+		fadeIndex 			0.000
+		color 				1.000 1.000 1.000 1.000
+		fadeColor 			0.000 0.000 0.000 0.000
+		offset 				0.000 0.000 0.000
+		gravity 			-5.000
+	}
+
+}
+
+particle heatblast_haze
+{
+	{
+		count 				2
+		material 			textures/haze/heat
+		time 				10.000
+		cycles 				0.000
+		timeOffset 			0.000
+		bunching 			1.000
+		distribution 		rect 1.000 1.000 1.000
+		direction 			cone 31.000
+		orientation 		view
+		speed 				"0.000"
+		size 				"100.000" to "300.000"
+		aspect 				"1.000"
+		rotation 			"30.000"// to "0.000"
+		randomDistribution 	1
+		boundsExpansion 	0.000
+		fadeIn 				0.250
+		fadeOut 			0.250
+		fadeIndex 			0.000
+		color 				1.000 1.000 1.000 1.000
+		fadeColor 			0.000 0.000 0.000 0.000
+		offset 				0.000 0.000 0.000
+		gravity 			-8.000
+	}
+}
+
+particle heatblast_haze_large
+{
+	{
+		count 				2
+		material 			textures/haze/heat
+		time 				10.000
+		cycles 				0.000
+		timeOffset 			0.000
+		bunching 			1.000
+		distribution 		rect 1.000 1.000 1.000
+		direction 			cone 31.000
+		orientation 		view
+		speed 				"30.000"
+		size 				"200.000" to "500.000"
+		aspect 				"1.000"
+		rotation 			"0.000" to "0.000"
+		randomDistribution 	1
+		boundsExpansion 	0.000
+		fadeIn 				0.250
+		fadeOut 			0.250
+		fadeIndex 			0.000
+		color 				1.000 1.000 1.000 1.000
+		fadeColor 			0.000 0.000 0.000 0.000
+		offset 				0.000 0.000 0.000
+		gravity 			-8.000
+	}
+}
