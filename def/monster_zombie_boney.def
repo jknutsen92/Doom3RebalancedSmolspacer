@@ -130,7 +130,7 @@ entityDef monster_zombie_boney {
 	"mass"							"200"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"15"
-	"skin_heated"					"skins/monsters/zombies/boney_heated.skin"
+	"body_skin_heated"					"skins/monsters/zombies/boney_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 
 	"skin"							"skins/monsters/zombies/boney.skin"

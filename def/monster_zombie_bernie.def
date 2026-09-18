@@ -124,7 +124,7 @@ entityDef monster_zombie_bernie {
 	"mass"							"200"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"75"											// He's on fire	-smolspacer
-	"skin_heated"					"skins/monsters/zombies/bernie_heated.skin"
+	"body_skin_heated"					"skins/monsters/zombies/bernie_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 
 	"look_min"						"-90 -125 0"

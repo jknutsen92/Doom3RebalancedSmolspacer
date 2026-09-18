@@ -96,7 +96,7 @@ entityDef monster_flying_cacodemon {
 	"mass"							"600"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"60"
-	"skin_heated"					"skins/models/monsters/cacodemon_heated.skin"
+	"body_skin_heated"					"skins/models/monsters/cacodemon_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 	
 	"bone_flytilt"					"Body2"

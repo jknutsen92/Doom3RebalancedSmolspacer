@@ -116,7 +116,7 @@ skin skins/monsters/zombies/sawyer_heated {
 
 // monster_zsec_machinegun.def
 skin skins/monsters/zombies/zsecurity_machinegun_heated {
-	models/characters/male_npc/security/security 	models/characters/male_npc/security/dsecurity_heated
+	models/characters/male_npc/security/dsecurity 	models/characters/male_npc/security/dsecurity_heated
 	models/weapons/pistol/w_pistol 					textures/common/nodraw
 	models/weapons/shotgun/w_shotgun2 				textures/common/nodraw
 	models/monsters/zsecurity/zsheild 				textures/common/nodraw
@@ -126,28 +126,43 @@ skin skins/monsters/zombies/zsecurity_machinegun_heated {
 
 // monster_zsec_pistol.def
 skin skins/monsters/zombies/zsecurity_pistol_heated {
-	models/characters/male_npc/security/dsecurity   textures/common/nodraw //models/characters/male_npc/security/dsecurity_heated
-	models/monsters/zsecurity/zsechead4				models/monsters/zsecurity/zsechead4_heated // textures/common/nodraw //models/monsters/zsecurity/zsechead4_heated
-	models/monsters/zsecurity/zsechead				textures/common/nodraw
+	models/characters/male_npc/security/dsecurity   models/characters/male_npc/security/dsecurity_heated	
 	models/monsters/zsecurity/zsheild               textures/common/nodraw
 	models/monsters/zsecurity/zsheild_glass         textures/common/nodraw
 	models/monsters/skeleton/skeleton01             textures/common/nodraw
 }
 
+skin skins/monsters/zombies/zsecurity_pistol_head_heated {
+	models/monsters/zsecurity/zsechead4				models/monsters/zsecurity/zsechead4_heated
+}
+
 // monster_zsec_shield.def
 skin skins/monsters/zombies/zsecurity_helmet_pistol_shield_heated {
-	models/characters/male_npc/security/security 	models/characters/male_npc/security/dsecurity_heated
+	models/characters/male_npc/security/dsecurity 	models/characters/male_npc/security/dsecurity_heated
+	models/monsters/zsecurity/zsheild				models/monsters/zsecurity/zsheild_heated
 	models/weapons/shotgun/w_shotgun2 				textures/common/nodraw
 	models/weapons/machinegun/w_machinegun 			textures/common/nodraw
 	models/monsters/skeleton/skeleton01 			textures/common/nodraw
 }
 
+skin skins/monsters/zombies/dsechelmet_heated {
+	models/monsters/zsecurity/zsechead2 			models/monsters/zsecurity/dzsechead2_heated
+	models/characters/male_npc/security/gog 		models/characters/male_npc/security/dgog_heated
+}
+
 // monster_zsec_shotgun.def
 skin skins/monsters/zombies/zsecurity_shotgun_heated {
-	models/characters/male_npc/security/security 	models/characters/male_npc/security/dsecurity_heated
+	models/characters/male_npc/security/dsecurity 	models/characters/male_npc/security/dsecurity_heated
+		
 	models/weapons/pistol/w_pistol 					textures/common/nodraw
 	models/weapons/machinegun/w_machinegun 			textures/common/nodraw
 	models/monsters/zsecurity/zsheild 				textures/common/nodraw
 	models/monsters/zsecurity/zsheild_glass 		textures/common/nodraw
 	models/monsters/skeleton/skeleton01 			textures/common/nodraw
+}
+
+skin skins/monsters/zombies/zsecurity_shotgun_head_heated {
+	models/monsters/zsecurity/marsec				models/monsters/zsecurity/marsec_heated
+	models/monsters/zsecurity/zsgogs				models/monsters/zsecurity/zsgogs_heated
+	models/monsters/zsecurity/zsechead				models/monsters/zsecurity/zsechead_heated
 }

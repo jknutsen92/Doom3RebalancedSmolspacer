@@ -854,17 +854,12 @@ models/monsters/zombie/sawyer/sawyer_heated
     }
 }
 
-// monster_zsec
+// monster_zsec_pistol
 models/characters/male_npc/security/dsecurity_heated
 {
     unsmoothedTangents
     noselfShadow
     flesh
-    {
-        blend   add
-        color   0.5 * parm11, 0, 0.1 * parm11, 1
-        map     lights/fullambient.tga
-    }
     diffusemap	  models/characters/male_npc/security/dsecurity.tga
     {
         blend bumpmap
@@ -872,13 +867,17 @@ models/characters/male_npc/security/dsecurity_heated
         
     }
     specularmap	models/characters/male_npc/security/dsecurity_s.tga
+	{
+        blend   add
+        color   0.5 * parm11, 0, 0.1 * parm11, 1
+        map     lights/fullambient.tga
+    }
 }
 
 models/monsters/zsecurity/zsechead4_heated
 {
     noselfShadow
 	flesh
-	clamp
 	renderbump  -size 512 512 -trace 0.07 -colorMap -aa 2  models/monsters/zsecurity/zsechead4_local.tga models/monsters/zsecurity/zsechead4_hi.lwo
 	diffusemap	    models/monsters/zsecurity/zsechead4.tga
 	{
@@ -895,6 +894,111 @@ models/monsters/zsecurity/zsechead4_heated
 }
 
 // monster_zsec_shield.def
+models/monsters/zsecurity/dzsechead2_heated
+{
+    noselfShadow
+	unsmoothedTangents 	
+	metal
+	nooverlays
+	diffusemap	    models/monsters/zsecurity/dzsechead2.tga
+	bumpmap		    models/monsters/zsecurity/zsechead2_local.tga
+	specularmap		models/monsters/zsecurity/dzsechead2_s.tga
+    {
+        blend   add
+        color   0.5 * parm11, 0, 0.1 * parm11, 1
+        map     lights/fullambient.tga
+    }
+}
+
+models/monsters/zsecurity/zsheild_heated
+{
+	renderbump  -size 512 512 -trace 0.07 -colorMap -aa 2  models/monsters/zsecurity/zsheild_local.tga models/monsters/zsecurity/zsheild_hi.lwo
+ 	noselfShadow
+	ricochet
+	{       
+      	blend		diffusemap
+	 	map			models/monsters/zsecurity/zsheild.tga
+	   	alphaTest 	0.5
+	}
+	specularmap 	models/monsters/zsecurity/zsheild_s.tga	
+	bumpmap		addnormals(models/monsters/zsecurity/zsheild_local.tga, heightmap(models/monsters/zsecurity/zsheild_h.tga, 10 ) )
+    {
+        blend   add
+        color   0.5 * parm11, 0, 0.1 * parm11, 1
+        map     lights/fullambient.tga
+    }
+}
+
+models/characters/male_npc/security/dgog_heated
+{
+	noshadows
+	noselfShadow
+	metal
+	renderbump  -size 256 128 -trace 1.1 -colorMap -aa 2  models/characters/male_npc/security/gog_local.tga models/characters/male_npc/security/gog_hi.lwo
+	{
+		blend	add
+		map models/characters/male_npc/security/dgog.tga
+		alphaTest 0.5
+	}
+	specularmap	models/characters/male_npc/security/dgog_s.tga
+	bumpmap	models/characters/male_npc/security/gog_local.tga
+    {
+        blend   add
+        color   0.5 * parm11, 0, 0.1 * parm11, 1
+        map     lights/fullambient.tga
+    }
+}
+
 // monster_zsec_shotgun.def
+models/monsters/zsecurity/marsec_heated
+{
+    noselfShadow
+	translucent
+	nonsolid
+	noimpact
+	noshadows
+	{
+		blend	diffusemap
+		map	models/monsters/zsecurity/marsec.tga		 
+	}
+    {
+        blend   add
+        color   0.5 * parm11, 0, 0.1 * parm11, 1
+        map     lights/fullambient.tga
+    }
+}
 
+models/monsters/zsecurity/zsgogs_heated
+{
+    noselfShadow
+	renderbump  -size 256	256 -trace 0.07 -colorMap -aa 2  models/monsters/zsecurity/zsgogs_local.tga models/monsters/zsecurity/zsgogs_hi.lwo     
+	{
+		blend	diffusemap
+		map	models/monsters/zsecurity/zsgogs.tga
+		alphaTest 0.7
+	}
+	bumpmap		models/monsters/zsecurity/zsgogs_local.tga
+	specularmap		models/monsters/zsecurity/zsgogs_s.tga
+    {
+        blend   add
+        color   0.5 * parm11, 0, 0.1 * parm11, 1
+        map     lights/fullambient.tga
+    }
+}
 
+models/monsters/zsecurity/zsechead_heated
+{
+    noselfShadow
+	unsmoothedTangents
+	metal
+	clamp
+	renderbump  -size 512 512 -trace 0.07 -colorMap -aa 2  models/monsters/zsecurity/zsechead_local.tga models/monsters/zsecurity/zsechead_hi.lwo
+	diffusemap	models/monsters/zsecurity/zsechead.tga
+	bumpmap		addnormals(models/monsters/zsecurity/zsechead_local.tga, heightmap(models/monsters/zsecurity/zsechead_h.tga,7 ) )
+	specularmap		models/monsters/zsecurity/zsechead_s.tga
+    {
+        blend   add
+        color   0.5 * parm11, 0, 0.1 * parm11, 1
+        map     lights/fullambient.tga
+    }
+}

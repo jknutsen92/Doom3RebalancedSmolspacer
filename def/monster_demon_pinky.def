@@ -180,7 +180,7 @@ entityDef monster_demon_pinky {
 	"mass"							"600"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"15"						// Maybe he has a hard time cooling down because of the machinery
-	"skin_heated"					"skins/models/monsters/pinky_heated.skin"
+	"body_skin_heated"					"skins/models/monsters/pinky_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 
 	"look_min"						"-90 -125 0"

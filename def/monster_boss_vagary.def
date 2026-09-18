@@ -147,7 +147,7 @@ entityDef monster_boss_vagary {
 	"burnaway"						"0.50"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"130"
-	"skin_heated"					"skins/models/monsters/vagary_heated.skin"
+	"body_skin_heated"					"skins/models/monsters/vagary_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 
 	"look_min"						"-90 -125 0"

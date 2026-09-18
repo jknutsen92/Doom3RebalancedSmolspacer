@@ -275,7 +275,8 @@ entityDef monster_zsec_shield {
 	"mass"							"250"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"20"
-	"skin_heated"					"skins/monsters/zombies/zsecurity_helmet_pistol_shield_heated.skin"
+	"body_skin_heated"				"skins/monsters/zombies/zsecurity_helmet_pistol_shield_heated.skin"
+	"head_skin_heated"				"skins/monsters/zombies/dsechelmet_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 	
 	"damage_zone head"				"*loneckcontrol"

@@ -377,7 +377,7 @@ entityDef monster_demon_imp {
 	"mass"							"200"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"10"
-	"skin_heated"					"skins/models/monsters/imp_heated.skin"
+	"body_skin_heated"					"skins/models/monsters/imp_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 
 	"burnaway"						".5"

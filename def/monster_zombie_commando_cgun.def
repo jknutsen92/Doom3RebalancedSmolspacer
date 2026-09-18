@@ -789,7 +789,7 @@ entityDef monster_zombie_commando_cgun {
 	"mass"   						"450"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"50"
-	"skin_heated"					"skins/monsters/zombies/commando_heated.skin"
+	"body_skin_heated"					"skins/monsters/zombies/commando_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 
 	"ik_numLegs"					"2"
