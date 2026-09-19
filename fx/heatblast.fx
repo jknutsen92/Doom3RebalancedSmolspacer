@@ -35,11 +35,20 @@ fx fx/heatblast {
     }
     {
         name                "hazeparticle"
+        restart             0
         delay               0.2
-        duration            10
+        duration            6
         particle            "heatblast_haze.prt"
     }
-    // TODO add the heat warping effect
+    {
+        name                "ballburn"
+        delay               0.1
+        restart             0
+        duration            8
+        // offset              0, 0, -8
+        decal               "textures/decals/ballburn01"   
+        size                300
+    }
 }
 
 fx fx/heatblast_large {
@@ -80,8 +89,17 @@ fx fx/heatblast_large {
     {
         name                "hazeparticle"
         delay               0.2
-        duration            10
+        duration            6
         particle            "heatblast_haze_large.prt"
     }
-    // TODO add the heat warping effect
+    {
+        name                "ballburn"
+        delay               0.1
+        restart             0
+        duration            8
+        fadeOut             1
+        offset              0, 0, 10
+        decal               "textures/decals/ballburn01.tga"           
+        size                500
+    }
 }
