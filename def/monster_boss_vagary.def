@@ -218,6 +218,49 @@ entityDef monster_boss_vagary {
 	"snd_headshot_chaingun"			"headshot_auto_flesh"
 	"snd_headshot_rocket"			"headshot_rocket_flesh"
 	"headshot_weakness"				"1"
+
+	// Heatblast gibs
+	"heatgib"						"1"
+	"skin_dropGib"					"skins/monsters/imp_gibbed.skin"
+
+	"def_dropGibItem1"				"moveable_item_head_pork"
+	"dropGibItem1Joint"				"Head"
+
+	"def_dropGibItem2"				"moveable_item_torso_pork"
+	"dropGibItem2Joint"				"Chest"
+
+	"def_dropGibItem3"				"moveable_item_rup_arm_pork"
+	"dropGibItem3Joint"				"Ruparm"
+
+	"def_dropGibItem4"				"moveable_item_left_waist_pork"
+	"dropGibItem4Joint"				"Waist"
+
+	"def_dropGibItem5"				"moveable_item_lup_leg_pork"
+	"dropGibItem5Joint"				"Lknee1"
+
+	"def_dropGibItem6"				"moveable_item_rup_leg_pork"
+	"dropGibItem6Joint"				"Rknee1"
+
+	"def_dropGibItem8"				"moveable_item_pelvis_pork"
+	"dropGibItem8Joint"				"FrontLegs"
+
+	"def_dropGibItem9"				"moveable_item_torso_pork"
+	"dropGibItem9Joint"				"Lbreast"
+
+	"def_dropGibItem10"				"moveable_item_torso_pork"
+	"dropGibItem10Joint"			"Rbreast"
+
+	"def_dropGibItem11"				"moveable_item_lup_leg_pork"
+	"dropGibItem11Joint"			"Lknee2"
+
+	"def_dropGibItem12"				"moveable_item_rup_leg_pork"
+	"dropGibItem12Joint"			"Rknee2"
+
+	"def_dropGibItem13"				"moveable_item_lup_leg_pork"
+	"dropGibItem5Joint"				"Lknee2"
+
+	"def_dropGibItem14"				"moveable_item_rup_leg_pork"
+	"dropGibItem6Joint"				"Rknee2"
 }
 
 entityDef melee_vagLeftClaw {
