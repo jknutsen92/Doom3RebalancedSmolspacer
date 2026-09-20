@@ -206,7 +206,7 @@ entityDef damage_rocketDirect {
 
 entityDef damage_rocketSplash {
 	"damage"					"150"
-	"radius"					"175" //changed by Tim 6-22-04 from 132
+	"radius"					"275" //changed by Tim 6-22-04 from 132
 	"knockback"					"80"
 	"push"						"10000"
 	"attackerDamageScale"		"0.2"

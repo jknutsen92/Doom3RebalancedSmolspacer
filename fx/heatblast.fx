@@ -24,7 +24,7 @@ fx fx/heatblast {
         duration            0.5
         restart             0
         offset              -1, -0.5, 0.2
-        shake               100, 45, 60, 10, 10000
+        shake               500, 45, 60, 10, 10000
     }
     {
         name                "bloodshower"
@@ -34,18 +34,24 @@ fx fx/heatblast {
         offset              0, 0, 16
     }
     {
-        name                "hazeparticle"
+        name                "smoke"
+        delay               0
         restart             0
-        delay               0.2
-        duration            6
-        particle            "heatblast_haze.prt"
+        duration            2
+        fadeOut             1
+        model               "heatblast_burn_imp.prt"
+    }
+    {
+        name                "hazeparticle"
+        delay               0.1
+        duration            5
+        fadeOut             1
+        model               "heatblast_haze.prt"
     }
     {
         name                "ballburn"
-        delay               0.1
-        restart             0
+        delay               0.25
         duration            8
-        // offset              0, 0, -8
         decal               "textures/decals/ballburn01"   
         size                300
     }

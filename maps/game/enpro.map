@@ -148294,11 +148294,11 @@ brushDef3
 "name" "speaker_128"
 "origin" "608 -112 -20"
 "s_global" "1"
+"s_maxdistance" "0.000000"
+"s_mindistance" "0.000000"
 "s_shader" "sound/vo/enpro/comp_haz_dor_closed.wav"
 "s_volume" "5"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
-"s_mindistance" "0.000000"
 }
 // entity 137
 {
@@ -148341,10 +148341,10 @@ brushDef3
 "name" "speaker_126"
 "origin" "-1892 476 -48"
 "s_global" "1"
-"s_shader" "sound/vo/enpro/comp_service_bridge.wav"
-"s_waitfortrigger" "1"
 "s_maxdistance" "0.000000"
 "s_mindistance" "0.000000"
+"s_shader" "sound/vo/enpro/comp_service_bridge.wav"
+"s_waitfortrigger" "1"
 }
 // entity 141
 {
@@ -148643,11 +148643,11 @@ brushDef3
 "name" "speaker_112"
 "origin" "-688 4432 -152"
 "s_global" "1"
+"s_maxdistance" "0.000000"
+"s_mindistance" "0.000000"
 "s_shader" "sound/vo/enpro/comp_rod_offline.wav"
 "s_volume" "8"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
-"s_mindistance" "0.000000"
 }
 // entity 169
 {
@@ -151031,6 +151031,7 @@ brushDef3
 "no_idle_chatter" "1"
 "origin" "2908 -365 -128"
 "trigger" "1"
+"plasma_heatable" "1"
 }
 // entity 274
 {
@@ -151096,6 +151097,7 @@ patchDef2
 "angle" "135"
 "origin" "2420 -379 -128"
 "trigger" "1"
+"plasma_heatable" "1"
 }
 // entity 281
 {
@@ -154983,6 +154985,7 @@ brushDef3
 "angle" "135"
 "origin" "-1312 4288 -352"
 "trigger" "1"
+"plasma_heatable" "1"
 }
 // entity 388
 {
@@ -156147,6 +156150,7 @@ brushDef3
 "angle" "180"
 "origin" "2535 280 -128"
 "trigger" "1"
+"plasma_heatable" "1"
 }
 // entity 462
 {
@@ -174399,9 +174403,9 @@ brushDef3
 "name" "speaker_90"
 "angle" "355.918579"
 "origin" "903.04 5.05 -58.75"
-"s_shader" "sound/chris/wavs/Chris_beds_1/Solid_Buzz_hilo_drone.wav"
 "s_maxdistance" "0.000000"
 "s_mindistance" "0.000000"
+"s_shader" "sound/chris/wavs/Chris_beds_1/Solid_Buzz_hilo_drone.wav"
 }
 // entity 1588
 {
@@ -175741,11 +175745,11 @@ patchDef2
 "name" "speaker_113"
 "origin" "-716 4432 -152"
 "s_global" "1"
+"s_maxdistance" "0.000000"
+"s_mindistance" "0.000000"
 "s_shader" "sound/vo/enpro/comp_unsafe_levels.wav"
 "s_volume" "8"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
-"s_mindistance" "0.000000"
 }
 // entity 1678
 {
@@ -175763,11 +175767,11 @@ patchDef2
 "name" "speaker_114"
 "origin" "-740 4348 -64"
 "s_global" "1"
+"s_maxdistance" "0.000000"
+"s_mindistance" "0.000000"
 "s_shader" "sound/vo/enpro/comp_evaucate.wav"
 "s_volume" "8"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
-"s_mindistance" "0.000000"
 }
 // entity 1680
 {
@@ -175775,10 +175779,10 @@ patchDef2
 "name" "speaker_115"
 "origin" "-1256 3864 -144"
 "s_global" "1"
-"s_shader" "sound/vo/enpro/comp_evaucate.wav"
-"s_waitfortrigger" "1"
 "s_maxdistance" "0.000000"
 "s_mindistance" "0.000000"
+"s_shader" "sound/vo/enpro/comp_evaucate.wav"
+"s_waitfortrigger" "1"
 }
 // entity 1681
 {
@@ -175794,11 +175798,11 @@ patchDef2
 "name" "speaker_118"
 "origin" "-740 4432 -128"
 "s_global" "1"
+"s_maxdistance" "0.000000"
+"s_mindistance" "0.000000"
 "s_shader" "sound/vo/enpro/comp_evaucate.wav"
 "s_volume" "8"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
-"s_mindistance" "0.000000"
 }
 // entity 1683
 {
@@ -176056,11 +176060,11 @@ patchDef2
 "name" "speaker_129"
 "origin" "-628 4348 -152"
 "s_global" "1"
+"s_maxdistance" "0.000000"
+"s_mindistance" "0.000000"
 "s_shader" "sound/vo/enpro/comp_core_temp.wav"
 "s_volume" "8"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
-"s_mindistance" "0.000000"
 }
 // entity 1709
 {
@@ -176068,11 +176072,11 @@ patchDef2
 "name" "speaker_130"
 "origin" "-612 4388 -152"
 "s_global" "1"
+"s_maxdistance" "0.000000"
+"s_mindistance" "0.000000"
 "s_shader" "sound/vo/enpro/comp_235.wav"
 "s_volume" "8"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
-"s_mindistance" "0.000000"
 }
 // entity 1710
 {
@@ -176225,11 +176229,11 @@ brushDef3
 "name" "speaker_131"
 "origin" "-588 4388 -152"
 "s_global" "1"
+"s_maxdistance" "0.000000"
+"s_mindistance" "0.000000"
 "s_shader" "sound/vo/enpro/comp_585.wav"
 "s_volume" "8"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
-"s_mindistance" "0.000000"
 }
 // entity 1724
 {
@@ -176277,11 +176281,11 @@ brushDef3
 "name" "speaker_132"
 "origin" "-564 4388 -152"
 "s_global" "1"
+"s_maxdistance" "0.000000"
+"s_mindistance" "0.000000"
 "s_shader" "sound/vo/enpro/comp_900.wav"
 "s_volume" "8"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
-"s_mindistance" "0.000000"
 }
 // entity 1729
 {
@@ -176309,11 +176313,11 @@ brushDef3
 "name" "speaker_133"
 "origin" "-660 4348 -152"
 "s_global" "1"
+"s_maxdistance" "0.000000"
+"s_mindistance" "0.000000"
 "s_shader" "sound/vo/enpro/comp_reactor_core.wav"
 "s_volume" "8"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
-"s_mindistance" "0.000000"
 }
 // entity 1731
 {
@@ -176321,11 +176325,11 @@ brushDef3
 "name" "speaker_134"
 "origin" "-684 4348 -152"
 "s_global" "1"
+"s_maxdistance" "0.000000"
+"s_mindistance" "0.000000"
 "s_shader" "sound/vo/enpro/comp_rod_online.wav"
 "s_volume" "8"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
-"s_mindistance" "0.000000"
 }
 // entity 1732
 {
@@ -176354,11 +176358,11 @@ brushDef3
 "name" "speaker_135"
 "origin" "-712 4348 -152"
 "s_global" "1"
+"s_maxdistance" "0.000000"
+"s_mindistance" "0.000000"
 "s_shader" "sound/vo/enpro/comp_haz_dor_open.wav"
 "s_volume" "8"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
-"s_mindistance" "0.000000"
 }
 // entity 1734
 {
@@ -179692,51 +179696,51 @@ patchDef2
 "classname" "speaker"
 "name" "speaker_airlock_door2_right_lock"
 "origin" "3744 1392 -32"
-"s_shader" "airlock_locks_0_75s"
-"s_waitfortrigger" "1"
 "s_maxdistance" "25.000000"
 "s_mindistance" "1.000000"
+"s_shader" "airlock_locks_0_75s"
+"s_waitfortrigger" "1"
 }
 // entity 1984
 {
 "classname" "speaker"
 "name" "speaker_airlock_door2_left_lock"
 "origin" "3848 1392 -32"
-"s_shader" "airlock_locks_0_75s"
-"s_waitfortrigger" "1"
 "s_maxdistance" "25.000000"
 "s_mindistance" "1.000000"
+"s_shader" "airlock_locks_0_75s"
+"s_waitfortrigger" "1"
 }
 // entity 1985
 {
 "classname" "speaker"
 "name" "speaker_airlock_door2_bottom_lock"
 "origin" "3792 1360 -72"
+"s_maxdistance" "25.000000"
+"s_mindistance" "1.000000"
 "s_occlusion" "1"
 "s_shader" "airlock_locks_0_25s"
 "s_waitfortrigger" "1"
-"s_maxdistance" "25.000000"
-"s_mindistance" "1.000000"
 }
 // entity 1986
 {
 "classname" "speaker"
 "name" "speaker_airlock_door2_close"
 "origin" "3792 1360 -32"
-"s_shader" "airlock_locks_1_2s_close"
-"s_waitfortrigger" "1"
 "s_maxdistance" "25.000000"
 "s_mindistance" "1.000000"
+"s_shader" "airlock_locks_1_2s_close"
+"s_waitfortrigger" "1"
 }
 // entity 1987
 {
 "classname" "speaker"
 "name" "speaker_airlock_door2_open"
 "origin" "3792 1280 -32"
-"s_shader" "airlock_locks_1_2s_open"
-"s_waitfortrigger" "1"
 "s_maxdistance" "25.000000"
 "s_mindistance" "1.000000"
+"s_shader" "airlock_locks_1_2s_open"
+"s_waitfortrigger" "1"
 }
 // entity 1988
 {
@@ -180663,6 +180667,8 @@ brushDef3
 "s_global" "1"
 "s_justVolume" "0"
 "s_looping" "0"
+"s_maxdistance" "0.000000"
+"s_mindistance" "0.000000"
 "s_occlusion" "0"
 "s_omni" "0"
 "s_plain" "0"
@@ -180670,8 +180676,6 @@ brushDef3
 "s_volume" "50.000000"
 "s_waitfortrigger" "1"
 "wait" "0.000000"
-"s_maxdistance" "0.000000"
-"s_mindistance" "0.000000"
 }
 // entity 2054
 {
@@ -181093,11 +181097,11 @@ patchDef2
 "noflood" "1"
 "origin" "-804 524 -3328"
 "s_global" "1"
+"s_maxdistance" "0.000000"
+"s_mindistance" "0.000000"
 "s_shader" "sound/impact/crash/glasscrash_04.wav"
 "s_volume" "8"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
-"s_mindistance" "0.000000"
 }
 // entity 2091
 {
