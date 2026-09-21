@@ -407,6 +407,7 @@ entityDef monster_demon_imp {
 	"damage_zone legs"				"*Hips"
 
 	"damage_scale head"				"2"
+	"weakpoint_zone"				"head"
 
 	"snd_footstep"					"monster_demon_imp_footstep"
 	"snd_sight"						"monster_demon_imp_sight"
@@ -425,12 +426,11 @@ entityDef monster_demon_imp {
 	"snd_burn"						"monster_demon_archvile_burn"
 
 	"armorGibs"						"3"
-	"headshot_weakness"				"1"
-	"snd_headshot_pistol"			"headshot_pistol_flesh"
-	"snd_headshot_shotgun"			"headshot_shotgun_flesh"
-	"snd_headshot_machinegun"		"headshot_auto_flesh"
-	"snd_headshot_chaingun"			"headshot_auto_flesh"
-	"snd_headshot_rocket"			"headshot_rocket_flesh"
+	"snd_weakpoint_pistol"			"headshot_pistol_flesh"
+	"snd_weakpoint_shotgun"			"headshot_shotgun_flesh"
+	"snd_weakpoint_machinegun"		"headshot_auto_flesh"
+	"snd_weakpoint_chaingun"		"headshot_auto_flesh"
+	"snd_weakpoint_rocket"			"headshot_rocket_flesh"
 
 	// Heatblast gibs
 	"heatgib"						"1"

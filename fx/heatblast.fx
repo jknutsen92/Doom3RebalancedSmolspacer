@@ -19,14 +19,6 @@ fx fx/heatblast {
         particle            "particle_heatblast.prt"
     }
     {
-        name                "blastshake"
-        delay               0
-        duration            0.5
-        restart             0
-        offset              -1, -0.5, 0.2
-        shake               500, 45, 60, 10, 10000
-    }
-    {
         name                "bloodshower"
         delay               0
         duration            0.5

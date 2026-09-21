@@ -137,7 +137,7 @@ entityDef monster_boss_vagary {
 	"use_aas"						"aas96"
 	"team"							"1"
 	"rank"							"2"
-	"health"						"2000"
+	"health"						"1600"
 	"melee_range"					"64"
 	"attack_cone"					"70"
 	"attack_accuracy"				"0"
@@ -197,9 +197,16 @@ entityDef monster_boss_vagary {
 	"damage_zone chest"				"*Waist -*Ruparm -*Luparm -*Neck"
 	"damage_zone left_arm"			"*Luparm"
 	"damage_zone right_arm"			"*Ruparm"
-	"damage_zone legs"				"*Tail"
+	"damage_zone legs"				"*FrontLegs -*MidShoulders -*Lclaw1d -*Rclaw1d"
+	"damage_zone sac"				"*Butt"
 
 	"damage_scale head"				"2"
+	"damage_scale sac"				"3"
+	"damage_scale left_arm"			"0.8"
+	"damage_scale right_arm"		"0.8"
+	"damage_scale legs"				"0.8"
+	"weakpoint_zone"				"head"
+	"weakpoint_zone2"				"sac"
 
 	"snd_sight"						"monster_boss_vagary_sight"
 	"snd_chatter"					"monster_boss_vagary_idle"
@@ -212,12 +219,11 @@ entityDef monster_boss_vagary {
 	"snd_burn"						"monster_demon_tick_burn"
 	
 	"armorGibs"						"5"
-	"snd_headshot_pistol"			"headshot_pistol_flesh"
-	"snd_headshot_shotgun"			"headshot_shotgun_flesh"
-	"snd_headshot_machinegun"		"headshot_auto_flesh"
-	"snd_headshot_chaingun"			"headshot_auto_flesh"
-	"snd_headshot_rocket"			"headshot_rocket_flesh"
-	"headshot_weakness"				"1"
+	"snd_weakpoint_pistol"			"headshot_pistol_flesh"
+	"snd_weakpoint_shotgun"			"headshot_shotgun_flesh"
+	"snd_weakpoint_machinegun"		"headshot_auto_flesh"
+	"snd_weakpoint_chaingun"		"headshot_auto_flesh"
+	"snd_weakpoint_rocket"			"headshot_rocket_flesh"
 
 	// Heatblast gibs
 	"heatgib"						"1"
@@ -257,10 +263,10 @@ entityDef monster_boss_vagary {
 	"dropGibItem12Joint"			"Rknee2"
 
 	"def_dropGibItem13"				"moveable_item_lup_leg_pork"
-	"dropGibItem5Joint"				"Lknee2"
+	"dropGibItem13Joint"			"Lknee2"
 
 	"def_dropGibItem14"				"moveable_item_rup_leg_pork"
-	"dropGibItem6Joint"				"Rknee2"
+	"dropGibItem14Joint"			"Rknee2"
 }
 
 entityDef melee_vagLeftClaw {
