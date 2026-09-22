@@ -604,11 +604,10 @@ entityDef monster_zsec_machinegun {
 	"flashRadius"					"120"
 
 	"armorGibs"						"3"
-	"headshot_weakness"				"1"
 	"snd_weakpoint_pistol"			"headshot_pistol_metal"
 	"snd_weakpoint_shotgun"			"headshot_shotgun_metal"
 	"snd_weakpoint_machinegun"		"headshot_auto_metal"
-	"snd_weakpoint_chaingun"			"headshot_auto_metal"
+	"snd_weakpoint_chaingun"		"headshot_auto_metal"
 	"snd_weakpoint_rocket"			"headshot_rocket_metal"
 }
 

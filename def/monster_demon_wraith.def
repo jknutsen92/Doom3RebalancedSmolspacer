@@ -163,11 +163,20 @@ entityDef monster_demon_wraith {
 	"damage_zone chest"				"*spine_1 -*Rshldr -*Lshldr -*spine_7"
 	"damage_zone left_arm"			"*Lshldr"
 	"damage_zone right_arm"			"*Rshldr"
+	"damage_zone legs"				"*Hips"
+	
 	"damage_scale head"				"2"
+	"damage_scale left_arm"			"0.66"
+	"damage_scale right_arm"		"0.66"
+	"damage_scale legs"				"0.66"
+
+	"weakpoint_zone"				"head"
+	
 	"mass"   						"250"
+
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"80"
-	"body_skin_heated"					"skins/models/monsters/wraith_heated.skin"
+	"body_skin_heated"				"skins/models/monsters/wraith_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 	
 	"burnaway"						"0.50"
@@ -190,12 +199,29 @@ entityDef monster_demon_wraith {
 	"snd_burn"						"monster_demon_tick_burn"
 
 	"armorGibs"						"1"
-	"headshot_weakness"				"1"
 	"snd_weakpoint_pistol"			"headshot_pistol_flesh"
 	"snd_weakpoint_shotgun"			"headshot_shotgun_flesh"
 	"snd_weakpoint_machinegun"		"headshot_auto_flesh"
-	"snd_weakpoint_chaingun"			"headshot_auto_flesh"
+	"snd_weakpoint_chaingun"		"headshot_auto_flesh"
 	"snd_weakpoint_rocket"			"headshot_rocket_flesh"
+
+	// Heatblast gibs
+	"heatgib"						"1"
+
+	"def_dropGibItem1"				"moveable_item_head_pork"
+	"dropGibItem1Joint"				"Head"
+
+	"def_dropGibItem2"				"moveable_item_torso_pork"
+	"dropGibItem2Joint"				"Chest"
+
+	"def_dropGibItem3"				"moveable_item_rup_arm_pork"
+	"dropGibItem3Joint"				"Ruparm"
+
+	"def_dropGibItem4"				"moveable_item_left_waist_pork"
+	"dropGibItem4Joint"				"Waist"
+
+	"def_dropGibItem5"				"moveable_item_lup_leg_pork"
+	"dropGibItem5Joint"				"Lupleg"
 }
 
 entityDef wraith_spawneffect {

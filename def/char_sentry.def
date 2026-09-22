@@ -201,11 +201,33 @@ entityDef char_sentry {
 	"snd_talk_excuseme"				"char_sentry_waiting_for_player"
 
 	"mass"							"200"
+
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"80"
 	"body_skin_heated"				""
 	"heatblast_fx"					"fx/heatblast.fx"
 	"armorGibs"						"2"
+
+	// Heatblast gibs
+	"heatgib"						"1"
+
+	"def_dropGibItem1"				"moveable_item_shrapnel_small"
+	"dropGibItem1Joint"				"Head"
+
+	"def_dropGibItem2"				"moveable_item_shrapnel_small"
+	"dropGibItem2Joint"				"Hips"
+
+	"def_dropGibItem3"				"moveable_item_shrapnel_small"
+	"dropGibItem3Joint"				"Rknee"
+
+	"def_dropGibItem4"				"moveable_item_shrapnel_small"
+	"dropGibItem4Joint"				"Lknee"
+
+	"def_dropGibItem5"				"moveable_item_shrapnel_small"
+	"dropGibItem5Joint"				"Relbow"
+
+	"def_dropGibItem6"				"moveable_item_shrapnel_small"
+	"dropGibItem6Joint"				"Lelbow"
 }
 
 model char_sentry_flashlight {

@@ -191,7 +191,7 @@ entityDef monster_zombie_fat {
 	"mass"							"200"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"10"
-	"body_skin_heated"					"skins/monsters/zombies/zfat_heated.skin"
+	"body_skin_heated"				"skins/monsters/zombies/zfat_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 	
 	"blockedRadius"					"10"
@@ -216,13 +216,13 @@ entityDef monster_zombie_fat {
 	"ragdoll"						"monster_zombie_fat"
 	"skin"							"skins/monsters/zombies/zfat.skin"
 
-	"damage_zone head"				"*loneck"
-	"damage_zone chest"				"*waist -*Rshldr -*Lshldr -*loneck"
-	"damage_zone left_arm"			"*Lshldr"
-	"damage_zone right_arm"			"*Rshldr"
-	"damage_zone legs"				"*Hips origin Body Body2"
+	// "damage_zone head"				"*loneck"
+	// "damage_zone chest"				"*waist -*Rshldr -*Lshldr -*loneck"
+	// "damage_zone left_arm"			"*Lshldr"
+	// "damage_zone right_arm"			"*Rshldr"
+	// "damage_zone legs"				"*Hips origin Body Body2"
 
-	"damage_scale head"				"2"
+	// "damage_scale head"				"2"
 	
 	"dropGibItem9Joint"				"head"
 
@@ -249,12 +249,6 @@ entityDef monster_zombie_fat {
 	"skin_dropGib"					"skins/monsters/zombies/zfatgib.skin"
 
 	"armorGibs"						"1"
-	"headshot_weakness"				"1"
-	"snd_weakpoint_pistol"			"headshot_pistol_flesh"
-	"snd_weakpoint_shotgun"			"headshot_shotgun_flesh"
-	"snd_weakpoint_machinegun"		"headshot_auto_flesh"
-	"snd_weakpoint_chaingun"			"headshot_auto_flesh"
-	"snd_weakpoint_rocket"			"headshot_rocket_flesh"
 }
 
 

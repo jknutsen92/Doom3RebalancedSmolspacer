@@ -72,8 +72,6 @@ entityDef monster_flying_lostsoul {
 	"fly_pitch_scale"				"45"
 	"fly_pitch_max"					"30"
 	"plasma_heatable"				"0"							// They are literally on fire, I think they are cool being hot -smolspacer
-	//"heat_decay_rate"				"10"
-	//"smoke_heatblast"				"bfg_barrel.prt-chest"
 	
 	"bone_flytilt"					"Head"
 
@@ -100,12 +98,6 @@ entityDef monster_flying_lostsoul {
 	"fx_teleport3"					"fx/teleporter3_fly.fx"
 
 	"armorGibs"						"3"
-	"snd_headshot"					"monster_default_headshot"
-	"headshot_weakness"				"1"
-	"snd_weakpoint_pistol"			""							// fix this
-	"snd_weakpoint_machinegun"		""
-	"snd_weakpoint_chaingun"			""
-	"snd_weakpoint_rocket"			""
 }
 
 entityDef melee_lostsoul {

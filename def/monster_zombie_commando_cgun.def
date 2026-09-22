@@ -783,13 +783,20 @@ entityDef monster_zombie_commando_cgun {
 	"damage_zone chest"				"*spine_1 -*Rshldr -*Lshldr -*neck_1"
 	"damage_zone left_arm"			"*Lshldr"
 	"damage_zone right_arm"			"*Rshldr"
-	"damage_zone legs"				"origin lolegs"
+	"damage_zone legs"				"*Hips"
+	
 	"damage_scale head"				"2"
+	"damage_scale left_arm"			"0.75"
+	"damage_scale right_arm"		"0.75"
+	"damage_scale legs"				"0.75"
+	
+	"weakpoint_zone"				"head"
 
 	"mass"   						"450"
+
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"50"
-	"body_skin_heated"					"skins/monsters/zombies/commando_heated.skin"
+	"body_skin_heated"				"skins/monsters/zombies/commando_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 
 	"ik_numLegs"					"2"
@@ -843,12 +850,38 @@ entityDef monster_zombie_commando_cgun {
 	"flashRadius"					"120"
 
 	"armorGibs"						"3"
-	"headshot_weakness"				"1"
 	"snd_weakpoint_pistol"			"headshot_pistol_metal"
 	"snd_weakpoint_shotgun"			"headshot_shotgun_metal"
 	"snd_weakpoint_machinegun"		"headshot_auto_metal"
-	"snd_weakpoint_chaingun"			"headshot_auto_metal"
+	"snd_weakpoint_chaingun"		"headshot_auto_metal"
 	"snd_weakpoint_rocket"			"headshot_rocket_metal"
+
+	// Heatblast gibs
+	"heatgib"						"1"
+
+	"def_dropGibItem1"				"moveable_item_head_pork"
+	"dropGibItem1Joint"				"Head"
+
+	"def_dropGibItem2"				"moveable_item_torso_pork"
+	"dropGibItem2Joint"				"Chest"
+
+	"def_dropGibItem3"				"moveable_item_rup_arm_pork"
+	"dropGibItem3Joint"				"Ruparm"
+
+	"def_dropGibItem4"				"moveable_item_left_waist_pork"
+	"dropGibItem4Joint"				"Waist"
+
+	"def_dropGibItem5"				"moveable_item_lup_leg_pork"
+	"dropGibItem5Joint"				"Lupleg"
+
+	"def_dropGibItem6"				"moveable_item_rup_leg_pork"
+	"dropGibItem6Joint"				"Rupleg"
+
+	"def_dropGibItem7"				"moveable_item_rup2_leg_pork"
+	"dropGibItem7Joint"				"Rloleg"
+
+	"def_dropGibItem8"				"moveable_item_pelvis_pork"
+	"dropGibItem8Joint"				"Hips"
 }
 
 entityDef projectile_zombie_commando_cgun {

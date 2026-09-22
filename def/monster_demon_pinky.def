@@ -175,12 +175,12 @@ entityDef monster_demon_pinky {
 	"use_aas"						"aas96"
 	"team"							"1"
 	"rank"							"1"
-	"health"						"440"
+	"health"						"666"
 	"melee_range"					"60"
 	"mass"							"600"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"15"						// Maybe he has a hard time cooling down because of the machinery
-	"body_skin_heated"					"skins/models/monsters/pinky_heated.skin"
+	"body_skin_heated"				"skins/models/monsters/pinky_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 
 	"look_min"						"-90 -125 0"
@@ -206,7 +206,22 @@ entityDef monster_demon_pinky {
 	"damage_zone left_arm"			"*Lshldr"
 	"damage_zone right_arm"			"*Rshldr"
 	"damage_zone legs"				"*Waist1"
-	"damage_scale head"				"1"
+
+	"damage_scale legs"				"2"
+	"damage_scale left_arm"			"0.85"
+	"damage_scale right_arm"		"0.85"
+
+	"weakpoint_zone"				"legs"
+
+	"snd_weakpoint_pistol"			"headshot_pistol_metal"
+	"snd_weakpoint_shotgun"			"headshot_shotgun_metal"
+	"snd_weakpoint_machinegun"		"headshot_auto_metal"
+	"snd_weakpoint_chaingun"		"headshot_auto_metal"
+	"snd_weakpoint_rocket"			"headshot_rocket_metal"
+
+	// smolspacer - might use in conjunction with weakpoint - currently seems to be ignored by the script
+	// "pain_threshold"				""
+	// "pain_delay"					""
 
 	"snd_footstep"					"monster_demon_pinky_foot"
 	"snd_handstep"					"pinky_hand"
@@ -226,7 +241,6 @@ entityDef monster_demon_pinky {
 	"snd_burn"						"monster_demon_tick_burn"
 
 	"armorGibs"						"3"
-	"headshot_weakness"				"0"
 }
 
 entityDef melee_pinky_back {

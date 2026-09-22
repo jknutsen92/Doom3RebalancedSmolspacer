@@ -408,9 +408,10 @@ entityDef monster_demon_trite {
 	"chatter_combat_max"			"7"
 	"turn_rate"						"360"
 	"mass"							"50"
+
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"10"
-	"body_skin_heated"					"skins/models/monsters/trite_heated.skin"
+	"body_skin_heated"				"skins/models/monsters/trite_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 
 	"blockedRadius"					"25"
@@ -459,11 +460,12 @@ entityDef monster_demon_trite {
 	"ik_foot6"						"Rtip3"
 
 	"damage_zone head"				"*Body2 -*Ruparm1 -*Ruparm2 -*Ruparm3 -*Luparm1 -*Luparm2 -*Luparm3"
-	//"damage_zone chest"			"*waist -*Rshldr -*Lshldr -*loneck"
 	"damage_zone left_arm"			"*Luparm1"
 	"damage_zone right_arm"			"*Ruparm1"
-	//"damage_zone legs"			"*Hips origin Body Body2"
+	
 	"damage_scale head"				"1"
+	"damage_scale left_arm"			"0.5"
+	"damage_scale right_arm"		"0.5"
 
 	"snd_explode"					"rocket_impact"
 	"snd_chatter"					"monster_demon_trite_chatter"
@@ -479,7 +481,18 @@ entityDef monster_demon_trite {
 	"snd_burn"						"trite_deathsplat"
 
 	"armorGibs"						"2"
-	"headshot_weakness"				"0"
+
+	// Heatblast gibs
+	"heatgib"						"1"
+
+	"def_dropGibItem1"				"moveable_item_head_pork"
+	"dropGibItem1Joint"				"Head"
+
+	"def_dropGibItem3"				"moveable_item_rup_arm_pork"
+	"dropGibItem3Joint"				"Ruparm"
+
+	"def_dropGibItem4"				"moveable_item_rup_arm_pork"
+	"dropGibItem4Joint"				"Luparm"	
 }
 
 entityDef	melee_triteLeapAttack {

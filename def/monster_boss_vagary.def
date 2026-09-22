@@ -197,7 +197,7 @@ entityDef monster_boss_vagary {
 	"damage_zone chest"				"*Waist -*Ruparm -*Luparm -*Neck"
 	"damage_zone left_arm"			"*Luparm"
 	"damage_zone right_arm"			"*Ruparm"
-	"damage_zone legs"				"*FrontLegs -*MidShoulders -*Lclaw1d -*Rclaw1d"
+	"damage_zone legs"				"*FrontLegs *MidShoulders *Lclaw1d *Rclaw1d"
 	"damage_zone sac"				"*Butt"
 
 	"damage_scale head"				"2"

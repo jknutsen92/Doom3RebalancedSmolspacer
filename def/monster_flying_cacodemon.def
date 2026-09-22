@@ -112,7 +112,6 @@ entityDef monster_flying_cacodemon {
 	"smoke_burnParticleSystem"		"burn_imp.prt-Head"
 	
 	"damage_zone head"				"*Head -*LeftSide -*RightSide"
-	//"damage_zone chest"			"*Waist -*Rshldr -*Lshldr -*Neck"
 	"damage_zone left_arm"			"*LeftSide"
 	"damage_zone right_arm"			"*RightSide"
 	"damage_zone legs"				"*Tail1"
@@ -134,7 +133,57 @@ entityDef monster_flying_cacodemon {
 	"fx_teleport3"					"fx/teleporter3_fly.fx"
 
 	"armorGibs"						"3"
-	"headshot_weakness"				"0"
+
+	// Heatblast gibs
+	"heatgib"						"1"
+
+	"def_dropGibItem1"				"moveable_item_head_pork"
+	"dropGibItem1Joint"				"Head"
+
+	"def_dropGibItem2"				"moveable_item_torso_pork"
+	"dropGibItem2Joint"				"Body"
+
+	"def_dropGibItem3"				"moveable_item_rup_arm_pork"
+	"dropGibItem3Joint"				"RightSide"
+
+	"def_dropGibItem4"				"moveable_item_left_waist_pork"
+	"dropGibItem4Joint"				"LeftSide"
+
+	"def_dropGibItem5"				"moveable_item_lup_leg_pork"
+	"dropGibItem5Joint"				"Ltentacle1"
+
+	"def_dropGibItem6"				"moveable_item_rup_leg_pork"
+	"dropGibItem6Joint"				"Rtentacle1"
+
+	"def_dropGibItem7"				"moveable_item_rup2_leg_pork"
+	"dropGibItem7Joint"				"Rtentacle2"
+
+	"def_dropGibItem8"				"moveable_item_pelvis_pork"
+	"dropGibItem8Joint"				"Top"
+
+	"def_dropGibItem9"				"moveable_item_head_pork"
+	"dropGibItem9Joint"				"Jaw"
+
+	"def_dropGibItem10"				"moveable_item_torso_pork"
+	"dropGibItem10Joint"			"Tail1"
+
+	"def_dropGibItem11"				"moveable_item_rup_arm_pork"
+	"dropGibItem11Joint"			"Tail2"
+
+	"def_dropGibItem12"				"moveable_item_left_waist_pork"
+	"dropGibItem12Joint"			"Tail3"
+
+	"def_dropGibItem13"				"moveable_item_lup_leg_pork"
+	"dropGibItem13Joint"			"Rear1"
+
+	"def_dropGibItem14"				"moveable_item_rup_leg_pork"
+	"dropGibItem14Joint"			"Rear2"
+
+	"def_dropGibItem15"				"moveable_item_rup2_leg_pork"
+	"dropGibItem15Joint"			"Rear3"
+
+	"def_dropGibItem16"				"moveable_item_pelvis_pork"
+	"dropGibItem16Joint"			"Lftbrain"
 }
 
 entityDef damage_cacodemon_fireball {

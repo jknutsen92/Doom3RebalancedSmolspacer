@@ -161,7 +161,7 @@ entityDef monster_demon_archvile {
 	"melee_range"					"48"
 	"bone_focus"					"Head"
 	"burnaway"						"0.50"
-	"smoke_burnParticleSystem"			"burn_imp.prt-chest"
+	"smoke_burnParticleSystem"		"burn_imp.prt-chest"
 	"delay"							"2"
 	
 	"look_min"						"-90 -125 0"
@@ -173,11 +173,19 @@ entityDef monster_demon_archvile {
 	"damage_zone chest"				"*Waist -*Rshldr -*Lshldr -*Neck"
 	"damage_zone left_arm"			"*Lshldr"
 	"damage_zone right_arm"			"*Rshldr"
+	
 	"damage_scale head"				"2"
+	"damage_scale left_arm"			"0.75"
+	"damage_scale right_arm"		"0.75"
+	"damage_scale legs"				"0.75"
+
+	"weakpoint_zone"				"head"
+
 	"mass"   						"350"
+
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"75"
-	"body_skin_heated"					"skins/models/monsters/archvile_heated.skin"
+	"body_skin_heated"				"skins/models/monsters/archvile_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 
 	"ik_numLegs"					"2"
@@ -204,7 +212,7 @@ entityDef monster_demon_archvile {
 	"snd_createmissile"				"monster_demon_imp_fireball_create"
 	"snd_footstep"					"monster_demon_archvile_footstep"
 	"snd_resurrection"				"monster_demon_archvile_resurrection"
-	"snd_melee"					"monster_demon_archvile_melee"
+	"snd_melee"						"monster_demon_archvile_melee"
 	"snd_burn"						"monster_demon_archvile_burn"
 
 	"smokeParticleSystem"			"rarchhand"
@@ -214,13 +222,39 @@ entityDef monster_demon_archvile {
 	"def_attack1"					"archvile_incinerate"
 	"def_attack2"					"archvile_flamewall_2.prt"
 
-	"armorGibs"						"5"
-	"headshot_weakness"				"1"
+	"armorGibs"						"3"
 	"snd_weakpoint_pistol"			"headshot_pistol_flesh"
 	"snd_weakpoint_shotgun"			"headshot_shotgun_flesh"
 	"snd_weakpoint_machinegun"		"headshot_auto_flesh"
-	"snd_weakpoint_chaingun"			"headshot_auto_flesh"
+	"snd_weakpoint_chaingun"		"headshot_auto_flesh"
 	"snd_weakpoint_rocket"			"headshot_rocket_flesh"
+
+	// Heatblast gibs
+	"heatgib"						"1"
+
+	"def_dropGibItem1"				"moveable_item_head_pork"
+	"dropGibItem1Joint"				"Head"
+
+	"def_dropGibItem2"				"moveable_item_torso_pork"
+	"dropGibItem2Joint"				"Chest"
+
+	"def_dropGibItem3"				"moveable_item_rup_arm_pork"
+	"dropGibItem3Joint"				"Ruparm"
+
+	"def_dropGibItem4"				"moveable_item_left_waist_pork"
+	"dropGibItem4Joint"				"Waist"
+
+	"def_dropGibItem5"				"moveable_item_lup_leg_pork"
+	"dropGibItem5Joint"				"Lupleg"
+
+	"def_dropGibItem6"				"moveable_item_rup_leg_pork"
+	"dropGibItem6Joint"				"Rupleg"
+
+	"def_dropGibItem7"				"moveable_item_rup2_leg_pork"
+	"dropGibItem7Joint"				"Rloleg"
+
+	"def_dropGibItem8"				"moveable_item_pelvis_pork"
+	"dropGibItem8Joint"				"Hips"
 }
 
 entityDef melee_archLeftClaw {

@@ -167,9 +167,10 @@ entityDef monster_demon_hellknight {
 	"attack_accuracy"				"0"
 	"mass"							"600"
 	"pain_threshold"				"25"
+
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"105"
-	"body_skin_heated"					"skins/models/monsters/hellknight_heated.skin"
+	"body_skin_heated"				"skins/models/monsters/hellknight_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 	
 	"burnaway"						"0.50"
@@ -203,7 +204,13 @@ entityDef monster_demon_hellknight {
 	"damage_zone left_arm"			"*luparm"
 	"damage_zone right_arm"			"*ruparm"
 	"damage_zone legs"				"*hips"
+	
 	"damage_scale head"				"2"
+	"damage_scale left_arm"			"0.80"
+	"damage_scale right_arm"		"0.80"
+	"damage_scale legs"				"0.80"
+
+	"weakpoint_zone"				"head"
 	
 	"anim"							"idle"
 
@@ -224,8 +231,59 @@ entityDef monster_demon_hellknight {
 	"snd_weakpoint_pistol"			"headshot_pistol_flesh"
 	"snd_weakpoint_shotgun"			"headshot_shotgun_flesh"
 	"snd_weakpoint_machinegun"		"headshot_auto_flesh"
-	"snd_weakpoint_chaingun"			"headshot_auto_flesh"
+	"snd_weakpoint_chaingun"		"headshot_auto_flesh"
 	"snd_weakpoint_rocket"			"headshot_rocket_flesh"
+
+	// Heatblast gibs
+	"heatgib"						"1"
+
+	"def_dropGibItem1"				"moveable_item_head_pork"
+	"dropGibItem1Joint"				"Head"
+
+	"def_dropGibItem2"				"moveable_item_torso_pork"
+	"dropGibItem2Joint"				"Chest"
+
+	"def_dropGibItem3"				"moveable_item_rup_arm_pork"
+	"dropGibItem3Joint"				"Ruparm"
+
+	"def_dropGibItem4"				"moveable_item_left_waist_pork"
+	"dropGibItem4Joint"				"Waist"
+
+	"def_dropGibItem5"				"moveable_item_lup_leg_pork"
+	"dropGibItem5Joint"				"Lupleg"
+
+	"def_dropGibItem6"				"moveable_item_rup_leg_pork"
+	"dropGibItem6Joint"				"Rupleg"
+
+	"def_dropGibItem7"				"moveable_item_rup2_leg_pork"
+	"dropGibItem7Joint"				"Rloleg"
+
+	"def_dropGibItem8"				"moveable_item_pelvis_pork"
+	"dropGibItem8Joint"				"Hips"
+
+	"def_dropGibItem9"				"moveable_item_head_pork"
+	"dropGibItem9Joint"				"Jaw"
+
+	"def_dropGibItem10"				"moveable_item_torso_pork"
+	"dropGibItem10Joint"			"neck"
+
+	"def_dropGibItem11"				"moveable_item_rup_arm_pork"
+	"dropGibItem11Joint"			"tongue"
+
+	"def_dropGibItem12"				"moveable_item_left_waist_pork"
+	"dropGibItem12Joint"			"rwrist"
+
+	"def_dropGibItem13"				"moveable_item_lup_leg_pork"
+	"dropGibItem13Joint"			"lwrist"
+
+	"def_dropGibItem14"				"moveable_item_rup_leg_pork"
+	"dropGibItem14Joint"			"lrib2"
+
+	"def_dropGibItem15"				"moveable_item_rup2_leg_pork"
+	"dropGibItem15Joint"			"rrib2"
+
+	"def_dropGibItem16"				"moveable_item_pelvis_pork"
+	"dropGibItem16Joint"			"rfoot"
 }
 
 model delta1_hellknight {
