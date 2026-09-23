@@ -336,6 +336,9 @@ scriptEvent	vector	angToRight( vector angles );
 // Returns an up vector for the given Euler angles.
 scriptEvent	vector	angToUp( vector angles );
 
+// Get a vector that's rotated around an axis vector, pivoted at origin
+scriptEvent vector  getRotatedVec(vector vec, vector origin, vector axis, float angle);
+
 // Returns the sine of the given angle in degrees.
 scriptEvent	float	sin( float degrees );
 

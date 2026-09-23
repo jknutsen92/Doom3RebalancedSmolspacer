@@ -6,17 +6,18 @@ monster_demon_wraith
 
 ***********************************************************************/
 
-#define WRAITH_ATTACK_RATE			1.5
-#define WRAITH_DODGE_RATE			5
+#define WRAITH_ATTACK_RATE			0.75
+#define WRAITH_DODGE_RATE			1.5
 #define	WRAITH_PAIN_DELAY			0.25
-#define WRAITH_RUNDISTANCE			192
-#define WRAITH_WALKTURN				65
+// #define WRAITH_WALKTURN				65
 #define WRAITH_INVISIBLE_DIST_MIN	80//140
 #define WRAITH_INVISIBLE_DIST_MAX	256
 #define WRAITH_INVISIBLE_DELAY_MIN	3.0//0.6
 #define WRAITH_INVISIBLE_DELAY_MAX	5.0//1.5
-#define WRAITH_VISIBLE_DELAY_MIN	1.3
-#define WRAITH_VISIBLE_DELAY_MAX	2.2
+#define WRAITH_INVIS_ATTACKS_MIN	1
+#define WRAITH_INVIS_ATTACKS_MAX	3
+#define WRAITH_VISIBLE_DELAY_MIN	6
+#define WRAITH_VISIBLE_DELAY_MAX	9
 
 // anim blend times
 #define	WRAITH_PAIN_TO_IDLE			2
@@ -46,8 +47,12 @@ monster_demon_wraith
 #define	ATTACK_BECOME_VISIBLE		ATTACK_SPECIAL2
 
 object monster_demon_wraith : monster_base {
+	float 		meleeRange;
+
 	float		nextDodge;
-	float		nextInvisible;
+	float		nextInvisibleTime;
+	float 		nextInvisibleAttack;
+	float		nextInvisibleExpiration;
 	entity		combat_node;
 	entity		spawn_effect;
 
@@ -59,6 +64,7 @@ object monster_demon_wraith : monster_base {
 	void		state_LostCombat();
 
 	// attacks
+	boolean		combat_chase();
 	float		check_attacks();
 	void		do_attack( float attack_flags );
 	void		combat_melee();
@@ -83,6 +89,9 @@ object monster_demon_wraith : monster_base {
 	void		Legs_Run();
 	void		Legs_DodgeLeft();
 	void		Legs_DodgeRight();
+
+	void		flankEnemy();
+	void		chargeEnemy();
 };
 
 /***********************************************************************
@@ -203,6 +212,11 @@ monster_demon_wraith::init
 =====================
 */
 void monster_demon_wraith::init() {
+	meleeRange = getFloatKey("melee_range");
+	
+	nextInvisibleAttack = 0;
+	nextInvisibleExpiration = 0;
+
 	setState( "state_Begin" );
 }
 
@@ -240,7 +254,7 @@ void monster_demon_wraith::state_Idle() {
 	wait_for_enemy();
 
 	nextDodge		= RandomTime( WRAITH_DODGE_RATE );
-	nextInvisible	= 0;
+	nextInvisibleTime	= 0;
 
 	setState( "state_Combat" );
 }
@@ -250,6 +264,23 @@ void monster_demon_wraith::state_Idle() {
 	attacks
 
 ***********************************************************************/
+
+boolean monster_demon_wraith::combat_chase() {
+	boolean do_run;
+	
+	if ( !AI_ENEMY_VISIBLE || ( enemyRange() > run_distance ) ) {
+		do_run = true;
+	} else {
+		do_run = false;
+	}
+
+	if (invisible) {
+		return flankEnemy();
+	}
+	else {
+		return chargeEnemy();
+	}
+}
 
 /*
 =====================
@@ -288,7 +319,7 @@ float monster_demon_wraith::check_attacks() {
 	currentTime = sys.getTime();
 
 	if ( invisible ) {
-		if ( ( range < WRAITH_INVISIBLE_DIST_MIN ) || ( currentTime >= nextInvisible ) ) {
+		if ( ( range < WRAITH_INVISIBLE_DIST_MIN ) || ( currentTime >= nextInvisibleTime ) ) {
 			if ( canBecomeSolid() ) {
 				attack_flags |= ATTACK_BECOME_VISIBLE;
 			}
@@ -328,7 +359,7 @@ float monster_demon_wraith::check_attacks() {
 	}
 
 	range = enemyRange();
-	if ( AI_ONGROUND && ( range > WRAITH_INVISIBLE_DIST_MAX ) && ( currentTime >= nextInvisible ) ) {
+	if ( AI_ONGROUND && ( range > WRAITH_INVISIBLE_DIST_MAX ) && ( currentTime >= nextInvisibleTime ) ) {
 		attack_flags |= ATTACK_BECOME_INVISIBLE;
 	}
 	
@@ -438,7 +469,7 @@ void monster_demon_wraith::combat_become_visible() {
 		invisible = false;
 	}
 
-	nextInvisible = RandomDelay( WRAITH_INVISIBLE_DELAY_MIN, WRAITH_INVISIBLE_DELAY_MAX );
+	nextInvisibleTime = RandomDelay( WRAITH_INVISIBLE_DELAY_MIN, WRAITH_INVISIBLE_DELAY_MAX );
 }
 
 /*
@@ -478,7 +509,7 @@ void monster_demon_wraith::combat_become_invisible() {
 
 	allowHiddenMovement( true );
 	setShaderParm( SHADERPARM_TIME_OF_DEATH, sys.getTime() - 100 );
-	nextInvisible = RandomDelay( WRAITH_VISIBLE_DELAY_MIN, WRAITH_VISIBLE_DELAY_MAX );
+	nextInvisibleTime = RandomDelay( WRAITH_VISIBLE_DELAY_MIN, WRAITH_VISIBLE_DELAY_MAX );
 }
 
 /*
@@ -488,7 +519,7 @@ monster_demon_wraith::state_LostCombat
 */
 void monster_demon_wraith::state_LostCombat() {
 	combat_become_invisible();
-	sys.wait( nextInvisible - sys.getTime() );
+	sys.wait( nextInvisibleTime - sys.getTime() );
 
 	stopMove();
 	while( !canReachEnemy() ) {
@@ -500,4 +531,30 @@ void monster_demon_wraith::state_LostCombat() {
 	combat_become_visible();
 	
 	setState( "state_Combat" );
+}
+
+boolean monster_demon_wraith::flankEnemy() {
+
+}
+
+boolean monster_demon_wraith::chargeEnemy() {
+	float	range;
+	float	attack_flags;
+	float	delta;
+
+	moveToEnemy();
+	if (AI_MOVE_DONE) {
+		return false;
+	}
+
+	waitFrame();
+	if (AI_MOVE_DONE) {
+		attack_flags = check_attacks();
+		if (attack_flags) {
+			do_attack(attack_flags);
+			return true;
+		}
+		return false;
+	}
+	// while 
 }
