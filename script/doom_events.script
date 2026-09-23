@@ -348,6 +348,9 @@ scriptEvent	float	cos( float degrees );
 // Returns the square root of the given number.
 scriptEvent	float	sqrt( float square );
 
+// Round to the nearest integer
+scriptEvent float	round(float number);
+
 // Returns the normalized version of the given vector.
 scriptEvent	vector	vecNormalize( vector vec );
 
