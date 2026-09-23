@@ -91,7 +91,6 @@ entityDef weapon_plasmagun {
 	"nozzleGlowRadius"			"16"
 	"mtr_nozzleGlowShader"		"lights/plasmaglow"
 	
-	//"snd_acquire"				"sound_weapon_acquire"
 	"snd_acquire"				"player_plasma_raise"
 	"snd_respawn"				"sound_weapon_respawn"
 	"snd_hum"					"player_plasma_idle"
@@ -152,7 +151,7 @@ model viewmodel_plasmagun {
 }
 
 entityDef	damage_plasmablast {
-	"damage"					"7"					// "16" smolspacer
+	"damage"					"6"					// "16" smolspacer
 	"smoke_wound_flesh"			"bloodwound.prt"
 	"gib"						"0"
 }
@@ -165,8 +164,8 @@ entityDef	damage_plasma_splash {
 
 entityDef	damage_heatblast {
 	"damage"					"1"				// Base values
-	"heat"						"1"
-	"radius"					"1"			// these will be scaled according to mass
+	"heat"						"1"				// these will be scaled according to mass
+	"radius"					"1"
 	"attackerDamageScale"		"0.1"
 	"attackerPushScale"			"0.5"
 	"push"						"100"
@@ -233,8 +232,9 @@ entityDef projectile_plasmablast {
 	"snd_fly"					"plasma_flight"					// sound effect while in the air
 	"snd_explode"				"plasma_impact"
 
+	"ignore_zone_scaling"		"1"
 	"weakpoint_bonus"			"0"						// smolspacer - 1 bonus from headshots + feedback
-	"heat"						"30"
+	"heat"						"20"
 }
 
 /*

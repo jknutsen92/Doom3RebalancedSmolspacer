@@ -179,9 +179,9 @@ entityDef projectile_rocket {
 	"def_debris"				"debris_largeshrapnel"
 	"def_shrapnel"				"debris_shrapnel"
 	
-	"mtr_light_shader"			""
+	"mtr_light_shader"			"lights/redglow"
 	"light_color"				"1 0.8 0.4"
-	"light_radius"				"160"
+	"light_radius"				"100"
 	"light_offset"				"0 0 0"
 
 	"mtr_explode_light_shader"	"muzzleflash"
@@ -206,7 +206,7 @@ entityDef damage_rocketDirect {
 
 entityDef damage_rocketSplash {
 	"damage"					"150"
-	"radius"					"275" //changed by Tim 6-22-04 from 132
+	"radius"					"300" //changed by Tim 6-22-04 from 132
 	"knockback"					"80"
 	"push"						"10000"
 	"attackerDamageScale"		"0.2"

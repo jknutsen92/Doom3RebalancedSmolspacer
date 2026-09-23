@@ -759,9 +759,9 @@ entityDef player_base {
 
 	"max_ammo_shells"					"72"						// smolspacer
 	"max_ammo_bullets"					"144"						// base values are scaled by the g_maxAmmoScale cvar
-	"max_ammo_rockets"					"48"
+	"max_ammo_rockets"					"30"
 	"max_ammo_cells"					"500"
-	"max_ammo_grenades"					"36"
+	"max_ammo_grenades"					"24"
 	"max_ammo_souls"					"5"							// number of kills required to charge the soul cube
 	"max_ammo_bfg"						"24"
 	"max_ammo_clip"						"400"

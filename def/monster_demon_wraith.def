@@ -148,7 +148,7 @@ entityDef monster_demon_wraith {
 	"use_aas"						"aas48"
 	"team"							"1"
 	"rank"							"1"
-	"health"						"130"
+	"health"						"260"
 	"attack_cone"					"70"
 	"attack_accuracy"				"0"
 	"melee_range"					"48"

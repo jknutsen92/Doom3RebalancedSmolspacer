@@ -490,6 +490,7 @@ void monster_demon_wraith::combat_become_invisible() {
 
 	if ( !invisible ) {
 		// wait a bit incase we're blending from a run/walk
+		enableDamage(0);
 		sys.wait( 0.167 );
 
 		invisible = true;
@@ -497,7 +498,6 @@ void monster_demon_wraith::combat_become_invisible() {
 		startSound( "snd_fade_out", SND_CHANNEL_VOICE2, false );
 		spawn_fx();
 		sys.wait( WRAITH_FADE_DELAY );
-		enableDamage(0);
 
 		preBurn();
 		startTime = sys.getTime();

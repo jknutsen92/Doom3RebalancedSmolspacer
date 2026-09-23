@@ -170,7 +170,7 @@ entityDef monster_demon_mancubus {
 	
 	"mass"   						"800"
 
-	"heat_decay_rate"				"80"
+	"heat_decay_rate"				"50"
 	"plasma_heatable"				"1"
 	"body_skin_heated"				"skins/models/monsters/mancubus_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
