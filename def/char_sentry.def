@@ -315,7 +315,7 @@ entityDef projectile_sentry_bullet {
 }
 
 entityDef damage_sentry_bullet {
-	"damage"					"3"
+	"damage"					"5"
 	"kickDir"					"1 0 0"
 
 	"mtr_blob"					"genericDamage"

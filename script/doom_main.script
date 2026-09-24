@@ -104,5 +104,23 @@ void doom_main() {
 	// Do any script setup here
 	//
 
+	string g_skill = sys.getcvar("g_skill");
+	if (g_skill == "0") {
+		sys.execCfg("recruit.cfg");
+		sys.println("Loaded recruit.cfg");
+	}
+	else if (g_skill == "1") {
+		sys.execCfg("marine.cfg");
+		sys.println("Loaded marine.cfg");
+	}
+	else if (g_skill == "2") {
+		sys.execCfg("veteran.cfg");
+		sys.println("Loaded veteran.cfg");
+	}
+	else if (g_skill == "3") {
+		sys.execCfg("nightmare.cfg");
+		sys.println("Loaded nightmare.cfg");
+	}
+
 	sys.print( "Exiting doom_main()\n" );
 }

@@ -276,6 +276,8 @@ scriptEvent	void 	setcvar( string name, string value );
 // Returns the string for a cvar.
 scriptEvent	string	getcvar( string name );
 
+scriptEvent void	execCfg(string name);
+
 // Returns a random value X where 0 <= X < range.
 scriptEvent	float	random( float range );
 
