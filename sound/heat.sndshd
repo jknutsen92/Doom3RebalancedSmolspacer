@@ -1,6 +1,6 @@
 plasma_heat_blast {
 	minDistance	5
-	maxDistance	20
+	maxDistance	30
 	volume		17
 	shakes		0.2
 	unclamped
@@ -15,4 +15,12 @@ heat_sizzle {
     looping
 	
 	sound/heat/heat_sizzle.wav
+}
+
+heat_bonus_hit {
+	minDistance 5
+	maxDistance 20
+	volume 		15
+
+	sound/heat/heat_bonus_hit.wav
 }
