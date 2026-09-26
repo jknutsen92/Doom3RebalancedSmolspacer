@@ -553,9 +553,15 @@ boolean monster_demon_wraith::flankEnemy() {
 
 	randomRotatedAttackVec = sys.getRotatedVec(attackRangeVec, origin, upVec, randomAngle);
 	randomFlankPos = enemyPos + randomRotatedAttackVec;
+	float loopCount = 0;
 	while (!canReachPosition(randomFlankPos)) {
-		randomRotatedAttackVec = sys.getRotatedVec(attackRangeVec, origin, upVec, randomAngle);
+		if (loopCount > 4) {		// Prevents crashing
+			return false;
+		}
+		// Try the other 3 cardinal directions
+		randomRotatedAttackVec = sys.getRotatedVec(attackRangeVec, origin, upVec, 90);
 		randomFlankPos = enemyPos + randomRotatedAttackVec;
+		loopCount = loopCount + 1;
 	}
 	setWorldOrigin(randomFlankPos);
 
