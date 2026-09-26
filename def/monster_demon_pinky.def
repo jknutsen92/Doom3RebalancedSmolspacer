@@ -155,6 +155,12 @@ model monster_demon_pinky {
 	anim pain_left_arm				models/md5/monsters/pinky/pain_luparm3.md5anim {
 		frame 1							sound_voice snd_pain	
 	}
+	anim stun						models/md5/monsters/pinky/stun.md5anim {
+		frame 1							sound_voice snd_pain
+		frame 12						sound_body snd_gear
+		frame 18						sound_body snd_handstep
+		frame 43						sound_voice snd_sight1
+	}
 }
 	
 model monster_demon_pinky_pipes {
@@ -241,6 +247,32 @@ entityDef monster_demon_pinky {
 	"snd_burn"						"monster_demon_tick_burn"
 
 	"armorGibs"						"3"
+		// Heatblast gibs
+	"heatgib"						"1"
+
+	"def_dropGibItem1"				"moveable_item_head_pork"
+	"dropGibItem1Joint"				"Head"
+
+	"def_dropGibItem2"				"moveable_item_torso_pork"
+	"dropGibItem2Joint"				"Chest"
+
+	"def_dropGibItem3"				"moveable_item_rup_arm_pork"
+	"dropGibItem3Joint"				"Ruparm"
+
+	"def_dropGibItem4"				"moveable_item_left_waist_pork"
+	"dropGibItem4Joint"				"Waist"
+
+	"def_dropGibItem5"				"moveable_item_lup_leg_pork"
+	"dropGibItem5Joint"				"Lupleg"
+
+	"def_dropGibItem6"				"moveable_item_rup_leg_pork"
+	"dropGibItem6Joint"				"Rupleg"
+
+	"def_dropGibItem7"				"moveable_item_rup2_leg_pork"
+	"dropGibItem7Joint"				"Rloleg"
+
+	"def_dropGibItem8"				"moveable_item_pelvis_pork"
+	"dropGibItem8Joint"				"Hips"
 }
 
 entityDef melee_pinky_back {
