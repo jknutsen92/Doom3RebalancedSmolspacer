@@ -47,7 +47,9 @@ model monster_flying_lostsoul {
 	anim pain2						models/md5/monsters/lostsoul/pain2.md5anim {
 		frame 1							sound_voice snd_pain
 	}
-	anim charge						models/md5/monsters/lostsoul/charge.md5anim
+	anim charge						models/md5/monsters/lostsoul/charge.md5anim {
+		frame 1							sound_voice snd_sight 
+	}
 }
 
 entityDef monster_flying_lostsoul {

@@ -310,7 +310,7 @@ float monster_demon_pinky::check_attacks() {
 	if (AI_DAMAGE && (AI_DAMAGE_LOCATION == 45 || AI_DAMAGE_LOCATION == 46) && currentTime >= nextStunTime) {
 		startSoundShader("snd_pain", SND_CHANNEL_VOICE);
 		calc_stun();
-		sys.println("Precision shot: " + stunDmgRemaining);
+		// sys.println("Precision shot: " + stunDmgRemaining);
 		if (stunDmgRemaining <= 0) {
 			animState(ANIMCHANNEL_LEGS, "Legs_Stun", 0);
 		}
@@ -431,5 +431,5 @@ void monster_demon_pinky::calc_stun() {
 void monster_demon_pinky::stun_timeout() {
 	stunDmgTimeout = 0;
 	stunDmgRemaining = PINKY_STUN_DAMAGE;
-	sys.println("Timeout expired, resetting pinky damage stun");
+	// sys.println("Timeout expired, resetting pinky damage stun");
 }
