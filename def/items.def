@@ -167,6 +167,24 @@ entityDef item_keycard_aco {
 	"snd_acquire"			"guisounds_item"
 }
 
+entityDef item_keycard_power_core {
+	"inherit"				"item_default"
+	"editor_color"			".3 .3 1"
+	"editor_mins"			"-16 -16 0"
+	"editor_maxs"			"16 16 32"
+
+	"editor_usage"			"Power Core Key"
+	"editor_model"			"models/items/keycard/keycard3.lwo"
+
+	"spawnclass"			"idItem"
+	"model" 				"models/items/keycard/keycard3.lwo"
+	"size"					"32 32 32"
+	"inv_carry"				"1"
+	"inv_name"				"#str_07242"
+	"inv_id_bluekey"		"1"
+	"inv_item"				"1"
+	"snd_acquire"			"guisounds_item"
+}
 
 entityDef item_data_linker {
 	"inherit"				"item_default"

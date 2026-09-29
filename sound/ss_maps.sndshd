@@ -1,0 +1,9 @@
+enpro_key_hint {
+    volume          15
+    minDistance     20
+    maxDistance     100
+    unclamped
+    no_occlusion
+
+    sound/vo/enpro/key_hint.ogg
+}

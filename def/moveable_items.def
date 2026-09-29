@@ -148,6 +148,15 @@ entityDef moveable_item_armor_security {
 	"nopulse"					"1"
 }
 
+entityDef moveable_item_keycard_power_core {
+	"inherit"					"item_keycard_power_core"
+	"spawnclass"				"idMoveableItem"
+	"density"					"0.05"
+	"friction"					"0.3"
+	"bouncyness"				"0.1"
+	"nopulse"					"1"
+}
+
 entityDef moveable_item_medkit {
 	"inherit"					"item_medkit"
 	"spawnclass"				"idMoveableItem"

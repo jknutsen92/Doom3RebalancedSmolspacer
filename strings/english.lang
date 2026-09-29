@@ -5211,4 +5211,8 @@
 	"#str_07237"	"This server requires punkbuster. It can be enabled from the server browser."
 	"#str_07238"	"OpenAL is not installed."
 	"#str_07239"	"Pistol/Flashlight"
+	"#str_07240"	"POWER CORE ACCESS"
+	"#str_07241"	"UNION AEROSPACE\nENPRO POWER CORE"
+	"#str_07242"	"Power Core Key"
+	"#str_07243"	"CLICK TO SCAN\nPOWER CORE\nACCESS CARD"
 }
