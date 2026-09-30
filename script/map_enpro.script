@@ -985,6 +985,16 @@ namespace map_enpro {
 		sys.waitFor ($airlock_door2_left);		
         }
 
+	void trigger_commando_ladder_effects() {
+		$func_door_1667.open();
+		$func_door_1666.open();
+		sys.trigger($speaker_106);
+		sys.wait(0.5);
+		$speaker_106.fadeSound(SND_CHANNEL_ANY, -100, 2);
+		sys.wait(2);
+		$speaker_106.remove();
+	}
+
 	void setup_power_core_door_encounter() {
 		$func_door_1696.lock(2);
 		$func_door_1695.lock(2);

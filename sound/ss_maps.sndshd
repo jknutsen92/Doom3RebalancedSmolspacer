@@ -1,9 +1,18 @@
 enpro_key_hint {
-    volume          15
+    volume          16
     minDistance     20
     maxDistance     100
     unclamped
     no_occlusion
 
     sound/vo/enpro/key_hint.ogg
+}
+
+enpro_commando_taunt {
+    minDistance	15
+	maxDistance	35
+	volume	5
+    no_occlusion
+
+    sound/ed/zombie_commando/site1.wav
 }
