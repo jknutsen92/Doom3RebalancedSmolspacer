@@ -1,0 +1,25 @@
+void spookify_light(entity light, float fadeInTime, float fadeOutTime) {
+    string shader = light.getKey("texture");
+    light.fadeOutLight(fadeInTime);
+    sys.wait(0.2);
+
+    // Spookify
+    light.setLightParms(0.8, 0, 0, 1.0);
+    light.setShader("lights/round_flicker2");
+    light.startSound("snd_flicker", SND_CHANNEL_ANY, 0);
+
+    sys.wait(2);
+    light.fadeSound(SND_CHANNEL_ANY, -30, 3);
+    light.setShader(shader);
+    light.fadeInLight(fadeOutTime);
+    sys.wait(3);
+    light.stopSound(SND_CHANNEL_ANY, 0);
+}
+
+void rez(entity af, string demon) {
+    vector color = '1 0 0';
+    af.startFx("fx/resurrect");
+    fadeOutEnt(af, color, 3);
+    af.remove();
+    sys.spawn(demon);
+}

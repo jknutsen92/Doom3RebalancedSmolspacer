@@ -16,3 +16,12 @@ enpro_commando_taunt {
 
     sound/ed/zombie_commando/site1.wav
 }
+
+enpro_lostsoul_creep {
+    minDistance 10
+    maxDistance 25
+    volume      0
+    no_occlusion
+
+    sound/ambient/creep/1shot_creep_02.wav
+}
