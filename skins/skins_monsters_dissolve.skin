@@ -1,0 +1,10 @@
+
+// monster_zombie_maint.def
+skin skins/monsters/zombies/zmaint_dissolve {
+	models/monsters/zombie/zombie01/zhead02 		models/monsters/zombie/zombie01/zhead02_dissolve
+    models/monsters/zombie/zombie01/ztorso01 		models/monsters/zombie/zombie01/ztorso01_dissolve
+	models/monsters/zombie/zombie01/zarms01 		models/monsters/zombie/zombie01/zarms01_dissolve
+	models/monsters/zombie/zombie01/zlegs01 		models/monsters/zombie/zombie01/zlegs01_dissolve
+	models/monsters/skeleton/skeleton01 			textures/common/nodraw
+	models/monsters/zombie/zombie01/zback01			textures/common/nodraw
+}

@@ -1,0 +1,123 @@
+models/monsters/zombie/zombie01/zhead02_dissolve
+{
+    noselfShadow
+	flesh
+	clamp
+    {	// burning corpse effect
+		if	parm7			// only when dead
+		
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/imp/imp_dis.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 0.3 * (time - parm7)
+	}
+	{	// burning corpse effect
+		if parm7			// only when dead
+
+		// draw the fire burn at a negative polygonOffset, so it is behind the other stages
+		privatePolygonOffset	-1		// stage-only polygon offset
+        blend add	
+        blend gl_one, gl_zero
+		
+		map models/monsters/imp/imp_dis.tga	// replace this with a monster-specific texture
+		alphaTest 0.3 * (time - parm7)
+	}
+	renderbump  -size 512 512 -aa 2  models/monsters/zombie/zombie01/zhead02_local.tga models/monsters/zombie/zombie01/zhead02_hi.lwo
+    diffusemap	models/monsters/zombie/zombie01/zhead02.tga
+	bumpmap		addnormals(models/monsters/zombie/zombie01/zhead02_local.tga, heightmap(models/monsters/zombie/zombie01/zhead02_h.tga, 3 ) )
+    specularmap	models/monsters/zombie/zombie01/zhead02_s.tga
+}
+
+models/monsters/zombie/zombie01/ztorso01_dissolve
+{
+    noselfShadow
+	flesh
+	clamp
+    {	// burning corpse effect
+		if	parm7			// only when dead
+		
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/imp/imp_dis.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 0.3 * (time - parm7)
+	}
+	{	// burning corpse effect
+		if parm7			// only when dead
+
+		// draw the fire burn at a negative polygonOffset, so it is behind the other stages
+		privatePolygonOffset	-1		// stage-only polygon offset
+        blend add	
+        blend gl_one, gl_zero
+		
+		map models/monsters/imp/imp_dis.tga	// replace this with a monster-specific texture
+		alphaTest 0.3 * (time - parm7)
+	}
+	renderbump  -size 512 512 -aa 2  models/monsters/zombie/zombie01/ztorso01_local.tga models/monsters/zombie/zombie01/ztorso01_hi.lwo
+    diffusemap	models/monsters/zombie/zombie01/ztorso01.tga
+	bumpmap		addnormals(models/monsters/zombie/zombie01/ztorso01_local.tga, heightmap(models/monsters/zombie/zombie01/ztorso01_h.tga, 5 ) )
+    specularmap	models/monsters/zombie/zombie01/ztorso01_s.tga
+}
+
+models/monsters/zombie/zombie01/zarms01_dissolve
+{
+    noselfShadow
+    flesh
+    clamp
+    {	// burning corpse effect
+		if	parm7			// only when dead
+		
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/imp/imp_dis.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 0.3 * (time - parm7)
+	}
+	{	// burning corpse effect
+		if parm7			// only when dead
+
+		// draw the fire burn at a negative polygonOffset, so it is behind the other stages
+		privatePolygonOffset	-1		// stage-only polygon offset
+        blend add	
+        blend gl_one, gl_zero
+		
+		map models/monsters/imp/imp_dis.tga	// replace this with a monster-specific texture
+		alphaTest 0.3 * (time - parm7)
+	}
+	renderbump  -size 512 512 -aa 2  models/monsters/zombie/zombie01/zarms01_local.tga models/monsters/zombie/zombie01/zarms01_hi.lwo
+    diffusemap	models/monsters/zombie/zombie01/zarms01.tga
+	bumpmap		addnormals(models/monsters/zombie/zombie01/zarms01_local.tga, heightmap(models/monsters/zombie/zombie01/zarms01_h.tga, 5 ) )
+    specularmap	models/monsters/zombie/zombie01/zarms01_s.tga
+}
+
+models/monsters/zombie/zombie01/zlegs01_dissolve
+{
+    noselfShadow
+    flesh
+    clamp
+    {	// burning corpse effect
+		if	parm7			// only when dead
+		
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/imp/imp_dis.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 0.3 * (time - parm7)
+	}
+	{	// burning corpse effect
+		if parm7			// only when dead
+
+		// draw the fire burn at a negative polygonOffset, so it is behind the other stages
+		privatePolygonOffset	-1		// stage-only polygon offset
+        blend add	
+        blend gl_one, gl_zero
+		
+		map models/monsters/imp/imp_dis.tga	// replace this with a monster-specific texture
+		alphaTest 0.3 * (time - parm7)
+	}
+	renderbump  -size 512 512 -aa 2  models/monsters/zombie/zombie01/zlegs01_local.tga models/monsters/zombie/zombie01/zlegs01_hi.lwo
+	diffusemap	models/monsters/zombie/zombie01/zlegs01.tga
+	bumpmap		addnormals(models/monsters/zombie/zombie01/zlegs01_local.tga, heightmap(models/monsters/zombie/zombie01/zlegs01_h.tga, 5 ) )
+    specularmap	models/monsters/zombie/zombie01/zlegs01_s.tga
+}

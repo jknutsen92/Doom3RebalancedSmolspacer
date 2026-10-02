@@ -475,6 +475,9 @@ scriptEvent	void 	drawText( string text, vector origin, float scale, vector colo
 // checks if an influence is active
 scriptEvent float	influenceActive();
 
+// Destroys ragdoll and spawns a new demon in it's place
+scriptEvent entity	rezRagdoll(entity ragdoll, string newMonster);
+
 /***********************************************************************
 
 	cameras

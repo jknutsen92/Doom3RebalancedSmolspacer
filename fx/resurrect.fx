@@ -16,4 +16,10 @@ fx fx/resurrect {
 		light       "lights/spectrumlight", 2, 2, 2, 500
 		fadeIn      1
 	}
+	{
+		name		"soundsting"
+		delay		0.5
+		duration	3
+		sound		"mcu_spiritsting"
+	}
 }
