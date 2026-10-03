@@ -144,7 +144,7 @@ model viewmodel_chainsaw {
 }
 
 entityDef damage_chainsaw {
-	"damage"			"50"
+	"damage"			"20"
 	"kickDir"			"1 0 0"
 
 	"mtr_blob"			"genericDamage"
