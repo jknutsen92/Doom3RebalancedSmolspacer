@@ -231,6 +231,9 @@ scriptEvent void	callFunction( string functionName );
 // enables or prevents an entity from going dormant
 scriptEvent void	setNeverDormant( float enable );
 
+// whether or not the entity has finished spawning yet - intended to be used in conjuction with rezRagdoll
+scriptEvent float 	isSpawned();
+
 /***********************************************************************
 
 	system events (called via 'sys.')
@@ -292,6 +295,10 @@ scriptEvent	void 	threadname( string name );
 
 // Returns a reference to the entity with the specified name.
 scriptEvent	entity	getEntity( string name );
+
+// Destroys ragdoll entity and spawns a new demon in its place. Set the thread spawn args first just like when spawning an entity
+// Returns the entity that will spawn after the process is complete. Use isSpawned scriptEvent to wait until the entity has spawned
+scriptEvent entity 	resurrectRagdoll(entity ragdoll);
 
 // Creates an entity of the specified classname and returns a reference to the entity.
 scriptEvent	entity	spawn( string classname );
@@ -474,9 +481,6 @@ scriptEvent	void 	drawText( string text, vector origin, float scale, vector colo
 
 // checks if an influence is active
 scriptEvent float	influenceActive();
-
-// Destroys ragdoll and spawns a new demon in it's place
-scriptEvent void	rezRagdoll(entity ragdoll, string newMonster);
 
 /***********************************************************************
 
@@ -953,6 +957,19 @@ scriptEvent	string  getState();
 
 // returns the entity used for the character's head, if it has one.
 scriptEvent	entity	getHead();
+
+// get the team this entity belongs to
+scriptEvent float	getTeam();
+
+// set the team membership for this entity
+scriptEvent void	setTeam(float team);
+
+// // remove callback func for the actor's on_damaged event
+// scriptEvent void	removeEventCallback(string event);
+
+// // sets callback to function name for actor's on_damaged event. If calling from outside script object, prepend with namespace name if applicable
+// // i.e. entity.setEventCallback("on_damage", "map_enpro::my_on_hit_func")
+// scriptEvent void 	setEventCallback(string event, string funcname);
 
 /***********************************************************************
 

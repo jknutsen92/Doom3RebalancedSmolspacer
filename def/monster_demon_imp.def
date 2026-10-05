@@ -359,7 +359,7 @@ model monster_demon_imp {
 entityDef monster_demon_imp {
 	"inherit"						"monster_default"
 	"scriptobject"					"monster_demon_imp"
-	"script_callback_damaged"		"OnDamage"
+	"script_callback_damaged"		""
 	"model"							"monster_demon_imp"
 	"ragdoll"						"monster_demon_imp"
 	
