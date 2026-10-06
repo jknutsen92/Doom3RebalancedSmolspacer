@@ -407,10 +407,10 @@ entityDef monster_demon_trite {
 	"chatter_combat_min"			"3"
 	"chatter_combat_max"			"7"
 	"turn_rate"						"360"
-	"mass"							"50"
+	"mass"							"40"
 
 	"plasma_heatable"				"1"
-	"heat_decay_rate"				"10"
+	"heat_decay_rate"				"1"
 	"body_skin_heated"				"skins/models/monsters/trite_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 
@@ -489,10 +489,10 @@ entityDef monster_demon_trite {
 	"dropGibItem1Joint"				"Head"
 
 	"def_dropGibItem3"				"moveable_item_rup_arm_pork"
-	"dropGibItem3Joint"				"Ruparm"
+	"dropGibItem3Joint"				"Ruparm1"
 
 	"def_dropGibItem4"				"moveable_item_rup_arm_pork"
-	"dropGibItem4Joint"				"Luparm"	
+	"dropGibItem4Joint"				"Luparm1"	
 }
 
 entityDef	melee_triteLeapAttack {

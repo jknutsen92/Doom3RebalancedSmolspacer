@@ -25,3 +25,24 @@ enpro_lostsoul_creep {
 
     sound/ambient/creep/1shot_creep_02.wav
 }
+
+enpro_devil_wait {
+    volume      15
+    global
+
+    sound/vo/enpro/wait.wav
+}
+
+enpro_devil_how_has_a_welp_like_you {
+    volume      17
+    global
+
+    sound/vo/enpro/how_has_a_welp_like_you.wav
+}
+
+enpro_devil_kill_him {
+    volume      15
+    global
+
+    sound/vo/enpro/kill_him.wav
+}

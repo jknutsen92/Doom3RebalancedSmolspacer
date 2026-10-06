@@ -160,14 +160,15 @@ entityDef	damage_plasma_splash {
 	"damage"					"1"
 	"radius"					"50"
 	"gib"						"0"
+	"attackerDamageScale"		"0.5"
 	"exclude_debug_draw"		"1"
 }
 
 entityDef	damage_heatblast {
 	"damage"					"1"				// Base values
-	"heat"						"3"				// these will be scaled according to mass
+	"heat"						"1"				// these will be scaled according to mass
 	"radius"					"1"
-	"attackerDamageScale"		"0.1"
+	"attackerDamageScale"		"0.3"
 	"attackerPushScale"			"0.5"
 	"push"						"100"
 	"massScale"					"1"
@@ -235,7 +236,7 @@ entityDef projectile_plasmablast {
 
 	"ignore_zone_scaling"		"1"
 	"weakpoint_bonus"			"0"						// smolspacer - 1 bonus from headshots + feedback
-	"heat"						"20"
+	"heat"						"15"
 }
 
 /*
