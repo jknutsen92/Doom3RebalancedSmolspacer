@@ -151,7 +151,7 @@ model viewmodel_plasmagun {
 }
 
 entityDef	damage_plasmablast {
-	"damage"					"6"					// "16" smolspacer
+	"damage"					"5"					// "16" smolspacer
 	"smoke_wound_flesh"			"bloodwound.prt"
 	"gib"						"0"
 }
@@ -168,7 +168,7 @@ entityDef	damage_heatblast {
 	"damage"					"1"				// Base values
 	"heat"						"1"				// these will be scaled according to mass
 	"radius"					"1"
-	"attackerDamageScale"		"0.3"
+	"attackerDamageScale"		"0.1"
 	"attackerPushScale"			"0.5"
 	"push"						"100"
 	"massScale"					"1"

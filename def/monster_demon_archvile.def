@@ -184,7 +184,7 @@ entityDef monster_demon_archvile {
 	"mass"   						"350"
 
 	"plasma_heatable"				"1"
-	"heat_decay_rate"				"75"
+	"heat_decay_rate"				"25"
 	"body_skin_heated"				"skins/models/monsters/archvile_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 

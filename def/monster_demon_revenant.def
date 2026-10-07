@@ -225,7 +225,7 @@ entityDef monster_demon_revenant {
 	"mass"   						"350"
 
 	"plasma_heatable"				"1"
-	"heat_decay_rate"				"50"
+	"heat_decay_rate"				"25"
 	"body_skin_heated"				"skins/models/monsters/revenant_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 	

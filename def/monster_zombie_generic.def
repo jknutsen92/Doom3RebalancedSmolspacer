@@ -140,7 +140,7 @@ entityDef monster_zombie_base {
 	"mass"							"150"
 	
 	"plasma_heatable"				"1"
-	"heat_decay_rate"				"5"
+	"heat_decay_rate"				"10"
 	"heatblast_fx"					"fx/heatblast.fx"
 	
 	"burnaway"						"1.5"
@@ -524,7 +524,7 @@ entityDef monster_zombie_maint_flashlight {
 	"smoke_wound_ricochet"			"bulletricochet.prt"
 
 	"plasma_heatable"				"1"
-	"heat_decay_rate"				"5"
+	"heat_decay_rate"				"10"
 	"body_skin_heated"				""
 	"head_skin_heated"				""
 
