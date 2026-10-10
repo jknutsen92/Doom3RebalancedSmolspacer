@@ -964,12 +964,6 @@ scriptEvent float	getTeam();
 // set the team membership for this entity
 scriptEvent void	setTeam(float team);
 
-// // remove callback func for the actor's on_damaged event
-// scriptEvent void	removeEventCallback(string event);
-
-// // sets callback to function name for actor's on_damaged event. If calling from outside script object, prepend with namespace name if applicable
-// // i.e. entity.setEventCallback("on_damage", "map_enpro::my_on_hit_func")
-// scriptEvent void 	setEventCallback(string event, string funcname);
 
 /***********************************************************************
 
