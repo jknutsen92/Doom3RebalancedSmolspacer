@@ -56,7 +56,7 @@ entityDef weapon_chainsaw {
 
 	"weapon_scriptobject"		"weapon_chainsaw"
 	"def_melee"					"damage_chainsaw"
-	"melee_distance"			"64"
+	"melee_distance"			"72"
 	"ammoType"					""
 	"ammoRequired"				"0"
 	"clipSize"					"0"

@@ -73,7 +73,7 @@ entityDef weapon_plasmagun {
 	"flashRadius"				"120"
 	"silent_fire"				"0"
 	"smoke_muzzle"				"plasmamuzzlesmoke.prt"
-	"gib"				"1"
+	"gib"						"0"
 
 	"weaponAngleOffsetAverages" "15"
 	"weaponAngleOffsetScale" 	".40"
@@ -208,7 +208,7 @@ entityDef projectile_plasmablast {
 	"detonate_on_actor"			"1"					// whether projectile should detonate when it hits a character in the game
 
 	"impact_damage_effect"		"1"					// whether projectile causes blood splats from characters that bleed
-	"impact_gib"				"1"					// whether projectile can gib a character or not (for example: bullets don't gib, but rockets do)
+	"impact_gib"				"0"					// whether projectile can gib a character or not (for example: bullets don't gib, but rockets do)
 
 	"mtr_detonate"				"textures/decals/ballburn_plasma"
 	"decal_size"				"70" 
