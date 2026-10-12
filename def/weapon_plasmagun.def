@@ -152,12 +152,14 @@ model viewmodel_plasmagun {
 
 entityDef	damage_plasmablast {
 	"damage"					"5"					// "16" smolspacer
+	"heat"						"15"
 	"smoke_wound_flesh"			"bloodwound.prt"
 	"gib"						"0"
 }
 
 entityDef	damage_plasma_splash {
 	"damage"					"1"
+	"heat"						"10"
 	"radius"					"50"
 	"gib"						"0"
 	"attackerDamageScale"		"0.5"
@@ -236,7 +238,7 @@ entityDef projectile_plasmablast {
 
 	"ignore_zone_scaling"		"1"
 	"weakpoint_bonus"			"0"						// smolspacer - 1 bonus from headshots + feedback
-	"heat"						"15"
+	"heat"						"1"
 	"heatblast_gib_dir"			"0 0 200"
 }
 

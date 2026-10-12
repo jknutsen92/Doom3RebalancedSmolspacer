@@ -393,12 +393,12 @@ float RandomRange(float lower, float upper) {
 	return sys.random(upper - lower) + lower;
 }
 
-// Registers the handler func to be called when the signal is fired on this entity.
+// Registers the handler func to be called when the signal is fired on this entity and then waits
 void addSignalFunc(float signalNum, entity targetEnt, string func) {
     sys.onSignal(signalNum, targetEnt, func);
     // Required to keep the thread alive for the handler to be called
-	while (targetEnt.getName()) {
-		sys.println(targetEnt.getName() + " is alive. Waiting..");
-		sys.wait(10);
+	string name = targetEnt.getName();
+	while (sys.getEntity(name)) {
+		sys.wait(30);
 	}
 }

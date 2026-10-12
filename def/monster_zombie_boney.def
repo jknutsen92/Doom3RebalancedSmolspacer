@@ -124,7 +124,6 @@ entityDef monster_zombie_boney {
 	"health"						"150"
 	"melee_range"					"32"
 	"anim"							"idle"
-	//"def_projectile"				"projectile_berniefire"
 	"attack_cone"					"70"
 	"attack_accuracy"				"0"
 	"mass"							"200"
