@@ -2,6 +2,8 @@ namespace map_enpro {
 
 	// Set up exit room sounds for after the battle sequence. Trigger all this stuff when the player
 	// swaps out the rod.
+	float   g_playerTeam;
+    boolean g_playerHostile;
 	
 	void xianstuff() {
 		sys.trigger ($speaker_burn_1);			// flame1 in exit room
@@ -999,6 +1001,241 @@ namespace map_enpro {
 		$func_door_1696.lock(2);
 		$func_door_1695.lock(2);
 	}
+
+	void setup_secret_encounter() {
+		g_playerTeam = $player1.getTeam();
+        g_playerHostile = false;
+	}
+
+/////////////////////////////////////
+/////////// showdown secret encounter - smolspacer
+/////////////////////////////////////
+
+/////////////////////////////////////////////// Callbacks
+
+    void hit_by_player(entity this) {
+        if (!g_playerHostile) {
+            $player1.setTeam(g_playerTeam);
+            g_playerHostile = true;
+        }
+    }
+
+    void menace_player(entity this) {
+        this.turnToEntity($player1);
+        this.lookAt($player1, 10);
+    }
+
+	void end_showdown_encounter() {
+        $func_door_garage_1.open();
+		$func_door_garage_2.open();
+		sys.trigger($showdown_speaker_music);
+        $showdown_speaker_music.fadeSound(SND_CHANNEL_ANY, -80, 10);
+        sys.wait(10);
+        $showdown_speaker_music.remove();
+
+    }
+
+///////////////////////////////////////////////////////////
+
+    void flicker_lights() {
+        $light_4526.setShader("lights/round_flicker");
+		$light_4527.setShader("lights/round_flicker");
+		$light_4564.setShader("lights/round_flicker");
+		$light_4590.setShader("lights/square_flicker");
+		$light_4592.setShader("lights/square_flicker");
+		$light_4596.setShader("lights/newalphagrate1_flicker");
+		$light_4598.setShader("lights/square_flicker");
+		$light_4881.setShader("lights/round_flicker");
+		$light_4882.setShader("lights/round_flicker");
+    }
+
+	void dim_lights() {
+        $light_4526.fadeOutLight(3);
+		$light_4527.fadeOutLight(3);
+		$light_4564.fadeOutLight(3);
+		$light_4590.fadeOutLight(3);
+		$light_4592.fadeOutLight(3);
+		$light_4596.fadeOutLight(3);
+		$light_4598.fadeOutLight(3);
+		$light_4881.fadeOutLight(3);
+		$light_4882.fadeOutLight(3);
+	}
+
+    void resurrect_bodies() {
+        if ($showdown_marine_ragdoll_1) {
+            sys.setSpawnArg("classname", "monster_zombie_boney");
+            entity ent1 = sys.resurrectRagdoll($showdown_marine_ragdoll_1);
+            thread addSignalFunc(SIG_TRIGGER, ent1, "map_enpro::menace_player");
+            thread addSignalFunc(SIG_DAMAGE, ent1, "map_enpro::hit_by_player");
+            sys.wait(0.5);
+        }
+
+        if ($showdown_marine_ragdoll_2) {
+            sys.setSpawnArg("classname", "monster_zombie_bernie");
+            entity ent2 = sys.resurrectRagdoll($showdown_marine_ragdoll_2);
+            thread addSignalFunc(SIG_TRIGGER, ent2, "map_enpro::menace_player");
+            thread addSignalFunc(SIG_DAMAGE, ent2, "map_enpro::hit_by_player");
+            sys.wait(0.5);
+        }
+
+        if ($showdown_marine_ragdoll_3) {
+            sys.setSpawnArg("classname", "monster_zombie_maggot");
+            entity ent3 = sys.resurrectRagdoll($showdown_marine_ragdoll_3);
+            thread addSignalFunc(SIG_TRIGGER, ent3, "map_enpro::menace_player");
+            thread addSignalFunc(SIG_DAMAGE, ent3, "map_enpro::hit_by_player");
+            sys.wait(0.5);
+        }
+
+        if ($showdown_marine_ragdoll_4) {
+            sys.setSpawnArg("classname", "monster_zombie_bernie");
+            entity ent4 = sys.resurrectRagdoll($showdown_marine_ragdoll_4);
+            thread addSignalFunc(SIG_TRIGGER, ent4, "map_enpro::menace_player");
+            thread addSignalFunc(SIG_DAMAGE, ent4, "map_enpro::hit_by_player");
+            sys.wait(0.5);
+        }
+
+        if ($showdown_marine_ragdoll_5) {
+            sys.setSpawnArg("classname", "monster_zombie_boney");
+            entity ent5 = sys.resurrectRagdoll($showdown_marine_ragdoll_5);
+            thread addSignalFunc(SIG_TRIGGER, ent5, "map_enpro::menace_player");
+            thread addSignalFunc(SIG_DAMAGE, ent5, "map_enpro::hit_by_player");
+        }
+
+		if ($showdown_marine_ragdoll_6) {
+            sys.setSpawnArg("classname", "monster_zombie_maggot");
+            entity ent6 = sys.resurrectRagdoll($showdown_marine_ragdoll_6);
+            thread addSignalFunc(SIG_TRIGGER, ent6, "map_enpro::menace_player");
+            thread addSignalFunc(SIG_DAMAGE, ent6, "map_enpro::hit_by_player");
+        }
+
+        sys.wait(3);
+    }
+
+    void spawn_lostsouls() {
+        thread addSignalFunc(SIG_DAMAGE, $showdown_lostsoul_1, "map_enpro::hit_by_player");
+        sys.trigger($showdown_lostsoul_1);
+        $showdown_lostsoul_1.turnToEntity($player1);
+        $showdown_lostsoul_1.lookAt($player1, 10);
+        sys.wait(0.5);
+
+        thread addSignalFunc(SIG_DAMAGE, $showdown_lostsoul_2, "map_enpro::hit_by_player");
+        sys.trigger($showdown_lostsoul_2);
+        $showdown_lostsoul_2.turnToEntity($player1);
+        $showdown_lostsoul_2.lookAt($player1, 10);
+        sys.wait(0.5);
+
+        thread addSignalFunc(SIG_DAMAGE, $showdown_lostsoul_3, "map_enpro::hit_by_player");
+        sys.trigger($showdown_lostsoul_3);
+        $showdown_lostsoul_3.turnToEntity($player1);
+        $showdown_lostsoul_3.lookAt($player1, 10);
+        sys.wait(0.5);
+
+        thread addSignalFunc(SIG_DAMAGE, $showdown_lostsoul_4, "map_enpro::hit_by_player");
+        sys.trigger($showdown_lostsoul_4);
+        $showdown_lostsoul_4.turnToEntity($player1);
+        $showdown_lostsoul_4.lookAt($player1, 10);
+        sys.wait(0.5);
+
+        thread addSignalFunc(SIG_DAMAGE, $showdown_lostsoul_5, "map_enpro::hit_by_player");
+        sys.trigger($showdown_lostsoul_5);
+        $showdown_lostsoul_5.turnToEntity($player1);
+        $showdown_lostsoul_5.lookAt($player1, 10);
+        sys.wait(0.5);
+
+        thread addSignalFunc(SIG_DAMAGE, $showdown_lostsoul_6, "map_enpro::hit_by_player");
+        sys.trigger($showdown_lostsoul_6);
+        $showdown_lostsoul_6.turnToEntity($player1);
+        $showdown_lostsoul_6.lookAt($player1, 10);
+        sys.wait(0.5);
+
+        thread addSignalFunc(SIG_DAMAGE, $showdown_lostsoul_7, "map_enpro::hit_by_player");
+        sys.trigger($showdown_lostsoul_7);
+        $showdown_lostsoul_7.turnToEntity($player1);
+        $showdown_lostsoul_7.lookAt($player1, 10);
+
+        if (!g_playerHostile) {
+            $player1.startSoundShader("enpro_devil_how_has_a_welp_like_you", SND_CHANNEL_ANY);
+        }
+
+        sys.wait(3.5);
+    }
+
+	void restore_lights() {
+		$light_4526.setShader($light_4526.getKey("prev_texture"));
+		$light_4527.setShader($light_4527.getKey("prev_texture"));
+		$light_4564.setShader($light_4564.getKey("prev_texture"));
+		$light_4590.setShader($light_4590.getKey("prev_texture"));
+		$light_4592.setShader($light_4592.getKey("prev_texture"));
+		$light_4596.setShader($light_4596.getKey("prev_texture"));
+		$light_4598.setShader($light_4598.getKey("prev_texture"));
+		$light_4881.setShader($light_4881.getKey("prev_texture"));
+		$light_4882.setShader($light_4882.getKey("prev_texture"));
+
+		$light_4526.fadeInLight(1.5);
+		$light_4527.fadeInLight(1.5);
+		$light_4564.fadeInLight(1.5);
+		$light_4590.fadeInLight(1.5);
+		$light_4592.fadeInLight(1.5);
+		$light_4596.fadeInLight(1.5);
+		$light_4598.fadeInLight(1.5);
+		$light_4881.fadeInLight(1.5);
+		$light_4882.fadeInLight(1.5);
+	}
+
+	void start_showdown_encounter() {
+		float demonTeam = $showdown_cacodemon.getTeam();
+        // Set player team to be friendly to demons
+        $player1.setTeam(demonTeam);
+
+        // Flicker the lights
+        flicker_lights();
+
+        // Evil laugh
+        $player1.startSoundShader("betrugger_laugh_01", SND_CHANNEL_ANY);
+
+        // Start fading in the music
+        sys.trigger($showdown_speaker_music);
+        $showdown_speaker_music.fadeSound(SND_CHANNEL_ANY, 25, 14);
+
+        // Dim lights
+        dim_lights();
+        sys.wait(1);
+
+        // Start resurrecting the bodies
+        float helperThread;
+        helperThread = thread resurrect_bodies();
+        sys.waitForThread(helperThread);
+
+        if (!g_playerHostile) {
+            $player1.startSoundShader("enpro_devil_wait", SND_CHANNEL_ANY);
+        }
+
+        // Start spawning in the lost souls
+        helperThread = thread spawn_lostsouls();
+        sys.waitForThread(helperThread);
+
+        // Play audio sting
+        $player1.startSoundShader("sound/stingers/stinger_09.wav", SND_CHANNEL_ANY);
+
+        // Spawn in the cacodemon
+        thread addSignalFunc(SIG_REMOVED, $showdown_cacodemon, "map_enpro::end_showdown_encounter");
+        sys.trigger($showdown_cacodemon);
+        $showdown_cacodemon.turnToEntity($player1);
+        $showdown_cacodemon.lookAt($player1, 5);
+
+        // Restore the lights
+        restore_lights();
+
+        sys.wait(3);
+
+        // Play "Kill him!" or something
+        if (!g_playerHostile) {
+            sys.wait($player1.startSoundShader("enpro_devil_kill_him", SND_CHANNEL_ANY));
+        }
+
+        // Change the player's team back
+        $player1.setTeam(g_playerTeam);
+	}
                 
 	void main()
 	{
@@ -1008,6 +1245,7 @@ namespace map_enpro {
 		string g_skill = sys.getcvar("g_skill");
 		if (g_skill == "2" || g_skill == "3") {
 			setup_power_core_door_encounter();
+			setup_secret_encounter();
 		}
 	}
 }

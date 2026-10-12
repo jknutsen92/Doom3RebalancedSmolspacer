@@ -34,7 +34,7 @@ enpro_devil_wait {
 }
 
 enpro_devil_how_has_a_welp_like_you {
-    volume      17
+    volume      20
     global
 
     sound/vo/enpro/how_has_a_welp_like_you.wav
