@@ -393,12 +393,28 @@ float RandomRange(float lower, float upper) {
 	return sys.random(upper - lower) + lower;
 }
 
+// Entity existence test. Doesn't verify if the entityNum refers to the same entity
+boolean entityExists(entity ent) {
+	if (ent.getName()) {
+		return true;
+	}
+	return false;
+}
+
+// Ensure the entity exists according to its name which is guaranteed to be unique
+boolean uniqueEntityExists(string name) {
+	if (sys.getEntity(name)) {
+		return true;
+	}
+	return false;
+}
+
 // Registers the handler func to be called when the signal is fired on this entity and then waits
 void addSignalFunc(float signalNum, entity targetEnt, string func) {
     sys.onSignal(signalNum, targetEnt, func);
     // Required to keep the thread alive for the handler to be called
 	string name = targetEnt.getName();
-	while (sys.getEntity(name)) {
+	while (uniqueEntityExists(name)) {
 		sys.wait(30);
 	}
 }

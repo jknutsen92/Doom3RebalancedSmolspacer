@@ -4,6 +4,7 @@ namespace map_enpro {
 	// swaps out the rod.
 	float   g_playerTeam;
     boolean g_playerHostile;
+	float	g_airlock2Closed;
 	
 	void xianstuff() {
 		sys.trigger ($speaker_burn_1);			// flame1 in exit room
@@ -958,9 +959,7 @@ namespace map_enpro {
 /////////// exit airlock door
 /////////////////////////////////////
 
-        void exit_open()
-
-        {       //disable the gui on door2		
+	void exit_open() {       //disable the gui on door2		
 		$airlock_door2_gui.setGuiParm ( "gui_parm1" , 0);
 
 		//move the 4 locks to unlock position
@@ -984,8 +983,48 @@ namespace map_enpro {
 		$airlock_door2_right.rotateOnce ( '0 -45 0' );
 
 		sys.waitFor ($airlock_door2_right);
-		sys.waitFor ($airlock_door2_left);		
-        }
+		sys.waitFor ($airlock_door2_left);
+
+		g_airlock2Closed = false;
+	}
+
+    void exit_close() {
+        sys.trigger ($speaker_airlock_door2_open);
+
+        $airlock_door2_left.rotateOnce ( '0 -45 0' );
+        $airlock_door2_right.rotateOnce ( '0 45 0' );
+
+        sys.waitFor ($airlock_door2_right);
+        sys.waitFor ($airlock_door2_left);
+
+        sys.trigger ($speaker_airlock_door2_left_lock);
+        $airlock_door2_right_lock.move ( SOUTH, 16 );
+        sys.trigger ($speaker_airlock_door2_right_lock);
+        $airlock_door2_left_lock.move ( SOUTH, 16 );
+        sys.waitFor ($airlock_door2_right_lock);
+
+        sys.trigger ($speaker_airlock_door2_bottom_lock);				// sound
+        //move the 4 locks to unlock position
+        $airlock_door2_top_lock.move ( DOWN, 15 );
+        $airlock_door2_bottom_lock.move ( UP, 15 );
+        sys.waitFor ($airlock_door2_bottom_lock);
+
+        // Reset gui
+        $airlock_door2_gui.setGuiParm ( "gui_parm1" , 1);
+
+        g_airlock2Closed = true;
+    }
+
+    void exit_disable_gui() {
+        // Disable the gui
+        $airlock_door2_gui.setGui(1, "guis/demonic/hellfaceflash.gui");
+    }
+
+    void exit_enable_gui() {
+        // Enable the gui
+        $airlock_door2_gui.setGui(1, "guis/controlpanels/airlock_outer2.gui");
+    }
+
 
 	void trigger_commando_ladder_effects() {
 		$func_door_1667.open();
@@ -997,6 +1036,10 @@ namespace map_enpro {
 		$speaker_106.remove();
 	}
 
+/////////////////////////////////////
+/////////// showdown secret encounter - smolspacer
+/////////////////////////////////////
+
 	void setup_power_core_door_encounter() {
 		$func_door_1696.lock(2);
 		$func_door_1695.lock(2);
@@ -1005,11 +1048,8 @@ namespace map_enpro {
 	void setup_secret_encounter() {
 		g_playerTeam = $player1.getTeam();
         g_playerHostile = false;
+		g_airlock2Closed = true;
 	}
-
-/////////////////////////////////////
-/////////// showdown secret encounter - smolspacer
-/////////////////////////////////////
 
 /////////////////////////////////////////////// Callbacks
 
@@ -1026,13 +1066,13 @@ namespace map_enpro {
     }
 
 	void end_showdown_encounter() {
-        $func_door_garage_1.open();
-		$func_door_garage_2.open();
+        sys.trigger($func_door_garage_1);
+		sys.trigger($func_door_garage_2);
+		exit_enable_gui();
 		sys.trigger($showdown_speaker_music);
         $showdown_speaker_music.fadeSound(SND_CHANNEL_ANY, -80, 10);
         sys.wait(10);
         $showdown_speaker_music.remove();
-
     }
 
 ///////////////////////////////////////////////////////////
@@ -1062,7 +1102,7 @@ namespace map_enpro {
 	}
 
     void resurrect_bodies() {
-        if ($showdown_marine_ragdoll_1) {
+        if (entityExists($showdown_marine_ragdoll_1)) {
             sys.setSpawnArg("classname", "monster_zombie_boney");
             entity ent1 = sys.resurrectRagdoll($showdown_marine_ragdoll_1);
             thread addSignalFunc(SIG_TRIGGER, ent1, "map_enpro::menace_player");
@@ -1070,7 +1110,7 @@ namespace map_enpro {
             sys.wait(0.5);
         }
 
-        if ($showdown_marine_ragdoll_2) {
+        if (entityExists($showdown_marine_ragdoll_2)) {
             sys.setSpawnArg("classname", "monster_zombie_bernie");
             entity ent2 = sys.resurrectRagdoll($showdown_marine_ragdoll_2);
             thread addSignalFunc(SIG_TRIGGER, ent2, "map_enpro::menace_player");
@@ -1078,15 +1118,15 @@ namespace map_enpro {
             sys.wait(0.5);
         }
 
-        if ($showdown_marine_ragdoll_3) {
-            sys.setSpawnArg("classname", "monster_zombie_maggot");
+        if (entityExists($showdown_marine_ragdoll_3)) {
+            sys.setSpawnArg("classname", "monster_demon_maggot");
             entity ent3 = sys.resurrectRagdoll($showdown_marine_ragdoll_3);
             thread addSignalFunc(SIG_TRIGGER, ent3, "map_enpro::menace_player");
             thread addSignalFunc(SIG_DAMAGE, ent3, "map_enpro::hit_by_player");
             sys.wait(0.5);
         }
 
-        if ($showdown_marine_ragdoll_4) {
+        if (entityExists($showdown_marine_ragdoll_4)) {
             sys.setSpawnArg("classname", "monster_zombie_bernie");
             entity ent4 = sys.resurrectRagdoll($showdown_marine_ragdoll_4);
             thread addSignalFunc(SIG_TRIGGER, ent4, "map_enpro::menace_player");
@@ -1094,18 +1134,25 @@ namespace map_enpro {
             sys.wait(0.5);
         }
 
-        if ($showdown_marine_ragdoll_5) {
+        if (entityExists($showdown_marine_ragdoll_5)) {
             sys.setSpawnArg("classname", "monster_zombie_boney");
             entity ent5 = sys.resurrectRagdoll($showdown_marine_ragdoll_5);
             thread addSignalFunc(SIG_TRIGGER, ent5, "map_enpro::menace_player");
             thread addSignalFunc(SIG_DAMAGE, ent5, "map_enpro::hit_by_player");
         }
 
-		if ($showdown_marine_ragdoll_6) {
-            sys.setSpawnArg("classname", "monster_zombie_maggot");
+		if (entityExists($showdown_marine_ragdoll_6)) {
+            sys.setSpawnArg("classname", "monster_demon_maggot");
             entity ent6 = sys.resurrectRagdoll($showdown_marine_ragdoll_6);
             thread addSignalFunc(SIG_TRIGGER, ent6, "map_enpro::menace_player");
             thread addSignalFunc(SIG_DAMAGE, ent6, "map_enpro::hit_by_player");
+        }
+
+		if (entityExists($env_ragdoll_marine5_1)) {
+            sys.setSpawnArg("classname", "monster_demon_maggot");
+            entity ent7 = sys.resurrectRagdoll($env_ragdoll_marine5_1);
+            thread addSignalFunc(SIG_TRIGGER, ent7, "map_enpro::menace_player");
+            thread addSignalFunc(SIG_DAMAGE, ent7, "map_enpro::hit_by_player");
         }
 
         sys.wait(3);
@@ -1183,6 +1230,11 @@ namespace map_enpro {
 	}
 
 	void start_showdown_encounter() {
+		if (!g_airlock2Closed) {
+			thread exit_close();
+		}
+		exit_disable_gui();
+
 		float demonTeam = $showdown_cacodemon.getTeam();
         // Set player team to be friendly to demons
         $player1.setTeam(demonTeam);

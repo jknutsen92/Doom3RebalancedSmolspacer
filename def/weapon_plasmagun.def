@@ -152,7 +152,7 @@ model viewmodel_plasmagun {
 
 entityDef	damage_plasmablast {
 	"damage"					"5"					// "16" smolspacer
-	"heat"						"15"
+	"heat"						"20"
 	"smoke_wound_flesh"			"bloodwound.prt"
 	"gib"						"0"
 }

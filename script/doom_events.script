@@ -170,6 +170,19 @@ scriptEvent	void 	setGuiParm( string key, string value );
 // Sets a parameter on this entity's GUI.
 scriptEvent	void 	setGuiFloat( string key, float value );
 
+// Ported from d3xp: sets the entity's gui (selected by guiNum) to the path guis/some/gui. Should precache first with a call
+// to precacheGui to avoid framerate hitches when loading in the new gui
+scriptEvent void 	setGui(float guiNum, string guiName);
+
+// Ported from d3xp: precache the gui asset in memory to avoid hitching. Best called before using setGui
+scriptEvent void 	precacheGui(string guiName);
+
+// Ported from d3xp: gets the guiparm key value on the gui indicated by guiNum on the entity
+scriptEvent string	getGuiParm(float guiNum, string key);
+
+// Ported from d3xp: gets the guiparm key value as a float
+scriptEvent float	getGuiParmFloat(float guiNum, string key);
+
 // searches for the name of a spawn arg that matches the prefix.  for example,
 // passing in "attack_target" matches "attack_target1", "attack_targetx", "attack_target_enemy", 
 // etc. The returned string is the name of the key which can then be passed into
