@@ -1253,6 +1253,8 @@ scriptEvent void	allowHiddenMovement( float enable );
 // returns an entity within the bounds specified
 scriptEvent entity	findActorsInBounds( vector mins, vector maxs );
 
+scriptEvent float	isPlayerInBounds(vector mins, vector maxs);
+
 // returns true if character can walk to specified position.  for walking monsters, position should be near the floor.
 scriptEvent float	canReachPosition( vector pos );
 

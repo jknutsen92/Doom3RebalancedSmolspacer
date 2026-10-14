@@ -1,6 +1,33 @@
+#define RAGDOLL_REZ_BOUNDS_RADIUS       10       
+
 void overheat_burn(entity ent) {
     ent.preBurn();
     ent.burn();
     sys.wait(3);
     ent.remove();
+}
+
+void auto_resurrect(entity ent) {
+    vector mins = ent.getMins();
+    vector maxs = ent.getMaxs();
+    string name = ent.getName();
+    while (entityExists(ent)) {
+        // Test for player
+        sys.println(name + " testing for player");
+        if (ent.isPlayerInBounds(mins, maxs)) {
+            // Determine the resurrection entity
+
+            // Get timer
+            sys.println("Resurrecting " + ent.getName());
+
+            // Wait
+
+            // Resurrect the entity if it still exists
+
+            // Send it after the players
+            return;
+        }
+        sys.wait(5);
+    }
+    sys.println(name + " is dead. Returning");
 }
