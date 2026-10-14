@@ -1110,17 +1110,17 @@ namespace map_enpro {
             sys.wait(0.5);
         }
 
-        if (entityExists($showdown_marine_ragdoll_2)) {
+        if (entityExists($env_ragdoll_marine1_3)) {
             sys.setSpawnArg("classname", "monster_zombie_bernie");
-            entity ent2 = sys.resurrectRagdoll($showdown_marine_ragdoll_2);
+            entity ent2 = sys.resurrectRagdoll($env_ragdoll_marine1_3);
             thread addSignalFunc(SIG_TRIGGER, ent2, "map_enpro::menace_player");
             thread addSignalFunc(SIG_DAMAGE, ent2, "map_enpro::hit_by_player");
             sys.wait(0.5);
         }
 
-        if (entityExists($showdown_marine_ragdoll_3)) {
-            sys.setSpawnArg("classname", "monster_demon_maggot");
-            entity ent3 = sys.resurrectRagdoll($showdown_marine_ragdoll_3);
+        if (entityExists($env_ragdoll_marine1_1)) {
+            sys.setSpawnArg("classname", "monster_zombie_boney");
+            entity ent3 = sys.resurrectRagdoll($env_ragdoll_marine1_1);
             thread addSignalFunc(SIG_TRIGGER, ent3, "map_enpro::menace_player");
             thread addSignalFunc(SIG_DAMAGE, ent3, "map_enpro::hit_by_player");
             sys.wait(0.5);
@@ -1139,18 +1139,20 @@ namespace map_enpro {
             entity ent5 = sys.resurrectRagdoll($showdown_marine_ragdoll_5);
             thread addSignalFunc(SIG_TRIGGER, ent5, "map_enpro::menace_player");
             thread addSignalFunc(SIG_DAMAGE, ent5, "map_enpro::hit_by_player");
-        }
-
-		if (entityExists($showdown_marine_ragdoll_6)) {
-            sys.setSpawnArg("classname", "monster_demon_maggot");
-            entity ent6 = sys.resurrectRagdoll($showdown_marine_ragdoll_6);
-            thread addSignalFunc(SIG_TRIGGER, ent6, "map_enpro::menace_player");
-            thread addSignalFunc(SIG_DAMAGE, ent6, "map_enpro::hit_by_player");
+			sys.wait(0.5);
         }
 
 		if (entityExists($env_ragdoll_marine5_1)) {
-            sys.setSpawnArg("classname", "monster_demon_maggot");
-            entity ent7 = sys.resurrectRagdoll($env_ragdoll_marine5_1);
+            sys.setSpawnArg("classname", "monster_zombie_bernie");
+            entity ent6 = sys.resurrectRagdoll($env_ragdoll_marine5_1);
+            thread addSignalFunc(SIG_TRIGGER, ent6, "map_enpro::menace_player");
+            thread addSignalFunc(SIG_DAMAGE, ent6, "map_enpro::hit_by_player");
+			sys.wait(0.5);
+        }
+
+		if (entityExists($env_ragdoll_marine6_0)) {
+            sys.setSpawnArg("classname", "monster_zombie_boney");
+            entity ent7 = sys.resurrectRagdoll($env_ragdoll_marine6_0);
             thread addSignalFunc(SIG_TRIGGER, ent7, "map_enpro::menace_player");
             thread addSignalFunc(SIG_DAMAGE, ent7, "map_enpro::hit_by_player");
         }
@@ -1171,17 +1173,17 @@ namespace map_enpro {
         $showdown_lostsoul_2.lookAt($player1, 10);
         sys.wait(0.5);
 
-        thread addSignalFunc(SIG_DAMAGE, $showdown_lostsoul_3, "map_enpro::hit_by_player");
-        sys.trigger($showdown_lostsoul_3);
-        $showdown_lostsoul_3.turnToEntity($player1);
-        $showdown_lostsoul_3.lookAt($player1, 10);
-        sys.wait(0.5);
+        // thread addSignalFunc(SIG_DAMAGE, $showdown_lostsoul_3, "map_enpro::hit_by_player");
+        // sys.trigger($showdown_lostsoul_3);
+        // $showdown_lostsoul_3.turnToEntity($player1);
+        // $showdown_lostsoul_3.lookAt($player1, 10);
+        // sys.wait(0.5);
 
-        thread addSignalFunc(SIG_DAMAGE, $showdown_lostsoul_4, "map_enpro::hit_by_player");
-        sys.trigger($showdown_lostsoul_4);
-        $showdown_lostsoul_4.turnToEntity($player1);
-        $showdown_lostsoul_4.lookAt($player1, 10);
-        sys.wait(0.5);
+        // thread addSignalFunc(SIG_DAMAGE, $showdown_lostsoul_4, "map_enpro::hit_by_player");
+        // sys.trigger($showdown_lostsoul_4);
+        // $showdown_lostsoul_4.turnToEntity($player1);
+        // $showdown_lostsoul_4.lookAt($player1, 10);
+        // sys.wait(0.5);
 
         thread addSignalFunc(SIG_DAMAGE, $showdown_lostsoul_5, "map_enpro::hit_by_player");
         sys.trigger($showdown_lostsoul_5);
@@ -1195,10 +1197,10 @@ namespace map_enpro {
         $showdown_lostsoul_6.lookAt($player1, 10);
         sys.wait(0.5);
 
-        thread addSignalFunc(SIG_DAMAGE, $showdown_lostsoul_7, "map_enpro::hit_by_player");
-        sys.trigger($showdown_lostsoul_7);
-        $showdown_lostsoul_7.turnToEntity($player1);
-        $showdown_lostsoul_7.lookAt($player1, 10);
+        // thread addSignalFunc(SIG_DAMAGE, $showdown_lostsoul_7, "map_enpro::hit_by_player");
+        // sys.trigger($showdown_lostsoul_7);
+        // $showdown_lostsoul_7.turnToEntity($player1);
+        // $showdown_lostsoul_7.lookAt($player1, 10);
 
         if (!g_playerHostile) {
             $player1.startSoundShader("enpro_devil_how_has_a_welp_like_you", SND_CHANNEL_ANY);

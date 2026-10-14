@@ -183,6 +183,7 @@ entityDef item_keycard_power_core {
 	"inv_name"				"#str_07242"
 	"inv_id_bluekey"		"1"
 	"inv_item"				"1"
+	"inv_icon"				"guis/assets/hud/icons/acocard.tga"
 	"snd_acquire"			"guisounds_item"
 }
 

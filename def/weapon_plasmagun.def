@@ -168,7 +168,7 @@ entityDef	damage_plasma_splash {
 
 entityDef	damage_heatblast {
 	"damage"					"1"			// Base values
-	"heat"						"3"			// these will be scaled according to mass
+	"heat"						"10"		// these will be scaled according to mass
 	"radius"					"1"
 	"attackerDamageScale"		"0.1"
 	"attackerPushScale"			"0.5"
