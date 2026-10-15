@@ -1,5 +1,3 @@
-#define RAGDOLL_REZ_BOUNDS_RADIUS       10       
-
 void overheat_burn(entity ent) {
     ent.preBurn();
     ent.burn();
@@ -8,26 +6,53 @@ void overheat_burn(entity ent) {
 }
 
 void auto_resurrect(entity ent) {
-    vector mins = ent.getMins();
-    vector maxs = ent.getMaxs();
+    boolean debug = false;
+    if (sys.getcvar("g_debugResurrection") == "1") {
+        debug = true;
+    }
+    vector origin = ent.getOrigin();
+    vector mins = origin + '-1 -1 0';
+    vector maxs = origin + '1 1 0';
     string name = ent.getName();
     while (entityExists(ent)) {
         // Test for player
-        sys.println(name + " testing for player");
+        if (debug) {
+            sys.println(name + " testing for nearby player");
+        }
         if (ent.isPlayerInBounds(mins, maxs)) {
             // Determine the resurrection entity
+            string classname = "monster_demon_imp";
+            sys.setSpawnArg("classname", classname);
 
             // Get timer
-            sys.println("Resurrecting " + ent.getName());
+            float minDelay = sys.parseFloat(sys.getcvar("g_ragdollRezMinDelay"));
+            float maxDelay = sys.parseFloat(sys.getcvar("g_ragdollRezMaxDelay"));
+            float delayTime = RandomRange(minDelay, maxDelay);
 
-            // Wait
+            if (debug) {
+                sys.println(name + " spawning rez entity " + classname + " in " + delayTime + " seconds");
+            }
+            sys.wait(delayTime);
 
             // Resurrect the entity if it still exists
-
-            // Send it after the players
+            entity rezEntity;
+            if (entityExists(ent)) {
+                rezEntity = sys.resurrectRagdoll(ent);
+                // Send it after the player
+                while (!rezEntity.isSpawned()) {
+                    sys.waitFrame();
+                }
+                rezEntity.setEnemy($player1);
+                rezEntity.moveToEnemy();
+            }
+            else if (debug) {
+                sys.println(name + " was destroyed before resurrection completed");
+            }
             return;
         }
         sys.wait(5);
     }
-    sys.println(name + " is dead. Returning");
+    if (debug) {
+        sys.println(name + " destroyed. Exiting thread");
+    }
 }
