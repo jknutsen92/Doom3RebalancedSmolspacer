@@ -313,6 +313,9 @@ scriptEvent	entity	getEntity( string name );
 // Returns the entity that will spawn after the process is complete. Use isSpawned scriptEvent to wait until the entity has spawned
 scriptEvent entity 	resurrectRagdoll(entity ragdoll);
 
+// Returns the classname of a viable candidate entity that we can spawn via auto resurrection
+scriptEvent string	getResurrectionClass();
+
 // Creates an entity of the specified classname and returns a reference to the entity.
 scriptEvent	entity	spawn( string classname );
 

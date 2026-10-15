@@ -286,6 +286,8 @@ entityDef monster_zombie_commando {
 
 	"def_dropGibItem8"				"moveable_item_pelvis_pork"
 	"dropGibItem8Joint"				"Hips"
+
+	"auto_rez"						"0"
 }
 
 entityDef melee_commando_right {

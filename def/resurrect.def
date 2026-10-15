@@ -1,0 +1,75 @@
+// Scores determine which monsters can be selected for resurrection. The higher the score, the higher the difficulty/progress through the game
+entityDef demon_resurrector_score {
+    "monster_zombie_maint_nojaw"        "3"
+    "monster_zombie_suit_neckstump"     "3"
+    "monster_zombie_labcoat_skinny"     "3"
+    "monster_zombie_fat"                "5"
+    "monster_zombie_maint_wrench"       "6"
+    "monster_zombie_morgue"             "12"
+    "monster_zombie_bernie"             "14"
+    "monster_demon_trite"               "15"
+    "monster_zombie_maint_fast"         "16"
+    "monster_demon_imp"                 "18"
+    "monster_zsec_pistol"               "21"
+    "monster_zombie_boney"              "22"
+    "monster_demon_maggot"              "25"
+    "monster_zsec_machinegun"           "27"
+    "monster_zsec_shotgun"              "29"
+    "monster_demon_wraith"              "30"
+    "monster_flying_lostsoul"           "32"
+    "monster_flying_cacodemon"          "35"
+    "monster_demon_revenant"            "37"
+    "monster_demon_cherub"              "40"
+    "monster_zombie_sawyer"             "45"
+    "monster_zombie_commando"           "47"
+    "monster_demon_pinky"               "49"
+    "monster_zombie_commando_cgun"      "51"
+    "monster_demon_archvile"            "54"
+    "monster_demon_hellknight"          "60"
+}
+
+// The base score determines the center of the range of monsters that can be selected for resurrection
+// When combined with the spread determined by g_skill in the skill_resurrect_range table, you get a range 
+// of scores that will determine what monsters can be spawned on any given map at a given difficulty level
+entityDef map_resurrector_score {
+    "mars_city1"        "0"
+    "mc_underground"    "6"
+    "mars_city2"        "10"
+    "admin"             "14"
+    "alphalabs1"        "18"
+    "alphalabs2"        "20"
+    "alphalabs3"        "23"
+    "alphalabs4"        "27"
+    "enpro"             "30"
+    "commoutside"       "32"
+    "comm1"             "34"
+    "recycling1"        "36"
+    "recycling2"        "38"
+    "monorail"          "40"
+    "delta1"            "41"
+    "delta2a"           "43"
+    "delta3"            "47"
+    "delta4"            "49"
+    "hell1"             "50"
+    "delta5"            "52"
+    "cpu"               "54"
+    "cpuboss"           "54"
+    "site3"             "60"
+    "caverns1"          "60"
+    "caverns2"          "60"
+    "hellhole"          "60"
+}
+
+// The range of potential scores that can spawn on a given map's base score is given by g_skill.
+// Lower difficulty range is skewed more to the lower end of scores and higher difficulty range
+// is skewed more to the higher end of scores
+entityDef skill_resurrector_range {
+    "lower_0"   "-30"       // [-30,-10]    Recruit
+    "upper_0"   "-10"
+    "lower_1"   "-20"       // [-20,0]      Marine
+    "upper_1"   "0"
+    "lower_2"   "-10"       // [-10,10]     Veteran
+    "upper_2"   "10"
+    "lower_3"   "-10"       // [-10,10]     Nightmare
+    "upper_3"   "10"
+}

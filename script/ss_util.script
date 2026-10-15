@@ -14,14 +14,15 @@ void auto_resurrect(entity ent) {
     vector mins = origin + '-1 -1 0';
     vector maxs = origin + '1 1 0';
     string name = ent.getName();
-    while (entityExists(ent)) {
+    while (uniqueEntityExists(name)) {
         // Test for player
         if (debug) {
             sys.println(name + " testing for nearby player");
         }
         if (ent.isPlayerInBounds(mins, maxs)) {
             // Determine the resurrection entity
-            string classname = "monster_demon_imp";
+            string classname = sys.getResurrectionClass();
+            sys.setSpawnArg("auto_rez", "0");                // Ends the cycle of resurrection if it's a zombie type
             sys.setSpawnArg("classname", classname);
 
             // Get timer
@@ -36,7 +37,7 @@ void auto_resurrect(entity ent) {
 
             // Resurrect the entity if it still exists
             entity rezEntity;
-            if (entityExists(ent)) {
+            if (uniqueEntityExists(name)) {
                 rezEntity = sys.resurrectRagdoll(ent);
                 // Send it after the player
                 while (!rezEntity.isSpawned()) {
