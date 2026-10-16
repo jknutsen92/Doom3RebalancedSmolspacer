@@ -134,7 +134,7 @@ model viewmodel_bfg {
 
 entityDef damage_bfg {
 	"damage"					"200"
-	"heat"						"200"
+	"heat"						"125"
 	"push"						"1000"
 	"gib"						"1"
 	"smoke_wound_flesh"			"bloodwound.prt"

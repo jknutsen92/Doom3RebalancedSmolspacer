@@ -5,6 +5,57 @@ void overheat_burn(entity ent) {
     ent.remove();
 }
 
+boolean _has_clear_line_of_sight_to_player(entity ent, boolean debug) {
+    vector entOrigin = ent.getOrigin();
+    vector playerOrigin = $player1.getOrigin();
+    sys.tracePoint(entOrigin, playerOrigin, CONTENTS_SOLID|CONTENTS_BODY, ent);
+    entity result = sys.getTraceEntity();
+    if (result == $player1) {
+        if (debug) {
+            sys.println("Trace test from " + ent.getName() + " succeeded");
+        }
+        return true;
+    }
+    if (debug) {
+        sys.println("Trace test from " + ent.getName() + " failed. Hit " + result.getName());
+    }
+    return false;
+}
+
+void _resurrect_after_delay(entity ent, boolean debug) {
+    string name = ent.getName();
+
+    // Determine the resurrection entity
+    string classname = sys.getResurrectionClass();
+    sys.setSpawnArg("auto_rez", "0");                // Ends the cycle of resurrection if it's a zombie type
+    sys.setSpawnArg("classname", classname);
+
+    // Get timer
+    float minDelay = sys.parseFloat(sys.getcvar("g_ragdollRezMinDelay"));
+    float maxDelay = sys.parseFloat(sys.getcvar("g_ragdollRezMaxDelay"));
+    float delayTime = RandomRange(minDelay, maxDelay);
+
+    if (debug) {
+        sys.println(name + " spawning rez entity " + classname + " in " + delayTime + " seconds");
+    }
+    sys.wait(delayTime);
+
+    // Resurrect the entity if it still exists
+    entity rezEntity;
+    if (uniqueEntityExists(name)) {
+        rezEntity = sys.resurrectRagdoll(ent);
+        // Send it after the player
+        while (!rezEntity.isSpawned()) {
+            sys.waitFrame();
+        }
+        rezEntity.setEnemy($player1);
+        rezEntity.moveToEnemy();
+    }
+    else if (debug) {
+        sys.println(name + " was destroyed before resurrection completed");
+    }
+}
+
 void auto_resurrect(entity ent) {
     boolean debug = false;
     if (sys.getcvar("g_debugResurrection") == "1") {
@@ -20,36 +71,11 @@ void auto_resurrect(entity ent) {
             sys.println(name + " testing for nearby player");
         }
         if (ent.isPlayerInBounds(mins, maxs)) {
-            // Determine the resurrection entity
-            string classname = sys.getResurrectionClass();
-            sys.setSpawnArg("auto_rez", "0");                // Ends the cycle of resurrection if it's a zombie type
-            sys.setSpawnArg("classname", classname);
-
-            // Get timer
-            float minDelay = sys.parseFloat(sys.getcvar("g_ragdollRezMinDelay"));
-            float maxDelay = sys.parseFloat(sys.getcvar("g_ragdollRezMaxDelay"));
-            float delayTime = RandomRange(minDelay, maxDelay);
-
-            if (debug) {
-                sys.println(name + " spawning rez entity " + classname + " in " + delayTime + " seconds");
+            if (_has_clear_line_of_sight_to_player(ent, debug)) {
+                // Yes this is necessary as the doom3 script interpreter doesn't do short circuting boolean statements
+                _resurrect_after_delay(ent, debug);
+                return;
             }
-            sys.wait(delayTime);
-
-            // Resurrect the entity if it still exists
-            entity rezEntity;
-            if (uniqueEntityExists(name)) {
-                rezEntity = sys.resurrectRagdoll(ent);
-                // Send it after the player
-                while (!rezEntity.isSpawned()) {
-                    sys.waitFrame();
-                }
-                rezEntity.setEnemy($player1);
-                rezEntity.moveToEnemy();
-            }
-            else if (debug) {
-                sys.println(name + " was destroyed before resurrection completed");
-            }
-            return;
         }
         sys.wait(5);
     }
