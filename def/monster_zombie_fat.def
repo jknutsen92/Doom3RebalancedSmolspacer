@@ -191,7 +191,7 @@ entityDef monster_zombie_fat {
 	"mass"							"200"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"10"
-	"body_skin_heated"				"skins/monsters/zombies/zfat_heated.skin"
+	"body_skin_heated"				"skins/monster_zombie_fat_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
 	
 	"blockedRadius"					"10"
@@ -255,6 +255,7 @@ entityDef monster_zombie_fat {
 entityDef monster_zombie_fat2 {
 	"inherit"						"monster_zombie_fat"
 	"skin"							"skins/monsters/zombies/zfat2.skin"
+	"body_skin_heated"				"skins/monster_zombie_fat2_heated.skin"
 	"skin_dropGib"					"skins/monsters/zombies/zfatgib2.skin"
 }
 
@@ -303,6 +304,7 @@ entityDef monster_zombie_fat_wrench {
 	"inherit"						"monster_zombie_fat"
 	"model"							"monster_zombie_fat_wrench"
 	"skin"							"skins/monsters/zombies/zfatwrench.skin"
+	"body_skin_heated"				"skins/monster_zombie_fat_wrench_heated.skin"
 
 	"def_dropDeathItem"				"moveable_wrench"
 	"dropDeathItemJoint"			"pipe"

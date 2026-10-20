@@ -337,6 +337,8 @@ model monster_zombie_soldier {
 entityDef monster_zombie_jumpsuit {
 	"inherit"						"monster_zombie_base"
 	"model"							"monster_zombie_jumpsuit"		
+	"body_skin_heated"				"skins/monster_zombie_jumpsuit_heated.skin"
+
 	"def_head"						"head_zombie3"
 	"head_joint"					"Shoulders"
 	"body_skin_heated"				""
@@ -346,6 +348,7 @@ entityDef monster_zombie_jumpsuit {
 entityDef monster_zombie_maint_bald {
 	"inherit"						"monster_zombie_base"
 	"model"							"monster_zombie_jumpy"
+	"body_skin_heated"				"skins/monster_zombie_maint_bald_heated.skin"
 	"def_head"						"head_bloodybald"
 	"head_joint"					"Shoulders"
 	"body_skin_heated"				""
@@ -356,6 +359,7 @@ entityDef monster_zombie_maint_no_jaw {
 	"inherit"						"monster_zombie_base"
 	"model"							"monster_zombie_jumpy"
 	"skin"							"skins/monsters/zombies/jumpsuit.skin"
+	"body_skin_heated"				"skins/monster_zombie_maint_no_jaw_heated.skin"
 	"def_head"						"head_zombie2"
 	"head_joint"					"Shoulders"
 	"body_skin_heated"				""
@@ -366,6 +370,7 @@ entityDef monster_zombie_maint_nojaw {
 	"inherit"						"monster_zombie_base"
 	"model"							"monster_zombie_jumpy"
 	"skin"							"skins/monsters/zombies/jumpsuit.skin"
+	"body_skin_heated"				"skins/monster_zombie_maint_nojaw_heated.skin"
 	"def_head"						"head_zombie2"
 	"head_joint"					"Shoulders"
 	"body_skin_heated"				""

@@ -84,13 +84,34 @@ skin skins/monsters/zombies/commando_heated {
 }
 
 // monster_zombie_fat.def
-skin skins/monsters/zombies/zfat_heated {
+skin skins/monster_zombie_fat_heated {
 	models/monsters/zombie/fatty/fatty				models/monsters/zombie/fatty/fatty_heated
+	models/mapobjects/filler/monkeywrench			textures/common/nodraw
+	models/monsters/zombie/fatty/fattydamage		textures/common/nodraw
+	models/monsters/skeleton/skeleton01				textures/common/nodraw
+}
+
+skin skins/monster_zombie_fat2_heated {
+	models/monsters/zombie/fatty/fatty				textures/common/nodraw
+	models/mapobjects/filler/monkeywrench			textures/common/nodraw
+	models/monsters/zombie/fatty/fattydamage		models/monsters/zombie/fatty/fattydamage_heated
+	models/monsters/skeleton/skeleton01				textures/common/nodraw
+}
+
+skin skins/monster_zombie_fat_wrench_heated {
+	models/monsters/zombie/fatty/fatty				textures/common/nodraw
+	models/monsters/zombie/fatty/fattydamage		models/monsters/zombie/fatty/fattydamage_heated
+	models/monsters/skeleton/skeleton01				textures/common/nodraw
+}
+
+// monster_zombie_base
+skin skins/monster_zombie_base_heated {
+	models/monsters/skeleton/skeleton01				models/monsters/skeleton/skeleton01_heated
 }
 
 // monster_zombie_jumpsuit.def
-skin skins/monsters/zombies/jumpsuit_heated {
-	models/characters/male_npc/jumpsuit/jumpsuit 	models/characters/male_npc/jumpsuit/djumpsuit
+skin skins/monster_zombie_jumpsuit_heated {
+	models/characters/male_npc/jumpsuit/jumpsuit	models/characters/male_npc/jumpsuit/jumpsuit_heated
 }
 
 // monster_zombie_maint.def
@@ -101,6 +122,15 @@ skin skins/monsters/zombies/zmaint_heated {
 	models/monsters/zombie/zombie01/zlegs01 		models/monsters/zombie/zombie01/zlegs01_heated
 	models/monsters/skeleton/skeleton01 			textures/common/nodraw
 	models/monsters/zombie/zombie01/zback01 		textures/common/nodraw
+}
+
+skin skins/monster_zombie_maint_bald_heated {
+	models/characters/male_npc/jumpsuit/jumpsuit	models/characters/male_npc/jumpsuit/jumpsuit_heated
+}
+
+// monster_zombie_no_jaw
+skin skins/monster_zombie_maint_no_jaw_heated {
+	models/characters/male_npc/jumpsuit/jumpsuit	models/characters/male_npc/jumpsuit/jumpsuit_heated
 }
 
 // monster_zombie_morgue.def
