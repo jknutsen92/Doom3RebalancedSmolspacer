@@ -344,14 +344,9 @@ models/characters/male_npc/security/gog_heated {
 	metal
 	noshadows
 	noselfShadow
-		renderbump  -size 256 128 -trace 1.1 -colorMap -aa 2  models/characters/male_npc/security/gog_local.tga models/characters/male_npc/security/gog_hi.lwo
-	{
-		blend	add
-		map models/characters/male_npc/security/gog.tga
-		alphaTest 0.5
-	}
-		specularmap	models/characters/male_npc/security/gog_s.tga
-		bumpmap	models/characters/male_npc/security/gog_local.tga
+	renderbump  -size 256 128 -trace 1.1 -colorMap -aa 2  models/characters/male_npc/security/gog_local.tga models/characters/male_npc/security/gog_hi.lwo
+	specularmap	models/characters/male_npc/security/gog_s.tga
+	bumpmap	models/characters/male_npc/security/gog_local.tga
 	{
 		blend add   // gl_dst_alpha , gl_one_minus_dst_alpha
 		cubeMap		env/bland

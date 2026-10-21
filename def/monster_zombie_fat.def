@@ -310,6 +310,7 @@ entityDef monster_zombie_fat_wrench {
 	"def_dropDeathItem"				"moveable_wrench"
 	"dropDeathItemJoint"			"pipe"
 	"skin_dropDeath"				"skins/monsters/zombies/zfat2.skin"
+	"skin_dropDeath_heated"			"skins/monster_zombie_fat2_heated.skin"
 }
 
 

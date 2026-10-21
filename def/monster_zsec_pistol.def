@@ -444,6 +444,7 @@ entityDef monster_zsec_pistol {
 	"def_dropDeathItem9"			"moveable_item_pistol"
 	"dropDeathItem9Joint"			"pistol"
 	"skin_dropDeath"				"skins/monsters/zombies/zsecurity.skin"
+	"skin_dropDeath_heated"			"skins/env_ragdoll_zsecp_heated.skin"
 	
 	"snd_bounce"					"ragdoll_impact"
 	"snd_footstep"					"monster_zombie_security_footstep"

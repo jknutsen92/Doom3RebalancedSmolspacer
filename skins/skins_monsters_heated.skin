@@ -129,7 +129,7 @@ skin skins/head_zombie2_heated {
 }
 
 skin skins/head_zombie3_heated {
-	models/characters/common/leftdead2				models/characters/common/leftdead2_heated
+	models/characters/common/leftdead2				models/characters/common/leftdead2_heated			// textures/common/nodraw
 	models/monsters/zombie/zombie02/zhead02			models/monsters/zombie/zombie02/zhead02_heated
 	models/characters/common/rightdead2				models/characters/common/rightdead2_heated
 	models/characters/common/tongue					models/characters/common/tongue_heated

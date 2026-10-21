@@ -839,13 +839,7 @@ models/characters/male_npc/jumpsuit/jumpsuit_heated {
 
 // zombie heads
 models/characters/common/leftdead2_heated {
-	translucent
 	noshadows
-	{
-		blend add
-		map models/characters/common/dead2.tga
-		centerScale	0.6, 0.6
-	}
 	{
 		blend   add
 		color   0.3 * parm11, 0, 0.06 * parm11, 1
@@ -875,10 +869,10 @@ models/monsters/zombie/zombie02/zhead02_heated {
 	forceoverlays
 	flesh
 	clamp
-		renderbump  -size 512 512 -trace 0.05 -colorMap -aa 2  models/monsters/zombie/zombie02/zhead02_local.tga models/monsters/zombie/zombie02/zhead02_hi.lwo
-		diffusemap	    models/monsters/zombie/zombie02/zhead02.tga
-		bumpmap		addnormals(models/monsters/zombie/zombie02/zhead02_local.tga, heightmap(models/monsters/zombie/zombie02/zhead02_h.tga, 9 ) )
-		specularmap  models/monsters/zombie/zombie02/zhead02_s.tga
+	renderbump  -size 512 512 -trace 0.05 -colorMap -aa 2  models/monsters/zombie/zombie02/zhead02_local.tga models/monsters/zombie/zombie02/zhead02_hi.lwo
+	diffusemap	    models/monsters/zombie/zombie02/zhead02.tga
+	bumpmap		addnormals(models/monsters/zombie/zombie02/zhead02_local.tga, heightmap(models/monsters/zombie/zombie02/zhead02_h.tga, 9 ) )
+	specularmap  models/monsters/zombie/zombie02/zhead02_s.tga
 	{
 		blend   add
 		color   0.3 * parm11, 0, 0.06 * parm11, 1
@@ -903,13 +897,7 @@ models/monsters/zombie/zombie02/zhead02_heated {
 }
 
 models/characters/common/rightdead2_heated {
-	translucent
 	noshadows
-	{
-		blend add
-		map models/characters/common/dead2.tga
-		centerScale	0.6, 0.6
-	}
 	{
 		blend   add
 		color   0.3 * parm11, 0, 0.06 * parm11, 1
@@ -937,10 +925,10 @@ models/characters/common/tongue_heated {
 	noselfShadow
 	noshadows
 	unsmoothedTangents
-		renderbump  -size 128 256 -trace 0.1 -colorMap -aa 2  models/characters/common/tongue_local.tga models/characters/common/tongue_hi.lwo
-		diffusemap	    models/characters/common/tongue.tga
-		bumpmap		addnormals(models/characters/common/tongue_local.tga, heightmap(models/characters/common/tongue_h.tga, 4 ) )
-		specularmap		models/characters/common/tongue_s.tga
+	renderbump  -size 128 256 -trace 0.1 -colorMap -aa 2  models/characters/common/tongue_local.tga models/characters/common/tongue_hi.lwo
+	diffusemap	    models/characters/common/tongue.tga
+	bumpmap		addnormals(models/characters/common/tongue_local.tga, heightmap(models/characters/common/tongue_h.tga, 4 ) )
+	specularmap		models/characters/common/tongue_s.tga
 	{
 		blend   add
 		color   0.3 * parm11, 0, 0.06 * parm11, 1
@@ -1034,11 +1022,11 @@ models/characters/common/lefthead03_heated
 	noshadows
 	deform	eyeBall
 	sort decal
-	{
-		blend filter
-		map models/characters/common/bet.tga
-		centerScale	0.5, 0.5	
-	}	
+	// {
+	// 	blend filter
+	// 	map models/characters/common/bet.tga
+	// 	centerScale	0.5, 0.5	
+	// }	
 	{	// burning corpse effect
 		if	parm7			// only when dead
 		// make a burned away alpha test for the normal skin
@@ -1101,11 +1089,11 @@ models/characters/common/righthead03_heated
 	noshadows
 	deform	eyeBall
 	sort decal
-	{
-		blend filter
-		map models/characters/common/bet.tga
-		centerScale	0.5, 0.5	
-	}	
+	// {
+	// 	blend filter
+	// 	map models/characters/common/bet.tga
+	// 	centerScale	0.5, 0.5	
+	// }	
 	{	// burning corpse effect
 		if	parm7			// only when dead
 		// make a burned away alpha test for the normal skin
@@ -1812,11 +1800,6 @@ models/monsters/zsecurity/zsgogs_heated
 {
     noselfShadow
 	renderbump  -size 256	256 -trace 0.07 -colorMap -aa 2  models/monsters/zsecurity/zsgogs_local.tga models/monsters/zsecurity/zsgogs_hi.lwo     
-	{
-		blend	diffusemap
-		map	models/monsters/zsecurity/zsgogs.tga
-		alphaTest 0.7
-	}
 	bumpmap		models/monsters/zsecurity/zsgogs_local.tga
 	specularmap		models/monsters/zsecurity/zsgogs_s.tga
     {

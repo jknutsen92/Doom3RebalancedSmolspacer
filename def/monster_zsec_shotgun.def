@@ -329,6 +329,7 @@ entityDef monster_zsec_shotgun {
 	"def_dropDeathItem9"			"moveable_item_shotgun"
 	"dropDeathItem9Joint"			"shotgun"
 	"skin_dropDeath"				"skins/monsters/zombies/zsecurity.skin"
+	"skin_dropDeath_heated"			"skins/env_ragdoll_zsecs_heated.skin"
 
 	"ragdoll"						"monster_zombie_security_shotgun"
 	"model"							"model_monster_zsec_shotgun"

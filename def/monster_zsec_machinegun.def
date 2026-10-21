@@ -596,7 +596,7 @@ entityDef monster_zsec_machinegun {
 	"def_dropDeathItem9"		"moveable_item_machinegun"
 	"dropDeathItem9Joint"		"machinegun"
 	"skin_dropDeath"			"skins/monsters/zombies/zsecurity.skin"
-
+	"skin_dropDeath_heated"		"skins/env_ragdoll_zsecm_heated.skin"
 
 	"mtr_flashShader"				"muzzleflash"
 	"flashTime"						"0.15"
