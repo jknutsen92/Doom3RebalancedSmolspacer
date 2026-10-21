@@ -580,32 +580,42 @@ models/monsters/zombie/bernie/bernie_heated
 	}
 }
 
+
+
 // monster_zombie_boney.def
-models/monsters/zombie/boney/boney_heated
-{
-    noSelfShadow
-    flesh
-    unsmoothedTangents
-    {	// burning corpse effect
-        if	parm7			// only when dead
-        // make a burned away alpha test for the normal skin
-        blend	gl_zero, gl_one			// don't draw anything
-        
-        map models/monsters/spectre/global_dis.tga	// replace this with a monster-specific texture
-        alphaTest 0.05 + 1.5 * (time - parm7)
-    }
-	renderbump  -size 1024 1024 -trace 0.03 -colorMap -aa 2   models/monsters/zombie/boney/boney_local.tga models/monsters/zombie/boney/boney_hi.lwo
-    diffusemap	  models/monsters/zombie/boney/boney
-    {
-        blend bumpmap
-        map  addnormals(models/monsters/zombie/boney/boney_local.tga, heightmap(models/monsters/zombie/boney/boney_h.tga, 8 ) )
-    }
-    specularmap	models/monsters/zombie/boney/boney_s.tga
+models/monsters/zombie/boney/boney_heated {
+	noSelfShadow
+	flesh
+	unsmoothedTangents
+	forceoverlays
+	{	// burning corpse effect
+		if	parm7			// only when dead
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/spectre/global_dis.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 1.5 * (time - parm7)
+	}
+		renderbump  -size 1024 1024 -trace 0.03 -colorMap -aa 2   models/monsters/zombie/boney/boney_local.tga models/monsters/zombie/boney/boney_hi.lwo
+		diffusemap	  models/monsters/zombie/boney/boney
 	{
-        blend   add
-        color   0.3 * parm11, 0, 0.06 * parm11, 1
-        map     lights/fullambient.tga
-    }
+		blend bumpmap
+		map  addnormals(models/monsters/zombie/boney/boney_local.tga, heightmap(models/monsters/zombie/boney/boney_h.tga, 8 ) )
+	}
+		specularmap	models/monsters/zombie/boney/boney_s.tga
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{
+		if parm7			// only when dead
+		privatePolygonOffset	-1		// stage-only polygon offset
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
+		alphaTest 3.6 * (time - parm7)
+	}
 }
 
 // monster_zombie_commando.def
@@ -827,6 +837,334 @@ models/characters/male_npc/jumpsuit/jumpsuit_heated {
 	specularmap	models/characters/male_npc/jumpsuit/jumpsuit_s.tga
 }
 
+// zombie heads
+models/characters/common/leftdead2_heated {
+	translucent
+	noshadows
+	{
+		blend add
+		map models/characters/common/dead2.tga
+		centerScale	0.6, 0.6
+	}
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{	// burning corpse effect
+		if	parm7			// only when dead
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/spectre/dis2.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 2 * (time - parm7)
+	}
+	{
+		if parm7			// only when dead
+		privatePolygonOffset	-1		// stage-only polygon offset
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
+		alphaTest 3.6 * (time - parm7)
+	}
+}
+
+models/monsters/zombie/zombie02/zhead02_heated {
+	noselfShadow
+	unsmoothedTangents
+	forceoverlays
+	flesh
+	clamp
+		renderbump  -size 512 512 -trace 0.05 -colorMap -aa 2  models/monsters/zombie/zombie02/zhead02_local.tga models/monsters/zombie/zombie02/zhead02_hi.lwo
+		diffusemap	    models/monsters/zombie/zombie02/zhead02.tga
+		bumpmap		addnormals(models/monsters/zombie/zombie02/zhead02_local.tga, heightmap(models/monsters/zombie/zombie02/zhead02_h.tga, 9 ) )
+		specularmap  models/monsters/zombie/zombie02/zhead02_s.tga
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{	// burning corpse effect
+		if	parm7			// only when dead
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/spectre/dis2.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 2 * (time - parm7)
+	}
+	{
+		if parm7			// only when dead
+		privatePolygonOffset	-1		// stage-only polygon offset
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
+		alphaTest 3.6 * (time - parm7)
+	}
+}
+
+models/characters/common/rightdead2_heated {
+	translucent
+	noshadows
+	{
+		blend add
+		map models/characters/common/dead2.tga
+		centerScale	0.6, 0.6
+	}
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{	// burning corpse effect
+		if	parm7			// only when dead
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/spectre/dis2.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 2 * (time - parm7)
+	}
+	{
+		if parm7			// only when dead
+		privatePolygonOffset	-1		// stage-only polygon offset
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
+		alphaTest 3.6 * (time - parm7)
+	}
+}
+
+models/characters/common/tongue_heated {
+	noselfShadow
+	noshadows
+	unsmoothedTangents
+		renderbump  -size 128 256 -trace 0.1 -colorMap -aa 2  models/characters/common/tongue_local.tga models/characters/common/tongue_hi.lwo
+		diffusemap	    models/characters/common/tongue.tga
+		bumpmap		addnormals(models/characters/common/tongue_local.tga, heightmap(models/characters/common/tongue_h.tga, 4 ) )
+		specularmap		models/characters/common/tongue_s.tga
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{	// burning corpse effect
+		if	parm7			// only when dead
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/spectre/dis2.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 2 * (time - parm7)
+	}
+	{
+		if parm7			// only when dead
+		privatePolygonOffset	-1		// stage-only polygon offset
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
+		alphaTest 3.6 * (time - parm7)
+	}
+}
+
+models/monsters/zombie/zombie01/zhead01_heated {
+	noselfShadow
+	flesh
+	clamp
+	forceOverlays
+	{	// burning corpse effect
+		if	parm7			// only when dead
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/spectre/dis2.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 1.7 * (time - parm7)
+	}
+		renderbump  -size 512 512 -aa 2  models/monsters/zombie/zombie01/zhead01_local.tga models/monsters/zombie/zombie01/zhead01_hi.lwo
+		diffusemap	models/monsters/zombie/zombie01/zhead01.tga
+		bumpmap		addnormals(models/monsters/zombie/zombie01/zhead01_local.tga, heightmap(models/monsters/zombie/zombie01/zhead01_h.tga, 5 ) )
+		specularmap	models/monsters/zombie/zombie01/zhead01_s.tga
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{
+		if parm7			// only when dead
+		privatePolygonOffset	-1		// stage-only polygon offset
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
+		alphaTest 3.6 * (time - parm7)
+	}
+}
+
+models/monsters/zombie/zombie01/zhead03_heated {
+	noselfShadow
+	forceoverlays
+	flesh
+	clamp
+	{	// burning corpse effect
+		if	parm7			// only when dead
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/spectre/dis2.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 1.7 * (time - parm7)
+	}
+		renderbump  -size 512 512 -aa 2  models/monsters/zombie/zombie01/zhead03_local.tga models/monsters/zombie/zombie01/zhead03_hi.lwo
+		diffusemap	models/monsters/zombie/zombie01/zhead03.tga
+		bumpmap		addnormals(models/monsters/zombie/zombie01/zhead03_local.tga, heightmap(models/monsters/zombie/zombie01/zhead03_h.tga, 9 ) )
+		specularmap	models/monsters/zombie/zombie01/zhead03_s.tga
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{
+		if parm7			// only when dead
+		privatePolygonOffset	-1		// stage-only polygon offset
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
+		alphaTest 3.6 * (time - parm7)
+	}
+}
+
+models/characters/common/lefthead03_heated
+{
+	translucent
+	noshadows
+	deform	eyeBall
+	sort decal
+	{
+		blend filter
+		map models/characters/common/bet.tga
+		centerScale	0.5, 0.5	
+	}	
+	{	// burning corpse effect
+		if	parm7			// only when dead
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/spectre/dis2.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 1.7 * (time - parm7)
+	}
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{
+		if parm7			// only when dead
+		privatePolygonOffset	-1		// stage-only polygon offset
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
+		alphaTest 3.6 * (time - parm7)
+	}
+}
+
+models/characters/common/teethhead03_heated
+{
+	noShadows
+	unsmoothedTangents
+	{	 
+		blend	diffusemap
+		map	models/characters/common/teeth.tga
+	}
+	bumpmap	   models/characters/common/teeth_local.tga
+	specularmap models/characters/common/teeth_s.tga
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{	// burning corpse effect
+		if	parm7			// only when dead
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/spectre/dis2.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 1.7 * (time - parm7)
+	}
+	{
+		if parm7			// only when dead
+		privatePolygonOffset	-1		// stage-only polygon offset
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
+		alphaTest 3.6 * (time - parm7)
+	}
+}
+
+models/characters/common/righthead03_heated
+{
+	translucent
+	noshadows
+	deform	eyeBall
+	sort decal
+	{
+		blend filter
+		map models/characters/common/bet.tga
+		centerScale	0.5, 0.5	
+	}	
+	{	// burning corpse effect
+		if	parm7			// only when dead
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/spectre/dis2.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 1.7 * (time - parm7)
+	}
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{
+		if parm7			// only when dead
+		privatePolygonOffset	-1		// stage-only polygon offset
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
+		alphaTest 3.6 * (time - parm7)
+	}
+}
+
+models/characters/scientist/head03/head03_heated
+{
+    noselfShadow
+	clamp
+	flesh
+	forceOverlays
+	renderbump  -size 512 512 -trace 0.04 -colorMap -aa 2  models/characters/scientist/head03/head03_local.tga models/characters/scientist/head03/head03_hi.lwo
+	{
+        blend diffusemap
+		map models/characters/scientist/head03/head03.tga
+	}
+	bumpmap		addnormals(models/characters/scientist/head03/head03_local.tga, heightmap(models/characters/scientist/head03/head03_h.tga, 4 ) )
+    specularmap	models/characters/scientist/head03/head03_s.tga
+	{	// burning corpse effect
+		if	parm7			// only when dead
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/spectre/dis2.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 1.7 * (time - parm7)
+	}
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{
+		if parm7			// only when dead
+		privatePolygonOffset	-1		// stage-only polygon offset
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
+		alphaTest 3.6 * (time - parm7)
+	}
+}
+
 // monster_zombie_maint.def
 models/monsters/zombie/zombie01/zhead02_heated
 {
@@ -972,7 +1310,178 @@ models/monsters/zombie/zombie01/zlegs01_heated
 	}
 }
 
+models/characters/common/teethdead_heated {
+	noShadows
+	noselfshadow
+	unsmoothedTangents
+		renderbump  -size 128 128  -colorMap -aa 2  models/characters/common/teeth_local.tga models/characters/common/teeth_hi.lwo
+	{
+		blend	diffusemap
+		map	models/characters/common/teethdead.tga
+		alphaTest 0.2
+	}
+		bumpmap	   models/characters/common/teeth_local.tga
+		specularmap models/characters/common/teeth_s.tga
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{	// burning corpse effect
+		if	parm7			// only when dead
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/spectre/dis2.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 1.7 * (time - parm7)
+	}
+	{
+		if parm7			// only when dead
+		privatePolygonOffset	-1		// stage-only polygon offset
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
+		alphaTest 3.6 * (time - parm7)
+	}
+}
 
+models/monsters/zombie/zombie01/eyes/dead_heated {
+	translucent
+	noshadows
+	{
+		blend add
+		map models/monsters/zombie/zombie01/eyes/godmode.tga
+		//translate	time * 0.0 , time * 0.6
+		
+	}
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{
+		if parm7			// only when dead
+		privatePolygonOffset	-1		// stage-only polygon offset
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
+		alphaTest 3.6 * (time - parm7)
+	}
+}
+
+// zombie_suit_*
+models/characters/male_npc/suit/suit_heated {
+	noselfShadow
+	clamp
+	unsmoothedTangents
+	flesh
+	forceOverlays
+	{	// burning corpse effect
+		if	parm7			// only when dead
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/spectre/dis2.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 2 * (time - parm7)
+	}
+		renderbump  -size 1024 1024 -trace 0.03 -colorMap -aa 2  models/characters/male_npc/suit/suit_local.tga models/characters/male_npc/suit/suit_hi.lwo
+		diffusemap	  models/characters/male_npc/suit/suit.tga
+	{
+		blend bumpmap
+		map  addnormals(models/characters/male_npc/suit/suit_local.tga, heightmap(models/characters/male_npc/suit/suit_h.tga, 5 ) )
+		
+	}
+		specularmap	models/characters/male_npc/suit/suit_s.tga
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{
+		if parm7			// only when dead
+		privatePolygonOffset	-1		// stage-only polygon offset
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
+		alphaTest 3.6 * (time - parm7)
+	}
+}
+
+// monster_zombie_labcoat_*
+models/characters/male_npc/labcoat/labcoat_heated {
+	noselfShadow
+	clamp
+	unsmoothedTangents
+	flesh
+	forceOverlays
+		renderbump  -size 1024 1024 -trace 0.03 -colorMap -aa 2  models/characters/male_npc/labcoat/labcoat_local.tga models/characters/male_npc/labcoat/labcoat_hi.lwo
+	{	// burning corpse effect
+		if	parm7			// only when dead
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/spectre/dis2.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 2 * (time - parm7)
+	}
+		diffusemap	  models/characters/male_npc/labcoat/labcoat.tga
+	{
+		blend bumpmap
+		map  addnormals(models/characters/male_npc/labcoat/labcoat_local.tga, heightmap(models/characters/male_npc/labcoat/labcoat_h.tga, 5 ) )
+		
+	}
+		specularmap	models/characters/male_npc/labcoat/labcoat_s.tga
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{
+		if parm7			// only when dead
+		privatePolygonOffset	-1		// stage-only polygon offset
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
+		alphaTest 3.6 * (time - parm7)
+	}
+}
+
+// monster_zombie_tshirt_*
+models/characters/male_npc/soldier/soldier_heated {
+	noselfShadow
+	clamp
+	unsmoothedTangents
+	flesh
+	forceOverlays
+	{	// burning corpse effect
+		if	parm7			// only when dead
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/spectre/dis2.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 2 * (time - parm7)
+	}
+		renderbump  -size 1024 1024 -trace 0.03 -colorMap -aa 2  models/characters/male_npc/soldier/soldier_local.tga models/characters/male_npc/soldier/soldier_hi.lwo
+		diffusemap	  models/characters/male_npc/soldier/soldier.tga
+	{
+		blend bumpmap
+		map  addnormals(models/characters/male_npc/soldier/soldier_local.tga, heightmap(models/characters/male_npc/soldier/soldier_h.tga, 5 ) )
+		
+	}
+		specularmap	models/characters/male_npc/soldier/soldier_s.tga
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{
+		if parm7			// only when dead
+		privatePolygonOffset	-1		// stage-only polygon offset
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
+		alphaTest 3.6 * (time - parm7)
+	}
+}
 
 // monster_zombie_morgue.def
 models/monsters/zombie/morgue/morgue_heated
@@ -1012,42 +1521,61 @@ models/monsters/zombie/morgue/morgue_heated
 }
 
 // monster_zombie_sawyer.def
-models/monsters/zombie/sawyer/sawyer_heated
-{
-    noSelfShadow
-    unsmoothedTangents
-    flesh
-    clamp
-    {	// burning corpse effect
+models/monsters/zombie/sawyer/sawyer_heated {
+	noSelfShadow
+	unsmoothedTangents
+	flesh
+	clamp
+	forceoverlays
+	{	// burning corpse effect
 		if	parm7			// only when dead
 		// make a burned away alpha test for the normal skin
 		blend	gl_zero, gl_one			// don't draw anything
 		
 		map models/monsters/spectre/global_dis.tga	// replace this with a monster-specific texture
 		alphaTest 0.05 + 1.5 * (time - parm7)
-    }
-	renderbump  -size 1024 1024 -trace 0.03 -colorMap -aa 2  models/monsters/zombie/sawyer/sawyer_local.tga models/monsters/zombie/sawyer/sawyer_hi.lwo
-    diffusemap	   models/monsters/zombie/sawyer/sawyer_d.tga
-    {
-        blend bumpmap
-        map   addnormals(models/monsters/zombie/sawyer/sawyer_local.tga, heightmap(models/monsters/zombie/sawyer/sawyer_h.tga, 6 ) )
-    }
-    specularmap   models/monsters/zombie/sawyer/sawyer_s.tga
-	specularmap   models/monsters/zombie/morgue/morgue_s.tga
- 	{
-        blend   add
-        color   0.3 * parm11, 0, 0.06 * parm11, 1
-        map     lights/fullambient.tga
-    }
-	{	// burning corpse effect
+	}
+		renderbump  -size 1024 1024 -trace 0.03 -colorMap -aa 2  models/monsters/zombie/sawyer/sawyer_local.tga models/monsters/zombie/sawyer/sawyer_hi.lwo
+		diffusemap	   models/monsters/zombie/sawyer/sawyer_d.tga
+	{
+		blend bumpmap
+		map   addnormals(models/monsters/zombie/sawyer/sawyer_local.tga, heightmap(models/monsters/zombie/sawyer/sawyer_h.tga, 6 ) )
+	}
+		specularmap   models/monsters/zombie/sawyer/sawyer_s.tga
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{
 		if parm7			// only when dead
-
-		// draw the fire burn at a negative polygonOffset, so it is behind the other stages
 		privatePolygonOffset	-1		// stage-only polygon offset
-        blend add	
-        blend gl_one, gl_zero
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
+		alphaTest 3.6 * (time - parm7)
+	}
+}
+
+models/monsters/zombie/sawyer/shair1_heated {
+	translucent
+	clamp
+	{
+		blend	filter
+		map	models/monsters/zombie/sawyer/shair1.tga
 		
-		map models/monsters/vagary/vagary_dis.tga	// replace this with a monster-specific texture
+	}
+	{
+		blend   add
+		color   0.3 * parm11, 0, 0.06 * parm11, 1
+		map     lights/fullambient.tga
+	}
+	{
+		if parm7			// only when dead
+		privatePolygonOffset	-1		// stage-only polygon offset
+		blend add
+		blend gl_one, gl_zero
+		map models/monsters/vagary/vagary_dis.tga
 		alphaTest 3.6 * (time - parm7)
 	}
 }

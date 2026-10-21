@@ -21,6 +21,29 @@ fx fx/heatglow
     }
 }
 
+fx fx/heatglow_fade
+{
+    {
+        delay               0
+        duration            1
+        fadeOut             1
+        restart             0
+        offset              0, 0, 32
+        name                "glowlight"
+        light               lights/heatglow, 2.5, 2.5, 2.5, 160
+        boundLightAndParm   1
+    }
+    {
+        name                "heathaze"
+        delay               0
+        duration            1
+        restart             0
+        fadeOut             1
+        model               "heatglow_haze.prt"
+        trackorigin         1
+    }
+}
+
 fx fx/heatglow_large {
     {
         delay               0

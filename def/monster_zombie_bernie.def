@@ -125,8 +125,9 @@ entityDef monster_zombie_bernie {
 
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"5"
-	"body_skin_heated"				"skins/monsters/zombies/bernie_heated.skin"
+	"body_skin_heated"				"skins/monster_zombie_bernie_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
+	"smoke_burnParticleSystem"		"burn_imp.prt-chest"
 
 	"look_min"						"-90 -125 0"
 	"look_max"						"25 125 0"

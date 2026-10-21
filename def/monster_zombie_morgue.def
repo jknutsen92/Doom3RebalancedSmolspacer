@@ -78,11 +78,8 @@ entityDef monster_zombie_morgue {
 	"attack_cone"					"70"
 	"attack_accuracy"				"0"
 	"mass"							"200"
-	"plasma_heatable"				"1"
-	"heat_decay_rate"				"10"
-	"body_skin_heated"					"skins/monsters/zombies/morgue_heated.skin"
-	"heatblast_fx"					"fx/heatblast.fx"
 
+	"body_skin_heated"				"skins/monster_zombie_morgue_heated.skin"
 	"skin"							"skins/monsters/zombies/morgue.skin"
 	"skin_dropGib"					"skins/monsters/zombies/morguegib.skin"
 	

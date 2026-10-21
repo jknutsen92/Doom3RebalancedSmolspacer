@@ -66,9 +66,9 @@ skin skins/models/monsters/cacodemon_heated {
 }
 
 // monster_zombie_bernie.def
-skin skins/monsters/zombies/bernie_heated {
+skin skins/monster_zombie_bernie_heated {
 	models/monsters/zombie/bernie/bernie			models/monsters/zombie/bernie/bernie_heated
-	models/monsters/skeleton/skeleton01 			textures/common/nodraw
+	models/monsters/skeleton/skeleton01				textures/common/nodraw
 }
 
 // monster_zombie_boney.def
@@ -92,14 +92,14 @@ skin skins/monster_zombie_fat_heated {
 }
 
 skin skins/monster_zombie_fat2_heated {
-	models/monsters/zombie/fatty/fatty				textures/common/nodraw
+	models/monsters/zombie/fatty/fatty				textures/common/nodraw	//models/monsters/zombie/fatty/bloodyfatty_heated
 	models/mapobjects/filler/monkeywrench			textures/common/nodraw
 	models/monsters/zombie/fatty/fattydamage		models/monsters/zombie/fatty/fattydamage_heated
 	models/monsters/skeleton/skeleton01				textures/common/nodraw
 }
 
 skin skins/monster_zombie_fat_wrench_heated {
-	models/monsters/zombie/fatty/fatty				textures/common/nodraw
+	models/monsters/zombie/fatty/fatty				textures/common/nodraw	//models/monsters/zombie/fatty/bloodyfatty_heated
 	models/monsters/zombie/fatty/fattydamage		models/monsters/zombie/fatty/fattydamage_heated
 	models/monsters/skeleton/skeleton01				textures/common/nodraw
 }
@@ -114,34 +114,166 @@ skin skins/monster_zombie_jumpsuit_heated {
 	models/characters/male_npc/jumpsuit/jumpsuit	models/characters/male_npc/jumpsuit/jumpsuit_heated
 }
 
-// monster_zombie_maint.def
-skin skins/monsters/zombies/zmaint_heated {
-	models/monsters/zombie/zombie01/zhead02 		models/monsters/zombie/zombie01/zhead02_heated
-	models/monsters/zombie/zombie01/ztorso01 		models/monsters/zombie/zombie01/ztorso01_heated
-	models/monsters/zombie/zombie01/zarms01 		models/monsters/zombie/zombie01/zarms01_heated
-	models/monsters/zombie/zombie01/zlegs01 		models/monsters/zombie/zombie01/zlegs01_heated
-	models/monsters/skeleton/skeleton01 			textures/common/nodraw
-	models/monsters/zombie/zombie01/zback01 		textures/common/nodraw
+// zombie heads
+skin skins/head_zombie1_heated {
+	models/characters/common/tongue					models/characters/common/tongue_heated
+	models/characters/common/rightdead2				models/characters/common/rightdead2_heated
+	models/characters/common/leftdead2				models/characters/common/leftdead2_heated
+	models/monsters/zombie/zombie01/zhead02			models/monsters/zombie/zombie01/zhead02_heated
+	models/characters/common/teethdead				models/characters/common/teethdead_heated
 }
 
+skin skins/head_zombie2_heated {
+	models/characters/common/tongue					models/characters/common/tongue_heated
+	models/monsters/zombie/zombie01/zhead01			models/monsters/zombie/zombie01/zhead01_heated
+}
+
+skin skins/head_zombie3_heated {
+	models/characters/common/leftdead2				models/characters/common/leftdead2_heated
+	models/monsters/zombie/zombie02/zhead02			models/monsters/zombie/zombie02/zhead02_heated
+	models/characters/common/rightdead2				models/characters/common/rightdead2_heated
+	models/characters/common/tongue					models/characters/common/tongue_heated
+}
+
+skin skins/head_zombie4_heated {
+	models/monsters/zombie/zombie01/zhead03			models/monsters/zombie/zombie01/zhead03_heated
+}
+
+skin skins/head_zombie5_heated {
+	models/monsters/zsecurity/marsec				models/monsters/zsecurity/marsec_heated
+	models/monsters/zsecurity/zsgogs2damage			models/monsters/zsecurity/zsgogs2damage_heated
+	models/monsters/zsecurity/zsgogs				models/monsters/zsecurity/zsgogs_heated
+	models/monsters/zsecurity/zsechead				models/monsters/zsecurity/zsechead_heated
+}
+
+skin skins/head_zombie6_heated {
+	models/characters/common/tongue					models/characters/common/tongue_heated
+	models/monsters/zsecurity/zsechead4				models/monsters/zsecurity/zsechead4_heated
+	models/characters/common/rightdead3				models/characters/common/rightdead3_heated
+	models/characters/common/leftdead3				models/characters/common/leftdead3_heated
+}
+
+skin skins/head_bloodybald_heated {
+	models/characters/common/lefthead03				models/characters/common/lefthead03_heated
+	models/characters/common/teethhead03			models/characters/common/teethhead03_heated
+	models/characters/common/righthead03			models/characters/common/righthead03_heated
+	models/characters/scientist/head03/head03		models/characters/scientist/head03/head03_heated
+}
+
+skin skins/head_stump_heated {
+	models/characters/male_npc/marine/stump			models/characters/male_npc/marine/stump_heated
+}
+
+// monster_zombie_maint.def
+skin skins/monster_zombie_maint_heated {
+	models/monsters/zombie/zombie01/zlegs01			models/monsters/zombie/zombie01/zlegs01_heated
+	models/monsters/zombie/zombie01/zhead02			models/monsters/zombie/zombie01/zhead02_heated
+	models/monsters/zombie/zombie01/zarms01			models/monsters/zombie/zombie01/zarms01_heated
+	models/monsters/zombie/zombie01/ztorso01		models/monsters/zombie/zombie01/ztorso01_heated
+	models/characters/common/teethdead				models/characters/common/teethdead_heated
+	models/monsters/zombie/zombie01/eyes/dead		models/monsters/zombie/zombie01/eyes/dead_heated
+	models/monsters/zombie/zombie01/zback01			textures/common/nodraw
+	models/monsters/skeleton/skeleton01				textures/common/nodraw
+}
+
+// monster_zombie_maint_fast
+skin skins/monster_zombie_maint_fast_heated {
+	models/monsters/zombie/zombie01/zlegs01			models/monsters/zombie/zombie01/zlegs01_heated
+	models/monsters/zombie/zombie01/zhead02			models/monsters/zombie/zombie01/zhead02_heated
+	models/monsters/zombie/zombie01/zarms01			models/monsters/zombie/zombie01/zarms01_heated
+	models/monsters/zombie/zombie01/ztorso01		models/monsters/zombie/zombie01/ztorso01_heated
+	models/characters/common/teethdead				models/characters/common/teethdead_heated
+	models/monsters/zombie/zombie01/eyes/dead		models/monsters/zombie/zombie01/eyes/dead_heated
+	models/monsters/zombie/zombie01/zback01			textures/common/nodraw
+	models/monsters/skeleton/skeleton01				textures/common/nodraw
+}
+
+// monster_zombie_maint_bald
 skin skins/monster_zombie_maint_bald_heated {
 	models/characters/male_npc/jumpsuit/jumpsuit	models/characters/male_npc/jumpsuit/jumpsuit_heated
 }
 
-// monster_zombie_no_jaw
+// monster_zombie_maint_no_jaw
 skin skins/monster_zombie_maint_no_jaw_heated {
 	models/characters/male_npc/jumpsuit/jumpsuit	models/characters/male_npc/jumpsuit/jumpsuit_heated
 }
 
+// monster_zombie_maint_nojaw
+skin skins/monster_zombie_maint_nojaw_heated {
+	models/characters/male_npc/jumpsuit/jumpsuit	models/characters/male_npc/jumpsuit/jumpsuit_heated
+}
+
+// monster_zombie_maint_wrench
+skin skins/monster_zombie_maint_wrench_heated {
+	models/characters/male_npc/jumpsuit/jumpsuit	models/characters/male_npc/jumpsuit/jumpsuit_heated
+}
+
+// monster_zombie_maint_skinny
+skin skins/monster_zombie_maint_skinny_heated {
+	models/characters/male_npc/jumpsuit/jumpsuit	models/characters/male_npc/jumpsuit/jumpsuit_heated
+}
+
+// monster_zombie_suit_neckstump
+skin skins/monster_zombie_suit_neckstump_heated {
+	models/characters/male_npc/suit/suit			models/characters/male_npc/suit/suit_heated
+}
+
+// monster_zombie_suit_bloodymouth
+skin skins/monster_zombie_suit_bloodymouth_heated {
+	models/characters/male_npc/suit/suit			models/characters/male_npc/suit/suit_heated
+}
+
+// monster_zombie_suit_skinny
+skin skins/monster_zombie_suit_skinny_heated {
+	models/characters/male_npc/suit/suit			models/characters/male_npc/suit/suit_heated
+}
+
+// monster_zombie_labcoat_neckstump
+skin skins/monster_zombie_labcoat_neckstump_heated {
+	models/characters/male_npc/labcoat/labcoat		models/characters/male_npc/labcoat/labcoat_heated
+}
+
+// monster_zombie_labcoat_limb
+skin skins/monster_zombie_labcoat_limb_heated {
+	models/characters/male_npc/labcoat/labcoat		models/characters/male_npc/labcoat/labcoat_heated
+}
+
+// monster_zombie_labcoat_skinny
+skin skins/monster_zombie_labcoat_skinny_heated {
+	models/characters/male_npc/labcoat/labcoat		models/characters/male_npc/labcoat/labcoat_heated
+}
+
+// monster_zombie_labcoat_pipe
+skin skins/monster_zombie_labcoat_pipe_heated {
+	models/characters/male_npc/labcoat/labcoat		models/characters/male_npc/labcoat/labcoat_heated
+}
+
+// monster_zombie_labcoat_hanging
+skin skins/monster_zombie_labcoat_hanging_heated {
+	models/characters/male_npc/labcoat/labcoat		models/characters/male_npc/labcoat/labcoat_heated
+}
+
+// monster_zombie_tshirt_bald
+skin skins/monster_zombie_tshirt_bald_heated {
+	models/characters/male_npc/soldier/soldier		models/characters/male_npc/soldier/soldier_heated
+}
+
+// monster_zombie_tshirt_blown
+skin skins/monster_zombie_tshirt_blown_heated {
+	models/characters/male_npc/soldier/soldier		models/characters/male_npc/soldier/soldier_heated
+}
+
 // monster_zombie_morgue.def
-skin skins/monsters/zombies/morgue_heated {
+skin skins/monster_zombie_morgue_heated {
 	models/monsters/zombie/morgue/morgue			models/monsters/zombie/morgue/morgue_heated
+	models/monsters/skeleton/skeleton01				textures/common/nodraw
 }
 
 // monster_zombie_sawyer.def
-skin skins/monsters/zombies/sawyer_heated {
+skin skins/monster_zombie_sawyer_heated {
 	models/monsters/zombie/sawyer/sawyer			models/monsters/zombie/sawyer/sawyer_heated
-	models/monsters/skeleton/skeleton01 			textures/common/nodraw
+	models/monsters/zombie/sawyer/shair1			textures/common/nodraw
+	models/monsters/skeleton/skeleton01				textures/common/nodraw
 }
 
 // monster_zsec_machinegun.def

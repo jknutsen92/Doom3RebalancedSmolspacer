@@ -36,6 +36,11 @@ entityDef zombie_default {
 	
 	"weakpoint_zone"				"head"
 
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"10"
+	"heatblast_fx"					"fx/heatblast.fx"
+	"smoke_burnParticleSystem"		"burn_imp.prt-chest"
+
 	// gibs common to all zombies
 	"gib"						"1"
 	

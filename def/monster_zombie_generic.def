@@ -139,10 +139,6 @@ entityDef monster_zombie_base {
 	"turn_rate"						"360"
 	"mass"							"150"
 	
-	"plasma_heatable"				"1"
-	"heat_decay_rate"				"10"
-	"heatblast_fx"					"fx/heatblast.fx"
-	
 	"burnaway"						"1.5"
 
 	"bone_focus"					"headcontrol"
@@ -337,33 +333,29 @@ model monster_zombie_soldier {
 entityDef monster_zombie_jumpsuit {
 	"inherit"						"monster_zombie_base"
 	"model"							"monster_zombie_jumpsuit"		
-	"body_skin_heated"				"skins/monster_zombie_jumpsuit_heated.skin"
-
 	"def_head"						"head_zombie3"
 	"head_joint"					"Shoulders"
-	"body_skin_heated"				""
-	"head_skin_heated"				""
+	"body_skin_heated"				"skins/monster_zombie_jumpsuit_heated.skin"
+	"head_skin_heated"				"skins/head_zombie3_heated.skin"
 }
 
 entityDef monster_zombie_maint_bald {
 	"inherit"						"monster_zombie_base"
 	"model"							"monster_zombie_jumpy"
-	"body_skin_heated"				"skins/monster_zombie_maint_bald_heated.skin"
 	"def_head"						"head_bloodybald"
 	"head_joint"					"Shoulders"
-	"body_skin_heated"				""
-	"head_skin_heated"				""
+	"body_skin_heated"				"skins/monster_zombie_maint_bald_heated.skin"
+	"head_skin_heated"				"skins/head_bloodybald_heated.skin"
 }
 
 entityDef monster_zombie_maint_no_jaw {
 	"inherit"						"monster_zombie_base"
 	"model"							"monster_zombie_jumpy"
 	"skin"							"skins/monsters/zombies/jumpsuit.skin"
-	"body_skin_heated"				"skins/monster_zombie_maint_no_jaw_heated.skin"
 	"def_head"						"head_zombie2"
 	"head_joint"					"Shoulders"
-	"body_skin_heated"				""
-	"head_skin_heated"				""
+	"body_skin_heated"				"skins/monster_zombie_maint_no_jaw_heated.skin"
+	"head_skin_heated"				"skins/head_zombie2_heated"
 }
 
 entityDef monster_zombie_maint_nojaw {
@@ -373,8 +365,8 @@ entityDef monster_zombie_maint_nojaw {
 	"body_skin_heated"				"skins/monster_zombie_maint_nojaw_heated.skin"
 	"def_head"						"head_zombie2"
 	"head_joint"					"Shoulders"
-	"body_skin_heated"				""
-	"head_skin_heated"				""
+	"body_skin_heated"				"skins/monster_zombie_maint_no_jaw_heated.skin"
+	"head_skin_heated"				"skins/head_zombie2_heated"
 }
 
 
@@ -389,8 +381,8 @@ entityDef monster_zombie_maint_wrench {
 	"smoke_wound_ricochet"			"bulletricochet.prt"
 	"def_dropDeathItem"				"moveable_wrench"
 	"dropDeathItemJoint"			"Rhand"
-	"body_skin_heated"				""
-	"head_skin_heated"				""
+	"body_skin_heated"				"skins/monster_zombie_maint_wrench_heated.skin"
+	"head_skin_heated"				"skins/head_zombie2_heated"
 }
 
 entityDef monster_zombie_maint_skinny {
@@ -399,8 +391,8 @@ entityDef monster_zombie_maint_skinny {
 	"skin"							"skins/monsters/zombies/jumpsuit.skin"
 	"def_head"						"head_zombie1"
 	"head_joint"					"Shoulders"
-	"body_skin_heated"				""
-	"head_skin_heated"				""
+	"body_skin_heated"				"skins/monster_zombie_maint_skinny_heated.skin"
+	"head_skin_heated"				"skins/head_zombie1_heated"
 }
 
 entityDef monster_zombie_suit_neckstump {
@@ -409,58 +401,58 @@ entityDef monster_zombie_suit_neckstump {
 	"skin"							"skins/monsters/zombies/suit.skin"			
 	"def_head"						"head_stump"
 	"head_joint"					"Shoulders"
-	"body_skin_heated"				""
+	"body_skin_heated"				"skins/monster_zombie_suit_neckstump_heated.skin"
 	"head_skin_heated"				""
 }
 
 entityDef monster_zombie_suit_bloodymouth {
 	"inherit"						"monster_zombie_base"
 	"model"							"monster_zombie_suit"
-	"skin"							"skins/monsters/zombies/suit.skin"			
+	"skin"							"skins/monsters/zombies/suit.skin"		
 	"def_head"						"head_zombie3"
 	"head_joint"					"Shoulders"
-	"body_skin_heated"				""
-	"head_skin_heated"				""
+	"body_skin_heated"				"skins/monster_zombie_suit_bloodymouth_heated.skin"	
+	"head_skin_heated"				"skins/head_zombie3_heated.skin"
 }
 
 entityDef monster_zombie_suit_skinny {
 	"inherit"						"monster_zombie_base"
 	"model"							"monster_zombie_suit"
-	"skin"							"skins/monsters/zombies/suit.skin"			
+	"skin"							"skins/monsters/zombies/suit.skin"
 	"def_head"						"head_zombie1"
 	"head_joint"					"Shoulders"
-	"body_skin_heated"				""
-	"head_skin_heated"				""
+	"body_skin_heated"				"skins/monster_zombie_suit_skinny_heated.skin"
+	"head_skin_heated"				"skins/head_zombie1_heated"
 }
 
 entityDef monster_zombie_labcoat_neckstump {
 	"inherit"						"monster_zombie_base"
 	"model"							"monster_zombie_labcoat"
-	"skin"							"skins/monsters/zombies/labcoat.skin"			
+	"skin"							"skins/monsters/zombies/labcoat.skin"
 	"def_head"						"head_stump"
 	"head_joint"					"Shoulders"
-	"body_skin_heated"				""
+	"body_skin_heated"				"skins/monster_zombie_labcoat_neckstump_heated.skin"
 	"head_skin_heated"				""
 }
 
 entityDef monster_zombie_labcoat_limb {
 	"inherit"						"monster_zombie_base"
 	"model"							"monster_zombie_labcoat"
-	"skin"							"skins/monsters/zombies/labcoat.skin"				
+	"skin"							"skins/monsters/zombies/labcoat.skin"
 	"def_head"						"head_zombie3"
 	"head_joint"					"Shoulders"
-	"body_skin_heated"				""
-	"head_skin_heated"				""
+	"body_skin_heated"				"skins/monster_zombie_labcoat_limb_heated.skin"
+	"head_skin_heated"				"skins/head_zombie3_heated.skin"
 }
 
 entityDef monster_zombie_labcoat_skinny {
 	"inherit"						"monster_zombie_base"
 	"model"							"monster_zombie_labcoat"
-	"skin"							"skins/monsters/zombies/labcoat.skin"				
+	"skin"							"skins/monsters/zombies/labcoat.skin"
 	"def_head"						"head_zombie1"
 	"head_joint"					"Shoulders"
-	"body_skin_heated"				""
-	"head_skin_heated"				""
+	"body_skin_heated"				"skins/monster_zombie_labcoat_skinny_heated.skin"
+	"head_skin_heated"				"skins/head_zombie1_heated"
 }
 
 entityDef monster_zombie_labcoat_pipe {
@@ -469,8 +461,8 @@ entityDef monster_zombie_labcoat_pipe {
 	"skin"							"skins/monsters/zombies/labcoat.skin"
 	"def_head"						"head_zombie4"
 	"head_joint"					"Shoulders"
-	"body_skin_heated"				""
-	"head_skin_heated"				""
+	"body_skin_heated"				"skins/monster_zombie_labcoat_pipe_heated.skin"
+	"head_skin_heated"				"skins/head_zombie4_heated"
 }
 
 entityDef monster_zombie_labcoat_hanging {
@@ -490,28 +482,28 @@ entityDef monster_zombie_labcoat_hanging {
 	"look_joint headcontrol"		"0 0 0"
 	"look_joint Ruparm"				"0 0 0"
 	"look_joint Luparm"				"0 0 0"
-	"body_skin_heated"				""
-	"head_skin_heated"				""
+	"body_skin_heated"				"skins/monster_zombie_labcoat_hanging_heated.skin"
+	"head_skin_heated"				"skins/head_zombie4_heated"
 }
 
 entityDef monster_zombie_tshirt_bald {
 	"inherit"						"monster_zombie_base"
 	"model"							"monster_zombie_soldier"
-	"skin"							"skins/monsters/zombies/soldier.skin"	
+	"skin"							"skins/monsters/zombies/soldier.skin"
 	"def_head"						"head_bloodybald"
 	"head_joint"					"Shoulders"
-	"body_skin_heated"				""
-	"head_skin_heated"				""
+	"body_skin_heated"				"skins/monster_zombie_tshirt_bald_heated.skin"
+	"head_skin_heated"				"skins/head_bloodybald_heated.skin"
 }
 
 entityDef monster_zombie_tshirt_blown {
 	"inherit"						"monster_zombie_base"
 	"model"							"monster_zombie_soldier"
-	"skin"							"skins/monsters/zombies/soldier.skin"	
+	"skin"							"skins/monsters/zombies/soldier.skin"
 	"def_head"						"head_zombie4"
 	"head_joint"					"Shoulders"
-	"body_skin_heated"				""
-	"head_skin_heated"				""
+	"body_skin_heated"				"skins/monster_zombie_tshirt_blown_heated.skin"
+	"head_skin_heated"				"skins/head_zombie4_heated"
 }
 
 entityDef monster_zombie_maint_flashlight {
@@ -527,11 +519,6 @@ entityDef monster_zombie_maint_flashlight {
 	"mass"							"150"
 	"smoke_wound_metal"				"bulletricochet.prt"
 	"smoke_wound_ricochet"			"bulletricochet.prt"
-
-	"plasma_heatable"				"1"
-	"heat_decay_rate"				"10"
-	"body_skin_heated"				""
-	"head_skin_heated"				""
 
 	"bone_focus"					"headcontrol"
 	"bone_leftEye"					"Leyeaim"

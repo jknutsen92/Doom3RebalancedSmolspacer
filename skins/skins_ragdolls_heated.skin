@@ -1,0 +1,166 @@
+skin skins/env_ragdoll_skeleton_heated {
+	models/monsters/skeleton/skeleton01					models/monsters/skeleton/skeleton01_heated
+}
+
+skin skins/env_ragdoll_skeleton2_heated {
+	models/monsters/skeleton/skeleton01					models/monsters/skeleton/skeleton01_heated
+}
+
+skin skins/env_ragdoll_boney_heated {
+	models/monsters/zombie/boney/boney					models/monsters/zombie/boney/boney_heated
+	models/monsters/skeleton/skeleton01					textures/common/nodraw
+}
+
+skin skins/env_ragdoll_mummy_heated {
+	models/mapobjects/alphalabs3/vagary/vagary_mummy	models/mapobjects/alphalabs3/vagary/vagary_mummy_heated
+}
+
+skin skins/env_ragdoll_mummy_fixed_heated {
+	models/mapobjects/alphalabs3/vagary/vagary_mummy	models/mapobjects/alphalabs3/vagary/vagary_mummy_heated
+}
+
+skin skins/env_ragdoll_hazmat_heated {
+	models/characters/male_npc/hazmat/hazmat			models/characters/male_npc/hazmat/hazmat_heated
+	models/characters/male_npc/hazmat/visor				models/characters/male_npc/hazmat/visor_heated
+}
+
+skin skins/env_ragdoll_fatty_heated {
+	models/monsters/zombie/fatty/fatty					models/monsters/zombie/fatty/fatty_heated
+	models/mapobjects/filler/monkeywrench				textures/common/nodraw
+	models/monsters/zombie/fatty/fattydamage			models/monsters/zombie/fatty/fattydamage_heated
+	models/monsters/skeleton/skeleton01					models/monsters/skeleton/skeleton01_heated
+}
+
+skin skins/env_ragdoll_zmaint_heated {
+	models/monsters/zombie/zombie01/zlegs01				models/monsters/zombie/zombie01/zlegs01_heated
+	models/monsters/zombie/zombie01/zhead02				models/monsters/zombie/zombie01/zhead02_heated
+	models/monsters/zombie/zombie01/zarms01				models/monsters/zombie/zombie01/zarms01_heated
+	models/monsters/zombie/zombie01/ztorso01			models/monsters/zombie/zombie01/ztorso01_heated
+	models/characters/common/teethdead					models/characters/common/teethdead_heated
+	models/monsters/zombie/zombie01/eyes/dead			models/monsters/zombie/zombie01/eyes/dead_heated
+	models/monsters/zombie/zombie01/zback01				textures/common/nodraw
+	models/monsters/skeleton/skeleton01					textures/common/nodraw
+}
+
+skin skins/env_ragdoll_maint_heated {
+	models/characters/male_npc/jumpsuit/jumpsuit		models/characters/male_npc/jumpsuit/jumpsuit_heated
+}
+
+skin skins/env_ragdoll_lab1_heated {
+	models/characters/male_npc/labcoat/labcoat			models/characters/male_npc/labcoat/labcoat_heated
+}
+
+skin skins/env_ragdoll_lab2_heated {
+	models/characters/male_npc/labcoat/labcoat			models/characters/male_npc/labcoat/labcoat_heated
+}
+
+skin skins/head_zombie4_heated {
+	models/monsters/zombie/zombie01/zhead03				models/monsters/zombie/zombie01/zhead03_heated
+}
+
+skin skins/env_ragdoll_lab3_heated {
+	models/characters/male_npc/labcoat/labcoat			models/characters/male_npc/labcoat/labcoat_heated
+}
+
+skin skins/head_surgeon_heated {
+	models/characters/common/rightbrown					models/characters/common/rightbrown_heated
+	models/characters/common/leftbrown					models/characters/common/leftbrown_heated
+	models/characters/scientist/head04/head04			models/characters/scientist/head04/head04_heated
+}
+
+skin skins/env_ragdoll_lab4_heated {
+	models/characters/male_npc/labcoat/labcoat			models/characters/male_npc/labcoat/labcoat_heated
+}
+
+skin skins/env_ragdoll_suit1_heated {
+	models/characters/male_npc/suit/suit				models/characters/male_npc/suit/suit_heated
+}
+
+skin skins/env_ragdoll_suit2_heated {
+	models/characters/male_npc/suit/suit				models/characters/male_npc/suit/suit_heated
+}
+
+skin skins/env_ragdoll_suit3_heated {
+	models/characters/male_npc/suit/suit				models/characters/male_npc/suit/suit_heated
+}
+
+skin skins/env_ragdoll_marine1_heated {
+	models/characters/male_npc/soldier/soldier			models/characters/male_npc/soldier/soldier_heated
+}
+
+skin skins/env_ragdoll_marine2_heated {
+	models/characters/male_npc/soldier/soldier			models/characters/male_npc/soldier/soldier_heated
+}
+
+skin skins/env_ragdoll_marine3_heated {
+	models/characters/male_npc/soldier/soldier			models/characters/male_npc/soldier/soldier_heated
+}
+
+skin skins/env_ragdoll_marine4_heated {
+	models/characters/male_npc/soldier/soldier			models/characters/male_npc/soldier/soldier_heated
+}
+
+skin skins/env_ragdoll_marine5_heated {
+	models/characters/male_npc/marine/marine			models/characters/male_npc/marine/marine_heated
+}
+
+skin skins/env_ragdoll_marine6_heated {
+	models/characters/male_npc/marine/marine			models/characters/male_npc/marine/marine_heated
+}
+
+skin skins/head_asian_young_heated {
+	models/characters/scientist/head05/head05			models/characters/scientist/head05/head05_heated
+	models/characters/common/teethhead05				models/characters/common/teethhead05_heated
+	models/characters/common/tongue						models/characters/common/tongue_heated
+	models/characters/common/lefthead05					models/characters/common/lefthead05_heated
+	models/characters/common/righthead05				models/characters/common/righthead05_heated
+}
+
+skin skins/env_ragdoll_zscientist1_heated {
+	models/characters/male_npc/labcoat/labcoat			models/characters/male_npc/labcoat/labcoat_heated
+}
+
+skin skins/env_ragdoll_zscientist2_heated {
+	models/characters/male_npc/labcoat/labcoat			models/characters/male_npc/labcoat/labcoat_heated
+}
+
+skin skins/env_ragdoll_zscientist3_heated {
+	models/characters/male_npc/labcoat/labcoat			models/characters/male_npc/labcoat/labcoat_heated
+}
+
+skin skins/env_ragdoll_zsecp_heated {
+	models/monsters/zsecurity/zsheild					textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass				textures/common/nodraw
+	models/characters/male_npc/security/dsecurity		models/characters/male_npc/security/dsecurity_heated
+	models/monsters/skeleton/skeleton01					textures/common/nodraw
+	models/weapons/pistol/w_pistol						textures/common/nodraw
+}
+
+skin skins/env_ragdoll_zsecs_heated {
+	models/characters/male_npc/security/dsecurity		models/characters/male_npc/security/dsecurity_heated
+	models/monsters/skeleton/skeleton01					textures/common/nodraw
+	models/weapons/shotgun/w_shotgun2					textures/common/nodraw
+}
+
+skin skins/env_ragdoll_zsecm_heated {
+	models/characters/male_npc/security/dsecurity		models/characters/male_npc/security/dsecurity_heated
+	models/monsters/skeleton/skeleton01					textures/common/nodraw
+	models/weapons/machinegun/w_machinegun				textures/common/nodraw
+}
+
+skin skins/head_security_helmet_heated {
+	models/characters/male_npc/security/gog				models/characters/male_npc/security/gog_heated
+	models/monsters/zsecurity/zsechead2					models/monsters/zsecurity/zsechead2_heated
+}
+
+skin skins/env_ragdoll_marine_helmet_heated {
+	models/characters/male_npc/marine/marine			models/characters/male_npc/marine/marine_heated
+}
+
+skin skins/head_marine_helmet_heated {
+	models/characters/sarge2/helmet						models/characters/sarge2/helmet_heated
+}
+
+skin skins/env_ragdoll_marine_stump_heated {
+	models/characters/male_npc/marine/marine			models/characters/male_npc/marine/marine_heated
+}

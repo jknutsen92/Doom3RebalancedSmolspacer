@@ -17,6 +17,14 @@ heat_sizzle {
 	sound/heat/heat_sizzle.wav
 }
 
+heat_dissolve {
+	minDistance 5
+	maxDistance 25
+	volume		0
+
+	sound/heat/heat_dissolve.wav
+}
+
 heat_bonus_hit {
 	minDistance 5
 	maxDistance 20

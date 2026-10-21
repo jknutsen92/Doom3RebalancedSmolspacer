@@ -189,10 +189,11 @@ entityDef monster_zombie_fat {
 	"melee_range"					"32"
 	"walk_on_sight"					"1"
 	"mass"							"200"
+	"body_skin_heated"				"skins/monster_zombie_fat_heated.skin"
 	"plasma_heatable"				"1"
 	"heat_decay_rate"				"10"
-	"body_skin_heated"				"skins/monster_zombie_fat_heated.skin"
 	"heatblast_fx"					"fx/heatblast.fx"
+	"smoke_burnParticleSystem"		"burn_imp.prt-chest"
 	
 	"blockedRadius"					"10"
 	"blockedMoveTime"				"1200"
