@@ -1,6 +1,6 @@
 /***********************************************************************
 
-	weapon_shotgun.def
+	weapon_shotgun_classic.def
 
 ***********************************************************************/
 
@@ -46,7 +46,7 @@ entityDef weapon_shotgun_classic {
 
 	"spawnclass"				"idItem"
 	"size"						"32 32 32"
-	"model"						"models/weapons/shotgun/w_shotgun2.lwo"		// TODO
+	"model"						"models/weapons/shotgun/w_shotgun2.lwo"
 	"model_view" 				"viewmodel_shotgun_classic"
 	"model_world" 				"worldmodel_shotgun_classic"
 	"joint_attach"				"SHOTGUN_ATTACHER"
@@ -94,14 +94,14 @@ entityDef weapon_shotgun_classic {
 entityDef moveable_item_shotgun_classic {
 	"inherit"					"weapon_shotgun_classic"
 	"spawnclass"				"idMoveableItem"
-	"model"						"models/weapons/shotgun/w_shotgun2.lwo"		// TODO
+	"model"						"models/weapons/shotgun/w_shotgun2.lwo"
 	"density"					"0.05"
 	"friction"					"0.2"
 	"bouncyness"				"0"
 }
 
 model worldmodel_shotgun_classic {
-	mesh						models/md5/weapons/shotgun_world/worldshotgun.md5mesh	// TODO
+	mesh						models/md5/weapons/shotgun_world/worldshotgun.md5mesh
 
 	anim raise					models/md5/weapons/shotgun_world/shotgun_idle.md5anim
 	anim idle 					models/md5/weapons/shotgun_world/shotgun_idle.md5anim
@@ -117,7 +117,7 @@ model worldmodel_shotgun_classic {
 }
 
 model viewmodel_shotgun_classic {
-	mesh						models/md5/weapons/shotgun_view/viewshotgun.md5mesh		// TODO
+	mesh						models/md5/weapons/shotgun_view/viewshotgun.md5mesh
 	
 	anim raise					models/md5/weapons/shotgun_view/raise.md5anim {
 		frame 1					sound_body player_shotgun_raise

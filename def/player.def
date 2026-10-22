@@ -774,6 +774,8 @@ entityDef player_base {
 	"weapon_nightmare"					"weapon_fists,weapon_pistol,weapon_flashlight,weapon_pda,weapon_soulcube"
 	"current_weapon"					"0"
 	
+	"weapontoggle2"						"2,14"
+	
 	"pm_jumpheight"						"48"
 	"pm_stepsize"						"16"
 	"pm_crouchspeed"					"80"

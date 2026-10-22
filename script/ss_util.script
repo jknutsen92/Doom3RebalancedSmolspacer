@@ -22,6 +22,25 @@ boolean _has_clear_line_of_sight_to_player(entity ent, boolean debug) {
     return false;
 }
 
+void _pursue_enemy(entity pursuer, entity target, boolean debug) {
+    if (debug) {
+        sys.println(pursuer.getName() + " pursuing " + target.getName());
+    }
+    pursuer.setEnemy(target);
+    while (pursuer.canReachEnemy()) {
+        if (debug) {
+            sys.println(pursuer.getName() + " moving to " + target.getName() + "'s postion");
+        }
+        pursuer.moveToEnemy();
+        sys.wait(10);
+    }
+    if (debug) {
+        sys.println(target.getName() + " out of reach of " + pursuer.getName() + ". Self-terminating");
+    }
+    // TODO: Maybe we can teleport somewhere near the player to jumpscare him, but for now, just remove the entity
+    pursuer.remove();
+}
+
 void _resurrect_after_delay(entity ent, boolean debug) {
     string name = ent.getName();
 
@@ -48,8 +67,7 @@ void _resurrect_after_delay(entity ent, boolean debug) {
         while (!rezEntity.isSpawned()) {
             sys.waitFrame();
         }
-        rezEntity.setEnemy($player1);
-        rezEntity.moveToEnemy();
+        _pursue_enemy(rezEntity, $player1, debug);
     }
     else if (debug) {
         sys.println(name + " was destroyed before resurrection completed");

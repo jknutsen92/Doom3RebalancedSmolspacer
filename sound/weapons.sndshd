@@ -893,7 +893,7 @@ player_shotgun_fire {
 player_shotgun_fire_classic {
 	minDistance	10
 	maxDistance	30
-	volume		3
+	volume		11
 	no_dups
 
 	sound/weapons/shotgun/wetfire.wav

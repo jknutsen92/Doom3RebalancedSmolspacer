@@ -309,6 +309,8 @@ scriptEvent	void 	threadname( string name );
 // Returns a reference to the entity with the specified name.
 scriptEvent	entity	getEntity( string name );
 
+scriptEvent void	cacheEntity(string classname);
+
 // Destroys ragdoll entity and spawns a new demon in its place. Set the thread spawn args first just like when spawning an entity
 // Returns the entity that will spawn after the process is complete. Use isSpawned scriptEvent to wait until the entity has spawned
 scriptEvent entity 	resurrectRagdoll(entity ragdoll);

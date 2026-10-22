@@ -1,0 +1,6 @@
+entityDef path_patrol {
+	"inherit"				"path_corner"
+	"editor_usage"			"Character will patrol to this entity"
+    "editor_var aas"        "What type of characters are compatible with this patrol grid based on their AAS type: aas48, aas96, aas_mancubus."
+    "aas"                   "aas48"
+}
