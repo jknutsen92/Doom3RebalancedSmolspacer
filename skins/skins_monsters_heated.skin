@@ -280,7 +280,7 @@ skin skins/monster_zombie_sawyer_heated {
 skin skins/monsters/zombies/zsecurity_machinegun_heated {
 	models/characters/male_npc/security/dsecurity 	models/characters/male_npc/security/dsecurity_heated
 	models/weapons/pistol/w_pistol 					textures/common/nodraw
-	models/weapons/shotgun/w_shotgun2 				textures/common/nodraw
+	models/weapons/shotgun/w_shotgun1 				textures/common/nodraw
 	models/monsters/zsecurity/zsheild 				textures/common/nodraw
 	models/monsters/zsecurity/zsheild_glass 		textures/common/nodraw
 	models/monsters/skeleton/skeleton01 			textures/common/nodraw
@@ -302,7 +302,7 @@ skin skins/monsters/zombies/zsecurity_pistol_head_heated {
 skin skins/monsters/zombies/zsecurity_helmet_pistol_shield_heated {
 	models/characters/male_npc/security/dsecurity 	models/characters/male_npc/security/dsecurity_heated
 	models/monsters/zsecurity/zsheild				models/monsters/zsecurity/zsheild_heated
-	models/weapons/shotgun/w_shotgun2 				textures/common/nodraw
+	models/weapons/shotgun/w_shotgun1 				textures/common/nodraw
 	models/weapons/machinegun/w_machinegun 			textures/common/nodraw
 	models/monsters/skeleton/skeleton01 			textures/common/nodraw
 }

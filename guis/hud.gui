@@ -50,6 +50,9 @@ windowDef Desktop {
 		if ("gui::newweapon" == 10) { 
 			resetTime "WeapIcon10Large" "0" ;
 		}
+		if ("gui::newweapon" == 14) {
+			resetTime "WeapIcon14Large" "0" ;
+		}
 	}
 
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -716,6 +719,37 @@ windowDef Desktop {
 			set	"weapon9::matcolor" "0 0.6 0.6 0.4" ;
 			set	"weapon10::matcolor" "0 0.6 0.6 0.4" ;
 			set	"weapon11::matcolor" "0 0.6 0.6 0.9" ;
+
+			set 	"AmmoFlash2::visible" "1" ;
+			set 	"AmmoFlash1::visible" "0" ;
+			set	"ScanLineLA::visible" "1" ;
+			set	"ScanLineLAG::visible" "0" ;
+			set	"BorderLAGrenades::visible" "0" ;
+			set	"BorderLA::visible" "1" ;
+			set	"weaphud" "0" ;
+			set	"BgLA::visible" "1" ;
+			set	"Lines1A::visible" "1" ;
+			set	"Lines1B::visible" "0" ;
+			set	"Lines2A::visible" "1" ;
+			set	"ammovalue2Black::visible" "1" ;
+			set	"ammovalue2::visible" "1" ;
+			set	"ammovalue3Black::visible" "1" ;
+			set	"ammovalue3::visible" "1" ;
+		}
+		if ("gui::weapon14" == 2) { 
+			resetTime "WeapIcon14" "0" ; 
+			set	"weapon0::matcolor" "0 0.6 0.6 0.4" ;
+			set	"weapon1::matcolor" "0 0.6 0.6 0.4" ;
+			set	"weapon2::matcolor" "0 0.6 0.6 0.9" ;
+			set	"weapon3::matcolor" "0 0.6 0.6 0.4" ;
+			set	"weapon4::matcolor" "0 0.6 0.6 0.4" ;
+			set	"weapon5::matcolor" "0 0.6 0.6 0.4" ;
+			set	"weapon6::matcolor" "0 0.6 0.6 0.4" ;
+			set	"weapon7::matcolor" "0 0.6 0.6 0.4" ;
+			set	"weapon8::matcolor" "0 0.6 0.6 0.4" ;
+			set	"weapon9::matcolor" "0 0.6 0.6 0.4" ;
+			set	"weapon10::matcolor" "0 0.6 0.6 0.4" ;
+			set	"weapon11::matcolor" "0 0.6 0.6 0.4" ;
 
 			set 	"AmmoFlash2::visible" "1" ;
 			set 	"AmmoFlash1::visible" "0" ;
@@ -1518,6 +1552,12 @@ windowDef Desktop {
 		matcolor	0, 0.6, 0.6, 0.4
 		visible	("gui::weapon10" != 0)
 	}
+	windowDef Weapon14 {
+		rect	553 ,471 ,10 ,6 
+		background	"guis/assets/hud/weapons"
+		matcolor	0, 0.6, 0.6, 0.4
+		visible	("gui::weapon14" != 0)
+	}
 
 	windowDef WeapReload {
 		text	"#str_02020"
@@ -1593,7 +1633,7 @@ windowDef Desktop {
 	windowDef WeapIcon2 {
 		visible		1
 		rect		560, 405, 64, 32 
-		background	"guis/assets/hud/icons/shotgunw"
+		background	"guis/assets/hud/icons/shotgun1w"
 		matcolor	1, 1, 1 ,0
 		visible	("gui::weapon2" == 2)
 		notime		1
@@ -1736,6 +1776,21 @@ windowDef Desktop {
 		onTime 0 {
 			transition "matcolor" "0.7 1 1 0.7" "0.3 0.6 0.6 0" "1000" "1" "0" ;
 			set "weapname::text" "#str_02024" ;
+			resetTime "weapname" "0" ;
+		}
+	}
+
+	windowDef WeapIcon14 {
+		visible		1
+		rect		560, 405, 64, 32 
+		background	"guis/assets/hud/icons/shotgunw"
+		matcolor	1, 1, 1 ,0
+		visible	("gui::weapon14" == 2)
+		notime		1
+
+		onTime 0 {
+			transition "matcolor" "0.7 1 1 0.7" "0.3 0.6 0.6 0" "1000" "1" "0" ;
+			set "weapname::text" "#str_07244" ;
 			resetTime "weapname" "0" ;
 		}
 	}
@@ -3786,6 +3841,35 @@ windowDef Desktop {
 		textscale	0.25
 		font		"fonts/bank"
 	}	
+
+	windowDef WeapIcon14Large {
+		visible		1
+		rect		256,280,128,64
+		background	"gui/hud/shotgun_classic"
+		matcolor	1, 1, 1, 0
+		visible 1
+		notime 1
+		
+		onTime 0 {
+			transition "rect" "253 280 128 64" "256 280 128 64" "300" "0" "1" ;
+			transition "matcolor" "1 1 1 0" "1 1 1 1" "300" ;
+			transition "WeapName14Large::forecolor" "0.6 1 0.9 0" "0.6 1 0.9 1" "300" ;
+		}
+		onTime 1000 {
+			transition "rect" "256 280 128 64" "259 280 128 64" "300" "0" "1" ;
+			transition "matcolor" "1 1 1 1" "1 1 1 0" "300" ;
+			transition "WeapName14Large::forecolor" "0.6 1 0.9 1" "0.6 1 0.9 0" "300" ;
+		}
+	}
+	windowDef WeapName14Large {
+		text	"#str_07244"
+		rect	258 ,279 ,220 ,20 
+		forecolor	0.6, 1, 0.9, 0
+		visible	1
+		textscale	0.25
+		font		"fonts/bank"
+	}
+	
 //---------------------------------------------------------------------------------------------
 // Sound Meter - Dev Only 
 //---------------------------------------------------------------------------------------------

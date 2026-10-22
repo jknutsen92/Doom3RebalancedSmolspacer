@@ -42,11 +42,11 @@ entityDef weapon_shotgun {
 	"editor_mins"				"-16 -16 0"
 	"editor_maxs"				"16 16 32"
 	"editor_usage"				"Shotgun"
-	"editor_rotatable"		"1"
+	"editor_rotatable"			"1"
 
 	"spawnclass"				"idItem"
 	"size"						"32 32 32"
-	"model"						"models/weapons/shotgun/w_shotgun2.lwo"
+	"model"						"models/weapons/shotgun/w_shotgun1.lwo"
 	"model_view" 				"viewmodel_shotgun"
 	"model_world" 				"worldmodel_shotgun"
 	"joint_attach"				"SHOTGUN_ATTACHER"
@@ -90,20 +90,21 @@ entityDef weapon_shotgun {
 	"snd_respawn"				"sound_weapon_respawn"
 	"skin_invisible"			"skins/shotgun_invis"
 	
-	"spread"					"17"
+	"spread"					"13"
 }
 
 entityDef moveable_item_shotgun {
 	"inherit"					"weapon_shotgun"
 	"spawnclass"				"idMoveableItem"
-	"model"						"models/weapons/shotgun/w_shotgun2.lwo"
+	"model"						"models/weapons/shotgun/w_shotgun1.lwo"
+	"mass"						"10"
 	"density"					"0.05"
 	"friction"					"0.2"
 	"bouncyness"				"0"
 }
 
 model worldmodel_shotgun {
-	mesh						models/md5/weapons/shotgun_world/worldshotgun.md5mesh
+	mesh						models/md5/weapons/shotgun1_world/worldshotgun.md5mesh
 
 	anim raise					models/md5/weapons/shotgun_world/shotgun_idle.md5anim
 	anim idle 					models/md5/weapons/shotgun_world/shotgun_idle.md5anim
@@ -119,48 +120,48 @@ model worldmodel_shotgun {
 }
 
 model viewmodel_shotgun {
-	mesh						models/md5/weapons/shotgun_view/viewshotgun.md5mesh
+	mesh						models/md5/weapons/shotgun1_view/viewshotgun.md5mesh
 	
-	anim raise					models/md5/weapons/shotgun_view/raise.md5anim {
+	anim raise					models/md5/weapons/shotgun1_view/raise.md5anim {
 		frame 1					sound_body player_shotgun_raise
 	}
-	anim idle 					models/md5/weapons/shotgun_view/idle.md5anim
-	anim fire1 					models/md5/weapons/shotgun_view/fire1.md5anim {
+	anim idle 					models/md5/weapons/shotgun1_view/idle.md5anim
+	anim fire1 					models/md5/weapons/shotgun1_view/fire1.md5anim {
 		frame 1					sound_weapon player_shotgun_fire
 		frame 17				sound_voice player_shotgun_pump
 	}
-	anim fire2 					models/md5/weapons/shotgun_view/fire2.md5anim {
+	anim fire2 					models/md5/weapons/shotgun1_view/fire2.md5anim {
 		frame 1					sound_weapon player_shotgun_fire
 		frame 17				sound_voice player_shotgun_pump
 	}
-	anim fire3 					models/md5/weapons/shotgun_view/fire3.md5anim {
+	anim fire3 					models/md5/weapons/shotgun1_view/fire3.md5anim {
 		frame 1					sound_weapon player_shotgun_fire
 		frame 17				sound_voice player_shotgun_pump
 	}
-	anim reload_start 			models/md5/weapons/shotgun_view/reload_start.md5anim {
+	anim reload_start 			models/md5/weapons/shotgun1_view/reload_start.md5anim {
 		frame 1					sound player_shotgun_reload_start	
 	}
-	anim reload_loop1 			models/md5/weapons/shotgun_view/reload_loop.md5anim {
+	anim reload_loop1 			models/md5/weapons/shotgun1_view/reload_loop.md5anim {
 		frame 6					sound player_shotgun_reload
 	}
-	anim reload_loop2 			models/md5/weapons/shotgun_view/reload_loop2.md5anim {
+	anim reload_loop2 			models/md5/weapons/shotgun1_view/reload_loop2.md5anim {
 		frame 6					sound player_shotgun_reload
 	}
-	anim reload_loop3 			models/md5/weapons/shotgun_view/reload_loop3.md5anim {
+	anim reload_loop3 			models/md5/weapons/shotgun1_view/reload_loop3.md5anim {
 		frame 6					sound player_shotgun_reload
 	}
-	anim reload_end 			models/md5/weapons/shotgun_view/reload_end.md5anim {
+	anim reload_end 			models/md5/weapons/shotgun1_view/reload_end.md5anim {
 		//frame 1					sound player_shotgun_reload_end
 		frame 14				sound_voice player_shotgun_pump
 	}
-	anim noammo					models/md5/weapons/shotgun_view/empty.md5anim {
+	anim noammo					models/md5/weapons/shotgun1_view/empty.md5anim {
 		frame 1					sound_voice player_shotgun_empty
 	}
-	anim putaway				models/md5/weapons/shotgun_view/lower.md5anim 
+	anim putaway				models/md5/weapons/shotgun1_view/lower.md5anim 
 }
 
 entityDef	damage_shotgun {
-	"damage"			"9"
+	"damage"			"10"
 	"kickDir"			"1 0 0"
 
 	"mtr_blob"			"genericDamage"
@@ -220,7 +221,6 @@ entityDef projectile_bullet_shotgun {
 	"mins"						"-1 -1 -1"
 	"maxs"						"1 1 1"
 	"cone"						"3"
-	//"model" 					"models/items/projectiles/rocket.ase"
 	"scale"						"0.1"
 	"noshadows"					"1"
 								

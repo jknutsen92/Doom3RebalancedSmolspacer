@@ -745,11 +745,11 @@ entityDef player_base {
 	"weapon13_toggle"					"1"
 	"weapon13_allowempty"				"1"
 	
-	"def_weapon14"						""
+	"def_weapon14"						"weapon_shotgun_classic"
 	"weapon14_best"						"0"
-	"weapon14_cycle"					"0"
+	"weapon14_cycle"					"1"
 	"weapon14_toggle"					"0"
-	"weapon14_allowempty"				"0"
+	"weapon14_allowempty"				"1"
 	
 	"def_weapon15"						""
 	"weapon15_best"						"0"

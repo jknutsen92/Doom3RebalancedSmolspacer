@@ -29,6 +29,7 @@ This is the main script that is loaded before any level scripts load.
 #include "script/weapon_chainsaw.script"
 #include "script/weapon_flashlight.script"
 #include "script/weapon_pda.script"
+#include "script/weapon_shotgun_classic.script"
 
 // ai
 #include "script/ai_monster_base.script"

@@ -139,7 +139,7 @@ skin skins/env_ragdoll_zsecp_heated {
 skin skins/env_ragdoll_zsecs_heated {
 	models/characters/male_npc/security/dsecurity		models/characters/male_npc/security/dsecurity_heated
 	models/monsters/skeleton/skeleton01					textures/common/nodraw
-	models/weapons/shotgun/w_shotgun2					textures/common/nodraw
+	models/weapons/shotgun/w_shotgun1					textures/common/nodraw
 }
 
 skin skins/env_ragdoll_zsecm_heated {

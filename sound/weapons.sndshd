@@ -880,22 +880,27 @@ monster_shotgun_fire {
 player_shotgun_fire {
 	minDistance	10
 	maxDistance	30
-	volume		11
+	volume		3
+	no_dups
+
+	sound/weapons/shotgun/fire/sg_fire_01.wav
+	sound/weapons/shotgun/fire/sg_fire_01_a.wav
+	sound/weapons/shotgun/fire/sg_fire_01_b.wav
+	sound/weapons/shotgun/fire/sg_fire_01_c.wav
+	sound/weapons/shotgun/fire/sg_fire_01_d.wav
+}
+
+player_shotgun_fire_classic {
+	minDistance	10
+	maxDistance	30
+	volume		3
 	no_dups
 
 	sound/weapons/shotgun/wetfire.wav
 	sound/weapons/shotgun/wetfire3.wav
 	sound/weapons/shotgun/wetfire5.wav
-
-	//sound/weapons/shotgun/wetfire2.wav
-	//sound/weapons/shotgun/wetfire4.wav
-	
-
-	//sound/weapons/shotgun/xfire_01.wav
-	//sound/weapons/shotgun/xfire_02.wav
-	//sound/weapons/shotgun/xfire_03.wav
-	//sound/weapons/shotgun/xfire_04.wav
 }
+
 
 player_shotgun_pump  {
 	minDistance	10
