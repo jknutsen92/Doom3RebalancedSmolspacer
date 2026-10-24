@@ -47,7 +47,7 @@ entityDef weapon_flashlight {
 
 	"weapon_scriptobject"		"weapon_flashlight"
 	"def_melee"					"damage_flashlight"
-	"melee_distance"			"48"
+	"melee_distance"			"60"
 	"ammoType"					""
 	"ammoRequired"				"0"
 	"clipSize"					"0"

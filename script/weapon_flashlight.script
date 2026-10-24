@@ -12,6 +12,9 @@ weapon_flashlight.script
 #define FLASHLIGHT_FIRE_TO_IDLE		4
 #define FLASHLIGHT_RELOAD_TO_IDLE	4
 
+#define FIRST_DAMAGE_FRAME 			2
+#define LAST_DAMAGE_FRAME			8
+
 #define	FLASHLIGHT_MIN_SKIN_INTENSITY	0.2
 
 object weapon_flashlight : weapon_base {
@@ -28,6 +31,7 @@ object weapon_flashlight : weapon_base {
 	void		Raise();
 	void		Idle();
 	void		Fire();
+	void		HitFrames();
 	void		ToggleOnOff();
 	void		EnterCinematic();
 	void		ExitCinematic();
@@ -109,20 +113,26 @@ void weapon_flashlight::Idle() {
 }
 
 void weapon_flashlight::Fire() {
-	float waitTime;
-
 	playAnim( ANIMCHANNEL_ALL, "fire" );
-	waitTime = sys.getTime() + 0.1;
-	while( sys.getTime() < waitTime ) {
-		updateLightIntensity();
-		waitFrame();
-	}
-	melee();
+	HitFrames();
 	while( !animDone( ANIMCHANNEL_ALL, FLASHLIGHT_FIRE_TO_IDLE ) ) {
 		updateLightIntensity();
 		waitFrame();
 	}
 	weaponState( "Idle", FLASHLIGHT_FIRE_TO_IDLE );
+}
+
+void weapon_flashlight::HitFrames() {
+	float currentFrame = 0;
+	boolean hitConnected = false;
+	while (currentFrame <= LAST_DAMAGE_FRAME && !hitConnected) {
+		if (currentFrame >= FIRST_DAMAGE_FRAME) {
+			hitConnected = melee();
+		}
+		updateLightIntensity();
+		currentFrame++;
+		waitFrame();
+	}
 }
 
 void weapon_flashlight::ToggleOnOff() {

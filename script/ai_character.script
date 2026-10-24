@@ -1389,6 +1389,10 @@ void character::path_corner() {
 	}
 }
 
+void character::path_patrol() {
+	path_corner();
+}
+
 /*
 =====================
 character::path_anim

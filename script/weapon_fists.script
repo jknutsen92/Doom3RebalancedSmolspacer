@@ -8,7 +8,10 @@ weapon_fists.script
 #define FISTS_IDLE_TO_LOWER		4
 #define FISTS_IDLE_TO_PUNCH		0
 #define FISTS_RAISE_TO_IDLE		4
-#define FISTS_PUNCH_TO_IDLE		1
+#define FISTS_PUNCH_TO_IDLE		6
+
+#define FIRST_DAMAGE_FRAME		2
+#define LAST_DAMAGE_FRAME		5
 
 object weapon_fists : weapon_base {
 	float		side;
@@ -19,6 +22,7 @@ object weapon_fists : weapon_base {
 	void		Raise();
 	void		Idle();
 	void		Punch();
+	void 		PunchFrames();
 	void		ExitCinematic();
 	string		GetFireAnim();
 };
@@ -59,11 +63,22 @@ void weapon_fists::Idle() {
 
 void weapon_fists::Punch() {
 	playAnim( ANIMCHANNEL_ALL, GetFireAnim() );
-	sys.wait( 0.1 );
-	melee();
+	PunchFrames();
 	waitUntil( animDone( ANIMCHANNEL_ALL, FISTS_PUNCH_TO_IDLE ) );
 	side = !side;
 	weaponState( "Idle", FISTS_PUNCH_TO_IDLE );
+}
+
+void weapon_fists::PunchFrames() {
+	float currentFrame = 0;
+	boolean punchConnected = false;
+	while (currentFrame <= LAST_DAMAGE_FRAME && !punchConnected) {
+		if (currentFrame >= FIRST_DAMAGE_FRAME) {
+			punchConnected = melee();
+		}
+		currentFrame++;
+		waitFrame();
+	}
 }
 
 void weapon_fists::ExitCinematic() {
