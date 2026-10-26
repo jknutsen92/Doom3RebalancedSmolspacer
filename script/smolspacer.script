@@ -64,7 +64,7 @@ void _resurrect_after_delay(entity ent, boolean debug) {
     if (uniqueEntityExists(name)) {
         rezEntity = sys.resurrectRagdoll(ent);
         // Send it after the player
-        while (!rezEntity.isSpawned()) {
+        while (rezEntity.isHidden()) {
             sys.waitFrame();
         }
         _pursue_enemy(rezEntity, $player1, debug);

@@ -46678,7 +46678,7 @@ brushDef3
 ( 0 -1 0 -776 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/common/caulk" 0 0 0
 ( 1 0 0 -504 ) ( ( 0.03125 0 0 ) ( 0 0.03125 0 ) ) "textures/common/caulk" 0 0 0
 ( 0 1 0 498 ) ( ( 0.03125 0 9.094947017729282e-13 ) ( 0 0.03125 5.684341886080801e-14 ) ) "textures/common/caulk" 0 0 0
-( -1 0 0 502 ) ( ( 0.03125 0 4.999999999999993 ) ( 0 0.03125 6.661338147750939e-16 ) ) "textures/common/caulk" 0 0 0
+( -1 0 0 502 ) ( ( 0.03125 0 5 ) ( 0 0.03125 6.661338147750939e-16 ) ) "textures/common/caulk" 0 0 0
 }
 }
 // primitive 3563
@@ -71430,9 +71430,9 @@ patchDef3
 "classname" "speaker"
 "name" "speaker_archiver_staging"
 "origin" "-1128 976 144"
-"s_shader" "speaker_archiver_staging"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_staging"
 }
 // entity 190
 {
@@ -73441,11 +73441,11 @@ brushDef3
 "classname" "speaker"
 "name" "tim_speaker_27"
 "origin" "232 -212 96"
+"s_maxdistance" "20.000000"
+"s_mindistance" "5.000000"
 "s_shader" "one_shot_electrical_switch_heavy_1"
 "s_volume" "5"
 "s_waitfortrigger" "1"
-"s_maxdistance" "20.000000"
-"s_mindistance" "5.000000"
 }
 // entity 294
 {
@@ -78740,10 +78740,10 @@ brushDef3
 "classname" "speaker"
 "name" "tim_speaker_49"
 "origin" "1711 157 96"
-"s_shader" "admin_glass_shatter"
-"s_waitfortrigger" "1"
 "s_maxdistance" "15.000001"
 "s_mindistance" "5.000000"
+"s_shader" "admin_glass_shatter"
+"s_waitfortrigger" "1"
 }
 // entity 666
 {
@@ -80234,11 +80234,11 @@ patchDef2
 "classname" "speaker"
 "name" "speaker_39"
 "origin" "-699 519 144"
+"s_maxdistance" "20.000000"
+"s_mindistance" "5.000000"
 "s_shader" "one_shot_electrical_switch_heavy_1"
 "s_volume" "5"
 "s_waitfortrigger" "1"
-"s_maxdistance" "20.000000"
-"s_mindistance" "5.000000"
 }
 // entity 781
 {
@@ -83388,11 +83388,11 @@ patchDef2
 "classname" "speaker"
 "name" "speaker_41"
 "origin" "-640 1472 192"
+"s_maxdistance" "20.000000"
+"s_mindistance" "5.000000"
 "s_shader" "one_shot_electrical_switch_heavy_1"
 "s_volume" "5"
 "s_waitfortrigger" "1"
-"s_maxdistance" "20.000000"
-"s_mindistance" "5.000000"
 }
 // entity 887
 {
@@ -83538,10 +83538,10 @@ patchDef2
 "classname" "speaker"
 "name" "speaker_42"
 "origin" "-640 -16 160"
-"s_shader" "e3_metalbash_01"
-"s_waitfortrigger" "1"
 "s_maxdistance" "35.000000"
 "s_mindistance" "2.000000"
+"s_shader" "e3_metalbash_01"
+"s_waitfortrigger" "1"
 }
 // entity 898
 {
@@ -89235,54 +89235,54 @@ patchDef2
 "classname" "speaker"
 "name" "speaker_archiver_loading1"
 "origin" "-1128 848 144"
-"s_shader" "speaker_archiver_loading1"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_loading1"
 }
 // entity 1141
 {
 "classname" "speaker"
 "name" "speaker_archiver_loading2"
 "origin" "-1128 864 144"
-"s_shader" "speaker_archiver_loading2"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_loading2"
 }
 // entity 1142
 {
 "classname" "speaker"
 "name" "speaker_archiver_depository1_1"
 "origin" "-1032 608 80"
-"s_shader" "speaker_archiver_depository1_1"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_depository1_1"
 }
 // entity 1143
 {
 "classname" "speaker"
 "name" "speaker_archiver_depository2_1"
 "origin" "-1048 824 80"
-"s_shader" "speaker_archiver_depository2_1"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_depository2_1"
 }
 // entity 1144
 {
 "classname" "speaker"
 "name" "speaker_archiver_dump2_1"
 "origin" "-1136 560 112"
-"s_shader" "speaker_archiver_dump2_1"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_dump2_1"
 }
 // entity 1145
 {
 "classname" "speaker"
 "name" "speaker_archiver_dump1_1"
 "origin" "-1296 720 112"
-"s_shader" "speaker_archiver_dump1_1"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_dump1_1"
 }
 // entity 1146
 {
@@ -89290,9 +89290,9 @@ patchDef2
 "name" "speaker_archiver_arm1_short"
 "bind" "archiver1_arm"
 "origin" "-1088 688 128"
-"s_shader" "speaker_archiver_arm1_short"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_arm1_short"
 }
 // entity 1147
 {
@@ -89300,81 +89300,81 @@ patchDef2
 "name" "speaker_archiver_arm2_short"
 "bind" "archiver2_arm"
 "origin" "-1072 688 128"
-"s_shader" "speaker_archiver_arm2_short"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_arm2_short"
 }
 // entity 1148
 {
 "classname" "speaker"
 "name" "speaker_archiver_depository1_2"
 "origin" "-1024 600 80"
-"s_shader" "speaker_archiver_depository1_2"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_depository1_2"
 }
 // entity 1149
 {
 "classname" "speaker"
 "name" "speaker_archiver_depository2_2"
 "origin" "-1040 816 80"
-"s_shader" "speaker_archiver_depository2_2"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_depository2_2"
 }
 // entity 1150
 {
 "classname" "speaker"
 "name" "speaker_archiver_dump1_2"
 "origin" "-1296 704 112"
-"s_shader" "speaker_archiver_dump1_2"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_dump1_2"
 }
 // entity 1151
 {
 "classname" "speaker"
 "name" "speaker_archiver_dump2_2"
 "origin" "-1152 560 112"
-"s_shader" "speaker_archiver_dump2_2"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_dump2_2"
 }
 // entity 1152
 {
 "classname" "speaker"
 "name" "speaker_archiver_depository1_3"
 "origin" "-1016 592 80"
-"s_shader" "speaker_archiver_depository1_3"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_depository1_3"
 }
 // entity 1153
 {
 "classname" "speaker"
 "name" "speaker_archiver_depository2_3"
 "origin" "-1032 808 80"
-"s_shader" "speaker_archiver_depository2_3"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_depository2_3"
 }
 // entity 1154
 {
 "classname" "speaker"
 "name" "speaker_archiver_dump1_3"
 "origin" "-1296 688 112"
-"s_shader" "speaker_archiver_dump1_3"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_dump1_3"
 }
 // entity 1155
 {
 "classname" "speaker"
 "name" "speaker_archiver_dump2_3"
 "origin" "-1168 560 112"
-"s_shader" "speaker_archiver_dump2_3"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_dump2_3"
 }
 // entity 1156
 {
@@ -89382,9 +89382,9 @@ patchDef2
 "name" "speaker_archiver_arm1_long"
 "bind" "archiver1_arm"
 "origin" "-1088 720 128"
-"s_shader" "speaker_archiver_arm1_long"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_arm1_long"
 }
 // entity 1157
 {
@@ -89392,9 +89392,9 @@ patchDef2
 "name" "speaker_archiver_arm2_long"
 "bind" "archiver2_arm"
 "origin" "-1072 704 128"
-"s_shader" "speaker_archiver_arm2_long"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_arm2_long"
 }
 // entity 1158
 {
@@ -89402,9 +89402,9 @@ patchDef2
 "name" "speaker_archiver_arm2_longer"
 "bind" "archiver2_arm"
 "origin" "-1072 720 128"
-"s_shader" "speaker_archiver_arm2_longer"
 "s_maxdistance" "15.000001"
 "s_mindistance" "3.000000"
+"s_shader" "speaker_archiver_arm2_longer"
 }
 // entity 1159
 {
@@ -94682,10 +94682,10 @@ patchDef2
 "classname" "speaker"
 "name" "speaker_251"
 "origin" "268 1380 184"
+"s_maxdistance" "0.000000"
 "s_mindistance" "2.000000"
 "s_shader" "sound/vo/admin/whisper_save_me.wav"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
 }
 // entity 1426
 {
@@ -98136,8 +98136,52 @@ patchDef3
 "name" "speaker_353"
 "origin" "-64 -744 94"
 "s_looping" "0"
-"s_shader" "entrance_elevator"
-"s_waitfortrigger" "1"
 "s_maxdistance" "15.000001"
 "s_mindistance" "5.000000"
+"s_shader" "entrance_elevator"
+"s_waitfortrigger" "1"
+}
+// entity 1624
+{
+"classname" "path_patrol"
+"name" "path_patrol_lobby_hallway"
+"angle" "0.000000"
+"origin" "144 -104 0"
+"target0" "path_patrol_offices"
+}
+// entity 1625
+{
+"classname" "path_patrol"
+"name" "path_patrol_offices"
+"angle" "90.000000"
+"origin" "248 1392 128"
+"target0" "path_patrol_lobby_hallway"
+"target1" "path_patrol_catwalk_hallway"
+}
+// entity 1626
+{
+"classname" "path_patrol"
+"name" "path_patrol_catwalk_hallway"
+"origin" "904 -176 136"
+"target0" "path_patrol_offices"
+}
+// entity 1627
+{
+"classname" "monster_zsec_shotgun"
+"name" "monster_zsec_shotgun_patrol_offices"
+"origin" "248.472 1321.01 127.966"
+"rotation" "0 1 0 -1 0 0 0 0 1"
+"target0" "path_patrol_offices"
+"wander" "1"
+"neverdormant" "1"
+}
+// entity 1628
+{
+"classname" "monster_zsec_pistol"
+"name" "monster_zsec_pistol_patrol_catwalk"
+"origin" "896.39 -186.292 136.896"
+"rotation" "0 1 0 -1 0 0 0 0 1"
+"wander" "1"
+"neverdormant" "1"
+"target0" "path_patrol_catwalk_hallway"
 }

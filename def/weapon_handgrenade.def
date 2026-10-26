@@ -128,7 +128,7 @@ model viewmodel_grenade {
 }
 
 entityDef damage_grenadeDirect {
-	"damage"					"150"
+	"damage"					"175"
 	"push"						"1000"
 	"mtr_wound_flesh"			"textures/decals/hurt02"
 	"mtr_splat_flesh"			""
@@ -137,7 +137,7 @@ entityDef damage_grenadeDirect {
 }
 
 entityDef damage_grenadeSplash {
-	"damage"					"150"
+	"damage"					"175"
 	"radius"					"250"
 	"knockback"					"80"
 	"push"						"10000"

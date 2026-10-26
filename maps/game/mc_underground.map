@@ -15935,7 +15935,7 @@ brushDef3
 {
 ( 0 0 -1 -704 ) ( ( 0.03125 0 18.25 ) ( 0 0.03125 165 ) ) "textures/common/monster_clip" 0 0 0
 ( 0 0 1 -968 ) ( ( 0.03125 0 18.25 ) ( 0 0.03125 -165 ) ) "textures/common/monster_clip" 0 0 0
-( 0 -1 0 -2256 ) ( ( 0.03125 0 -165 ) ( 0 0.03125 9.25 ) ) "textures/common/monster_clip" 0 0 0
+( 0 -1 0 -2392 ) ( ( 0.03125 0 -164.25 ) ( 0 0.03125 9.25 ) ) "textures/common/monster_clip" 0 0 0
 ( 1 0 0 -3296 ) ( ( 0.03125 0 18.25 ) ( 0 0.03125 9.25 ) ) "textures/common/monster_clip" 0 0 0
 ( -1 0 0 2336 ) ( ( 0.03125 0 -18.25 ) ( 0 0.03125 9.25 ) ) "textures/common/monster_clip" 0 0 0
 ( 0 1 0 1552 ) ( ( 0.03125 0 -18.25 ) ( 0 0.03125 9.25 ) ) "textures/common/monster_clip" 0 0 0
@@ -129533,6 +129533,7 @@ patchDef2
 "noflood" "1"
 "origin" "3721 -970 274"
 "rotation" "0.17374 0.948705 -0.264147 0.452609 -0.315143 -0.834164 -0.87462 0.0253726 -0.484145"
+"target0" "target_tip_4"
 }
 // entity 209
 {
@@ -130292,6 +130293,7 @@ patchDef2
 "inv_item" "4"
 "origin" "1042 1344 168"
 "rotation" "-0.71934 0.694658 0 -0.694658 -0.71934 0 0 0 1"
+"target0" "monster_demon_imp_crawler_1"
 }
 // entity 219
 {
@@ -170619,6 +170621,7 @@ patchDef2
 "body waist" "-220.98730469 -1479.06799316 -218.04980469 -59.6064682 -166.75202942 -58.15522003"
 "hide" "1"
 "origin" "-223 -1476 -226"
+"auto_rez" "0"
 }
 // entity 1753
 {
@@ -182312,4 +182315,191 @@ patchDef2
 )
 }
 }
+}
+// entity 2545
+{
+"classname" "target_tip"
+"name" "target_tip_4"
+"origin" "3696 -992 336"
+"text_tip" "You can equip your flashlight and pistol at the same time by hitting the pistol+flashlight key. This comes at the cost of your flashlight's melee attack and your pistol's accuracy and handling. "
+}
+// entity 2546
+{
+"classname" "monster_demon_imp_crawler"
+"name" "monster_demon_imp_crawler_1"
+"hide" "1"
+"not_easy" "1"
+"not_medium" "1"
+"origin" "856 1280 224"
+"rotation" "1 0 0 0 1 0 0 0 1"
+}
+// entity 2547
+{
+"classname" "monster_demon_wraith"
+"name" "monster_demon_wraith_1"
+"hide" "1"
+"not_easy" "1"
+"not_medium" "1"
+"origin" "889.356 923.361 138.642"
+"rotation" "0 1 0 -1 0 0 0 0 1"
+}
+// entity 2548
+{
+"classname" "item_armor_security"
+"name" "item_armor_security_1"
+"origin" "2433.63 -2290.48 104.756"
+"rotation" "0.421815 0.906682 0 -0.906682 0.421815 0 0 0 1"
+"target0" "trigger_relay_maint_ambush"
+}
+// entity 2549
+{
+"classname" "trigger_relay"
+"name" "trigger_relay_maint_ambush"
+"not_easy" "1"
+"not_medium" "1"
+"origin" "2688 -2200 216"
+"target0" "monster_demon_trite_1"
+"target1" "trigger_once_3"
+"target2" "monster_zsec_pistol_1"
+"target3" "monster_zsec_pistol_4"
+}
+// entity 2550
+{
+"classname" "monster_demon_trite"
+"name" "monster_demon_trite_1"
+"hide" "1"
+"not_easy" "1"
+"not_medium" "1"
+"origin" "2687.32 -2310.53 224"
+"rotation" "-1 0 0 0 -1 0 0 0 1"
+"trigger_anim" "196drop"
+}
+// entity 2551
+{
+"classname" "trigger_once"
+"name" "trigger_once_3"
+"model" "trigger_once_3"
+"not_easy" "1"
+"not_medium" "1"
+"origin" "2752 -2116 168"
+"target0" "monster_zsec_pistol_4"
+"target1" "monster_zsec_pistol_1"
+"target2" "monster_demon_trite_4"
+"target3" "monster_demon_trite_2"
+"target4" "monster_demon_trite_3"
+"target5" "monster_zsec_shotgun_6"
+"triggerFirst" "1"
+// primitive 0
+{
+brushDef3
+{
+( 0 0 1 -64 ) ( ( 0.0625 0 -9.094947017729282e-13 ) ( 0 0.0625 0.75 ) ) "textures/common/trigonce" 0 0 0
+( 0 1 0 -28 ) ( ( 0.0625 0 -0.75 ) ( 0 0.0625 0.75 ) ) "textures/common/trigonce" 0 0 0
+( 1 0 0 -64 ) ( ( 0.0625 0 0 ) ( 0 0.0625 0.75 ) ) "textures/common/trigonce" 0 0 0
+( 0 0 -1 -64 ) ( ( 0.0625 0 -9.094947017729282e-13 ) ( 0 0.0625 0.25 ) ) "textures/common/trigonce" 0 0 0
+( 0 -1 0 -28 ) ( ( 0.0625 0 -0.25 ) ( 0 0.0625 0.75 ) ) "textures/common/trigonce" 0 0 0
+( -1 0 0 -64 ) ( ( 0.0625 0 0 ) ( 0 0.0625 0.75 ) ) "textures/common/trigonce" 0 0 0
+}
+}
+}
+// entity 2552
+{
+"classname" "ai_attackcone_turret"
+"name" "ai_attackcone_turret_1"
+"angle" "-81.816582"
+"fov" "180"
+"height" "500"
+"not_easy" "1"
+"not_medium" "1"
+"origin" "2688 -1512 192.5"
+}
+// entity 2553
+{
+"classname" "monster_zsec_pistol"
+"name" "monster_zsec_pistol_1"
+"hide" "1"
+"not_easy" "1"
+"not_medium" "1"
+"origin" "2730.29 -1511.61 193.396"
+"rotation" "0 -1 0 1 0 0 0 0 1"
+"target0" "ai_attackcone_turret_1"
+}
+// entity 2554
+{
+"classname" "ai_attackcone_turret"
+"name" "ai_attackcone_turret_2"
+"angle" "-102.706779"
+"fov" "180"
+"height" "500"
+"not_easy" "1"
+"not_medium" "1"
+"origin" "3136 -1512 264.5"
+}
+// entity 2555
+{
+"classname" "monster_zsec_pistol"
+"name" "monster_zsec_pistol_4"
+"hide" "1"
+"not_easy" "1"
+"not_medium" "1"
+"origin" "3130.29 -1471.61 265.396"
+"rotation" "0 -1 0 1 0 0 0 0 1"
+"target0" "ai_attackcone_turret_2"
+}
+// entity 2556
+{
+"classname" "monster_demon_trite"
+"name" "monster_demon_trite_2"
+"hide" "1"
+"not_easy" "1"
+"not_medium" "1"
+"origin" "2689.34 -1834.69 96"
+"rotation" "0.748249 -0.663418 0 0.663418 0.748249 0 0 0 1"
+"trigger_anim" "outofhole"
+}
+// entity 2557
+{
+"classname" "monster_demon_trite"
+"name" "monster_demon_trite_3"
+"hide" "1"
+"not_easy" "1"
+"not_medium" "1"
+"origin" "3007.78 -1817.21 104"
+"rotation" "-0.802544 -0.596593 0 0.596593 -0.802544 0 0 0 1"
+"trigger_anim" "outofhole"
+}
+// entity 2558
+{
+"classname" "monster_demon_trite"
+"name" "monster_demon_trite_4"
+"hide" "1"
+"not_easy" "1"
+"not_medium" "1"
+"origin" "2903.78 -1985.21 400"
+"rotation" "-0.802544 -0.596593 0 0.596593 -0.802544 0 0 0 1"
+"trigger_anim" "400drop"
+}
+// entity 2559
+{
+"classname" "ai_attackcone"
+"name" "ai_attackcone_6"
+"angle" "180.000000"
+"anim" "leanoutleftfire"
+"fov" "90"
+"not_easy" "1"
+"not_medium" "1"
+"num_shots" "1"
+"offset" "0 -48 0"
+"origin" "3240 -936 264.375"
+}
+// entity 2560
+{
+"classname" "monster_zsec_shotgun"
+"name" "monster_zsec_shotgun_6"
+"hide" "1"
+"not_easy" "1"
+"not_medium" "1"
+"origin" "3271.46 -918.517 264.341"
+"rotation" "-1 0 0 0 -1 0 0 0 1"
+"target0" "ai_attackcone_6"
 }

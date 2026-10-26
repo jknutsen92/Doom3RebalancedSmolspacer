@@ -1,5 +1,9 @@
 mapProcFile003
 
+model { /* name = */ "trigger_once_3" /* numSurfaces = */ 0
+
+}
+
 model { /* name = */ "func_static_52979" /* numSurfaces = */ 1
 
 /* surface 0 */ { "textures/common/entitygui" /* numVerts = */ 4 /* numIndexes = */ 6

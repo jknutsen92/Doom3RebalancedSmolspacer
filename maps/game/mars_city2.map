@@ -154572,14 +154572,14 @@ patchDef2
 "classname" "path_patrol"
 "name" "path_patrol_mess"
 "origin" "-3144 -1416 129"
-"target0" "path_patrol_armory"
+"target0" "path_patrol_lobby"
 "target1" "path_patrol_bathroom"
 }
 // entity 2491
 {
 "classname" "path_patrol"
-"name" "path_patrol_armory"
-"origin" "-3384 -3064 184"
+"name" "path_patrol_lobby"
+"origin" "-2568 -2080 152.25"
 "target0" "path_patrol_mess"
 }
 // entity 2492
@@ -154588,4 +154588,14 @@ patchDef2
 "name" "path_patrol_bathroom"
 "origin" "-2520 -904 152.125"
 "target0" "path_patrol_mess"
+}
+// entity 2493
+{
+"classname" "monster_zsec_machinegun"
+"name" "monster_zsec_machinegun_patrol_bathroom"
+"origin" "-2544 -960 151.84"
+"rotation" "1 0 0 0 1 0 0 0 1"
+"target0" "path_patrol_bathroom"
+"wander" "1"
+"neverdormant" "1"
 }

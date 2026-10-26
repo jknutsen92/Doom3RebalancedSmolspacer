@@ -48,6 +48,7 @@ entityDef map_resurrector_score {
     "monorail"          "40"
     "delta1"            "41"
     "delta2a"           "43"
+    "delta2b"           "45"
     "delta3"            "47"
     "delta4"            "49"
     "hell1"             "50"
