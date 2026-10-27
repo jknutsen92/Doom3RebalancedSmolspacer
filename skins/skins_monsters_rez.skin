@@ -1,0 +1,188 @@
+skin skins/monster_zombie_maint_nojaw_rez {
+	models/characters/male_npc/jumpsuit/jumpsuit        models/characters/male_npc/jumpsuit/jumpsuit_rez
+}
+
+skin skins/head_zombie2_rez {
+	models/characters/common/tongue			            models/characters/common/tongue_rez
+	models/monsters/zombie/zombie01/zhead01			    models/monsters/zombie/zombie01/zhead01_rez
+}
+
+skin skins/monster_zombie_suit_neckstump_rez {
+	models/characters/male_npc/suit/suit			    models/characters/male_npc/suit/suit_rez
+}
+
+skin skins/head_stump_rez {
+	models/characters/male_npc/marine/stump			    models/characters/male_npc/marine/stump_rez
+}
+
+skin skins/monster_zombie_labcoat_skinny_rez {
+	models/characters/male_npc/labcoat/labcoat			models/characters/male_npc/labcoat/labcoat_rez
+}
+
+skin skins/head_zombie1_rez {
+	models/characters/common/tongue			            models/characters/common/tongue_rez
+	models/characters/common/rightdead2			        models/characters/common/rightdead2_rez
+	models/characters/common/leftdead2			        models/characters/common/leftdead2_rez
+	models/monsters/zombie/zombie01/zhead02			    models/monsters/zombie/zombie01/zhead02_rez
+	models/characters/common/teethdead			        models/characters/common/teethdead_rez
+}
+
+skin skins/monster_zombie_fat_rez {
+	models/monsters/zombie/fatty/fatty			        models/monsters/zombie/fatty/fatty_rez
+	models/mapobjects/filler/monkeywrench			    textures/common/nodraw
+	models/monsters/zombie/fatty/fattydamage			textures/common/nodraw
+	models/monsters/skeleton/skeleton01			        textures/common/nodraw
+}
+
+skin skins/monster_zombie_maint_wrench_rez {
+	models/characters/male_npc/jumpsuit/jumpsuit		models/characters/male_npc/jumpsuit/jumpsuit_rez
+}
+
+skin skins/monster_zombie_morgue_rez {
+	models/monsters/zombie/morgue/morgue			    models/monsters/zombie/morgue/morgue_rez
+	models/monsters/skeleton/skeleton01			        textures/common/nodraw
+}
+
+skin skins/monster_zombie_bernie_rez {
+	models/monsters/zombie/bernie/bernie			    models/monsters/zombie/bernie/bernie_rez
+	models/monsters/skeleton/skeleton01			        textures/common/nodraw
+}
+
+skin skins/monster_demon_trite_rez {
+	models/monsters/trite/trite			                models/monsters/trite/trite_rez
+}
+
+skin skins/monster_zombie_maint_fast_rez {
+	models/monsters/zombie/zombie01/zlegs01			    models/monsters/zombie/zombie01/zlegs01_rez
+	models/monsters/zombie/zombie01/zhead02			    models/monsters/zombie/zombie01/zhead02_rez
+	models/monsters/zombie/zombie01/zarms01			    models/monsters/zombie/zombie01/zarms01_rez
+	models/monsters/zombie/zombie01/ztorso01			models/monsters/zombie/zombie01/ztorso01_rez
+	models/characters/common/teethdead			        models/characters/common/teethdead_rez
+	models/monsters/zombie/zombie01/eyes/dead			models/monsters/zombie/zombie01/eyes/dead_rez
+	models/monsters/zombie/zombie01/zback01			    textures/common/nodraw
+	models/monsters/skeleton/skeleton01			        textures/common/nodraw
+}
+
+skin skins/monster_demon_imp_rez {
+	models/monsters/imp/imp			                    models/monsters/imp/imp_rez
+}
+
+skin skins/monster_zsec_pistol_rez {
+	models/monsters/zsecurity/zsheild			        textures/common/nodraw
+	models/monsters/zsecurity/zsheild_glass			    textures/common/nodraw
+	models/characters/male_npc/security/dsecurity		models/characters/male_npc/security/dsecurity_rez
+	models/monsters/skeleton/skeleton01			        textures/common/nodraw
+}
+
+skin skins/head_zombie6_rez {
+	models/characters/common/tongue			            models/characters/common/tongue_rez
+	models/monsters/zsecurity/zsechead4			        models/monsters/zsecurity/zsechead4_rez
+	models/characters/common/rightdead3			        models/characters/common/rightdead3_rez
+	models/characters/common/leftdead3			        models/characters/common/leftdead3_rez
+}
+
+skin skins/monster_zombie_boney_rez {
+	models/monsters/zombie/boney/boney			        models/monsters/zombie/boney/boney_rez
+	models/monsters/skeleton/skeleton01			        textures/common/nodraw
+}
+
+skin skins/monster_demon_maggot_rez {
+	models/monsters/maggot/magspine			            models/monsters/maggot/magspine_rez
+	models/monsters/maggot/magtongue			        models/monsters/maggot/magtongue_rez
+	models/monsters/maggot/maggot3			            models/monsters/maggot/maggot3_rez
+	models/monsters/maggot/mageyes			            models/monsters/maggot/mageyes_rez
+}
+
+skin skins/monster_zsec_machinegun_rez {
+	models/characters/male_npc/security/dsecurity	    models/characters/male_npc/security/dsecurity_rez
+	models/monsters/skeleton/skeleton01			        textures/common/nodraw
+	models/weapons/machinegun/w_machinegun			    models/weapons/machinegun/w_machinegun_rez
+}
+
+skin skins/head_security_dhelmet_rez {
+	models/characters/male_npc/security/gog			    models/characters/male_npc/security/gog_rez
+	models/monsters/zsecurity/zsechead2			        models/monsters/zsecurity/zsechead2_rez
+}
+
+skin skins/monster_zsec_shotgun_rez {
+	models/characters/male_npc/security/dsecurity		models/characters/male_npc/security/dsecurity_rez
+	models/monsters/skeleton/skeleton01			        textures/common/nodraw
+	models/weapons/shotgun/w_shotgun2			        models/weapons/shotgun/w_shotgun2_rez
+}
+
+skin skins/head_zombie5_rez {
+	models/monsters/zsecurity/marsec			        models/monsters/zsecurity/marsec_rez
+	models/monsters/zsecurity/zsgogs2damage			    models/monsters/zsecurity/zsgogs2damage_rez
+	models/monsters/zsecurity/zsgogs			        models/monsters/zsecurity/zsgogs_rez
+	models/monsters/zsecurity/zsechead			        models/monsters/zsecurity/zsechead_rez
+}
+
+skin skins/monster_demon_wraith_rez {
+	models/monsters/wraith/wraith			            models/monsters/wraith/wraith_rez
+	models/monsters/wraith/weyes			            models/monsters/wraith/weyes_rez
+	models/monsters/wraith/wing			                models/monsters/wraith/wing_rez
+}
+
+skin skins/monster_flying_lostsoul_rez {
+	models/monsters/lost/lost_teeth			            models/monsters/lost/lost_teeth_rez
+	models/monsters/lost/lost			                models/monsters/lost/lost_rez
+	models/monsters/lost/lostfx			                models/monsters/lost/lostfx_rez
+}
+
+skin skins/monster_flying_cacodemon_rez {
+	models/monsters/cacodemon/cacodemon			        models/monsters/cacodemon/cacodemon_rez
+	models/monsters/cacodemon/cacoeye			        models/monsters/cacodemon/cacoeye_rez
+	models/monsters/cacodemon/cacobrain			        models/monsters/cacodemon/cacobrain_rez
+	models/monsters/cacodemon/cacodemon_mouth			models/monsters/cacodemon/cacodemon_mouth_rez
+}
+
+skin skins/monster_demon_revenant_rez {
+	models/monsters/revenant/revenant2			        models/monsters/revenant/revenant2_rez
+	models/monsters/revenant/revenant			        models/monsters/revenant/revenant_rez
+	models/monsters/revenant/reye			            models/monsters/revenant/reye_rez
+}
+
+skin skins/monster_demon_cherub_rez {
+	models/characters/common/leftdead3			        models/characters/common/leftdead3_rez
+	models/characters/common/rightdead3			        models/characters/common/rightdead3_rez
+	models/monsters/cherub/teeth			            models/monsters/cherub/teeth_rez
+	models/monsters/cherub/cherub			            models/monsters/cherub/cherub_rez
+}
+
+skin skins/monster_zombie_sawyer_rez {
+	models/monsters/zombie/sawyer/sawyer			    models/monsters/zombie/sawyer/sawyer_rez
+	models/monsters/skeleton/skeleton01			        textures/common/nodraw
+}
+
+skin skins/monster_zombie_commando_rez {
+	models/monsters/zombie/commando/com1_d			    models/monsters/zombie/commando/com1_d_rez
+	models/monsters/tentacle/dp_tentacle			    models/monsters/tentacle/dp_tentacle_rez
+	models/monsters/zombie/commando/teeth			    models/monsters/zombie/commando/teeth_rez
+	models/monsters/zombie/commando/com1_eye			models/monsters/zombie/commando/com1_eye_rez
+}
+
+skin skins/monster_demon_pinky_rez {
+	models/monsters/pinky/pinky_metal			        models/monsters/pinky/pinky_metal_rez
+	models/monsters/pinky/pinky			                models/monsters/pinky/pinky_rez
+	models/monsters/pinky/teeth			                models/monsters/pinky/teeth_rez
+	models/monsters/hellknight/gob			            models/monsters/hellknight/gob_rez
+}
+
+skin skins/monster_zombie_commando_cgun_rez {
+	models/monsters/zombie/commando/com1_eye			models/monsters/zombie/commando/com1_eye_rez
+	models/monsters/zombie/commando/teeth		        models/monsters/zombie/commando/teeth_rez
+	models/monsters/zombie/commando/com1_d			    models/monsters/zombie/commando/com1_d_rez
+}
+
+skin skins/monster_demon_archvile_rez {
+	models/monsters/archvile/archvile2			        models/monsters/archvile/archvile2_rez
+	models/monsters/archvile/archvilehand2			    models/monsters/archvile/archvilehand2_rez
+}
+
+skin skins/monster_demon_hellknight_rez {
+	models/monsters/hellknight/hellknight			    models/monsters/hellknight/hellknight_rez
+	models/monsters/hellknight/gob2			            models/monsters/hellknight/gob2_rez
+	models/monsters/hellknight/gob			            models/monsters/hellknight/gob_rez
+	models/monsters/hellknight/tongue			        models/monsters/hellknight/tongue_rez
+}
+

@@ -23,19 +23,29 @@ boolean _has_clear_line_of_sight_to_player(entity ent, boolean debug) {
 }
 
 void _pursue_enemy(entity pursuer, entity target, boolean debug) {
+    string pursuerName = pursuer.getName();
     if (debug) {
-        sys.println(pursuer.getName() + " pursuing " + target.getName());
+        sys.println(pursuerName + " pursuing " + target.getName());
     }
     pursuer.setEnemy(target);
-    while (pursuer.canReachEnemy()) {
-        if (debug) {
-            sys.println(pursuer.getName() + " moving to " + target.getName() + "'s postion");
+    // Keep trying to hunt the player as long as he is visible or reacheable
+    while (pursuer.inPlayerPVS() || pursuer.canReachEnemy()) {
+        if (!uniqueEntityExists(pursuerName) || !pursuer.isLiving()) {
+            return;
         }
-        pursuer.moveToEnemy();
+        if (pursuer.canReachEnemy()) {
+            if (debug) {
+                sys.println(pursuerName + " moving to " + target.getName() + "'s postion");
+            }
+            pursuer.moveToEnemy();
+        }
+        else if (debug) {
+            sys.println(pursuerName + " out of reach of " + target.getName() + ". Waiting for target to leave view or become reacheable");
+        }
         sys.wait(10);
     }
     if (debug) {
-        sys.println(target.getName() + " out of reach of " + pursuer.getName() + ". Self-terminating");
+        sys.println(target.getName() + " out of reach AND sight of  " + pursuerName + ". Self-terminating");
     }
     // TODO: Maybe we can teleport somewhere near the player to jumpscare him, but for now, just remove the entity
     pursuer.remove();

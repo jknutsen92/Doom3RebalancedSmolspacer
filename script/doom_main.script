@@ -102,10 +102,6 @@ This is the main script that is loaded before any level scripts load.
 void doom_main() {
 	sys.print( "Entering doom_main()\n");
 
-	//
-	// Do any script setup here
-	//
-
 	string g_skill = sys.getcvar("g_skill");
 	if (g_skill == "0") {
 		sys.execCfg("recruit.cfg");

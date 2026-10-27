@@ -244,6 +244,12 @@ scriptEvent void	callFunction( string functionName );
 // enables or prevents an entity from going dormant
 scriptEvent void	setNeverDormant( float enable );
 
+// Checks if the entity is in the players' PVS
+scriptEvent float 	inPlayerPVS();
+
+// Checks if the entity is alive
+scriptEvent float 	isLiving();
+
 /***********************************************************************
 
 	system events (called via 'sys.')
