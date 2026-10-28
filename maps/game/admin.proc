@@ -1,5 +1,9 @@
 mapProcFile003
 
+model { /* name = */ "trigger_once_1" /* numSurfaces = */ 0
+
+}
+
 model { /* name = */ "tim_func_fracture_6" /* numSurfaces = */ 1
 
 /* surface 0 */ { "textures/glass/glass1_nvp" /* numVerts = */ 4 /* numIndexes = */ 6

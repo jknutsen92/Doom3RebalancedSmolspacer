@@ -1,0 +1,126 @@
+#define ZSEC_BURST_SHOTS        6
+#define ZSEC_SHOT_DELAY         0.1
+#define ZSEC_NUM_BURSTS         2
+#define ZSEC_BURST_DELAY        0.9
+
+namespace map_marscity2 
+{
+
+	float request_speaker = 1;
+
+	void setup_objects() {
+		$func_fracture_1.takeDamage(0);
+	}
+
+	void lower_airlock_ladder()
+	{
+		sys.wait( 2 );
+		sys.trigger( $snd_ladder_move );
+		$airlock_ladder.move( DOWN, 102 );
+	}
+	
+	void video_request_speaker()
+	{
+		float	sound_length;
+		
+		while (request_speaker == 1)
+		{
+			sound_length = $speaker_280.startSoundShader ("marscity2_comp_vidconnect_req", SND_CHANNEL_VOICE2 );
+			sys.wait (sound_length);
+			sys.wait( 1 );
+		}
+	}
+	
+	void connect_sarge_speaker()
+	{
+		request_speaker = 0;
+		$speaker_280.stopSound ( SND_CHANNEL_VOICE2, false );
+		sys.trigger( $sarge_monitor );
+		//sys.wait( 1.5 );
+		sys.trigger( $speaker_281 );
+		sys.wait( .25);
+		sys.trigger( $speaker_282 );
+		sys.trigger( $sarge_monitor );
+		sys.trigger( $trigger_relay_111 );
+	}
+	
+	void loop_steamblast1()
+	{
+		while (1)
+		{
+			sys.trigger( $steamblast_1 );
+			sys.trigger( $steamblast_1_snd );
+			sys.wait( 2 );
+			sys.trigger( $steamblast_1 );
+			sys.trigger( $steamblast_1_snd );
+			sys.wait( 7 );
+		}	
+	}
+
+	void force_open_corridor() {
+        $tim_func_door_251.open();
+        $tim_func_door_251.disable();
+        $tim_func_door_252.open();
+        $tim_func_door_252.disable();
+    }
+
+    void zsec_fire() {
+        $monster_zsec_window_shooter.startSoundShader("monster_machinegun_fire", SND_CHANNEL_ANY);
+        $monster_zsec_window_shooter.fireMissileAtTarget("barrel", "func_fracture_1");
+    }
+
+    void trigger_zsecs() {
+        float i;
+        float j;
+        sys.trigger($monster_zsec_corridor_shooter);
+        $monster_zsec_window_shooter.startSoundShader("monster_zombie_security_chatter", SND_CHANNEL_ANY);
+        $monster_zsec_window_shooter.playAnim(ANIMCHANNEL_TORSO, "range_attack");
+        sys.wait(0.25);
+        $monster_zsec_window_shooter.playCycle(ANIMCHANNEL_TORSO, "range_attack_loop1");
+        $func_fracture_1.takeDamage(1);
+        for (i = 0; i < ZSEC_NUM_BURSTS; i++) {
+            for (j = 0; j < ZSEC_BURST_SHOTS; j++) {
+                zsec_fire();
+                sys.wait(ZSEC_SHOT_DELAY);
+            }
+            sys.wait(ZSEC_BURST_DELAY);
+        }
+        sys.trigger($monster_zsec_corridor_shooter);
+        $monster_zsec_window_shooter.overrideAnim(ANIMCHANNEL_TORSO);
+        $monster_zsec_window_shooter.playAnim(ANIMCHANNEL_TORSO, "range_attack_end");
+        $monster_zsec_window_shooter.callFunction("sight_enemy");
+        sys.wait(1);
+        sys.trigger($monster_zsec_window_shooter);
+    }
+
+    void start_ambush_sequence() {
+        thread trigger_zsecs();
+		force_open_corridor();
+        sys.wait(1.5);
+        sys.trigger($monster_demon_maggot_2);
+        sys.wait(2.5);
+        sys.trigger($monster_demon_maggot_4);
+        sys.wait(1.5);
+        sys.trigger($monster_demon_maggot_3);
+    }
+
+    void start_window_sequence() {
+        // teleport in maggot
+        sys.trigger($monster_demon_maggot_window);
+        sys.wait(1.8);
+        // Draw crack decal
+        $func_static_cracked_decal.show();
+        // Play shatter sound effect
+        $func_fracture_1.startSoundShader("glass_hit", SND_CHANNEL_ANY);
+    }
+	
+	//*********************************
+	//	MAIN
+	//*********************************
+	void main()
+	{
+		thread video_request_speaker();
+		setup_objects();
+		//init_world();
+	}
+}

@@ -1,0 +1,8 @@
+glass_hit {
+    volume          19
+    minDistance     5
+    maxDistance     25
+    unclamped
+
+    sound/impact/crash/glass_hit.wav
+}

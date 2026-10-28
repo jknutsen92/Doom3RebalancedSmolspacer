@@ -74889,7 +74889,6 @@ brushDef3
 "shaderparm7" "1"
 "snd_close" "cpu_door_close"
 "snd_open" "cpu_door_open"
-"target" "trigger_relay_112"
 "team" "serverroom1"
 }
 // entity 393
@@ -88442,6 +88441,7 @@ patchDef2
 "talk2_blendout" "8"
 "talkradius" "512"
 "talktrigger" "1"
+"auto_rez" "0"
 }
 // entity 1098
 {
@@ -98169,19 +98169,47 @@ patchDef3
 {
 "classname" "monster_zsec_shotgun"
 "name" "monster_zsec_shotgun_patrol_offices"
+"neverdormant" "1"
 "origin" "248.472 1321.01 127.966"
 "rotation" "0 1 0 -1 0 0 0 0 1"
 "target0" "path_patrol_offices"
 "wander" "1"
-"neverdormant" "1"
 }
 // entity 1628
 {
 "classname" "monster_zsec_pistol"
 "name" "monster_zsec_pistol_patrol_catwalk"
+"neverdormant" "1"
 "origin" "896.39 -186.292 136.896"
 "rotation" "0 1 0 -1 0 0 0 0 1"
-"wander" "1"
-"neverdormant" "1"
 "target0" "path_patrol_catwalk_hallway"
+"wander" "1"
+}
+// entity 1629
+{
+"classname" "func_static"
+"name" "func_static_2"
+"origin" "562.97 605.024 80.4744"
+"model" "models/mapobjects/filler/daisy/daisy.lwo"
+"rotation" "-0.922744 -0.385414 0 0.385414 -0.922744 0 0 0 1"
+}
+// entity 1630
+{
+"classname" "trigger_once"
+"name" "trigger_once_1"
+"model" "trigger_once_1"
+"origin" "256.5 450.5 194"
+"target" "trigger_relay_112"
+// primitive 0
+{
+brushDef3
+{
+( 0 0 1 -63 ) ( ( 0.0625 0 -0.2187499999999432 ) ( 0 0.0625 -0.03125000000002842 ) ) "textures/common/trigonce" 0 0 0
+( 0 1 0 -17 ) ( ( 0.06250000000000001 0 0.03125 ) ( 0 0.06249999999999998 0.8125 ) ) "textures/common/trigonce" 0 0 0
+( 1 0 0 -70 ) ( ( 0.0625 0 -0.96875 ) ( 0 0.0625 2.842170943040401e-14 ) ) "textures/common/trigonce" 0 0 0
+( 0 0 -1 -62 ) ( ( 0.0625 0 -0.96875 ) ( 0 0.06250000000000001 0.03125000000005684 ) ) "textures/common/trigonce" 0 0 0
+( 0 -1 0 -17.5 ) ( ( 0.06250000000000001 0 -0.03125000000002132 ) ( 0 0.06249999999999999 0 ) ) "textures/common/trigonce" 0 0 0
+( -1 0 0 -69 ) ( ( 0.0625 0 -0.03125 ) ( 0 0.0625 0 ) ) "textures/common/trigonce" 0 0 0
+}
+}
 }

@@ -1,0 +1,16 @@
+models/mapobjects/filler/daisy/daisy_eyeout {
+    diffusemap      models/mapobjects/filler/daisy/daisy_eyeout.tga
+}
+
+models/mapobjects/filler/daisy_furout {
+    diffusemap      models/mapobjects/filler/daisy/daisy_furout.tga
+}
+
+models/mapobjects/filler/daisy/daisy_hairout {
+    diffusemap      models/mapobjects/filler/daisy/daisy_hairout.tga
+}
+
+models/mapobjects/filler/daisy/daisy_base_white {
+    blend           diffusemap
+    rgb             0.792
+}

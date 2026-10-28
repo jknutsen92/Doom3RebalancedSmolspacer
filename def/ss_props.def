@@ -1,0 +1,14 @@
+model daisy {
+    mesh                models/mapobjects/filler/daisy/daisy.lwo
+}
+
+entityDef moveable_daisy {
+    "inherit"           "moveable_item_default"
+    "model"             "models/mapobjects/filler/daisy/daisy.lwo"
+	"mins"				"-4 -9 -3.5"
+	"maxs"				"4 9 3.5"
+    "density"		    "1"
+	"friction"			"0.5"
+	"bouncyness"		"0.2"
+    "snd_bounce"        "book_impact"
+}
