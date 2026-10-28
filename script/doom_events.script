@@ -250,6 +250,12 @@ scriptEvent float 	inPlayerPVS();
 // Checks if the entity is alive
 scriptEvent float 	isLiving();
 
+// Enables/disables the takedamage flag on the entity
+scriptEvent void	takeDamage(float enable);
+
+// Adds ent to the entity's target list and returns the index
+scriptEvent float	addTarget(entity ent); 
+
 /***********************************************************************
 
 	system events (called via 'sys.')

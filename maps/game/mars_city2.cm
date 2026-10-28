@@ -1,6 +1,6 @@
 CM "1.00"
 
-159405562
+3073868298
 
 collisionModel "worldMap" {
 	vertices { /* numVertices = */ 48112
@@ -230423,30 +230423,6 @@ collisionModel "func_static_53010" {
 	brushes /* brushMemory = */ 0 {
 	}
 }
-collisionModel "func_static_53009" {
-	vertices { /* numVertices = */ 4
-	/* 0 */ ( -29 0 41 )
-	/* 1 */ ( 27 0 41 )
-	/* 2 */ ( 27 0 -41 )
-	/* 3 */ ( -29 0 -41 )
-	}
-	edges { /* numEdges = */ 5
-	/* 0 */ ( 0 0 ) 0 0
-	/* 1 */ ( 0 1 ) 0 2
-	/* 2 */ ( 1 2 ) 0 2
-	/* 3 */ ( 2 3 ) 0 2
-	/* 4 */ ( 3 0 ) 0 2
-	}
-	nodes {
-	( -1 0 )
-	}
-	polygons /* polygonMemory = */ 152 {
-	4 ( -3 -2 -1 -4 ) ( 0 -1 -0 ) -0 ( -29 0 -41 ) ( 27 0 41 ) "textures/glass/glass2"
-	4 ( 1 2 3 4 ) ( -0 1 0 ) 0 ( -29 0 -41 ) ( 27 0 41 ) "textures/glass/glass2"
-	}
-	brushes /* brushMemory = */ 0 {
-	}
-}
 collisionModel "func_aas_obstacle_1" {
 	vertices { /* numVertices = */ 8
 	/* 0 */ ( 2 -24 -64 )
@@ -266699,6 +266675,30 @@ collisionModel "tim_func_static_1" {
 	}
 	polygons /* polygonMemory = */ 76 {
 	4 ( 1 2 3 4 ) ( 0 1 0 ) -0.5017089844 ( -4.001953125 -0.5017089844 -4 ) ( 4.998046875 -0.5014648438 4 ) "textures/common/entitygui"
+	}
+	brushes /* brushMemory = */ 0 {
+	}
+}
+collisionModel "func_fracture_1" {
+	vertices { /* numVertices = */ 4
+	/* 0 */ ( 28.5 0.5 41.1251525879 )
+	/* 1 */ ( 28.5 0.5 -40.8748474121 )
+	/* 2 */ ( -28.5 0.5 -40.8748474121 )
+	/* 3 */ ( -28.5 0.5 41.1251525879 )
+	}
+	edges { /* numEdges = */ 5
+	/* 0 */ ( 0 0 ) 0 0
+	/* 1 */ ( 0 1 ) 0 2
+	/* 2 */ ( 1 2 ) 0 2
+	/* 3 */ ( 2 3 ) 0 2
+	/* 4 */ ( 3 0 ) 0 2
+	}
+	nodes {
+	( -1 0 )
+	}
+	polygons /* polygonMemory = */ 152 {
+	4 ( -3 -2 -1 -4 ) ( -0 -1 -0 ) -0.5 ( -28.5 0.5 -40.8748474121 ) ( 28.5 0.5 41.1251525879 ) "textures/glass/glass2"
+	4 ( 1 2 3 4 ) ( 0 1 0 ) 0.5 ( -28.5 0.5 -40.8748474121 ) ( 28.5 0.5 41.1251525879 ) "textures/glass/glass2"
 	}
 	brushes /* brushMemory = */ 0 {
 	}

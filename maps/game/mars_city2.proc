@@ -1,5 +1,15 @@
 mapProcFile003
 
+model { /* name = */ "func_fracture_1" /* numSurfaces = */ 1
+
+/* surface 0 */ { "textures/glass/glass2" /* numVerts = */ 4 /* numIndexes = */ 6
+( 28.5 0.5 41.125 0 0 0 1 0 ) ( -28.5 0.5 -40.875 1 1 0 1 0 ) ( 28.5 0.5 -40.875 1 0 0 1 0 ) 
+( -28.5 0.5 41.125 0 1 0 1 0 ) 
+0 1 2 0 3 1 
+}
+
+}
+
 model { /* name = */ "tim_func_static_1" /* numSurfaces = */ 1
 
 /* surface 0 */ { "textures/common/entitygui" /* numVerts = */ 4 /* numIndexes = */ 6
@@ -11604,16 +11614,6 @@ model { /* name = */ "func_static_52988" /* numSurfaces = */ 1
 }
 
 model { /* name = */ "func_aas_obstacle_1" /* numSurfaces = */ 0
-
-}
-
-model { /* name = */ "func_static_53009" /* numSurfaces = */ 1
-
-/* surface 0 */ { "textures/glass/glass2" /* numVerts = */ 4 /* numIndexes = */ 6
-( -29 0 41 0 0 0 1 0 ) ( 27 0 -41 -1 -1 0 1 0 ) ( 27 0 41 -1 0 0 1 0 ) 
-( -29 0 -41 0 -1 0 1 0 ) 
-0 1 2 0 3 1 
-}
 
 }
 

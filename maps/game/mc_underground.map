@@ -130305,8 +130305,8 @@ patchDef2
 "inv_item" "4"
 "origin" "1042 1344 168"
 "rotation" "-0.71934 0.694658 0 -0.694658 -0.71934 0 0 0 1"
-"target1" "trigger_relay_1"
 "target0" "monster_demon_imp_1"
+"target1" "trigger_relay_1"
 }
 // entity 219
 {
@@ -182375,6 +182375,7 @@ patchDef2
 "origin" "2752 -2116 168"
 "target0" "monster_zsec_pistol_4"
 "target1" "monster_zsec_pistol_1"
+"target2" "monster_zsec_shotgun_6"
 "target5" "trigger_once_4"
 "triggerFirst" "1"
 // primitive 0
@@ -182423,20 +182424,24 @@ brushDef3
 "min" "10"
 "not_easy" "1"
 "not_medium" "1"
-"num_shots" "1"
+"num_shots" "2"
 "offset" "0 -48 0"
 "origin" "3240 -952 264.375"
+"min_wait" "0.5"
+"max_wait" "0.8"
 }
 // entity 2553
 {
 "classname" "monster_zsec_shotgun"
 "name" "monster_zsec_shotgun_6"
+"attack_path" "1"
 "hide" "1"
 "not_easy" "1"
 "not_medium" "1"
 "origin" "3271.46 -918.517 264.341"
 "rotation" "-1 0 0 0 -1 0 0 0 1"
 "target0" "ai_attackcone_6"
+"trigger" "1"
 }
 // entity 2554
 {
@@ -182445,12 +182450,12 @@ brushDef3
 "fov" "180"
 "height" "200"
 "max" "200"
+"max_wait" "0.6"
 "min" "1"
+"min_wait" "0.2"
 "not_easy" "1"
 "not_medium" "1"
 "origin" "896 1280 180.137"
-"min_wait" "0.2"
-"max_wait" "0.6"
 }
 // entity 2555
 {
@@ -182460,9 +182465,12 @@ brushDef3
 "anim" "cratestand"
 "fov" "180"
 "max" "1000"
+"max_wait" "1"
 "min" "200"
+"min_wait" "0.3"
 "not_easy" "1"
 "not_medium" "1"
+"num_shots" "6"
 "origin" "2688 -1504 192.5"
 }
 // entity 2556
@@ -182473,9 +182481,12 @@ brushDef3
 "anim" "cratestand"
 "fov" "180"
 "max" "1000"
+"max_wait" "1.2"
 "min" "200"
+"min_wait" "0.5"
 "not_easy" "1"
 "not_medium" "1"
+"num_shots" "7"
 "origin" "3136 -1504 264.5"
 }
 // entity 2557

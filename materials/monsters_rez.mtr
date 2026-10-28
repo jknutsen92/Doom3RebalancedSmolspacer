@@ -5,7 +5,6 @@ table crackPulseTable {{
 models/characters/male_npc/jumpsuit/jumpsuit_rez {
 	noselfShadow
 	clamp
-	//unsmoothedTangents
 	flesh
 	forceOverlays
 	{	// burning corpse effect
@@ -23,7 +22,7 @@ models/characters/male_npc/jumpsuit/jumpsuit_rez {
 		map  addnormals(models/characters/male_npc/jumpsuit/jumpsuit_local.tga, heightmap(models/characters/male_npc/jumpsuit/jumpsuit_h.tga, 5 ) )
 		
 	}
-		specularmap	models/characters/male_npc/jumpsuit/jumpsuit_s.tga
+	specularmap	models/characters/male_npc/jumpsuit/jumpsuit_s.tga
 	{
 		blend                   add
 		rgb                     crackPulseTable[ time / 10 ]
