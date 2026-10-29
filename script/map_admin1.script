@@ -444,6 +444,29 @@ namespace map_admin1
 		sys.println("tim_monster_demon_imp_14 escaped");
 	}
 
+	void start_backpack_ambush() {
+		sys.println("Beginning ambush");
+		sys.wait(0.5);
+		sys.trigger($monster_zsec_machinegun_ambush_1);
+		sys.println("triggered 1");
+		sys.trigger($monster_zsec_machinegun_ambush_3);
+		sys.println("triggered 2");
+		sys.wait(1);
+		sys.trigger($monster_zsec_machinegun_ambush_2);
+		sys.println("triggered 3");
+		sys.wait(4);
+		sys.println("Triggering imp");
+		if (g_impEscaped) {
+			sys.println("Imp flanking");
+			$func_door_1.lock(0);
+			$func_door_2.lock(0);
+			sys.trigger($monster_demon_imp_13);
+		}
+		else {
+			sys.println("GFY");
+		}
+	}
+
 	void main()
 	{
 		//$swinglight_mover.sway( 2, 0, '40 15 0' );
@@ -451,6 +474,7 @@ namespace map_admin1
 		$library_lamp1_swing_anchor.sway( 3, 0, '15 10 0' );
 		$library_lamp1_swing_anchor2.sway( 3.5, 0, '7 5 5' );
 		g_impEscaped = false;
+
 
 		archivers_setup();
 	}

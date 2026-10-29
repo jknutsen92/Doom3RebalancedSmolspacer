@@ -286,6 +286,7 @@ model monster_demon_trite {
 	anim offwall					models/md5/monsters/trite/getoffwall.md5anim {
 		ai_no_turn		
 		frame 1							disableWalkIK
+		frame 1 						disableGravity
 		frame 5							sound_body snd_footstep
 		frame 6							sound_body2 snd_footstep
 		frame 11						sound_body snd_footstep
@@ -301,6 +302,7 @@ model monster_demon_trite {
 		frame 39						sound_body snd_footstep
 		frame 41						sound_body2 snd_footstep
 		frame 51						sound_body snd_footstep
+		frame 60						enableGravity
 		frame 61						sound_body2 snd_footstep
 		frame 62						sound_body snd_footstep
 		frame 62						enableWalkIK
