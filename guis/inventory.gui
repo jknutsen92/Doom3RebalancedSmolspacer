@@ -1,0 +1,482 @@
+#define             CAP_FULL_COLOR              0.345,  0.635,  0.91,   0.5     // (0.345, 0.635, 0.91, 0.5) for count% >= 40%
+
+#define             BULLETS_COLOR               0.518,  0.012,  0.012,  1
+#define             SHELLS_COLOR                0.29,   0.29,   0.29,   1
+#define             CLIP_COLOR                  0,      0.455,  0.055,  1
+#define             GRENADES_COLOR              0.427,  0,      0.514,  1
+#define             BELT_COLOR                  0.643,  0.302,  0,      1
+#define             CELLS_COLOR                 0,      0.008,  0.455,  1
+#define             ROCKETS_COLOR               0.322,  0.137,  0,      1
+
+windowDef Desktop {
+    rect            0, 0, 640, 480
+    visible         1
+    nocursor        1
+    text            "HUD"
+    textscale       0.2
+    backcolor       0, 0, 0, 0
+    visible         1
+
+    windowDef standardWeapons {
+        rect            25, 20, 580, 360
+        backcolor       0, 0, 0, 0
+        textscale       0.2
+        visible         1
+
+        windowDef ammoCategory1 {
+            rect            0, 0, 580, 48
+            backcolor       0, 0, 0, 0
+            textscale       0.2
+            visible         1
+
+            windowDef weapon1 {
+                rect            64, 2, 60, 44
+                bordersize      2
+                bordercolor     BULLETS_COLOR
+                backcolor       0.8, 0.8, 0.8, 1
+
+                windowDef weaponIcon {
+                    rect            2, 1, 52, 36
+                    background      "guis/assets/hud/icons/pistolw"
+                    matcolor        BULLETS_COLOR
+                }
+
+                windowDef clipFill {
+                    rect            0, 0, 56, 40
+                    backcolor       CAP_FULL_COLOR
+
+                }
+
+                windowDef clipCount {
+                    rect            38, 24, 16, 8
+                    text            "12"
+                    forecolor       BULLETS_COLOR
+                        textscale       0.25
+                        textalign       2
+                }
+            }
+
+            windowDef ammoBar {
+                rect        128, 6, 450, 36
+                backcolor       0.8, 0.8, 0.8, 1
+                bordersize      2
+                bordercolor     BULLETS_COLOR
+
+                windowDef ammoBarFill {
+                    rect            0, 0, 446, 32               // [0%,100%] => [0,446]
+                    backcolor       CAP_FULL_COLOR
+                }
+
+                windowDef ammoBarName {
+                    rect            8, 8, 128, 2
+                    text            "BULLETS"
+                    textscale       0.25
+                    forecolor       BULLETS_COLOR
+                }
+
+                windowDef ammoBarCount {
+                    rect            402, 8, 36, 24
+                    text            "144"
+                    textscale       0.25
+                    textalign       2
+                    forecolor       BULLETS_COLOR
+                }
+            }
+        }
+
+        windowDef ammoCategory2 {
+            rect            0, 48, 580, 48
+            backcolor       0, 0, 0, 0
+            textscale       0.2
+            visible         1
+
+            windowDef weapon1 {
+                rect            64, 2, 60, 44
+                bordersize      2
+                bordercolor     SHELLS_COLOR
+                backcolor       0.8, 0.8, 0.8, 1
+
+                windowDef weaponIcon {
+                    rect            2, 1, 52, 36
+                    background      "guis/assets/hud/icons/shotgun1w"
+                    matcolor        SHELLS_COLOR
+                }
+
+                windowDef clipFill {
+                    rect            0, 0, 56, 40
+                    backcolor       CAP_FULL_COLOR
+
+                }
+
+                windowDef clipCount {
+                    rect            38, 24, 16, 8
+                    text            "6"
+                    forecolor       SHELLS_COLOR
+                    textscale       0.25
+                    textalign       2
+                }
+            }
+
+            windowDef weapon2 {
+                rect            0, 2, 60, 44
+                bordersize      2
+                bordercolor     SHELLS_COLOR
+                backcolor       0.8, 0.8, 0.8, 1
+                visible         1
+
+                windowDef weaponIcon {
+                    rect            2, 1, 52, 36
+                    background      "guis/assets/hud/icons/shotgunw"
+                    matcolor        SHELLS_COLOR
+                }
+
+                windowDef clipFill {
+                    rect            0, 0, 56, 40
+                    backcolor       CAP_FULL_COLOR
+
+                }
+
+                windowDef clipCount {
+                    rect            38, 24, 16, 8
+                    text            "8"
+                    forecolor       SHELLS_COLOR
+                    textscale       0.25
+                    textalign       2
+                }
+            }
+
+            windowDef ammoBar {
+                rect        128, 6, 450, 36
+                backcolor       0.8, 0.8, 0.8, 1
+                bordersize      2
+                bordercolor     SHELLS_COLOR
+
+                windowDef ammoBarFill {
+                    rect            0, 0, 446, 32               // [0%,100%] => [0,446]
+                    backcolor       CAP_FULL_COLOR
+                }
+
+                windowDef ammoBarName {
+                    rect            8, 8, 128, 2
+                    text            "SHELLS"
+                    textscale       0.25
+                    forecolor       SHELLS_COLOR
+                }
+
+                windowDef ammoBarCount {
+                    rect            402, 8, 36, 24
+                    text            "72"
+                    textscale       0.25
+                    textalign       2
+                    forecolor       SHELLS_COLOR
+                }
+            }
+        }
+
+        windowDef ammoCategory3 {
+            rect            0, 96, 580, 48
+            backcolor       0, 0, 0, 0
+            textscale       0.2
+            visible         1
+
+            windowDef weapon1 {
+                rect            64, 2, 60, 44
+                bordersize      2
+                bordercolor     CLIP_COLOR
+                backcolor       0.8, 0.8, 0.8, 1
+
+                windowDef weaponIcon {
+                    rect            2, 1, 52, 36
+                    background      "guis/assets/hud/icons/machinegunw"
+                    matcolor        CLIP_COLOR
+                }
+
+                windowDef clipFill {
+                    rect            0, 0, 56, 40
+                    backcolor       CAP_FULL_COLOR
+
+                }
+
+                windowDef clipCount {
+                    rect            38, 24, 16, 8
+                    text            "40"
+                    forecolor       CLIP_COLOR
+                        textscale       0.25
+                        textalign       2
+                }
+            }
+
+            windowDef ammoBar {
+                rect        128, 6, 450, 36
+                backcolor       0.8, 0.8, 0.8, 1
+                bordersize      2
+                bordercolor     CLIP_COLOR
+
+                windowDef ammoBarFill {
+                    rect            0, 0, 446, 32               // [0%,100%] => [0,446]
+                    backcolor       CAP_FULL_COLOR
+                }
+
+                windowDef ammoBarName {
+                    rect            8, 8, 128, 2
+                    text            "CLIP"
+                    textscale       0.25
+                    forecolor       CLIP_COLOR
+                }
+
+                windowDef ammoBarCount {
+                    rect            402, 8, 36, 24
+                    text            "400"
+                    textscale       0.25
+                    textalign       2
+                    forecolor       CLIP_COLOR
+                }
+            }
+        }
+
+        windowDef ammoCategory4 {
+            rect            0, 144, 580, 48
+            backcolor       0, 0, 0, 0
+            textscale       0.2
+            visible         1
+
+            windowDef weapon1 {
+                rect            64, 2, 60, 44
+                bordersize      2
+                bordercolor     GRENADES_COLOR
+                backcolor       0.8, 0.8, 0.8, 1
+                visible         0
+
+                windowDef weaponIcon {
+                    rect            2, 1, 52, 36
+                    background      "guis/assets/hud/icons/pistolw"
+                    matcolor        GRENADES_COLOR
+                }
+
+                windowDef clipFill {
+                    rect            0, 0, 56, 40
+                    backcolor       CAP_FULL_COLOR
+
+                }
+
+                windowDef clipCount {
+                    rect            38, 24, 16, 8
+                    text            "1"
+                    forecolor       GRENADES_COLOR
+                        textscale       0.25
+                        textalign       2
+                }
+            }
+
+            windowDef ammoBar {
+                rect        128, 6, 450, 36
+                backcolor       0.8, 0.8, 0.8, 1
+                bordersize      2
+                bordercolor     GRENADES_COLOR
+
+                windowDef ammoBarFill {
+                    rect            0, 0, 446, 32               // [0%,100%] => [0,446]
+                    backcolor       CAP_FULL_COLOR
+                }
+
+                windowDef ammoBarName {
+                    rect            8, 8, 128, 2
+                    text            "GRENADES"
+                    textscale       0.25
+                    forecolor       GRENADES_COLOR
+                }
+
+                windowDef ammoBarCount {
+                    rect            402, 8, 36, 24
+                    text            "24"
+                    textscale       0.25
+                    textalign       2
+                    forecolor       GRENADES_COLOR
+                }
+            }
+        }
+
+        windowDef ammoCategory5 {
+            rect            0, 192, 580, 48
+            backcolor       0, 0, 0, 0
+            textscale       0.2
+            visible         1
+
+            windowDef weapon1 {
+                rect            64, 2, 60, 44
+                bordersize      2
+                bordercolor     BELT_COLOR
+                backcolor       0.8, 0.8, 0.8, 1
+
+                windowDef weaponIcon {
+                    rect            2, 1, 52, 36
+                    background      "guis/assets/hud/icons/chaingunw"
+                    matcolor        BELT_COLOR
+                }
+
+                windowDef clipFill {
+                    rect            0, 0, 56, 40
+                    backcolor       CAP_FULL_COLOR
+
+                }
+
+                windowDef clipCount {
+                    rect            38, 24, 16, 8
+                    text            "120"
+                    forecolor       BELT_COLOR
+                        textscale       0.25
+                        textalign       2
+                }
+            }
+
+            windowDef ammoBar {
+                rect        128, 6, 450, 36
+                backcolor       0.8, 0.8, 0.8, 1
+                bordersize      2
+                bordercolor     BELT_COLOR
+
+                windowDef ammoBarFill {
+                    rect            0, 0, 446, 32               // [0%,100%] => [0,446]
+                    backcolor       CAP_FULL_COLOR
+                }
+
+                windowDef ammoBarName {
+                    rect            8, 8, 128, 2
+                    text            "AMMO BELT"
+                    textscale       0.25
+                    forecolor       BELT_COLOR
+                }
+
+                windowDef ammoBarCount {
+                    rect            402, 8, 36, 24
+                    text            "1080"
+                    textscale       0.25
+                    textalign       2
+                    forecolor       BELT_COLOR
+                }
+            }
+        }
+
+        windowDef ammoCategory6 {
+            rect            0, 240, 580, 48
+            backcolor       0, 0, 0, 0
+            textscale       0.2
+            visible         1
+
+            windowDef weapon1 {
+                rect            64, 2, 60, 44
+                bordersize      2
+                bordercolor     CELLS_COLOR
+                backcolor       0.8, 0.8, 0.8, 1
+
+                windowDef weaponIcon {
+                    rect            2, 1, 52, 36
+                    background      "guis/assets/hud/icons/plasmagunw"
+                    matcolor        CELLS_COLOR
+                }
+
+                windowDef clipFill {
+                    rect            0, 0, 56, 40
+                    backcolor       CAP_FULL_COLOR
+
+                }
+
+                windowDef clipCount {
+                    rect            38, 24, 16, 8
+                    text            "50"
+                    forecolor       CELLS_COLOR
+                        textscale       0.25
+                        textalign       2
+                }
+            }
+
+            windowDef ammoBar {
+                rect        128, 6, 450, 36
+                backcolor       0.8, 0.8, 0.8, 1
+                bordersize      2
+                bordercolor     CELLS_COLOR
+
+                windowDef ammoBarFill {
+                    rect            0, 0, 446, 32               // [0%,100%] => [0,446]
+                    backcolor       CAP_FULL_COLOR
+                }
+
+                windowDef ammoBarName {
+                    rect            8, 8, 128, 2
+                    text            "CELLS"
+                    textscale       0.25
+                    forecolor       CELLS_COLOR
+                }
+
+                windowDef ammoBarCount {
+                    rect            402, 8, 36, 24
+                    text            "500"
+                    textscale       0.25
+                    textalign       2
+                    forecolor       CELLS_COLOR
+                }
+            }
+        }
+
+        windowDef ammoCategory7 {
+            rect            0, 288, 580, 48
+            backcolor       0, 0, 0, 0
+            textscale       0.2
+            visible         1
+
+            windowDef weapon1 {
+                rect            64, 2, 60, 44
+                bordersize      2
+                bordercolor     ROCKETS_COLOR
+                backcolor       0.8, 0.8, 0.8, 1
+
+                windowDef weaponIcon {
+                    rect            2, 1, 52, 36
+                    background      "guis/assets/hud/icons/rocketlauncherw"
+                    matcolor        ROCKETS_COLOR
+                }
+
+                windowDef clipFill {
+                    rect            0, 0, 56, 40
+                    backcolor       CAP_FULL_COLOR
+
+                }
+
+                windowDef clipCount {
+                    rect            38, 24, 16, 8
+                    text            "5"
+                    forecolor       ROCKETS_COLOR
+                        textscale       0.25
+                        textalign       2
+                }
+            }
+
+            windowDef ammoBar {
+                rect        128, 6, 450, 36
+                backcolor       0.8, 0.8, 0.8, 1
+                bordersize      2
+                bordercolor     ROCKETS_COLOR
+
+                windowDef ammoBarFill {
+                    rect            0, 0, 446, 32               // [0%,100%] => [0,446]
+                    backcolor       CAP_FULL_COLOR
+                }
+
+                windowDef ammoBarName {
+                    rect            8, 8, 128, 2
+                    text            "ROCKETS"
+                    textscale       0.25
+                    forecolor       ROCKETS_COLOR
+                }
+
+                windowDef ammoBarCount {
+                    rect            402, 8, 36, 24
+                    text            "30"
+                    textscale       0.25
+                    textalign       2
+                    forecolor       ROCKETS_COLOR
+                }
+            }
+        }
+    }
+}
