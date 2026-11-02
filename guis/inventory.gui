@@ -1,5 +1,12 @@
-#define             CAP_FULL_COLOR              0.345,  0.635,  0.91,   0.5     // (0.345, 0.635, 0.91, 0.5) for count% >= 40%
+// Fill colors
+#define             CAP_FULL_COLOR              0.345,  0.635,  0.91,   0.5     // count% >= 40%
+#define             CAP_LOW_COLOR               0.973,  1,      0.463,  0.5     // count% (15%,40%)
+#define             CAP_CRITICAL_COLOR          1,      0.114,  0.114,  0.5     // count% <= 15%
 
+// Matte background colors
+#define             NEUTRAL_BAR_BACKGROUND      0.8,    0.8,    0.8,    1
+
+// Borders and highlights
 #define             BULLETS_COLOR               0.518,  0.012,  0.012,  1
 #define             SHELLS_COLOR                0.29,   0.29,   0.29,   1
 #define             CLIP_COLOR                  0,      0.455,  0.055,  1
@@ -7,13 +14,15 @@
 #define             BELT_COLOR                  0.643,  0.302,  0,      1
 #define             CELLS_COLOR                 0,      0.008,  0.455,  1
 #define             ROCKETS_COLOR               0.322,  0.137,  0,      1
+#define             CHAINSAW_COLOR              0.51,   0,      0.231,  1
+#define             BFG_COLOR                   0.031,  0.522,  0.4,    1
+#define             SOUL_CUBE_COLOR             0.541,  0.239,  0,      1
+#define             SECRET_CHAINSAW_COLOR       0.851,  0.212,  0,      1
 
 windowDef Desktop {
     rect            0, 0, 640, 480
     visible         1
     nocursor        1
-    text            "HUD"
-    textscale       0.2
     backcolor       0, 0, 0, 0
     visible         1
 
@@ -33,7 +42,7 @@ windowDef Desktop {
                 rect            64, 2, 60, 44
                 bordersize      2
                 bordercolor     BULLETS_COLOR
-                backcolor       0.8, 0.8, 0.8, 1
+                backcolor       NEUTRAL_BAR_BACKGROUND
 
                 windowDef weaponIcon {
                     rect            2, 1, 52, 36
@@ -42,14 +51,26 @@ windowDef Desktop {
                 }
 
                 windowDef clipFill {
-                    rect            0, 0, 56, 40
+                    rect            0, 0, 56 * "gui::player_weapon1_clip_ratio", 40
                     backcolor       CAP_FULL_COLOR
 
+                    onTime 0 {
+                        if ("gui::player_weapon1_clip_ratio" >= 0.4) {
+                            set "backcolor" "0.345, 0.635, 0.91, 0.5";
+                        }
+                        else if ("gui::player_weapon1_clip_ratio" > 0.15 && "gui::player_weapon1_clip_ratio" < 0.4) {
+                            set "backcolor" "0.973,1, 0.463, 0.5";
+                        }
+                        else if ("gui::player_weapon1_clip_ratio" <= 0.15) {
+                            set "backcolor" "1, 0.114, 0.114, 0.5";
+                        }
+                        resetTime "clipFill" "0";
+                    }
                 }
 
                 windowDef clipCount {
                     rect            38, 24, 16, 8
-                    text            "12"
+                    text            "gui::player_weapon1_clip"
                     forecolor       BULLETS_COLOR
                         textscale       0.25
                         textalign       2
@@ -58,13 +79,26 @@ windowDef Desktop {
 
             windowDef ammoBar {
                 rect        128, 6, 450, 36
-                backcolor       0.8, 0.8, 0.8, 1
+                backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     BULLETS_COLOR
 
                 windowDef ammoBarFill {
-                    rect            0, 0, 446, 32               // [0%,100%] => [0,446]
+                    rect            0, 0, 446 * "gui::player_bullets_ratio", 32               // [0%,100%] => [0,446]
                     backcolor       CAP_FULL_COLOR
+
+                    onTime 0 {
+                        if ("gui::player_bullets_ratio" >= 0.4) {
+                            set "backcolor" "0.345, 0.635, 0.91, 0.5";
+                        }
+                        else if ("gui::player_bullets_ratio" > 0.15 && "gui::player_bullets_ratio" < 0.4) {
+                            set "backcolor" "0.973,1, 0.463, 0.5";
+                        }
+                        else if ("gui::player_bullets_ratio" <= 0.15) {
+                            set "backcolor" "1, 0.114, 0.114, 0.5";
+                        }
+                        resetTime "ammoBarFill" "0";
+                    }
                 }
 
                 windowDef ammoBarName {
@@ -76,7 +110,7 @@ windowDef Desktop {
 
                 windowDef ammoBarCount {
                     rect            402, 8, 36, 24
-                    text            "144"
+                    text            "gui::player_bullets_count"
                     textscale       0.25
                     textalign       2
                     forecolor       BULLETS_COLOR
@@ -94,7 +128,7 @@ windowDef Desktop {
                 rect            64, 2, 60, 44
                 bordersize      2
                 bordercolor     SHELLS_COLOR
-                backcolor       0.8, 0.8, 0.8, 1
+                backcolor       NEUTRAL_BAR_BACKGROUND
 
                 windowDef weaponIcon {
                     rect            2, 1, 52, 36
@@ -121,7 +155,7 @@ windowDef Desktop {
                 rect            0, 2, 60, 44
                 bordersize      2
                 bordercolor     SHELLS_COLOR
-                backcolor       0.8, 0.8, 0.8, 1
+                backcolor       NEUTRAL_BAR_BACKGROUND
                 visible         1
 
                 windowDef weaponIcon {
@@ -147,7 +181,7 @@ windowDef Desktop {
 
             windowDef ammoBar {
                 rect        128, 6, 450, 36
-                backcolor       0.8, 0.8, 0.8, 1
+                backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     SHELLS_COLOR
 
@@ -183,7 +217,7 @@ windowDef Desktop {
                 rect            64, 2, 60, 44
                 bordersize      2
                 bordercolor     CLIP_COLOR
-                backcolor       0.8, 0.8, 0.8, 1
+                backcolor       NEUTRAL_BAR_BACKGROUND
 
                 windowDef weaponIcon {
                     rect            2, 1, 52, 36
@@ -208,7 +242,7 @@ windowDef Desktop {
 
             windowDef ammoBar {
                 rect        128, 6, 450, 36
-                backcolor       0.8, 0.8, 0.8, 1
+                backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     CLIP_COLOR
 
@@ -244,7 +278,7 @@ windowDef Desktop {
                 rect            64, 2, 60, 44
                 bordersize      2
                 bordercolor     GRENADES_COLOR
-                backcolor       0.8, 0.8, 0.8, 1
+                backcolor       NEUTRAL_BAR_BACKGROUND
                 visible         0
 
                 windowDef weaponIcon {
@@ -270,7 +304,7 @@ windowDef Desktop {
 
             windowDef ammoBar {
                 rect        128, 6, 450, 36
-                backcolor       0.8, 0.8, 0.8, 1
+                backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     GRENADES_COLOR
 
@@ -306,7 +340,7 @@ windowDef Desktop {
                 rect            64, 2, 60, 44
                 bordersize      2
                 bordercolor     BELT_COLOR
-                backcolor       0.8, 0.8, 0.8, 1
+                backcolor       NEUTRAL_BAR_BACKGROUND
 
                 windowDef weaponIcon {
                     rect            2, 1, 52, 36
@@ -331,7 +365,7 @@ windowDef Desktop {
 
             windowDef ammoBar {
                 rect        128, 6, 450, 36
-                backcolor       0.8, 0.8, 0.8, 1
+                backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     BELT_COLOR
 
@@ -367,7 +401,7 @@ windowDef Desktop {
                 rect            64, 2, 60, 44
                 bordersize      2
                 bordercolor     CELLS_COLOR
-                backcolor       0.8, 0.8, 0.8, 1
+                backcolor       NEUTRAL_BAR_BACKGROUND
 
                 windowDef weaponIcon {
                     rect            2, 1, 52, 36
@@ -385,14 +419,14 @@ windowDef Desktop {
                     rect            38, 24, 16, 8
                     text            "50"
                     forecolor       CELLS_COLOR
-                        textscale       0.25
-                        textalign       2
+                    textscale       0.25
+                    textalign       2
                 }
             }
 
             windowDef ammoBar {
                 rect        128, 6, 450, 36
-                backcolor       0.8, 0.8, 0.8, 1
+                backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     CELLS_COLOR
 
@@ -428,7 +462,7 @@ windowDef Desktop {
                 rect            64, 2, 60, 44
                 bordersize      2
                 bordercolor     ROCKETS_COLOR
-                backcolor       0.8, 0.8, 0.8, 1
+                backcolor       NEUTRAL_BAR_BACKGROUND
 
                 windowDef weaponIcon {
                     rect            2, 1, 52, 36
@@ -446,14 +480,14 @@ windowDef Desktop {
                     rect            38, 24, 16, 8
                     text            "5"
                     forecolor       ROCKETS_COLOR
-                        textscale       0.25
-                        textalign       2
+                    textscale       0.25
+                    textalign       2
                 }
             }
 
             windowDef ammoBar {
                 rect        128, 6, 450, 36
-                backcolor       0.8, 0.8, 0.8, 1
+                backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     ROCKETS_COLOR
 
@@ -475,6 +509,113 @@ windowDef Desktop {
                     textscale       0.25
                     textalign       2
                     forecolor       ROCKETS_COLOR
+                }
+            }
+        }
+    }
+
+    windowDef specialWeapons {
+        rect        25, 360, 580, 108
+        visible     1
+
+        windowDef chainsawCategory {
+            rect        0, 0, 172, 108
+            backcolor   NEUTRAL_BAR_BACKGROUND
+            bordersize  2
+            bordercolor CHAINSAW_COLOR
+
+            windowDef weaponIcon {
+                rect        2, 2, 164, 106
+                background  "guis/assets/hud/icons/chainsaww"
+                matcolor    CHAINSAW_COLOR
+            }
+
+            windowDef ammoFill {
+                rect        0, 0, 168, 104
+                backcolor   CAP_FULL_COLOR
+            }
+        }
+
+        windowDef bfgCategory {
+            rect        184, 0, 256, 108
+
+            windowDef weapon {
+                rect        0, 0, 156, 108
+                backcolor   NEUTRAL_BAR_BACKGROUND
+                bordersize  2
+                bordercolor BFG_COLOR
+
+                windowDef weaponIcon {
+                    rect        2, 2, 152, 104
+                    background  "guis/assets/hud/icons/bfgw.tga"
+                    matcolor    BFG_COLOR
+                }
+
+                windowDef clipCount {
+                    rect        112, 82, 36, 8
+                    text        "4"
+                    forecolor   BFG_COLOR
+                    textscale   0.35
+                    textalign   2
+                }
+
+                windowDef clipFill {
+                    rect        0, 0, 152, 104
+                    backcolor   CAP_FULL_COLOR
+                }
+            }
+
+            windowDef ammoBar {
+                rect        160, 0, 92, 108
+                backcolor   NEUTRAL_BAR_BACKGROUND
+                bordersize  2
+                bordercolor BFG_COLOR
+
+                windowDef bfgCellIcon {
+                    rect        21, 22, 48, 64
+                    background  "guis/assets/hud/icons/bfg_cell_icon"
+                    matcolor    BFG_COLOR
+                }
+
+                windowDef ammoCount {
+                    rect        49, 82, 36, 8
+                    text        "24"
+                    forecolor   BFG_COLOR
+                    textscale   0.35
+                    textalign   2
+                }
+
+                windowDef ammoFill {
+                    rect        0, 0, 88, 104
+                    backcolor   CAP_FULL_COLOR
+                }
+            }
+        }
+
+        windowDef soulCubeCategory {
+            rect        452, 0, 128, 108
+
+            windowDef secretChainsawIcon {
+                rect        4, 78, 24, 24
+                background  "guis/assets/hud/icons/chainsaw_icon"
+                matcolor    SECRET_CHAINSAW_COLOR
+            }
+
+            windowDef soulCube {
+                rect        30, 0, 96, 108
+                backcolor   NEUTRAL_BAR_BACKGROUND
+                bordersize  2
+                bordercolor SOUL_CUBE_COLOR
+
+                windowDef icon {
+                    rect        0, 0, 92, 104
+                    background  "guis/assets/hud/icons/scubew.tga"
+                    matcolor    SOUL_CUBE_COLOR
+                }
+
+                windowDef soulsFill {
+                    rect        0, 0, 92, 104
+                    backcolor   CAP_FULL_COLOR
                 }
             }
         }
