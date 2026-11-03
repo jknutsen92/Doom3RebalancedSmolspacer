@@ -1,23 +1,25 @@
-// Fill colors
-#define             CAP_FULL_COLOR              0.345,  0.635,  0.91,   0.5     // count% >= 40%
-#define             CAP_LOW_COLOR               0.973,  1,      0.463,  0.5     // count% (15%,40%)
-#define             CAP_CRITICAL_COLOR          1,      0.114,  0.114,  0.5     // count% <= 15%
+#define FULL_COLOR                  0.345,  0.635,  0.91,   0.5
+#define LOW_COLOR                   0.973,  1,      0.463,  0.5
+#define CRIT_COLOR                  1,      0.114,  0.114,  0.5
 
 // Matte background colors
-#define             NEUTRAL_BAR_BACKGROUND      0.8,    0.8,    0.8,    1
+#define NEUTRAL_BAR_BACKGROUND      0.8,    0.8,    0.8,    1
 
 // Borders and highlights
-#define             BULLETS_COLOR               0.518,  0.012,  0.012,  1
-#define             SHELLS_COLOR                0.29,   0.29,   0.29,   1
-#define             CLIP_COLOR                  0,      0.455,  0.055,  1
-#define             GRENADES_COLOR              0.427,  0,      0.514,  1
-#define             BELT_COLOR                  0.643,  0.302,  0,      1
-#define             CELLS_COLOR                 0,      0.008,  0.455,  1
-#define             ROCKETS_COLOR               0.322,  0.137,  0,      1
-#define             CHAINSAW_COLOR              0.51,   0,      0.231,  1
-#define             BFG_COLOR                   0.031,  0.522,  0.4,    1
-#define             SOUL_CUBE_COLOR             0.541,  0.239,  0,      1
-#define             SECRET_CHAINSAW_COLOR       0.851,  0.212,  0,      1
+#define BULLETS_COLOR               0.518,  0.012,  0.012,  1
+#define SHELLS_COLOR                0.29,   0.29,   0.29,   1
+#define CLIP_COLOR                  0,      0.455,  0.055,  1
+#define GRENADES_COLOR              0.427,  0,      0.514,  1
+#define BELT_COLOR                  0.643,  0.302,  0,      1
+#define CELLS_COLOR                 0,      0.008,  0.455,  1
+#define ROCKETS_COLOR               0.322,  0.137,  0,      1
+#define CHAINSAW_COLOR              0.51,   0,      0.231,  1
+#define BFG_COLOR                   0.031,  0.522,  0.4,    1
+#define SOUL_CUBE_COLOR             0.541,  0.239,  0,      1
+#define SECRET_CHAINSAW_COLOR       0.851,  0.212,  0,      1
+
+#define LOW_RATIO                   0.5
+#define CRIT_RATIO                  0.20
 
 windowDef Desktop {
     rect            0, 0, 640, 480
@@ -26,23 +28,36 @@ windowDef Desktop {
     backcolor       0, 0, 0, 0
     visible         1
 
+    definevec4  "fullcolor" FULL_COLOR 
+    definevec4  "lowcolor"  LOW_COLOR
+    definevec4  "critcolor" CRIT_COLOR
+
     windowDef standardWeapons {
         rect            25, 20, 580, 360
         backcolor       0, 0, 0, 0
         textscale       0.2
         visible         1
 
-        windowDef ammoCategory1 {
+        windowDef bulletsCategory {
             rect            0, 0, 580, 48
             backcolor       0, 0, 0, 0
             textscale       0.2
-            visible         1
 
-            windowDef weapon1 {
+            windowDef weaponPistol {
                 rect            64, 2, 60, 44
                 bordersize      2
                 bordercolor     BULLETS_COLOR
                 backcolor       NEUTRAL_BAR_BACKGROUND
+
+                onEvent {
+                    if ("gui::player_pistol_posession" == 1) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
+                    }
+                    
+                }
 
                 windowDef weaponIcon {
                     rect            2, 1, 52, 36
@@ -50,54 +65,102 @@ windowDef Desktop {
                     matcolor        BULLETS_COLOR
                 }
 
-                windowDef clipFill {
-                    rect            0, 0, 56 * "gui::player_weapon1_clip_ratio", 40
-                    backcolor       CAP_FULL_COLOR
+                windowDef pistolClipFill {
+                    rect            0, 0, 56 * "gui::player_pistol_clip_ratio", 40
 
-                    onTime 0 {
-                        if ("gui::player_weapon1_clip_ratio" >= 0.4) {
-                            set "backcolor" "0.345, 0.635, 0.91, 0.5";
+                    onEvent {
+                        if ("gui::player_pistol_clip_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor" ;
                         }
-                        else if ("gui::player_weapon1_clip_ratio" > 0.15 && "gui::player_weapon1_clip_ratio" < 0.4) {
-                            set "backcolor" "0.973,1, 0.463, 0.5";
+                        else if ("gui::player_pistol_clip_ratio" > CRIT_RATIO && "gui::player_pistol_clip_ratio" < LOW_RATIO) {
+                            set "backcolor" "$desktop::lowcolor" ;
                         }
-                        else if ("gui::player_weapon1_clip_ratio" <= 0.15) {
-                            set "backcolor" "1, 0.114, 0.114, 0.5";
+                        else if ("gui::player_pistol_clip_ratio" <= CRIT_RATIO) {
+                            set "backcolor" "$desktop::critcolor" ;
                         }
-                        resetTime "clipFill" "0";
+                        
                     }
                 }
 
-                windowDef clipCount {
-                    rect            38, 24, 16, 8
-                    text            "gui::player_weapon1_clip"
+                windowDef pistolClipEmpty {
+                    rect            0, 0, 56, 40
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_pistol_clip" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                        
+                    }
+                }
+
+                windowDef pistolClipCount {
+                    rect            38, 24, 16, 16
+                    text            "gui::player_pistol_clip"
                     forecolor       BULLETS_COLOR
-                        textscale       0.25
-                        textalign       2
+                    textscale       0.25
+                    textalign       2
+
+                    onEvent {
+                        if ("gui::player_pistol_clip" < 0) {
+                            set "visible" "0";
+                        }
+                        else {
+                            set "visible" "1";
+                        }
+                        
+                    }
                 }
             }
 
-            windowDef ammoBar {
+            windowDef bulletsAmmoBar {
                 rect        128, 6, 450, 36
                 backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     BULLETS_COLOR
 
-                windowDef ammoBarFill {
-                    rect            0, 0, 446 * "gui::player_bullets_ratio", 32               // [0%,100%] => [0,446]
-                    backcolor       CAP_FULL_COLOR
+                onEvent {
+                    if ("gui::player_bullets_posession" == 1) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
+                    }
+                    
+                }
 
-                    onTime 0 {
-                        if ("gui::player_bullets_ratio" >= 0.4) {
-                            set "backcolor" "0.345, 0.635, 0.91, 0.5";
+                windowDef bulletsAmmoBarFill {
+                    rect            0, 0, 446 * "gui::player_bullets_ratio", 32               // [0%,100%] => [0,446]
+
+                    onEvent {
+                        if ("gui::player_bullets_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor";
                         }
-                        else if ("gui::player_bullets_ratio" > 0.15 && "gui::player_bullets_ratio" < 0.4) {
-                            set "backcolor" "0.973,1, 0.463, 0.5";
+                        else if ("gui::player_bullets_ratio" > CRIT_RATIO && "gui::player_bullets_ratio" < LOW_RATIO) {
+                            set "backcolor" "$desktop::lowcolor";
                         }
-                        else if ("gui::player_bullets_ratio" <= 0.15) {
-                            set "backcolor" "1, 0.114, 0.114, 0.5";
+                        else if ("gui::player_bullets_ratio" <= CRIT_RATIO) {
+                            set "backcolor" "$desktop::critcolor";
                         }
-                        resetTime "ammoBarFill" "0";
+                        
+                    }
+                }
+
+                windowDef bulletsAmmoBarEmpty {
+                    rect            0, 0, 446, 32
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_bullets_count" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                        
                     }
                 }
 
@@ -118,17 +181,26 @@ windowDef Desktop {
             }
         }
 
-        windowDef ammoCategory2 {
+        windowDef shellsCategory {
             rect            0, 48, 580, 48
             backcolor       0, 0, 0, 0
             textscale       0.2
-            visible         1
 
-            windowDef weapon1 {
+            windowDef weaponShotgun {
                 rect            64, 2, 60, 44
                 bordersize      2
                 bordercolor     SHELLS_COLOR
                 backcolor       NEUTRAL_BAR_BACKGROUND
+
+                onEvent {
+                    if ("gui::player_shotgun_posession" == 1) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
+                    }
+                    
+                }
 
                 windowDef weaponIcon {
                     rect            2, 1, 52, 36
@@ -136,27 +208,73 @@ windowDef Desktop {
                     matcolor        SHELLS_COLOR
                 }
 
-                windowDef clipFill {
-                    rect            0, 0, 56, 40
-                    backcolor       CAP_FULL_COLOR
+                windowDef shotgunClipFill {
+                    rect            0, 0, 56 * "gui::player_shotgun_clip_ratio", 40
 
+                    onEvent {
+                        if ("gui::player_shotgun_clip_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor" ;
+                        }
+                        else if ("gui::player_shotgun_clip_ratio" > CRIT_RATIO && "gui::player_shotgun_clip_ratio" < LOW_RATIO) {
+                            set "backcolor" "$desktop::lowcolor" ;
+                        }
+                        else if ("gui::player_shotgun_clip_ratio" <= CRIT_RATIO) {
+                            set "backcolor" "$desktop::critcolor" ;
+                        }
+                        
+                    }
                 }
 
-                windowDef clipCount {
-                    rect            38, 24, 16, 8
-                    text            "6"
+                windowDef shotgunClipEmpty {
+                    rect            0, 0, 56, 40
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_shotgun_clip" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                        
+                    }
+                }
+
+                windowDef shotgunClipCount {
+                    rect            38, 24, 16, 16
+                    text            "gui::player_shotgun_clip"
                     forecolor       SHELLS_COLOR
                     textscale       0.25
                     textalign       2
+
+                    onEvent {
+                        if ("gui::player_shotgun_clip" < 0) {
+                            set "visible" "0";
+                        }
+                        else {
+                            set "visible" "1";
+                        }
+                        
+                    }
                 }
             }
 
-            windowDef weapon2 {
+            windowDef weaponClassic {
                 rect            0, 2, 60, 44
                 bordersize      2
                 bordercolor     SHELLS_COLOR
                 backcolor       NEUTRAL_BAR_BACKGROUND
                 visible         1
+
+                onEvent {
+                    if ("gui::player_classic_posession" == 1) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
+                    }
+                    
+                }
 
                 windowDef weaponIcon {
                     rect            2, 1, 52, 36
@@ -164,30 +282,103 @@ windowDef Desktop {
                     matcolor        SHELLS_COLOR
                 }
 
-                windowDef clipFill {
-                    rect            0, 0, 56, 40
-                    backcolor       CAP_FULL_COLOR
+                windowDef classicClipFill {
+                    rect            0, 0, 56 * "gui::player_classic_clip_ratio", 40
 
+                    onEvent {
+                        if ("gui::player_classic_clip_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor" ;
+                        }
+                        else if ("gui::player_classic_clip_ratio" > CRIT_RATIO && "gui::player_classic_clip_ratio" < LOW_RATIO) {
+                            set "backcolor" "$desktop::lowcolor" ;
+                        }
+                        else if ("gui::player_classic_clip_ratio" <= CRIT_RATIO) {
+                            set "backcolor" "$desktop::critcolor" ;
+                        }
+                        
+                    }
                 }
 
-                windowDef clipCount {
-                    rect            38, 24, 16, 8
-                    text            "8"
+                windowDef classicClipEmpty {
+                    rect            0, 0, 56, 40
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_classic_clip" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                        
+                    }
+                }
+
+                windowDef classicClipCount {
+                    rect            38, 24, 16, 16
+                    text            "gui::player_classic_clip"
                     forecolor       SHELLS_COLOR
                     textscale       0.25
                     textalign       2
+
+                    onEvent {
+                        if ("gui::player_classic_clip" < 0) {
+                            set "visible" "0";
+                        }
+                        else {
+                            set "visible" "1";
+                        }
+                        
+                    }
                 }
             }
 
-            windowDef ammoBar {
-                rect        128, 6, 450, 36
+            windowDef shellsAmmoBar {
+                rect            128, 6, 450, 36
                 backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     SHELLS_COLOR
 
-                windowDef ammoBarFill {
-                    rect            0, 0, 446, 32               // [0%,100%] => [0,446]
-                    backcolor       CAP_FULL_COLOR
+                onEvent {
+                    if ("gui::player_shells_posession" == 1) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
+                    }
+                    
+                }
+
+                windowDef shellsAmmoBarFill {
+                    rect            0, 0, 446 * "gui::player_shells_ratio", 32               // [0%,100%] => [0,446]
+
+                    onEvent {
+                        if ("gui::player_shells_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor";
+                        }
+                        else if ("gui::player_shells_ratio" > CRIT_RATIO && "gui::player_bullets_ratio" < LOW_RATIO) {
+                            set "backcolor" "$desktop::lowcolor";
+                        }
+                        else if ("gui::player_shells_ratio" <= CRIT_RATIO) {
+                            set "backcolor" "$desktop::critcolor";
+                        }
+                        
+                    }
+                }
+
+                windowDef shellsAmmoBarEmpty {
+                    rect            0, 0, 446, 32
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_shells_count" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                        
+                    }
                 }
 
                 windowDef ammoBarName {
@@ -199,7 +390,7 @@ windowDef Desktop {
 
                 windowDef ammoBarCount {
                     rect            402, 8, 36, 24
-                    text            "72"
+                    text            "gui::player_shells_count"
                     textscale       0.25
                     textalign       2
                     forecolor       SHELLS_COLOR
@@ -207,17 +398,27 @@ windowDef Desktop {
             }
         }
 
-        windowDef ammoCategory3 {
+        windowDef clipCategory {
             rect            0, 96, 580, 48
             backcolor       0, 0, 0, 0
             textscale       0.2
             visible         1
 
-            windowDef weapon1 {
+            windowDef weaponMachinegun {
                 rect            64, 2, 60, 44
                 bordersize      2
                 bordercolor     CLIP_COLOR
                 backcolor       NEUTRAL_BAR_BACKGROUND
+
+                onEvent {
+                    if ("gui::player_machinegun_posession" == 1) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
+                    }
+                    
+                } 
 
                 windowDef weaponIcon {
                     rect            2, 1, 52, 36
@@ -225,30 +426,103 @@ windowDef Desktop {
                     matcolor        CLIP_COLOR
                 }
 
-                windowDef clipFill {
-                    rect            0, 0, 56, 40
-                    backcolor       CAP_FULL_COLOR
+                windowDef machinegunClipFill {
+                    rect            0, 0, 56 * "gui::player_machinegun_clip_ratio", 40
 
+                    onEvent {
+                        if ("gui::player_machinegun_clip_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor" ;
+                        }
+                        else if ("gui::player_machinegun_clip_ratio" > CRIT_RATIO && "gui::player_machinegun_clip_ratio" < LOW_RATIO) {
+                            set "backcolor" "$desktop::lowcolor" ;
+                        }
+                        else if ("gui::player_machinegun_clip_ratio" <= CRIT_RATIO) {
+                            set "backcolor" "$desktop::critcolor" ;
+                        }
+                        
+                    }
                 }
 
-                windowDef clipCount {
-                    rect            38, 24, 16, 8
-                    text            "40"
+                windowDef machinegunClipEmpty {
+                    rect            0, 0, 56, 40
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_machinegun_clip" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                        
+                    }
+                }
+
+                windowDef machinegunClipCount {
+                    rect            38, 24, 16, 16
+                    text            "gui::player_machinegun_clip"
                     forecolor       CLIP_COLOR
-                        textscale       0.25
-                        textalign       2
+                    textscale       0.25
+                    textalign       2
+
+                    onEvent {
+                        if ("gui::player_machinegun_clip" < 0) {
+                            set "visible" "0";
+                        }
+                        else {
+                            set "visible" "1";
+                        }
+                        
+                    }
                 }
             }
 
-            windowDef ammoBar {
-                rect        128, 6, 450, 36
+            windowDef clipAmmoBar {
+                rect            128, 6, 450, 36
                 backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     CLIP_COLOR
 
-                windowDef ammoBarFill {
-                    rect            0, 0, 446, 32               // [0%,100%] => [0,446]
-                    backcolor       CAP_FULL_COLOR
+                onEvent {
+                    if ("gui::player_clip_posession" == 1) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
+                    }
+                    
+                }
+
+                windowDef clipAmmoBarFill {
+                    rect            0, 0, 446 * "gui::player_clip_ratio", 32               // [0%,100%] => [0,446]
+
+                    onEvent {
+                        if ("gui::player_clip_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor";
+                        }
+                        else if ("gui::player_clip_ratio" > CRIT_RATIO && "gui::player_clip_ratio" < LOW_RATIO) {
+                            set "backcolor" "$desktop::lowcolor";
+                        }
+                        else if ("gui::player_clip_ratio" <= CRIT_RATIO) {
+                            set "backcolor" "$desktop::critcolor";
+                        }
+                        
+                    }
+                }
+
+                windowDef clipAmmoBarEmpty {
+                    rect            0, 0, 446, 32
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_clip_count" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                        
+                    }
                 }
 
                 windowDef ammoBarName {
@@ -260,7 +534,7 @@ windowDef Desktop {
 
                 windowDef ammoBarCount {
                     rect            402, 8, 36, 24
-                    text            "400"
+                    text            "gui::player_clip_count"
                     textscale       0.25
                     textalign       2
                     forecolor       CLIP_COLOR
@@ -268,13 +542,13 @@ windowDef Desktop {
             }
         }
 
-        windowDef ammoCategory4 {
+        windowDef grenadeCategory {
             rect            0, 144, 580, 48
             backcolor       0, 0, 0, 0
             textscale       0.2
             visible         1
 
-            windowDef weapon1 {
+            windowDef weaponThumper {
                 rect            64, 2, 60, 44
                 bordersize      2
                 bordercolor     GRENADES_COLOR
@@ -283,17 +557,14 @@ windowDef Desktop {
 
                 windowDef weaponIcon {
                     rect            2, 1, 52, 36
-                    background      "guis/assets/hud/icons/pistolw"
-                    matcolor        GRENADES_COLOR
+                    // matcolor        GRENADES_COLOR
                 }
 
-                windowDef clipFill {
+                windowDef thumperClipFill {
                     rect            0, 0, 56, 40
-                    backcolor       CAP_FULL_COLOR
-
                 }
 
-                windowDef clipCount {
+                windowDef thumperClipCount {
                     rect            38, 24, 16, 8
                     text            "1"
                     forecolor       GRENADES_COLOR
@@ -302,15 +573,52 @@ windowDef Desktop {
                 }
             }
 
-            windowDef ammoBar {
-                rect        128, 6, 450, 36
+            windowDef grenadeAmmoBar {
+                rect            128, 6, 450, 36
                 backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     GRENADES_COLOR
 
-                windowDef ammoBarFill {
-                    rect            0, 0, 446, 32               // [0%,100%] => [0,446]
-                    backcolor       CAP_FULL_COLOR
+                onEvent {
+                    if ("gui::player_grenade_posession" == 1) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
+                    }
+                    
+                }
+
+                windowDef grenadeAmmoBarFill {
+                    rect            0, 0, 446 * "gui::player_grenade_ratio", 32               // [0%,100%] => [0,446]
+
+                    onEvent {
+                        if ("gui::player_grenade_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor";
+                        }
+                        else if ("gui::player_grenade_ratio" > CRIT_RATIO && "gui::player_grenade_ratio" < LOW_RATIO) {
+                            set "backcolor" "$desktop::lowcolor";
+                        }
+                        else if ("gui::player_grenade_ratio" <= CRIT_RATIO) {
+                            set "backcolor" "$desktop::critcolor";
+                        }
+                        
+                    }
+                }
+
+                windowDef grenadeAmmoBarEmpty {
+                    rect            0, 0, 446, 32
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_grenade_count" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                        
+                    }
                 }
 
                 windowDef ammoBarName {
@@ -322,7 +630,7 @@ windowDef Desktop {
 
                 windowDef ammoBarCount {
                     rect            402, 8, 36, 24
-                    text            "24"
+                    text            "gui::player_grenade_count"
                     textscale       0.25
                     textalign       2
                     forecolor       GRENADES_COLOR
@@ -330,17 +638,27 @@ windowDef Desktop {
             }
         }
 
-        windowDef ammoCategory5 {
+        windowDef beltCategory {
             rect            0, 192, 580, 48
             backcolor       0, 0, 0, 0
             textscale       0.2
             visible         1
 
-            windowDef weapon1 {
+            windowDef weaponChaingun {
                 rect            64, 2, 60, 44
                 bordersize      2
                 bordercolor     BELT_COLOR
                 backcolor       NEUTRAL_BAR_BACKGROUND
+
+                onEvent {
+                    if ("gui::player_chaingun_posession" == 1) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
+                    }
+                    
+                }
 
                 windowDef weaponIcon {
                     rect            2, 1, 52, 36
@@ -348,30 +666,103 @@ windowDef Desktop {
                     matcolor        BELT_COLOR
                 }
 
-                windowDef clipFill {
-                    rect            0, 0, 56, 40
-                    backcolor       CAP_FULL_COLOR
+                windowDef chaingunClipFill {
+                    rect            0, 0, 56 * "gui::player_chaingun_clip_ratio", 40
 
+                    onEvent {
+                        if ("gui::player_chaingun_clip_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor" ;
+                        }
+                        else if ("gui::player_chaingun_clip_ratio" > CRIT_RATIO && "gui::player_chaingun_clip_ratio" < LOW_RATIO) {
+                            set "backcolor" "$desktop::lowcolor" ;
+                        }
+                        else if ("gui::player_chaingun_clip_ratio" <= CRIT_RATIO) {
+                            set "backcolor" "$desktop::critcolor" ;
+                        }
+                        
+                    }
                 }
 
-                windowDef clipCount {
-                    rect            38, 24, 16, 8
-                    text            "120"
+                windowDef chaingunClipEmpty {
+                    rect            0, 0, 56, 40
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_chaingun_clip" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                        
+                    }
+                }
+
+                windowDef chaingunClipCount {
+                    rect            30, 24, 24, 16
+                    text            "gui::player_chaingun_clip"
                     forecolor       BELT_COLOR
-                        textscale       0.25
-                        textalign       2
+                    textscale       0.25
+                    textalign       2
+
+                    onEvent {
+                        if ("gui::player_chaingun_clip" < 0) {
+                            set "visible" "0";
+                        }
+                        else {
+                            set "visible" "1";
+                        }
+                        
+                    }
                 }
             }
 
-            windowDef ammoBar {
+            windowDef beltAmmoBar {
                 rect        128, 6, 450, 36
                 backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     BELT_COLOR
 
-                windowDef ammoBarFill {
-                    rect            0, 0, 446, 32               // [0%,100%] => [0,446]
-                    backcolor       CAP_FULL_COLOR
+                onEvent {
+                    if ("gui::player_belt_posession" == 1) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
+                    }
+                    
+                }
+
+                windowDef beltAmmoBarFill {
+                    rect            0, 0, 446 * "gui::player_belt_ratio", 32               // [0%,100%] => [0,446]
+
+                    onEvent {
+                        if ("gui::player_belt_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor";
+                        }
+                        else if ("gui::player_belt_ratio" > CRIT_RATIO && "gui::player_belt_ratio" < LOW_RATIO) {
+                            set "backcolor" "$desktop::lowcolor";
+                        }
+                        else if ("gui::player_belt_ratio" <= CRIT_RATIO) {
+                            set "backcolor" "$desktop::critcolor";
+                        }
+                        
+                    }
+                }
+
+                windowDef beltAmmoBarEmpty {
+                    rect            0, 0, 446, 32
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_belt_count" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                        
+                    }
                 }
 
                 windowDef ammoBarName {
@@ -383,7 +774,7 @@ windowDef Desktop {
 
                 windowDef ammoBarCount {
                     rect            402, 8, 36, 24
-                    text            "1080"
+                    text            "gui::player_belt_count"
                     textscale       0.25
                     textalign       2
                     forecolor       BELT_COLOR
@@ -391,17 +782,27 @@ windowDef Desktop {
             }
         }
 
-        windowDef ammoCategory6 {
+        windowDef cellsCategory {
             rect            0, 240, 580, 48
             backcolor       0, 0, 0, 0
             textscale       0.2
             visible         1
 
-            windowDef weapon1 {
+            windowDef weaponPlasmagun {
                 rect            64, 2, 60, 44
                 bordersize      2
                 bordercolor     CELLS_COLOR
                 backcolor       NEUTRAL_BAR_BACKGROUND
+
+                onEvent {
+                    if ("gui::player_plasmagun_posession" == 1) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
+                    }
+                    
+                }
 
                 windowDef weaponIcon {
                     rect            2, 1, 52, 36
@@ -409,30 +810,103 @@ windowDef Desktop {
                     matcolor        CELLS_COLOR
                 }
 
-                windowDef clipFill {
-                    rect            0, 0, 56, 40
-                    backcolor       CAP_FULL_COLOR
+                windowDef plasmagunClipFill {
+                    rect            0, 0, 56 * "gui::player_plasmagun_clip_ratio", 40
 
+                    onEvent {
+                        if ("gui::player_plasmagun_clip_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor" ;
+                        }
+                        else if ("gui::player_plasmagun_clip_ratio" > CRIT_RATIO && "gui::player_plasmagun_clip_ratio" < LOW_RATIO) {
+                            set "backcolor" "$desktop::lowcolor" ;
+                        }
+                        else if ("gui::player_plasmagun_clip_ratio" <= CRIT_RATIO) {
+                            set "backcolor" "$desktop::critcolor" ;
+                        }
+                        
+                    }
                 }
 
-                windowDef clipCount {
-                    rect            38, 24, 16, 8
-                    text            "50"
+                windowDef plasmagunClipEmpty {
+                    rect            0, 0, 56, 40
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_plasmagun_clip" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                        
+                    }
+                }
+
+                windowDef plasmagunClipCount {
+                    rect            38, 24, 16, 16
+                    text            "gui::player_plasmagun_clip"
                     forecolor       CELLS_COLOR
                     textscale       0.25
                     textalign       2
+
+                    onEvent {
+                        if ("gui::player_plasmagun_clip" < 0) {
+                            set "visible" "0";
+                        }
+                        else {
+                            set "visible" "1";
+                        }
+                        
+                    }
                 }
             }
 
-            windowDef ammoBar {
-                rect        128, 6, 450, 36
+            windowDef cellsAmmoBar {
+                rect            128, 6, 450, 36
                 backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     CELLS_COLOR
 
-                windowDef ammoBarFill {
-                    rect            0, 0, 446, 32               // [0%,100%] => [0,446]
-                    backcolor       CAP_FULL_COLOR
+                onEvent {
+                    if ("gui::player_cells_posession" == 1) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
+                    }
+                    
+                }
+
+                windowDef cellsAmmoBarFill {
+                    rect            0, 0, 446 * "gui::player_cells_ratio", 32               // [0%,100%] => [0,446]
+
+                    onEvent {
+                        if ("gui::player_cells_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor";
+                        }
+                        else if ("gui::player_cells_ratio" > CRIT_RATIO && "gui::player_cells_ratio" < LOW_RATIO) {
+                            set "backcolor" "$desktop::lowcolor";
+                        }
+                        else if ("gui::player_cells_ratio" <= CRIT_RATIO) {
+                            set "backcolor" "$desktop::critcolor";
+                        }
+                        
+                    }
+                }
+
+                windowDef cellsAmmoBarEmpty {
+                    rect            0, 0, 446, 32
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_cells_count" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                        
+                    }
                 }
 
                 windowDef ammoBarName {
@@ -444,7 +918,7 @@ windowDef Desktop {
 
                 windowDef ammoBarCount {
                     rect            402, 8, 36, 24
-                    text            "500"
+                    text            "gui::player_cells_count"
                     textscale       0.25
                     textalign       2
                     forecolor       CELLS_COLOR
@@ -452,17 +926,28 @@ windowDef Desktop {
             }
         }
 
-        windowDef ammoCategory7 {
+        windowDef rocketsCategory {
             rect            0, 288, 580, 48
             backcolor       0, 0, 0, 0
             textscale       0.2
             visible         1
 
-            windowDef weapon1 {
+            windowDef weaponRocketLauncher {
                 rect            64, 2, 60, 44
                 bordersize      2
                 bordercolor     ROCKETS_COLOR
                 backcolor       NEUTRAL_BAR_BACKGROUND
+
+                onEvent {
+                    if ("gui::player_rocketlauncher_posession" == 1) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
+                    }
+                    
+                }
+
 
                 windowDef weaponIcon {
                     rect            2, 1, 52, 36
@@ -470,30 +955,103 @@ windowDef Desktop {
                     matcolor        ROCKETS_COLOR
                 }
 
-                windowDef clipFill {
-                    rect            0, 0, 56, 40
-                    backcolor       CAP_FULL_COLOR
+                windowDef rocketClipFill {
+                    rect            0, 0, 56 * "gui::player_rocket_clip_ratio", 40
 
+                    onEvent {
+                        if ("gui::player_rocket_clip_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor" ;
+                        }
+                        else if ("gui::player_rocket_clip_ratio" > CRIT_RATIO && "gui::player_rocket_clip_ratio" < LOW_RATIO) {
+                            set "backcolor" "$desktop::lowcolor" ;
+                        }
+                        else if ("gui::player_rocket_clip_ratio" <= CRIT_RATIO) {
+                            set "backcolor" "$desktop::critcolor" ;
+                        }
+                        
+                    }
                 }
 
-                windowDef clipCount {
-                    rect            38, 24, 16, 8
-                    text            "5"
+                windowDef rocketClipEmpty {
+                    rect            0, 0, 56, 40
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_rocket_clip" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                        
+                    }
+                }
+
+                windowDef rocketClipCount {
+                    rect            38, 24, 16, 16
+                    text            "gui::player_rocket_clip"
                     forecolor       ROCKETS_COLOR
                     textscale       0.25
                     textalign       2
+
+                    onEvent {
+                        if ("gui::player_rocket_clip" < 0) {
+                            set "visible" "0";
+                        }
+                        else {
+                            set "visible" "1";
+                        }
+                        
+                    }
                 }
             }
 
-            windowDef ammoBar {
+            windowDef rocketsAmmoBar {
                 rect        128, 6, 450, 36
                 backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     ROCKETS_COLOR
 
-                windowDef ammoBarFill {
-                    rect            0, 0, 446, 32               // [0%,100%] => [0,446]
-                    backcolor       CAP_FULL_COLOR
+                onEvent {
+                    if ("gui::player_rockets_posession" == 1) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
+                    }
+                    
+                }
+
+                windowDef rocketsAmmoBarFill {
+                    rect            0, 0, 446 * "gui::player_rockets_ratio", 32               // [0%,100%] => [0,446]
+
+                    onEvent {
+                        if ("gui::player_rockets_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor";
+                        }
+                        else if ("gui::player_rockets_ratio" > CRIT_RATIO && "gui::player_rockets_ratio" < LOW_RATIO) {
+                            set "backcolor" "$desktop::lowcolor";
+                        }
+                        else if ("gui::player_rockets_ratio" <= CRIT_RATIO) {
+                            set "backcolor" "$desktop::critcolor";
+                        }
+                        
+                    }
+                }
+
+                windowDef rocketsAmmoBarEmpty {
+                    rect            0, 0, 446, 32
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_rockets_count" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                        
+                    }
                 }
 
                 windowDef ammoBarName {
@@ -505,7 +1063,7 @@ windowDef Desktop {
 
                 windowDef ammoBarCount {
                     rect            402, 8, 36, 24
-                    text            "30"
+                    text            "gui::player_rockets_count"
                     textscale       0.25
                     textalign       2
                     forecolor       ROCKETS_COLOR
@@ -524,6 +1082,16 @@ windowDef Desktop {
             bordersize  2
             bordercolor CHAINSAW_COLOR
 
+            onEvent {
+                if ("gui::player_chainsaw_posession" == 1) {
+                    set "visible" "1";
+                }
+                else {
+                    set "visible" "0";
+                }
+                
+            }
+
             windowDef weaponIcon {
                 rect        2, 2, 164, 106
                 background  "guis/assets/hud/icons/chainsaww"
@@ -532,18 +1100,27 @@ windowDef Desktop {
 
             windowDef ammoFill {
                 rect        0, 0, 168, 104
-                backcolor   CAP_FULL_COLOR
+                visible     0
             }
         }
 
         windowDef bfgCategory {
             rect        184, 0, 256, 108
 
-            windowDef weapon {
+            windowDef weaponBfg {
                 rect        0, 0, 156, 108
                 backcolor   NEUTRAL_BAR_BACKGROUND
                 bordersize  2
                 bordercolor BFG_COLOR
+
+                onEvent {
+                    if ("gui::player_bfg_posession" == 1) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
+                    }
+                }
 
                 windowDef weaponIcon {
                     rect        2, 2, 152, 104
@@ -551,25 +1128,68 @@ windowDef Desktop {
                     matcolor    BFG_COLOR
                 }
 
+                windowDef bfgClipFill {
+                    rect        0, 0, 152 * "gui::player_bfg_clip_ratio", 104
+
+                    onEvent {
+                        if ("gui::player_bfg_clip_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor" ;
+                        }
+                        else if ("gui::player_bfg_clip_ratio" > CRIT_RATIO && "gui::player_bfg_clip_ratio" < LOW_RATIO) {
+                            set "backcolor" "$desktop::lowcolor" ;
+                        }
+                        else if ("gui::player_bfg_clip_ratio" <= CRIT_RATIO) {
+                            set "backcolor" "$desktop::critcolor" ;
+                        }
+                    }
+                }
+
+                windowDef bfgClipEmpty {
+                    rect            0, 0, 152, 104
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_bfg_clip" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                    }
+                }
+
                 windowDef clipCount {
-                    rect        112, 82, 36, 8
-                    text        "4"
+                    rect        112, 82, 36, 36
+                    text        "gui::player_bfg_clip"
                     forecolor   BFG_COLOR
                     textscale   0.35
                     textalign   2
-                }
 
-                windowDef clipFill {
-                    rect        0, 0, 152, 104
-                    backcolor   CAP_FULL_COLOR
+                    onEvent {
+                        if ("gui::player_bfg_clip" < 0) {
+                            set "visible" "0";
+                        }
+                        else {
+                            set "visible" "1";
+                        }
+                    }
                 }
             }
 
-            windowDef ammoBar {
+            windowDef bfgAmmoBar {
                 rect        160, 0, 92, 108
                 backcolor   NEUTRAL_BAR_BACKGROUND
                 bordersize  2
                 bordercolor BFG_COLOR
+
+                onEvent {
+                    if ("gui::player_bfgcell_posession" == 1) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
+                    }
+                }
 
                 windowDef bfgCellIcon {
                     rect        21, 22, 48, 64
@@ -577,17 +1197,42 @@ windowDef Desktop {
                     matcolor    BFG_COLOR
                 }
 
+                windowDef bfgAmmoFill {
+                    rect        0, 0, 88 * "gui::player_bfgcell_ratio", 104
+
+                    onEvent {
+                        if ("gui::player_bfgcell_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor";
+                        }
+                        else if ("gui::player_bfgcell_ratio" > CRIT_RATIO && "gui::player_bfgcell_ratio" < LOW_RATIO) {
+                            set "backcolor" "$desktop::lowcolor";
+                        }
+                        else if ("gui::player_bfgcell_ratio" <= CRIT_RATIO) {
+                            set "backcolor" "$desktop::critcolor";
+                        }
+                    }
+                }
+
+                windowDef bfgAmmoBarEmpty {
+                    rect            0, 0, 88, 104
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_bfgcell_count" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                    }
+                }
+
                 windowDef ammoCount {
                     rect        49, 82, 36, 8
-                    text        "24"
+                    text        "gui::player_bfgcell_count"
                     forecolor   BFG_COLOR
                     textscale   0.35
                     textalign   2
-                }
-
-                windowDef ammoFill {
-                    rect        0, 0, 88, 104
-                    backcolor   CAP_FULL_COLOR
                 }
             }
         }
@@ -599,6 +1244,7 @@ windowDef Desktop {
                 rect        4, 78, 24, 24
                 background  "guis/assets/hud/icons/chainsaw_icon"
                 matcolor    SECRET_CHAINSAW_COLOR
+                visible     0
             }
 
             windowDef soulCube {
@@ -607,6 +1253,15 @@ windowDef Desktop {
                 bordersize  2
                 bordercolor SOUL_CUBE_COLOR
 
+                onEvent {
+                    if ("gui::player_soulcube_posession" == 1) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
+                    }
+                }
+
                 windowDef icon {
                     rect        0, 0, 92, 104
                     background  "guis/assets/hud/icons/scubew.tga"
@@ -614,8 +1269,33 @@ windowDef Desktop {
                 }
 
                 windowDef soulsFill {
-                    rect        0, 0, 92, 104
-                    backcolor   CAP_FULL_COLOR
+                    rect        0, (104 - (104 * "gui::player_soulcube_ratio")), 92, 104 * "gui::player_soulcube_ratio"
+
+                    onEvent {
+                        if ("gui::player_soulcube_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor" ;
+                        }
+                        else if ("gui::player_soulcube_ratio" > CRIT_RATIO && "gui::player_soulcube_ratio" < LOW_RATIO) {
+                            set "backcolor" "$desktop::lowcolor" ;
+                        }
+                        else if ("gui::player_soulcube_ratio" <= CRIT_RATIO) {
+                            set "backcolor" "$desktop::critcolor" ;
+                        }
+                    }
+                }
+
+                windowDef soulsEmpty {
+                    rect            0, 0, 92, 104
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_soul_count" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                    }
                 }
             }
         }

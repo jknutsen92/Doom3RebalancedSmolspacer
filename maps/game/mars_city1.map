@@ -80958,6 +80958,7 @@ patchDef3
 "mins" "0 0 180"
 "origin" "-3820 -3136 210"
 "target" "sargecin_relay1"
+"use_aas" "-"
 }
 // entity 45
 {
@@ -80970,6 +80971,7 @@ patchDef3
 "no_cower" "1"
 "origin" "-3820 -3136 210"
 "target" "first_sarge_idle"
+"use_aas" "-"
 }
 // entity 46
 {
@@ -102312,6 +102314,7 @@ brushDef3
 "origin" "-3785 -3045 210"
 "target" "playeranim2"
 "target1" "player_sargecin1"
+"use_aas" "-"
 }
 // entity 1463
 {
