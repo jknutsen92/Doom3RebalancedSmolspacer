@@ -766,6 +766,7 @@ entityDef player_base {
 	"max_ammo_bfg"						"24"
 	"max_ammo_clip"						"400"
 	"max_ammo_belt"						"1080"
+	"max_ammo_fuel"						"400"
 	
 	// default weapons
 	// seperate multiple weapons with commas (no spaces).
@@ -819,6 +820,7 @@ entityDef player_base {
 	"ammo_bfg"							"0"
 	"ammo_clip"							"0"
 	"ammo_belt"							"0"
+	"ammo_fuel"							"0"
 
 	// inventory items
 	"key_blue"							"0"

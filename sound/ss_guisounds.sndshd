@@ -1,0 +1,9 @@
+guisounds_fuel {
+    description         "Gui Audio"
+
+    minDistance         4
+    maxDistance         15
+    volume              12
+
+    sound/weapons/chainsaw/ammo_fuel.wav
+}

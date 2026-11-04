@@ -344,6 +344,8 @@ windowDef Desktop {
 			set	"ammovalue2::visible" "0" ;
 			set	"ammovalue3Black::visible" "0" ;
 			set	"ammovalue3::visible" "0" ;
+			set "FuelBarBG::visible" "0";
+			set "FuelBarFill::visible" "0";
 		} 
 
 		if ("gui::weapon1" == 2) { 
@@ -376,6 +378,8 @@ windowDef Desktop {
 			set	"ammovalue2::visible" "1" ;
 			set	"ammovalue3Black::visible" "1" ;
 			set	"ammovalue3::visible" "1" ;
+			set "FuelBarBG::visible" "0";
+			set "FuelBarFill::visible" "0";
 		} 
 
 		if ("gui::weapon2" == 2) { 
@@ -408,6 +412,8 @@ windowDef Desktop {
 			set	"ammovalue2::visible" "1" ;
 			set	"ammovalue3Black::visible" "1" ;
 			set	"ammovalue3::visible" "1" ;
+			set "FuelBarBG::visible" "0";
+			set "FuelBarFill::visible" "0";
 		} 
 		if ("gui::weapon3" == 2) { 
 			resetTime "WeapIcon3" "0" ; 
@@ -441,6 +447,8 @@ windowDef Desktop {
 			set	"ammovalue2::visible" "0" ;
 			set	"ammovalue3Black::visible" "0" ;
 			set	"ammovalue3::visible" "0" ;
+			set "FuelBarBG::visible" "0";
+			set "FuelBarFill::visible" "0";
 		} 
 		if ("gui::weapon4" == 2) { 
 			resetTime "WeapIcon4" "0" ; 
@@ -474,6 +482,8 @@ windowDef Desktop {
 			set	"ammovalue2::visible" "0" ;
 			set	"ammovalue3Black::visible" "0" ;
 			set	"ammovalue3::visible" "0" ;
+			set "FuelBarBG::visible" "0";
+			set "FuelBarFill::visible" "0";
 		} 
 		if ("gui::weapon5" == 2) { 
 			resetTime "WeapIcon5" "0" ;
@@ -508,6 +518,8 @@ windowDef Desktop {
 			set	"ammovalue2::visible" "0" ;
 			set	"ammovalue3Black::visible" "1" ;
 			set	"ammovalue3::visible" "1" ;
+			set "FuelBarBG::visible" "0";
+			set "FuelBarFill::visible" "0";
 		} 
 		if ("gui::weapon6" == 2) { 
 			resetTime "WeapIcon6" "0" ; 
@@ -541,6 +553,8 @@ windowDef Desktop {
 			set	"ammovalue2::visible" "0" ;
 			set	"ammovalue3Black::visible" "0" ;
 			set	"ammovalue3::visible" "0" ;
+			set "FuelBarBG::visible" "0";
+			set "FuelBarFill::visible" "0";
 		} 
 		if ("gui::weapon7" == 2) { 
 			resetTime "WeapIcon7" "0" ; 
@@ -572,6 +586,8 @@ windowDef Desktop {
 			set	"ammovalue2::visible" "1" ;
 			set	"ammovalue3Black::visible" "1" ;
 			set	"ammovalue3::visible" "1" ;
+			set "FuelBarBG::visible" "0";
+			set "FuelBarFill::visible" "0";
 		} 
 		if ("gui::weapon8" == 2) { 
 			resetTime "WeapIcon8" "0" ; 
@@ -605,6 +621,8 @@ windowDef Desktop {
 			set	"ammovalue2::visible" "0" ;
 			set	"ammovalue3Black::visible" "0" ;
 			set	"ammovalue3::visible" "0" ;
+			set "FuelBarBG::visible" "0";
+			set "FuelBarFill::visible" "0";
 		} 
 		if ("gui::weapon9" == 2) { 
 			resetTime "WeapIcon9" "0" ; 
@@ -638,6 +656,8 @@ windowDef Desktop {
 			set	"ammovalue2::visible" "0" ;
 			set	"ammovalue3Black::visible" "0" ;
 			set	"ammovalue3::visible" "0" ;
+			set "FuelBarBG::visible" "0";
+			set "FuelBarFill::visible" "0";
 		} 
 		if ("gui::weapon10" == 2) { 
 			resetTime "WeapIcon10" "0" ; 
@@ -671,6 +691,8 @@ windowDef Desktop {
 			set	"ammovalue2::visible" "0" ;
 			set	"ammovalue3Black::visible" "0" ;
 			set	"ammovalue3::visible" "0" ;
+			set "FuelBarBG::visible" "1";
+			set "FuelBarFill::visible" "1";
 		} 
 		if ("gui::weapon11" == 2) { 
 			resetTime "WeapIcon11" "0" ; 
@@ -704,6 +726,8 @@ windowDef Desktop {
 			set	"ammovalue2::visible" "0" ;
 			set	"ammovalue3Black::visible" "0" ;
 			set	"ammovalue3::visible" "0" ;
+			set "FuelBarBG::visible" "0";
+			set "FuelBarFill::visible" "0";
 		}
 		if ("gui::weapon13" == 2) { 					// smolspacer - pistol+flashlight
 			resetTime "WeapIcon13" "0" ; 
@@ -735,6 +759,8 @@ windowDef Desktop {
 			set	"ammovalue2::visible" "1" ;
 			set	"ammovalue3Black::visible" "1" ;
 			set	"ammovalue3::visible" "1" ;
+			set "FuelBarBG::visible" "0";
+			set "FuelBarFill::visible" "0";
 		}
 		if ("gui::weapon14" == 2) { 
 			resetTime "WeapIcon14" "0" ; 
@@ -766,6 +792,8 @@ windowDef Desktop {
 			set	"ammovalue2::visible" "1" ;
 			set	"ammovalue3Black::visible" "1" ;
 			set	"ammovalue3::visible" "1" ;
+			set "FuelBarBG::visible" "0";
+			set "FuelBarFill::visible" "0";
 		} 
 	}
 
@@ -1347,6 +1375,16 @@ windowDef Desktop {
 		background	"guis/assets/hud/mp/llines2a1"
 	}
 
+	windowDef FuelBarBG {
+		rect		510, 438, 128, 32
+		backcolor	0.3, 0.8, 0.7, 0.2
+	}
+
+	windowDef FuelBarFill {
+		rect		512, 440, 124 * "gui::player_totalammo_ratio", 28
+		backcolor	0.145,  0.4,    0.361,  0.5
+	}	
+	
 //////**********************************************************************
 //  HUD Readout Text
 //////**********************************************************************

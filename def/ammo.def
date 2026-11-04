@@ -21,6 +21,7 @@ entityDef ammo_types {
 	"ammo_bfg"				"7"
 	"ammo_clip"				"8"
 	"ammo_belt"				"9"
+	"ammo_fuel"				"10"
 }
 
 entityDef ammo_names {
@@ -34,6 +35,7 @@ entityDef ammo_names {
 	"ammo_bfg"				"BFG Cell"
 	"ammo_clip"				"Clip"
 	"ammo_belt"				"Ammo Belt"
+	"ammo_fuel"				"Fuel"
 }
 
 entityDef ammo_bullets_small {
@@ -286,3 +288,21 @@ entityDef ammo_bfg_small {
 	"editor_copy100"		"inv_item"
 }
 
+entityDef ammo_fuel_small {
+	"editor_color"			".3 .3 1"
+	"editor_mins"			"-16 -16 0"
+	"editor_maxs"			"16 16 32"
+	"editor_rotatable"		"1"
+
+	"editor_usage"			"Small chainsaw fuel"
+
+	"spawnclass"			"idItem"
+	"model"					"models/mapobjects/cannister/cannister.ase"
+	"snd_acquire"			"guisounds_fuel"
+	"snd_respawn"			"sound_item_respawn"
+	"size"					"32 32 32"
+	"inv_ammo_fuel"			"75"
+	"inv_item"				"4"
+	"inv_name"				"Fuel"
+	"editor_copy100"		"inv_item"
+}

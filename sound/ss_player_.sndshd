@@ -1,0 +1,22 @@
+player_inventory_zip_open {
+    minDistance     3
+    maxDistance     10
+    volume          7
+    no_dups
+
+    sound/player/inventory/zip4.wav
+    sound/player/inventory/zip5.wav
+    sound/player/inventory/zip6.wav
+    sound/player/inventory/zip7.wav
+}
+
+player_inventory_zip_closed {
+    minDistance     3
+    maxDistance     10
+    volume          7
+    no_dups
+
+    sound/player/inventory/zip1.wav
+    sound/player/inventory/zip2.wav
+    sound/player/inventory/zip3.wav
+}

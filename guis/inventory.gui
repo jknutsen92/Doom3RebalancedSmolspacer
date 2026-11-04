@@ -1,25 +1,127 @@
-#define FULL_COLOR                  0.345,  0.635,  0.91,   0.5
-#define LOW_COLOR                   0.973,  1,      0.463,  0.5
-#define CRIT_COLOR                  1,      0.114,  0.114,  0.5
+#define FULL_COLOR                  0.145,  0.4,    0.361,  0.5
+#define LOW_COLOR                   0.702,  0.533,  0.141,  0.5
+#define CRIT_COLOR                  0.612,  0.118,  0.18,   0.5
 
 // Matte background colors
-#define NEUTRAL_BAR_BACKGROUND      0.8,    0.8,    0.8,    1
+#define NEUTRAL_BAR_BACKGROUND      0.1,    0.1,    0.1,    1
 
 // Borders and highlights
-#define BULLETS_COLOR               0.518,  0.012,  0.012,  1
-#define SHELLS_COLOR                0.29,   0.29,   0.29,   1
-#define CLIP_COLOR                  0,      0.455,  0.055,  1
-#define GRENADES_COLOR              0.427,  0,      0.514,  1
-#define BELT_COLOR                  0.643,  0.302,  0,      1
-#define CELLS_COLOR                 0,      0.008,  0.455,  1
-#define ROCKETS_COLOR               0.322,  0.137,  0,      1
-#define CHAINSAW_COLOR              0.51,   0,      0.231,  1
-#define BFG_COLOR                   0.031,  0.522,  0.4,    1
-#define SOUL_CUBE_COLOR             0.541,  0.239,  0,      1
+#define BULLETS_COLOR               0.702,  0,      0,      1
+#define SHELLS_COLOR                0.541,  0.541,  0.541,  1
+#define CLIP_COLOR                  0.624,  0.78,   0.306,  1
+#define GRENADES_COLOR              0.718,  0.263,  0.812,  1
+#define BELT_COLOR                  0.788,  0.592,  0.165,  1
+#define CELLS_COLOR                 0.176,  0.49,   0.851,  1
+#define ROCKETS_COLOR               0.569,  0.71,   0.373,  1
+#define CHAINSAW_COLOR              0.729,  0.408,  0.118,  1
+#define BFG_COLOR                   0.212,  0.8,    0.541,  1
+#define SOUL_CUBE_COLOR             0.851,  0.361,  0.114,  1
 #define SECRET_CHAINSAW_COLOR       0.851,  0.212,  0,      1
 
+// Styling logic
 #define LOW_RATIO                   0.5
 #define CRIT_RATIO                  0.20
+
+// Rects - Main weapons section
+#define MAIN_WEAPONS_PANE_WIDTH     580
+#define MAIN_WEAPONS_PANE_HEIGHT    360
+#define MAIN_WEAPONS_PANE_POS_X     25
+#define MAIN_WEAPONS_PANE_POS_Y     20
+
+// Rects - Ammo category
+#define AMMO_CATEGORY_WIDTH         580
+#define AMMO_CATEGORY_HEIGHT        48
+#define AMMO_CATEGORY_STEP_Y        AMMO_CATEGORY_HEIGHT
+
+// Rects - Weapon pane
+#define WEAP_PANE_WIDTH             60
+#define WEAP_PANE_HEIGHT            44
+#define WEAP_PANE_1_POS_X           64
+#define WEAP_PANE_1_POS_Y           2
+#define WEAP_PANE_2_POS_X           0
+#define WEAP_PANE_2_POS_Y           2
+
+#define WEAP_ICON_WIDTH             52
+#define WEAP_ICON_HEIGHT            36
+#define WEAP_ICON_POS_X             2
+#define WEAP_ICON_POS_Y             1
+
+#define WEAP_FILL_WIDTH             56
+#define WEAP_FILL_HEIGHT            40
+#define WEAP_FILL_POS_X             0
+#define WEAP_FILL_POS_Y             0
+
+#define WEAP_CLIP_COUNT_WIDTH       16
+#define WEAP_CLIP_COUNT_HEIGHT      16
+#define WEAP_CLIP_COUNT_POS_X       38
+#define WEAP_CLIP_COUNT_POS_Y       24
+#define WEAP_CLIP_COUNT_TEXTSCALE   0.25
+
+// Rects - Ammo bar
+#define AMMO_BAR_WIDTH              450
+#define AMMO_BAR_HEIGHT             36
+#define AMMO_BAR_POS_X              128
+#define AMMO_BAR_POS_Y              6
+
+#define AMMO_FILL_WIDTH             446
+#define AMMO_FILL_HEIGHT            32
+#define AMMO_FILL_POS_X             0
+#define AMMO_FILL_POS_Y             0
+
+#define AMMO_NAME_WIDTH             128
+#define AMMO_NAME_HEIGHT            2
+#define AMMO_NAME_POS_X             8
+#define AMMO_NAME_POS_Y             8
+#define AMMO_NAME_TEXTSCALE         0.25
+
+#define AMMO_COUNT_WIDTH            36
+#define AMMO_COUNT_HEIGHT           24
+#define AMMO_COUNT_POS_X            402
+#define AMMO_COUNT_POS_Y            8
+#define AMMO_COUNT_TEXTSCALE        0.25
+
+// Rects - Special weapons
+#define SPEC_WEAPONS_PANE_WIDTH     580
+#define SPEC_WEAPONS_PANE_HEIGHT    108
+#define SPEC_WEAPONS_PANE_POS_X     25
+#define SPEC_WEAPONS_PANE_POS_Y     360
+
+// Rects - Chainsaw
+#define CHAINSAW_CATEGORY_WIDTH     172
+#define CHAINSAW_CATEGORY_HEIGHT    108
+#define CHAINSAW_CATEGORY_POS_X     0
+#define CHAINSAW_CATEGORY_POS_Y     0
+
+#define CHAINSAW_ICON_WIDTH         164
+#define CHAINSAW_ICON_HEIGHT        106
+#define CHAINSAW_ICON_POS_X         2
+#define CHAINSAW_ICON_POS_Y         2
+
+#define CHAINSAW_FILL_WIDTH         168
+#define CHAINSAW_FILL_HEIGHT        104
+#define CHAINSAW_FILL_POS_X         0
+#define CHAINSAW_FILL_POS_Y         104
+
+// Rects - BFG
+#define BFG_CATEGORY_WIDTH          256
+#define BFG_CATEGORY_HEIGHT         108
+#define BFG_CATEGORY_POS_X          184
+#define BFG_CATEGORY_POS_Y          0
+
+#define BFG_WEAP_PANE_WIDTH         156
+#define BFG_WEAP_PANE_HEIGHT        108
+#define BFG_WEAP_PANE_POS_X         0
+#define BFG_WEAP_PANE_POS_Y         0
+
+#define BFG_WEAP_ICON_WIDTH         152
+#define BFG_WEAP_ICON_HEIGHT        104
+#define BFG_WEAP_ICON_POS_X         2
+#define BFG_WEAP_ICON_POS_Y         2
+
+#define BFG_WEAP_FILL_WIDTH         152
+#define BFG_WEAP_FILL_HEIGHT        104
+#define BFG_WEAP_FILL_POS_X         0
+#define BFG_WEAP_FILL_POS_Y         0
 
 windowDef Desktop {
     rect            0, 0, 640, 480
@@ -33,18 +135,18 @@ windowDef Desktop {
     definevec4  "critcolor" CRIT_COLOR
 
     windowDef standardWeapons {
-        rect            25, 20, 580, 360
+        rect            MAIN_WEAPONS_PANE_POS_X, MAIN_WEAPONS_PANE_POS_Y, MAIN_WEAPONS_PANE_WIDTH, MAIN_WEAPONS_PANE_HEIGHT
         backcolor       0, 0, 0, 0
         textscale       0.2
         visible         1
 
         windowDef bulletsCategory {
-            rect            0, 0, 580, 48
+            rect            0, 0, AMMO_CATEGORY_WIDTH, AMMO_CATEGORY_HEIGHT
             backcolor       0, 0, 0, 0
             textscale       0.2
 
             windowDef weaponPistol {
-                rect            64, 2, 60, 44
+                rect            WEAP_PANE_1_POS_X, WEAP_PANE_1_POS_Y, WEAP_PANE_WIDTH, WEAP_PANE_HEIGHT
                 bordersize      2
                 bordercolor     BULLETS_COLOR
                 backcolor       NEUTRAL_BAR_BACKGROUND
@@ -60,13 +162,13 @@ windowDef Desktop {
                 }
 
                 windowDef weaponIcon {
-                    rect            2, 1, 52, 36
+                    rect            WEAP_ICON_POS_X, WEAP_ICON_POS_Y, WEAP_ICON_WIDTH, WEAP_ICON_HEIGHT
                     background      "guis/assets/hud/icons/pistolw"
                     matcolor        BULLETS_COLOR
                 }
 
                 windowDef pistolClipFill {
-                    rect            0, 0, 56 * "gui::player_pistol_clip_ratio", 40
+                    rect            WEAP_FILL_POS_X, WEAP_FILL_POS_Y, WEAP_FILL_WIDTH * "gui::player_pistol_clip_ratio", WEAP_FILL_HEIGHT
 
                     onEvent {
                         if ("gui::player_pistol_clip_ratio" >= LOW_RATIO) {
@@ -83,7 +185,7 @@ windowDef Desktop {
                 }
 
                 windowDef pistolClipEmpty {
-                    rect            0, 0, 56, 40
+                    rect            WEAP_FILL_POS_X, WEAP_FILL_POS_Y, WEAP_FILL_WIDTH, WEAP_FILL_HEIGHT
                     backcolor       CRIT_COLOR
 
                     onEvent {
@@ -98,10 +200,10 @@ windowDef Desktop {
                 }
 
                 windowDef pistolClipCount {
-                    rect            38, 24, 16, 16
+                    rect            WEAP_CLIP_COUNT_POS_X, WEAP_CLIP_COUNT_POS_Y, WEAP_CLIP_COUNT_WIDTH, WEAP_CLIP_COUNT_HEIGHT
                     text            "gui::player_pistol_clip"
                     forecolor       BULLETS_COLOR
-                    textscale       0.25
+                    textscale       WEAP_CLIP_COUNT_TEXTSCALE
                     textalign       2
 
                     onEvent {
@@ -117,7 +219,7 @@ windowDef Desktop {
             }
 
             windowDef bulletsAmmoBar {
-                rect        128, 6, 450, 36
+                rect            AMMO_BAR_POS_X, AMMO_BAR_POS_Y, AMMO_BAR_WIDTH, AMMO_BAR_HEIGHT
                 backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     BULLETS_COLOR
@@ -133,7 +235,7 @@ windowDef Desktop {
                 }
 
                 windowDef bulletsAmmoBarFill {
-                    rect            0, 0, 446 * "gui::player_bullets_ratio", 32               // [0%,100%] => [0,446]
+                    rect            AMMO_FILL_POS_X, AMMO_FILL_POS_Y, AMMO_FILL_WIDTH * "gui::player_bullets_ratio", AMMO_FILL_HEIGHT       // [0%,100%] => [0,446]
 
                     onEvent {
                         if ("gui::player_bullets_ratio" >= LOW_RATIO) {
@@ -150,7 +252,7 @@ windowDef Desktop {
                 }
 
                 windowDef bulletsAmmoBarEmpty {
-                    rect            0, 0, 446, 32
+                    rect            AMMO_FILL_POS_X, AMMO_FILL_POS_Y, AMMO_FILL_WIDTH, AMMO_FILL_HEIGHT
                     backcolor       CRIT_COLOR
 
                     onEvent {
@@ -165,16 +267,16 @@ windowDef Desktop {
                 }
 
                 windowDef ammoBarName {
-                    rect            8, 8, 128, 2
+                    rect            AMMO_NAME_POS_X, AMMO_NAME_POS_Y, AMMO_NAME_WIDTH, AMMO_NAME_HEIGHT
                     text            "BULLETS"
-                    textscale       0.25
+                    textscale       AMMO_NAME_TEXTSCALE
                     forecolor       BULLETS_COLOR
                 }
 
                 windowDef ammoBarCount {
-                    rect            402, 8, 36, 24
+                    rect            AMMO_COUNT_POS_X, AMMO_COUNT_POS_Y, AMMO_COUNT_WIDTH, AMMO_COUNT_HEIGHT
                     text            "gui::player_bullets_count"
-                    textscale       0.25
+                    textscale       AMMO_COUNT_TEXTSCALE
                     textalign       2
                     forecolor       BULLETS_COLOR
                 }
@@ -182,12 +284,12 @@ windowDef Desktop {
         }
 
         windowDef shellsCategory {
-            rect            0, 48, 580, 48
+            rect            0, AMMO_CATEGORY_STEP_Y, AMMO_CATEGORY_WIDTH, AMMO_CATEGORY_HEIGHT
             backcolor       0, 0, 0, 0
             textscale       0.2
 
             windowDef weaponShotgun {
-                rect            64, 2, 60, 44
+                rect            WEAP_PANE_1_POS_X, WEAP_PANE_1_POS_Y, WEAP_PANE_WIDTH, WEAP_PANE_HEIGHT
                 bordersize      2
                 bordercolor     SHELLS_COLOR
                 backcolor       NEUTRAL_BAR_BACKGROUND
@@ -203,13 +305,13 @@ windowDef Desktop {
                 }
 
                 windowDef weaponIcon {
-                    rect            2, 1, 52, 36
+                    rect            WEAP_ICON_POS_X, WEAP_ICON_POS_Y, WEAP_ICON_WIDTH, WEAP_ICON_HEIGHT
                     background      "guis/assets/hud/icons/shotgun1w"
                     matcolor        SHELLS_COLOR
                 }
 
                 windowDef shotgunClipFill {
-                    rect            0, 0, 56 * "gui::player_shotgun_clip_ratio", 40
+                    rect            WEAP_FILL_POS_X, WEAP_FILL_POS_Y, WEAP_FILL_WIDTH * "gui::player_shotgun_clip_ratio", WEAP_FILL_HEIGHT
 
                     onEvent {
                         if ("gui::player_shotgun_clip_ratio" >= LOW_RATIO) {
@@ -226,7 +328,7 @@ windowDef Desktop {
                 }
 
                 windowDef shotgunClipEmpty {
-                    rect            0, 0, 56, 40
+                    rect            WEAP_FILL_POS_X, WEAP_FILL_POS_Y, WEAP_FILL_WIDTH, WEAP_FILL_HEIGHT
                     backcolor       CRIT_COLOR
 
                     onEvent {
@@ -241,10 +343,10 @@ windowDef Desktop {
                 }
 
                 windowDef shotgunClipCount {
-                    rect            38, 24, 16, 16
+                    rect            WEAP_CLIP_COUNT_POS_X, WEAP_CLIP_COUNT_POS_Y, WEAP_CLIP_COUNT_WIDTH, WEAP_CLIP_COUNT_HEIGHT
                     text            "gui::player_shotgun_clip"
                     forecolor       SHELLS_COLOR
-                    textscale       0.25
+                    textscale       WEAP_CLIP_COUNT_TEXTSCALE
                     textalign       2
 
                     onEvent {
@@ -260,7 +362,7 @@ windowDef Desktop {
             }
 
             windowDef weaponClassic {
-                rect            0, 2, 60, 44
+                rect            WEAP_PANE_2_POS_X, WEAP_PANE_2_POS_Y, WEAP_PANE_WIDTH, WEAP_PANE_HEIGHT
                 bordersize      2
                 bordercolor     SHELLS_COLOR
                 backcolor       NEUTRAL_BAR_BACKGROUND
@@ -277,13 +379,13 @@ windowDef Desktop {
                 }
 
                 windowDef weaponIcon {
-                    rect            2, 1, 52, 36
+                    rect            WEAP_ICON_POS_X, WEAP_ICON_POS_Y, WEAP_ICON_WIDTH, WEAP_ICON_HEIGHT
                     background      "guis/assets/hud/icons/shotgunw"
                     matcolor        SHELLS_COLOR
                 }
 
                 windowDef classicClipFill {
-                    rect            0, 0, 56 * "gui::player_classic_clip_ratio", 40
+                    rect            WEAP_FILL_POS_X, WEAP_FILL_POS_Y, WEAP_FILL_WIDTH * "gui::player_classic_clip_ratio", WEAP_FILL_HEIGHT
 
                     onEvent {
                         if ("gui::player_classic_clip_ratio" >= LOW_RATIO) {
@@ -300,7 +402,7 @@ windowDef Desktop {
                 }
 
                 windowDef classicClipEmpty {
-                    rect            0, 0, 56, 40
+                    rect            WEAP_FILL_POS_X, WEAP_FILL_POS_Y, WEAP_FILL_WIDTH, WEAP_FILL_HEIGHT
                     backcolor       CRIT_COLOR
 
                     onEvent {
@@ -315,10 +417,10 @@ windowDef Desktop {
                 }
 
                 windowDef classicClipCount {
-                    rect            38, 24, 16, 16
+                    rect            WEAP_CLIP_COUNT_POS_X, WEAP_CLIP_COUNT_POS_Y, WEAP_CLIP_COUNT_WIDTH, WEAP_CLIP_COUNT_HEIGHT
                     text            "gui::player_classic_clip"
                     forecolor       SHELLS_COLOR
-                    textscale       0.25
+                    textscale       WEAP_CLIP_COUNT_TEXTSCALE
                     textalign       2
 
                     onEvent {
@@ -334,7 +436,7 @@ windowDef Desktop {
             }
 
             windowDef shellsAmmoBar {
-                rect            128, 6, 450, 36
+                rect            AMMO_BAR_POS_X, AMMO_BAR_POS_Y, AMMO_BAR_WIDTH, AMMO_BAR_HEIGHT
                 backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     SHELLS_COLOR
@@ -350,7 +452,7 @@ windowDef Desktop {
                 }
 
                 windowDef shellsAmmoBarFill {
-                    rect            0, 0, 446 * "gui::player_shells_ratio", 32               // [0%,100%] => [0,446]
+                    rect            AMMO_FILL_POS_X, AMMO_FILL_POS_Y, AMMO_FILL_WIDTH * "gui::player_shells_ratio", AMMO_FILL_HEIGHT    // [0%,100%] => [0,446]
 
                     onEvent {
                         if ("gui::player_shells_ratio" >= LOW_RATIO) {
@@ -367,7 +469,7 @@ windowDef Desktop {
                 }
 
                 windowDef shellsAmmoBarEmpty {
-                    rect            0, 0, 446, 32
+                    rect            AMMO_FILL_POS_X, AMMO_FILL_POS_Y, AMMO_FILL_WIDTH, AMMO_FILL_HEIGHT
                     backcolor       CRIT_COLOR
 
                     onEvent {
@@ -382,16 +484,16 @@ windowDef Desktop {
                 }
 
                 windowDef ammoBarName {
-                    rect            8, 8, 128, 2
+                    rect            AMMO_NAME_POS_X, AMMO_NAME_POS_Y, AMMO_NAME_WIDTH, AMMO_NAME_HEIGHT
                     text            "SHELLS"
-                    textscale       0.25
+                    textscale       AMMO_NAME_TEXTSCALE
                     forecolor       SHELLS_COLOR
                 }
 
                 windowDef ammoBarCount {
-                    rect            402, 8, 36, 24
+                    rect            AMMO_COUNT_POS_X, AMMO_COUNT_POS_Y, AMMO_COUNT_WIDTH, AMMO_COUNT_HEIGHT
                     text            "gui::player_shells_count"
-                    textscale       0.25
+                    textscale       AMMO_COUNT_TEXTSCALE
                     textalign       2
                     forecolor       SHELLS_COLOR
                 }
@@ -399,13 +501,13 @@ windowDef Desktop {
         }
 
         windowDef clipCategory {
-            rect            0, 96, 580, 48
+            rect            0, AMMO_CATEGORY_STEP_Y * 2, AMMO_CATEGORY_WIDTH, AMMO_CATEGORY_HEIGHT
             backcolor       0, 0, 0, 0
             textscale       0.2
             visible         1
 
             windowDef weaponMachinegun {
-                rect            64, 2, 60, 44
+                rect            WEAP_PANE_1_POS_X, WEAP_PANE_1_POS_Y, WEAP_PANE_WIDTH, WEAP_PANE_HEIGHT
                 bordersize      2
                 bordercolor     CLIP_COLOR
                 backcolor       NEUTRAL_BAR_BACKGROUND
@@ -421,13 +523,13 @@ windowDef Desktop {
                 } 
 
                 windowDef weaponIcon {
-                    rect            2, 1, 52, 36
+                    rect            WEAP_ICON_POS_X, WEAP_ICON_POS_Y, WEAP_ICON_WIDTH, WEAP_ICON_HEIGHT
                     background      "guis/assets/hud/icons/machinegunw"
                     matcolor        CLIP_COLOR
                 }
 
                 windowDef machinegunClipFill {
-                    rect            0, 0, 56 * "gui::player_machinegun_clip_ratio", 40
+                    rect            WEAP_FILL_POS_X, WEAP_FILL_POS_Y, WEAP_FILL_WIDTH * "gui::player_machinegun_clip_ratio", WEAP_FILL_HEIGHT
 
                     onEvent {
                         if ("gui::player_machinegun_clip_ratio" >= LOW_RATIO) {
@@ -444,7 +546,7 @@ windowDef Desktop {
                 }
 
                 windowDef machinegunClipEmpty {
-                    rect            0, 0, 56, 40
+                    rect            WEAP_FILL_POS_X, WEAP_FILL_POS_Y, WEAP_FILL_WIDTH, WEAP_FILL_HEIGHT
                     backcolor       CRIT_COLOR
 
                     onEvent {
@@ -459,10 +561,10 @@ windowDef Desktop {
                 }
 
                 windowDef machinegunClipCount {
-                    rect            38, 24, 16, 16
+                    rect            WEAP_CLIP_COUNT_POS_X, WEAP_CLIP_COUNT_POS_Y, WEAP_CLIP_COUNT_WIDTH, WEAP_CLIP_COUNT_HEIGHT
                     text            "gui::player_machinegun_clip"
                     forecolor       CLIP_COLOR
-                    textscale       0.25
+                    textscale       WEAP_CLIP_COUNT_TEXTSCALE
                     textalign       2
 
                     onEvent {
@@ -478,7 +580,7 @@ windowDef Desktop {
             }
 
             windowDef clipAmmoBar {
-                rect            128, 6, 450, 36
+                rect            AMMO_BAR_POS_X, AMMO_BAR_POS_Y, AMMO_BAR_WIDTH, AMMO_BAR_HEIGHT
                 backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     CLIP_COLOR
@@ -494,7 +596,7 @@ windowDef Desktop {
                 }
 
                 windowDef clipAmmoBarFill {
-                    rect            0, 0, 446 * "gui::player_clip_ratio", 32               // [0%,100%] => [0,446]
+                    rect            AMMO_FILL_POS_X, AMMO_FILL_POS_Y, AMMO_FILL_WIDTH * "gui::player_clip_ratio", AMMO_FILL_HEIGHT  // [0%,100%] => [0,446]
 
                     onEvent {
                         if ("gui::player_clip_ratio" >= LOW_RATIO) {
@@ -511,7 +613,7 @@ windowDef Desktop {
                 }
 
                 windowDef clipAmmoBarEmpty {
-                    rect            0, 0, 446, 32
+                    rect            AMMO_FILL_POS_X, AMMO_FILL_POS_Y, AMMO_FILL_WIDTH, AMMO_FILL_HEIGHT
                     backcolor       CRIT_COLOR
 
                     onEvent {
@@ -526,16 +628,16 @@ windowDef Desktop {
                 }
 
                 windowDef ammoBarName {
-                    rect            8, 8, 128, 2
+                    rect            AMMO_NAME_POS_X, AMMO_NAME_POS_Y, AMMO_NAME_WIDTH, AMMO_NAME_HEIGHT
                     text            "CLIP"
-                    textscale       0.25
+                    textscale       AMMO_NAME_TEXTSCALE
                     forecolor       CLIP_COLOR
                 }
 
                 windowDef ammoBarCount {
-                    rect            402, 8, 36, 24
+                    rect            AMMO_COUNT_POS_X, AMMO_COUNT_POS_Y, AMMO_COUNT_WIDTH, AMMO_COUNT_HEIGHT
                     text            "gui::player_clip_count"
-                    textscale       0.25
+                    textscale       AMMO_COUNT_TEXTSCALE
                     textalign       2
                     forecolor       CLIP_COLOR
                 }
@@ -543,38 +645,53 @@ windowDef Desktop {
         }
 
         windowDef grenadeCategory {
-            rect            0, 144, 580, 48
+            rect            0, AMMO_CATEGORY_STEP_Y * 3, AMMO_CATEGORY_WIDTH, AMMO_CATEGORY_HEIGHT
             backcolor       0, 0, 0, 0
             textscale       0.2
             visible         1
 
             windowDef weaponThumper {
-                rect            64, 2, 60, 44
+                rect            WEAP_PANE_1_POS_X, WEAP_PANE_1_POS_Y, WEAP_PANE_WIDTH, WEAP_PANE_HEIGHT
                 bordersize      2
                 bordercolor     GRENADES_COLOR
                 backcolor       NEUTRAL_BAR_BACKGROUND
                 visible         0
 
                 windowDef weaponIcon {
-                    rect            2, 1, 52, 36
+                    rect            WEAP_ICON_POS_X, WEAP_ICON_POS_Y, WEAP_ICON_WIDTH, WEAP_ICON_HEIGHT
                     // matcolor        GRENADES_COLOR
                 }
 
                 windowDef thumperClipFill {
-                    rect            0, 0, 56, 40
+                    rect            WEAP_FILL_POS_X, WEAP_FILL_POS_Y, WEAP_FILL_WIDTH, WEAP_FILL_HEIGHT
+                }
+
+                windowDef thumperClipEmpty {
+                    rect            WEAP_FILL_POS_X, WEAP_FILL_POS_Y, WEAP_FILL_WIDTH, WEAP_FILL_HEIGHT
+                    backcolor       CRIT_COLOR
+
+                    // onEvent {
+                    //     if ("gui::player_thumper_clip" == 0) {
+                    //         set "visible" "1";
+                    //     }
+                    //     else {
+                    //         set "visible" "0";
+                    //     }
+                        
+                    // }
                 }
 
                 windowDef thumperClipCount {
-                    rect            38, 24, 16, 8
+                    rect            WEAP_CLIP_COUNT_POS_X, WEAP_CLIP_COUNT_POS_Y, WEAP_CLIP_COUNT_WIDTH, WEAP_CLIP_COUNT_HEIGHT
                     text            "1"
                     forecolor       GRENADES_COLOR
-                        textscale       0.25
-                        textalign       2
+                    textscale       WEAP_CLIP_COUNT_TEXTSCALE
+                    textalign       2
                 }
             }
 
             windowDef grenadeAmmoBar {
-                rect            128, 6, 450, 36
+                rect            AMMO_BAR_POS_X, AMMO_BAR_POS_Y, AMMO_BAR_WIDTH, AMMO_BAR_HEIGHT
                 backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     GRENADES_COLOR
@@ -590,7 +707,7 @@ windowDef Desktop {
                 }
 
                 windowDef grenadeAmmoBarFill {
-                    rect            0, 0, 446 * "gui::player_grenade_ratio", 32               // [0%,100%] => [0,446]
+                    rect            AMMO_FILL_POS_X, AMMO_FILL_POS_Y, AMMO_FILL_WIDTH * "gui::player_grenade_ratio", AMMO_FILL_HEIGHT       // [0%,100%] => [0,446]
 
                     onEvent {
                         if ("gui::player_grenade_ratio" >= LOW_RATIO) {
@@ -607,7 +724,7 @@ windowDef Desktop {
                 }
 
                 windowDef grenadeAmmoBarEmpty {
-                    rect            0, 0, 446, 32
+                    rect            AMMO_FILL_POS_X, AMMO_FILL_POS_Y, AMMO_FILL_WIDTH, AMMO_FILL_HEIGHT
                     backcolor       CRIT_COLOR
 
                     onEvent {
@@ -622,16 +739,16 @@ windowDef Desktop {
                 }
 
                 windowDef ammoBarName {
-                    rect            8, 8, 128, 2
+                    rect            AMMO_NAME_POS_X, AMMO_NAME_POS_Y, AMMO_NAME_WIDTH, AMMO_NAME_HEIGHT
                     text            "GRENADES"
-                    textscale       0.25
+                    textscale       AMMO_NAME_TEXTSCALE
                     forecolor       GRENADES_COLOR
                 }
 
                 windowDef ammoBarCount {
-                    rect            402, 8, 36, 24
+                    rect            AMMO_COUNT_POS_X, AMMO_COUNT_POS_Y, AMMO_COUNT_WIDTH, AMMO_COUNT_HEIGHT
                     text            "gui::player_grenade_count"
-                    textscale       0.25
+                    textscale       AMMO_COUNT_TEXTSCALE
                     textalign       2
                     forecolor       GRENADES_COLOR
                 }
@@ -639,13 +756,13 @@ windowDef Desktop {
         }
 
         windowDef beltCategory {
-            rect            0, 192, 580, 48
+            rect            0, AMMO_CATEGORY_STEP_Y * 4, AMMO_CATEGORY_WIDTH, AMMO_CATEGORY_HEIGHT
             backcolor       0, 0, 0, 0
             textscale       0.2
             visible         1
 
             windowDef weaponChaingun {
-                rect            64, 2, 60, 44
+                rect            WEAP_PANE_1_POS_X, WEAP_PANE_1_POS_Y, WEAP_PANE_WIDTH, WEAP_PANE_HEIGHT
                 bordersize      2
                 bordercolor     BELT_COLOR
                 backcolor       NEUTRAL_BAR_BACKGROUND
@@ -661,13 +778,13 @@ windowDef Desktop {
                 }
 
                 windowDef weaponIcon {
-                    rect            2, 1, 52, 36
+                    rect            WEAP_ICON_POS_X, WEAP_ICON_POS_Y, WEAP_ICON_WIDTH, WEAP_ICON_HEIGHT
                     background      "guis/assets/hud/icons/chaingunw"
                     matcolor        BELT_COLOR
                 }
 
                 windowDef chaingunClipFill {
-                    rect            0, 0, 56 * "gui::player_chaingun_clip_ratio", 40
+                    rect            WEAP_FILL_POS_X, WEAP_FILL_POS_Y, WEAP_FILL_WIDTH * "gui::player_chaingun_clip_ratio", WEAP_FILL_HEIGHT
 
                     onEvent {
                         if ("gui::player_chaingun_clip_ratio" >= LOW_RATIO) {
@@ -684,7 +801,7 @@ windowDef Desktop {
                 }
 
                 windowDef chaingunClipEmpty {
-                    rect            0, 0, 56, 40
+                    rect            WEAP_FILL_POS_X, WEAP_FILL_POS_Y, WEAP_FILL_WIDTH, WEAP_FILL_HEIGHT
                     backcolor       CRIT_COLOR
 
                     onEvent {
@@ -699,10 +816,10 @@ windowDef Desktop {
                 }
 
                 windowDef chaingunClipCount {
-                    rect            30, 24, 24, 16
+                    rect            WEAP_CLIP_COUNT_POS_X, WEAP_CLIP_COUNT_POS_Y, WEAP_CLIP_COUNT_WIDTH, WEAP_CLIP_COUNT_HEIGHT
                     text            "gui::player_chaingun_clip"
                     forecolor       BELT_COLOR
-                    textscale       0.25
+                    textscale       WEAP_CLIP_COUNT_TEXTSCALE
                     textalign       2
 
                     onEvent {
@@ -718,7 +835,7 @@ windowDef Desktop {
             }
 
             windowDef beltAmmoBar {
-                rect        128, 6, 450, 36
+                rect            AMMO_BAR_POS_X, AMMO_BAR_POS_Y, AMMO_BAR_WIDTH, AMMO_BAR_HEIGHT
                 backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     BELT_COLOR
@@ -734,7 +851,7 @@ windowDef Desktop {
                 }
 
                 windowDef beltAmmoBarFill {
-                    rect            0, 0, 446 * "gui::player_belt_ratio", 32               // [0%,100%] => [0,446]
+                    rect            AMMO_FILL_POS_X, AMMO_FILL_POS_Y, AMMO_FILL_WIDTH * "gui::player_belt_ratio", AMMO_FILL_HEIGHT  // [0%,100%] => [0,446]
 
                     onEvent {
                         if ("gui::player_belt_ratio" >= LOW_RATIO) {
@@ -751,7 +868,7 @@ windowDef Desktop {
                 }
 
                 windowDef beltAmmoBarEmpty {
-                    rect            0, 0, 446, 32
+                    rect            AMMO_FILL_POS_X, AMMO_FILL_POS_Y, AMMO_FILL_WIDTH, AMMO_FILL_HEIGHT
                     backcolor       CRIT_COLOR
 
                     onEvent {
@@ -766,16 +883,16 @@ windowDef Desktop {
                 }
 
                 windowDef ammoBarName {
-                    rect            8, 8, 128, 2
+                    rect            AMMO_NAME_POS_X, AMMO_NAME_POS_Y, AMMO_NAME_WIDTH, AMMO_NAME_HEIGHT
                     text            "AMMO BELT"
-                    textscale       0.25
+                    textscale       AMMO_NAME_TEXTSCALE
                     forecolor       BELT_COLOR
                 }
 
                 windowDef ammoBarCount {
-                    rect            402, 8, 36, 24
+                    rect            AMMO_COUNT_POS_X, AMMO_COUNT_POS_Y, AMMO_COUNT_WIDTH, AMMO_COUNT_HEIGHT
                     text            "gui::player_belt_count"
-                    textscale       0.25
+                    textscale       AMMO_COUNT_TEXTSCALE
                     textalign       2
                     forecolor       BELT_COLOR
                 }
@@ -783,13 +900,13 @@ windowDef Desktop {
         }
 
         windowDef cellsCategory {
-            rect            0, 240, 580, 48
+            rect            0, AMMO_CATEGORY_STEP_Y * 5, AMMO_CATEGORY_WIDTH, AMMO_CATEGORY_HEIGHT
             backcolor       0, 0, 0, 0
             textscale       0.2
             visible         1
 
             windowDef weaponPlasmagun {
-                rect            64, 2, 60, 44
+                rect            WEAP_PANE_1_POS_X, WEAP_PANE_1_POS_Y, WEAP_PANE_WIDTH, WEAP_PANE_HEIGHT
                 bordersize      2
                 bordercolor     CELLS_COLOR
                 backcolor       NEUTRAL_BAR_BACKGROUND
@@ -805,13 +922,13 @@ windowDef Desktop {
                 }
 
                 windowDef weaponIcon {
-                    rect            2, 1, 52, 36
+                    rect            WEAP_ICON_POS_X, WEAP_ICON_POS_Y, WEAP_ICON_WIDTH, WEAP_ICON_HEIGHT
                     background      "guis/assets/hud/icons/plasmagunw"
                     matcolor        CELLS_COLOR
                 }
 
                 windowDef plasmagunClipFill {
-                    rect            0, 0, 56 * "gui::player_plasmagun_clip_ratio", 40
+                    rect            WEAP_FILL_POS_X, WEAP_FILL_POS_Y, WEAP_FILL_WIDTH * "gui::player_plasmagun_clip_ratio", WEAP_FILL_HEIGHT
 
                     onEvent {
                         if ("gui::player_plasmagun_clip_ratio" >= LOW_RATIO) {
@@ -828,7 +945,7 @@ windowDef Desktop {
                 }
 
                 windowDef plasmagunClipEmpty {
-                    rect            0, 0, 56, 40
+                    rect            WEAP_FILL_POS_X, WEAP_FILL_POS_Y, WEAP_FILL_WIDTH, WEAP_FILL_HEIGHT
                     backcolor       CRIT_COLOR
 
                     onEvent {
@@ -843,10 +960,10 @@ windowDef Desktop {
                 }
 
                 windowDef plasmagunClipCount {
-                    rect            38, 24, 16, 16
+                    rect            WEAP_CLIP_COUNT_POS_X, WEAP_CLIP_COUNT_POS_Y, WEAP_CLIP_COUNT_WIDTH, WEAP_CLIP_COUNT_HEIGHT
                     text            "gui::player_plasmagun_clip"
                     forecolor       CELLS_COLOR
-                    textscale       0.25
+                    textscale       WEAP_CLIP_COUNT_TEXTSCALE
                     textalign       2
 
                     onEvent {
@@ -862,7 +979,7 @@ windowDef Desktop {
             }
 
             windowDef cellsAmmoBar {
-                rect            128, 6, 450, 36
+                rect            AMMO_BAR_POS_X, AMMO_BAR_POS_Y, AMMO_BAR_WIDTH, AMMO_BAR_HEIGHT
                 backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     CELLS_COLOR
@@ -878,7 +995,7 @@ windowDef Desktop {
                 }
 
                 windowDef cellsAmmoBarFill {
-                    rect            0, 0, 446 * "gui::player_cells_ratio", 32               // [0%,100%] => [0,446]
+                    rect            AMMO_FILL_POS_X, AMMO_FILL_POS_Y, AMMO_FILL_WIDTH * "gui::player_cells_ratio", AMMO_FILL_HEIGHT     // [0%,100%] => [0,446]
 
                     onEvent {
                         if ("gui::player_cells_ratio" >= LOW_RATIO) {
@@ -895,7 +1012,7 @@ windowDef Desktop {
                 }
 
                 windowDef cellsAmmoBarEmpty {
-                    rect            0, 0, 446, 32
+                    rect            AMMO_FILL_POS_X, AMMO_FILL_POS_Y, AMMO_FILL_WIDTH, AMMO_FILL_HEIGHT
                     backcolor       CRIT_COLOR
 
                     onEvent {
@@ -910,16 +1027,16 @@ windowDef Desktop {
                 }
 
                 windowDef ammoBarName {
-                    rect            8, 8, 128, 2
+                    rect            AMMO_NAME_POS_X, AMMO_NAME_POS_Y, AMMO_NAME_WIDTH, AMMO_NAME_HEIGHT
                     text            "CELLS"
-                    textscale       0.25
+                    textscale       AMMO_NAME_TEXTSCALE
                     forecolor       CELLS_COLOR
                 }
 
                 windowDef ammoBarCount {
-                    rect            402, 8, 36, 24
+                    rect            AMMO_COUNT_POS_X, AMMO_COUNT_POS_Y, AMMO_COUNT_WIDTH, AMMO_COUNT_HEIGHT
                     text            "gui::player_cells_count"
-                    textscale       0.25
+                    textscale       AMMO_COUNT_TEXTSCALE
                     textalign       2
                     forecolor       CELLS_COLOR
                 }
@@ -927,13 +1044,13 @@ windowDef Desktop {
         }
 
         windowDef rocketsCategory {
-            rect            0, 288, 580, 48
+            rect            0, AMMO_CATEGORY_STEP_Y * 6, AMMO_CATEGORY_WIDTH, AMMO_CATEGORY_HEIGHT
             backcolor       0, 0, 0, 0
             textscale       0.2
             visible         1
 
             windowDef weaponRocketLauncher {
-                rect            64, 2, 60, 44
+                rect            WEAP_PANE_1_POS_X, WEAP_PANE_1_POS_Y, WEAP_PANE_WIDTH, WEAP_PANE_HEIGHT
                 bordersize      2
                 bordercolor     ROCKETS_COLOR
                 backcolor       NEUTRAL_BAR_BACKGROUND
@@ -950,13 +1067,13 @@ windowDef Desktop {
 
 
                 windowDef weaponIcon {
-                    rect            2, 1, 52, 36
+                    rect            WEAP_ICON_POS_X, WEAP_ICON_POS_Y, WEAP_ICON_WIDTH, WEAP_ICON_HEIGHT
                     background      "guis/assets/hud/icons/rocketlauncherw"
                     matcolor        ROCKETS_COLOR
                 }
 
                 windowDef rocketClipFill {
-                    rect            0, 0, 56 * "gui::player_rocket_clip_ratio", 40
+                    rect            WEAP_FILL_POS_X, WEAP_FILL_POS_Y, WEAP_FILL_WIDTH * "gui::player_rocket_clip_ratio", WEAP_FILL_HEIGHT
 
                     onEvent {
                         if ("gui::player_rocket_clip_ratio" >= LOW_RATIO) {
@@ -973,7 +1090,7 @@ windowDef Desktop {
                 }
 
                 windowDef rocketClipEmpty {
-                    rect            0, 0, 56, 40
+                    rect            WEAP_FILL_POS_X, WEAP_FILL_POS_Y, WEAP_FILL_WIDTH, WEAP_FILL_HEIGHT
                     backcolor       CRIT_COLOR
 
                     onEvent {
@@ -988,10 +1105,10 @@ windowDef Desktop {
                 }
 
                 windowDef rocketClipCount {
-                    rect            38, 24, 16, 16
+                    rect            WEAP_CLIP_COUNT_POS_X, WEAP_CLIP_COUNT_POS_Y, WEAP_CLIP_COUNT_WIDTH, WEAP_CLIP_COUNT_HEIGHT
                     text            "gui::player_rocket_clip"
                     forecolor       ROCKETS_COLOR
-                    textscale       0.25
+                    textscale       WEAP_CLIP_COUNT_TEXTSCALE
                     textalign       2
 
                     onEvent {
@@ -1007,7 +1124,7 @@ windowDef Desktop {
             }
 
             windowDef rocketsAmmoBar {
-                rect        128, 6, 450, 36
+                rect            AMMO_BAR_POS_X, AMMO_BAR_POS_Y, AMMO_BAR_WIDTH, AMMO_BAR_HEIGHT
                 backcolor       NEUTRAL_BAR_BACKGROUND
                 bordersize      2
                 bordercolor     ROCKETS_COLOR
@@ -1023,7 +1140,7 @@ windowDef Desktop {
                 }
 
                 windowDef rocketsAmmoBarFill {
-                    rect            0, 0, 446 * "gui::player_rockets_ratio", 32               // [0%,100%] => [0,446]
+                    rect            AMMO_FILL_POS_X, AMMO_FILL_POS_Y, AMMO_FILL_WIDTH * "gui::player_rockets_ratio", AMMO_FILL_HEIGHT   // [0%,100%] => [0,446]
 
                     onEvent {
                         if ("gui::player_rockets_ratio" >= LOW_RATIO) {
@@ -1040,7 +1157,7 @@ windowDef Desktop {
                 }
 
                 windowDef rocketsAmmoBarEmpty {
-                    rect            0, 0, 446, 32
+                    rect            AMMO_FILL_POS_X, AMMO_FILL_POS_Y, AMMO_FILL_WIDTH, AMMO_FILL_HEIGHT
                     backcolor       CRIT_COLOR
 
                     onEvent {
@@ -1055,16 +1172,16 @@ windowDef Desktop {
                 }
 
                 windowDef ammoBarName {
-                    rect            8, 8, 128, 2
+                    rect            AMMO_NAME_POS_X, AMMO_NAME_POS_Y, AMMO_NAME_WIDTH, AMMO_NAME_HEIGHT
                     text            "ROCKETS"
-                    textscale       0.25
+                    textscale       AMMO_NAME_TEXTSCALE
                     forecolor       ROCKETS_COLOR
                 }
 
                 windowDef ammoBarCount {
-                    rect            402, 8, 36, 24
+                    rect            AMMO_COUNT_POS_X, AMMO_COUNT_POS_Y, AMMO_COUNT_WIDTH, AMMO_COUNT_HEIGHT
                     text            "gui::player_rockets_count"
-                    textscale       0.25
+                    textscale       AMMO_COUNT_TEXTSCALE
                     textalign       2
                     forecolor       ROCKETS_COLOR
                 }
@@ -1073,11 +1190,11 @@ windowDef Desktop {
     }
 
     windowDef specialWeapons {
-        rect        25, 360, 580, 108
+        rect        SPEC_WEAPONS_PANE_POS_X, SPEC_WEAPONS_PANE_POS_Y, SPEC_WEAPONS_PANE_WIDTH, SPEC_WEAPONS_PANE_HEIGHT
         visible     1
 
         windowDef chainsawCategory {
-            rect        0, 0, 172, 108
+            rect        CHAINSAW_CATEGORY_POS_X, CHAINSAW_CATEGORY_POS_Y, CHAINSAW_CATEGORY_WIDTH, CHAINSAW_CATEGORY_HEIGHT
             backcolor   NEUTRAL_BAR_BACKGROUND
             bordersize  2
             bordercolor CHAINSAW_COLOR
@@ -1093,22 +1210,47 @@ windowDef Desktop {
             }
 
             windowDef weaponIcon {
-                rect        2, 2, 164, 106
+                rect        CHAINSAW_ICON_POS_X, CHAINSAW_ICON_POS_Y, CHAINSAW_ICON_WIDTH, CHAINSAW_ICON_HEIGHT
                 background  "guis/assets/hud/icons/chainsaww"
                 matcolor    CHAINSAW_COLOR
             }
 
-            windowDef ammoFill {
-                rect        0, 0, 168, 104
-                visible     0
+            windowDef fuelFill {
+                rect        CHAINSAW_FILL_POS_X, CHAINSAW_FILL_POS_Y * (1 - "gui::player_fuel_ratio"), CHAINSAW_FILL_WIDTH, CHAINSAW_FILL_HEIGHT * "gui::player_fuel_ratio"
+                
+                onEvent {
+                    if ("gui::player_fuel_ratio" >= LOW_RATIO) {
+                            set "backcolor" "$desktop::fullcolor" ;
+                    }
+                    else if ("gui::player_fuel_ratio" > CRIT_RATIO && "gui::player_fuel_ratio" < LOW_RATIO) {
+                        set "backcolor" "$desktop::lowcolor" ;
+                    }
+                    else if ("gui::player_fuel_ratio" <= CRIT_RATIO) {
+                        set "backcolor" "$desktop::critcolor" ;
+                    }
+                }
             }
+
+            windowDef fuelEmpty {
+                    rect            CHAINSAW_FILL_POS_X, CHAINSAW_FILL_POS_Y, CHAINSAW_FILL_WIDTH, CHAINSAW_FILL_HEIGHT
+                    backcolor       CRIT_COLOR
+
+                    onEvent {
+                        if ("gui::player_fuel_count" == 0) {
+                            set "visible" "1";
+                        }
+                        else {
+                            set "visible" "0";
+                        }
+                    }
+                }
         }
 
         windowDef bfgCategory {
-            rect        184, 0, 256, 108
+            rect        BFG_CATEGORY_POS_X, BFG_CATEGORY_POS_Y, BFG_CATEGORY_WIDTH, BFG_CATEGORY_HEIGHT
 
             windowDef weaponBfg {
-                rect        0, 0, 156, 108
+                rect        BFG_WEAP_PANE_POS_X, BFG_WEAP_PANE_POS_Y, BFG_WEAP_PANE_WIDTH, BFG_WEAP_PANE_HEIGHT
                 backcolor   NEUTRAL_BAR_BACKGROUND
                 bordersize  2
                 bordercolor BFG_COLOR
@@ -1123,13 +1265,13 @@ windowDef Desktop {
                 }
 
                 windowDef weaponIcon {
-                    rect        2, 2, 152, 104
+                    rect        BFG_WEAP_ICON_POS_X, BFG_WEAP_ICON_POS_Y, BFG_WEAP_ICON_WIDTH, BFG_WEAP_ICON_HEIGHT
                     background  "guis/assets/hud/icons/bfgw.tga"
                     matcolor    BFG_COLOR
                 }
 
                 windowDef bfgClipFill {
-                    rect        0, 0, 152 * "gui::player_bfg_clip_ratio", 104
+                    rect        BFG_WEAP_FILL_POS_X, BFG_WEAP_FILL_POS_Y, BFG_WEAP_FILL_WIDTH * "gui::player_bfg_clip_ratio", BFG_WEAP_FILL_HEIGHT
 
                     onEvent {
                         if ("gui::player_bfg_clip_ratio" >= LOW_RATIO) {
@@ -1145,7 +1287,7 @@ windowDef Desktop {
                 }
 
                 windowDef bfgClipEmpty {
-                    rect            0, 0, 152, 104
+                    rect            BFG_WEAP_FILL_POS_X, BFG_WEAP_FILL_POS_Y, BFG_WEAP_FILL_WIDTH, BFG_WEAP_FILL_HEIGHT
                     backcolor       CRIT_COLOR
 
                     onEvent {
