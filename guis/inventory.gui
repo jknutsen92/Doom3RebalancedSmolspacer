@@ -6,7 +6,7 @@
 #define NEUTRAL_BAR_BACKGROUND      0.1,    0.1,    0.1,    1
 
 // Borders and highlights
-#define BULLETS_COLOR               0.702,  0,      0,      1
+#define BULLETS_COLOR               0.541,  0.239,  0.106,  1
 #define SHELLS_COLOR                0.541,  0.541,  0.541,  1
 #define CLIP_COLOR                  0.624,  0.78,   0.306,  1
 #define GRENADES_COLOR              0.718,  0.263,  0.812,  1
@@ -23,105 +23,160 @@
 #define CRIT_RATIO                  0.20
 
 // Rects - Main weapons section
-#define MAIN_WEAPONS_PANE_WIDTH     580
-#define MAIN_WEAPONS_PANE_HEIGHT    360
-#define MAIN_WEAPONS_PANE_POS_X     25
-#define MAIN_WEAPONS_PANE_POS_Y     20
+#define MAIN_WEAPONS_PANE_WIDTH     512
+#define MAIN_WEAPONS_PANE_HEIGHT    306
+#define MAIN_WEAPONS_PANE_POS_X     128
+#define MAIN_WEAPONS_PANE_POS_Y     40
 
 // Rects - Ammo category
-#define AMMO_CATEGORY_WIDTH         580
-#define AMMO_CATEGORY_HEIGHT        48
-#define AMMO_CATEGORY_STEP_Y        AMMO_CATEGORY_HEIGHT
+#define AMMO_CATEGORY_WIDTH         512
+#define AMMO_CATEGORY_HEIGHT        40
+#define AMMO_CATEGORY_STEP_Y        (AMMO_CATEGORY_HEIGHT + 2)
 
 // Rects - Weapon pane
-#define WEAP_PANE_WIDTH             60
-#define WEAP_PANE_HEIGHT            44
-#define WEAP_PANE_1_POS_X           64
+#define WEAP_PANE_WIDTH             50
+#define WEAP_PANE_HEIGHT            38
+#define WEAP_PANE_1_POS_X           68
 #define WEAP_PANE_1_POS_Y           2
-#define WEAP_PANE_2_POS_X           0
+#define WEAP_PANE_2_POS_X           14
 #define WEAP_PANE_2_POS_Y           2
 
-#define WEAP_ICON_WIDTH             52
-#define WEAP_ICON_HEIGHT            36
-#define WEAP_ICON_POS_X             2
-#define WEAP_ICON_POS_Y             1
+#define WEAP_ICON_WIDTH             44
+#define WEAP_ICON_HEIGHT            30
+#define WEAP_ICON_POS_X             0
+#define WEAP_ICON_POS_Y             0
 
-#define WEAP_FILL_WIDTH             56
-#define WEAP_FILL_HEIGHT            40
+#define WEAP_FILL_WIDTH             46
+#define WEAP_FILL_HEIGHT            34
 #define WEAP_FILL_POS_X             0
 #define WEAP_FILL_POS_Y             0
 
 #define WEAP_CLIP_COUNT_WIDTH       16
 #define WEAP_CLIP_COUNT_HEIGHT      16
-#define WEAP_CLIP_COUNT_POS_X       38
-#define WEAP_CLIP_COUNT_POS_Y       24
-#define WEAP_CLIP_COUNT_TEXTSCALE   0.25
+#define WEAP_CLIP_COUNT_POS_X       28
+#define WEAP_CLIP_COUNT_POS_Y       21
+#define WEAP_CLIP_COUNT_TEXTSCALE   0.18
 
 // Rects - Ammo bar
-#define AMMO_BAR_WIDTH              450
-#define AMMO_BAR_HEIGHT             36
-#define AMMO_BAR_POS_X              128
-#define AMMO_BAR_POS_Y              6
+#define AMMO_BAR_WIDTH              256
+#define AMMO_BAR_HEIGHT             22
+#define AMMO_BAR_POS_X              122
+#define AMMO_BAR_POS_Y              10
 
-#define AMMO_FILL_WIDTH             446
-#define AMMO_FILL_HEIGHT            32
+#define AMMO_FILL_WIDTH             252
+#define AMMO_FILL_HEIGHT            18
 #define AMMO_FILL_POS_X             0
 #define AMMO_FILL_POS_Y             0
 
 #define AMMO_NAME_WIDTH             128
 #define AMMO_NAME_HEIGHT            2
-#define AMMO_NAME_POS_X             8
-#define AMMO_NAME_POS_Y             8
-#define AMMO_NAME_TEXTSCALE         0.25
+#define AMMO_NAME_POS_X             4
+#define AMMO_NAME_POS_Y             2
+#define AMMO_NAME_TEXTSCALE         0.18
 
 #define AMMO_COUNT_WIDTH            36
 #define AMMO_COUNT_HEIGHT           24
-#define AMMO_COUNT_POS_X            402
-#define AMMO_COUNT_POS_Y            8
-#define AMMO_COUNT_TEXTSCALE        0.25
+#define AMMO_COUNT_POS_X            212
+#define AMMO_COUNT_POS_Y            2
+#define AMMO_COUNT_TEXTSCALE        0.18
 
 // Rects - Special weapons
-#define SPEC_WEAPONS_PANE_WIDTH     580
-#define SPEC_WEAPONS_PANE_HEIGHT    108
-#define SPEC_WEAPONS_PANE_POS_X     25
-#define SPEC_WEAPONS_PANE_POS_Y     360
+#define SPEC_WEAPONS_PANE_WIDTH     512
+#define SPEC_WEAPONS_PANE_HEIGHT    90
+#define SPEC_WEAPONS_PANE_POS_X     128
+#define SPEC_WEAPONS_PANE_POS_Y     340
 
 // Rects - Chainsaw
-#define CHAINSAW_CATEGORY_WIDTH     172
-#define CHAINSAW_CATEGORY_HEIGHT    108
+#define CHAINSAW_CATEGORY_WIDTH     108
+#define CHAINSAW_CATEGORY_HEIGHT    64
 #define CHAINSAW_CATEGORY_POS_X     0
 #define CHAINSAW_CATEGORY_POS_Y     0
 
-#define CHAINSAW_ICON_WIDTH         164
-#define CHAINSAW_ICON_HEIGHT        106
-#define CHAINSAW_ICON_POS_X         2
-#define CHAINSAW_ICON_POS_Y         2
+#define CHAINSAW_ICON_WIDTH         104
+#define CHAINSAW_ICON_HEIGHT        60
+#define CHAINSAW_ICON_POS_X         0
+#define CHAINSAW_ICON_POS_Y         0
 
-#define CHAINSAW_FILL_WIDTH         168
-#define CHAINSAW_FILL_HEIGHT        104
+#define CHAINSAW_FILL_WIDTH         104
+#define CHAINSAW_FILL_HEIGHT        60
 #define CHAINSAW_FILL_POS_X         0
-#define CHAINSAW_FILL_POS_Y         104
+#define CHAINSAW_FILL_POS_Y         60
 
 // Rects - BFG
-#define BFG_CATEGORY_WIDTH          256
-#define BFG_CATEGORY_HEIGHT         108
-#define BFG_CATEGORY_POS_X          184
+#define BFG_CATEGORY_WIDTH          216
+#define BFG_CATEGORY_HEIGHT         64
+#define BFG_CATEGORY_POS_X          122
 #define BFG_CATEGORY_POS_Y          0
 
-#define BFG_WEAP_PANE_WIDTH         156
-#define BFG_WEAP_PANE_HEIGHT        108
+#define BFG_WEAP_PANE_WIDTH         108
+#define BFG_WEAP_PANE_HEIGHT        64
 #define BFG_WEAP_PANE_POS_X         0
 #define BFG_WEAP_PANE_POS_Y         0
 
-#define BFG_WEAP_ICON_WIDTH         152
-#define BFG_WEAP_ICON_HEIGHT        104
-#define BFG_WEAP_ICON_POS_X         2
-#define BFG_WEAP_ICON_POS_Y         2
-
-#define BFG_WEAP_FILL_WIDTH         152
-#define BFG_WEAP_FILL_HEIGHT        104
+#define BFG_WEAP_FILL_WIDTH         104
+#define BFG_WEAP_FILL_HEIGHT        60
 #define BFG_WEAP_FILL_POS_X         0
 #define BFG_WEAP_FILL_POS_Y         0
+
+#define BFG_WEAP_ICON_WIDTH         104
+#define BFG_WEAP_ICON_HEIGHT        60
+#define BFG_WEAP_ICON_POS_X         0
+#define BFG_WEAP_ICON_POS_Y         0
+
+#define BFG_CLIP_COUNT_WIDTH        36
+#define BFG_CLIP_COUNT_HEIGHT       36
+#define BFG_CLIP_COUNT_POS_X        64
+#define BFG_CLIP_COUNT_POS_Y        42
+#define BFG_CLIP_COUNT_TEXTSCALE    0.25
+
+// Rects - BFG ammo
+#define BFG_AMMO_BAR_WIDTH          124
+#define BFG_AMMO_BAR_HEIGHT         30
+#define BFG_AMMO_BAR_POS_X          112
+#define BFG_AMMO_BAR_POS_Y          16
+
+#define BFGCELL_NAME_WIDTH          64
+#define BFGCELL_NAME_HEIGHT         2
+#define BFGCELL_NAME_POS_X          4
+#define BFGCELL_NAME_POS_Y          6
+#define BFGCELL_NAME_TEXTSCALE      0.20
+
+#define BFG_AMMO_FILL_WIDTH         100
+#define BFG_AMMO_FILL_HEIGHT        28
+#define BFG_AMMO_FILL_POS_X         0
+#define BFG_AMMO_FILL_POS_Y         0
+
+#define BFG_AMMO_COUNT_WIDTH        24
+#define BFG_AMMO_COUNT_HEIGHT       8
+#define BFG_AMMO_COUNT_POS_X        72
+#define BFG_AMMO_COUNT_POS_Y        6
+#define BFG_AMMO_COUNT_TEXTSCALE    0.20
+
+// Rects - Soulcube
+#define SOULCUBE_CATEGORY_WIDTH     90
+#define SOULCUBE_CATEGORY_HEIGHT    60
+#define SOULCUBE_CATEGORY_POS_X     320
+#define SOULCUBE_CATEGORY_POS_Y     0
+
+#define SOULCUBE_SECRET_ICON_WIDTH  24
+#define SOULCUBE_SECRET_ICON_HEIGHT 24
+#define SOULCUBE_SECRET_ICON_POS_X  4
+#define SOULCUBE_SECRET_ICON_POS_Y  78
+
+#define SOULCUBE_PANE_WIDTH         60
+#define SOULCUBE_PANE_HEIGHT        60
+#define SOULCUBE_PANE_POS_X         30
+#define SOULCUBE_PANE_POS_Y         0
+
+#define SOULCUBE_ICON_WIDTH         56
+#define SOULCUBE_ICON_HEIGHT        56
+#define SOULCUBE_ICON_POS_X         0
+#define SOULCUBE_ICON_POS_Y         0
+
+#define SOULCUBE_FILL_WIDTH         56
+#define SOULCUBE_FILL_HEIGHT        56
+#define SOULCUBE_FILL_POS_X         0
+#define SOULCUBE_FILL_POS_Y         58
 
 windowDef Desktop {
     rect            0, 0, 640, 480
@@ -1232,18 +1287,18 @@ windowDef Desktop {
             }
 
             windowDef fuelEmpty {
-                    rect            CHAINSAW_FILL_POS_X, CHAINSAW_FILL_POS_Y, CHAINSAW_FILL_WIDTH, CHAINSAW_FILL_HEIGHT
-                    backcolor       CRIT_COLOR
+                rect            CHAINSAW_ICON_POS_X, 0, CHAINSAW_ICON_WIDTH, CHAINSAW_ICON_HEIGHT
+                backcolor       CRIT_COLOR
 
-                    onEvent {
-                        if ("gui::player_fuel_count" == 0) {
-                            set "visible" "1";
-                        }
-                        else {
-                            set "visible" "0";
-                        }
+                onEvent {
+                    if ("gui::player_fuel_count" == 0) {
+                        set "visible" "1";
+                    }
+                    else {
+                        set "visible" "0";
                     }
                 }
+            }
         }
 
         windowDef bfgCategory {
@@ -1301,10 +1356,10 @@ windowDef Desktop {
                 }
 
                 windowDef clipCount {
-                    rect        112, 82, 36, 36
+                    rect        BFG_CLIP_COUNT_POS_X, BFG_CLIP_COUNT_POS_Y, BFG_CLIP_COUNT_WIDTH, BFG_CLIP_COUNT_HEIGHT
                     text        "gui::player_bfg_clip"
                     forecolor   BFG_COLOR
-                    textscale   0.35
+                    textscale   BFG_CLIP_COUNT_TEXTSCALE
                     textalign   2
 
                     onEvent {
@@ -1319,7 +1374,7 @@ windowDef Desktop {
             }
 
             windowDef bfgAmmoBar {
-                rect        160, 0, 92, 108
+                rect        BFG_AMMO_BAR_POS_X, BFG_AMMO_BAR_POS_Y, BFG_AMMO_BAR_WIDTH, BFG_AMMO_BAR_HEIGHT
                 backcolor   NEUTRAL_BAR_BACKGROUND
                 bordersize  2
                 bordercolor BFG_COLOR
@@ -1333,14 +1388,8 @@ windowDef Desktop {
                     }
                 }
 
-                windowDef bfgCellIcon {
-                    rect        21, 22, 48, 64
-                    background  "guis/assets/hud/icons/bfg_cell_icon"
-                    matcolor    BFG_COLOR
-                }
-
                 windowDef bfgAmmoFill {
-                    rect        0, 0, 88 * "gui::player_bfgcell_ratio", 104
+                    rect        BFG_AMMO_FILL_POS_X, BFG_AMMO_FILL_POS_Y, BFG_AMMO_FILL_WIDTH * "gui::player_bfgcell_ratio", BFG_AMMO_FILL_HEIGHT
 
                     onEvent {
                         if ("gui::player_bfgcell_ratio" >= LOW_RATIO) {
@@ -1356,7 +1405,7 @@ windowDef Desktop {
                 }
 
                 windowDef bfgAmmoBarEmpty {
-                    rect            0, 0, 88, 104
+                    rect            BFG_AMMO_FILL_POS_X, BFG_AMMO_FILL_POS_Y, BFG_AMMO_FILL_WIDTH, BFG_AMMO_FILL_HEIGHT
                     backcolor       CRIT_COLOR
 
                     onEvent {
@@ -1369,28 +1418,35 @@ windowDef Desktop {
                     }
                 }
 
+                windowDef bfgAmmoBarName {
+                    rect            BFGCELL_NAME_POS_X, BFGCELL_NAME_POS_Y, BFGCELL_NAME_WIDTH, BFGCELL_NAME_HEIGHT
+                    text            "BFG CELLS"
+                    forecolor       BFG_COLOR
+                    textscale       BFGCELL_NAME_TEXTSCALE
+                }
+
                 windowDef ammoCount {
-                    rect        49, 82, 36, 8
+                    rect        BFG_AMMO_COUNT_POS_X, BFG_AMMO_COUNT_POS_Y, BFG_AMMO_COUNT_WIDTH, BFG_AMMO_COUNT_HEIGHT
                     text        "gui::player_bfgcell_count"
                     forecolor   BFG_COLOR
-                    textscale   0.35
+                    textscale   BFG_AMMO_COUNT_TEXTSCALE
                     textalign   2
                 }
             }
         }
 
         windowDef soulCubeCategory {
-            rect        452, 0, 128, 108
+            rect        SOULCUBE_CATEGORY_POS_X, SOULCUBE_CATEGORY_POS_Y, SOULCUBE_CATEGORY_WIDTH, SOULCUBE_CATEGORY_HEIGHT
 
             windowDef secretChainsawIcon {
-                rect        4, 78, 24, 24
+                rect        SOULCUBE_SECRET_ICON_POS_X, SOULCUBE_SECRET_ICON_POS_Y, SOULCUBE_SECRET_ICON_WIDTH, SOULCUBE_SECRET_ICON_HEIGHT
                 background  "guis/assets/hud/icons/chainsaw_icon"
                 matcolor    SECRET_CHAINSAW_COLOR
                 visible     0
             }
 
             windowDef soulCube {
-                rect        30, 0, 96, 108
+                rect        SOULCUBE_PANE_POS_X, SOULCUBE_PANE_POS_Y, SOULCUBE_PANE_WIDTH, SOULCUBE_PANE_HEIGHT
                 backcolor   NEUTRAL_BAR_BACKGROUND
                 bordersize  2
                 bordercolor SOUL_CUBE_COLOR
@@ -1405,13 +1461,13 @@ windowDef Desktop {
                 }
 
                 windowDef icon {
-                    rect        0, 0, 92, 104
+                    rect        SOULCUBE_ICON_POS_X, SOULCUBE_ICON_POS_Y, SOULCUBE_ICON_WIDTH, SOULCUBE_ICON_HEIGHT
                     background  "guis/assets/hud/icons/scubew.tga"
                     matcolor    SOUL_CUBE_COLOR
                 }
 
                 windowDef soulsFill {
-                    rect        0, (104 - (104 * "gui::player_soulcube_ratio")), 92, 104 * "gui::player_soulcube_ratio"
+                    rect        SOULCUBE_FILL_POS_X, SOULCUBE_FILL_POS_Y * (1 - "gui::player_soulcube_ratio"), SOULCUBE_FILL_WIDTH, SOULCUBE_FILL_HEIGHT * "gui::player_soulcube_ratio"
 
                     onEvent {
                         if ("gui::player_soulcube_ratio" >= LOW_RATIO) {
@@ -1427,7 +1483,7 @@ windowDef Desktop {
                 }
 
                 windowDef soulsEmpty {
-                    rect            0, 0, 92, 104
+                    rect            SOULCUBE_FILL_POS_X, SOULCUBE_FILL_POS_Y, SOULCUBE_FILL_WIDTH, SOULCUBE_FILL_HEIGHT
                     backcolor       CRIT_COLOR
 
                     onEvent {
