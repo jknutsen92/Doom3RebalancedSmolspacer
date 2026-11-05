@@ -92,6 +92,7 @@ entityDef weapon_chainsaw {
 	"snd_startattack"			"player_chainsaw_startAttack"
 	"snd_attack"				"player_chainsaw_attack"
 	"snd_stopattack"			"player_chainsaw_stopAttack"
+	"snd_fuelstarve"			"player_chainsaw_fuelStarve"
 	"snd_cspull"				"monster_zombie_chainsaw_pull"
 	"snd_csrelease"				"monster_zombie_chainsaw_release"
 	"snd_csattack"				"monster_zombie_chainsaw_attack1"
@@ -123,25 +124,31 @@ model viewmodel_chainsaw {
 
 	anim idle 					models/md5/weapons/chainsaw_view/idle2.md5anim 
 
+	anim idle_empty				
+
+	anim melee_dryfire
+
 	anim melee_start 			models/md5/weapons/chainsaw_view/melee_start.md5anim
 	
 	anim melee_loop 			models/md5/weapons/chainsaw_view/melee_loop.md5anim
 	
-	anim melee_end 				models/md5/weapons/chainsaw_view/melee_end.md5anim 
+	anim melee_end 				models/md5/weapons/chainsaw_view/melee_end.md5anim
+
+	anim melee_empty
 	
 	anim wallkick				models/md5/weapons/chainsaw_view/wallkick.md5anim
-
-	
 
 	anim putaway				models/md5/weapons/chainsaw_view/lower.md5anim {
 		frame 1						sound_weapon player_chainsaw_putaway
 	}
+
 	anim raise1					models/md5/weapons/chainsaw_view/newraise.md5anim {
 		frame 3						sound_voice2 player_chainsaw_pull_zip
 		frame 13					sound_weapon player_chainsaw_pull 
 		frame 22					sound_body2 player_chainsaw_release
 	}
 
+	anim raise_empty
 }
 
 entityDef damage_chainsaw {

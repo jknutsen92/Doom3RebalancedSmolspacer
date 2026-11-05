@@ -470,6 +470,14 @@ player_chainsaw_attack {
 	sound/ed/chainsaw/attack.wav
 }
 
+player_chainsaw_fuelStarve {
+	minDistance	1
+	maxDistance	25	
+	volume		3
+
+	sound/weapons/chainsaw/fuelstarve.wav
+}
+
 player_chainsaw_stopAttack {
 	minDistance	1
 	maxDistance	25	
