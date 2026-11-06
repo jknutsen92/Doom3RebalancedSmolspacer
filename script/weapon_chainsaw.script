@@ -4,32 +4,44 @@ weapon_chainsaw.script
 
 ***********************************************************************/
 
-#define CHAINSAW_FIRERATE			0.1
-#define CHAINSAW_IDLE_FUEL_TICK		5
+#define CHAINSAW_FIRERATE				0.1
+#define CHAINSAW_IDLE_FUEL_TICK_TIME	5
+#define CHAINSAW_FUEL_TICK_AMOUNT		10
 
 // blend times
-#define CHAINSAW_IDLE_TO_LOWER		4
-#define CHAINSAW_IDLE_TO_FIRE		4
-#define CHAINSAW_RAISE_TO_IDLE		4
-#define CHAINSAW_FIRE_TO_IDLE		4
+#define CHAINSAW_IDLE_TO_LOWER			4
+#define CHAINSAW_IDLE_TO_FIRE			4
+#define CHAINSAW_RAISE_TO_IDLE			4
+#define CHAINSAW_FIRE_TO_IDLE			4
 
 object weapon_chainsaw : weapon_base {
 	float		next_attack;
 	float		next_idle_fuel_tick;
+	boolean 	fuel_empty;
+
+	string 		skin_revved;
+	string		skin_stopped;
+	string 		skin_idle;
 	
 	void		init();
 	
 	void		Lower();
 	void		Raise();
+	void 		UpdateIdleAnim();
 	void		Idle();
 	void		Fire();
 	void 		MeleeLoop();
 	void		ExitCinematic();
+	void     	useFuel(float amount);
+	void		outOfFuel();
 };
 
 void weapon_chainsaw::init() {
 	next_attack = 0;
 	next_idle_fuel_tick = 0;
+	skin_revved = getKey("skin_revved");
+	skin_stopped = getKey("skin_stopped");
+	skin_idle = "";
 	weaponState( "Raise", 0 );
 }
 
@@ -44,9 +56,13 @@ void weapon_chainsaw::Raise() {
 	weaponRising();
 	if (fuelRemaining > 0) {
 		playAnim( ANIMCHANNEL_ALL, "raise" );
+		fuel_empty = false;
 	}
 	else {
 		playAnim(ANIMCHANNEL_ALL, "raise_empty");
+		stopSound(SND_CHANNEL_BODY, false);
+		setSkin(skin_stopped);
+		fuel_empty = true;
 	}
 	waitUntil( animDone( ANIMCHANNEL_ALL, CHAINSAW_RAISE_TO_IDLE ) );
 	weaponState( "Idle", CHAINSAW_RAISE_TO_IDLE );
@@ -61,25 +77,45 @@ void weapon_chainsaw::Lower() {
 	weaponState( "Raise", 0 );
 }
 
-void weapon_chainsaw::Idle() {
-	float currentTime;
-	float fuelRemaining;
-
+void weapon_chainsaw::UpdateIdleAnim() {
+	float fuelRemaining = ammoAvailable();
 	if (fuelRemaining > 0) {
 		weaponReady();								// Play chainsaw idle hum sound
 		playCycle( ANIMCHANNEL_ALL, "idle" );
+		setSkin(skin_idle);
 	}
 	else {
 		playCycle(ANIMCHANNEL_ALL, "idle_empty");
 	}
+}
+
+void weapon_chainsaw::Idle() {
+	float currentTime;
+	float fuelRemaining;
+
+	UpdateIdleAnim();
 	while( 1 ) {
+		fuelRemaining = ammoAvailable();
+		if (fuel_empty && fuelRemaining > 0) {			// If we picked up fuel during this idle anim
+			fuel_empty = false;
+			playAnim(ANIMCHANNEL_ALL, "idle_empty_to_idle");
+			waitUntil(animDone(ANIMCHANNEL_ALL, 0));
+			UpdateIdleAnim();
+		}
+		else if (!fuel_empty && fuelRemaining <= 0) {	// If we ran out of fuel during this idle anim
+			outOfFuel();
+			playAnim(ANIMCHANNEL_ALL, "idle_to_idle_empty");
+			waitUntil(animDone(ANIMCHANNEL_ALL, 0));
+			UpdateIdleAnim();
+		} 
+
 		if ( WEAPON_LOWERWEAPON ) {
 			weaponState( "Lower", CHAINSAW_IDLE_TO_LOWER );
 		}
 
 		if (fuelRemaining > 0 && currentTime >= next_idle_fuel_tick) {
-			useAmmo(1);
-			next_idle_fuel_tick = currentTime + CHAINSAW_IDLE_FUEL_TICK;
+			useFuel(CHAINSAW_FUEL_TICK_AMOUNT);
+			next_idle_fuel_tick = currentTime + CHAINSAW_IDLE_FUEL_TICK_TIME;
 		}
 
 		currentTime = sys.getTime();
@@ -98,6 +134,7 @@ void weapon_chainsaw::Fire() {
 	if (fuelRemaining > 0) {
 		playAnim( ANIMCHANNEL_ALL, "melee_start" );
 		melee();
+		useFuel(CHAINSAW_FUEL_TICK_AMOUNT);
 		startSound( "snd_startattack", SND_CHANNEL_WEAPON, false );
 		waitUntil( animDone( ANIMCHANNEL_ALL, 3 ) );
 		startSound( "snd_attack", SND_CHANNEL_WEAPON, false );
@@ -106,6 +143,8 @@ void weapon_chainsaw::Fire() {
 	}
 	else {
 		playAnim(ANIMCHANNEL_ALL, "melee_dryfire");
+		setSkin(skin_idle);
+		// TODO: Enable smoke
 		waitUntil(animDone(ANIMCHANNEL_ALL, 0));
 		weaponState("Idle", CHAINSAW_FIRE_TO_IDLE);
 	}
@@ -116,13 +155,14 @@ void weapon_chainsaw::MeleeLoop() {
 	float fuelRemaining = ammoAvailable();
 
 	playCycle( ANIMCHANNEL_ALL, "melee_loop" );
+	setSkin(skin_revved);
 	next_attack = sys.getTime();
-	while ( fuelRemaining > 0 && (WEAPON_ATTACK || WEAPON_NETFIRING) ) {
+	while ( (fuelRemaining > 0) && (WEAPON_ATTACK || WEAPON_NETFIRING) ) {
 		currentTime = sys.getTime();
 		if ( currentTime >= next_attack ) {
 			melee();
 			next_attack = currentTime + CHAINSAW_FIRERATE;
-			useAmmo(1);
+			useFuel(CHAINSAW_FUEL_TICK_AMOUNT);
 		}
 		waitFrame();
 		fuelRemaining = ammoAvailable();
@@ -132,8 +172,8 @@ void weapon_chainsaw::MeleeLoop() {
 		playAnim( ANIMCHANNEL_ALL, "melee_end" );
 	}
 	else {
-		startSound("snd_fuelstarve", SND_CHANNEL_WEAPON, false);
-		playAnim(ANIMCHANNEL_ALL, "melee_empty");
+		outOfFuel();
+		playAnim(ANIMCHANNEL_ALL, "melee_loop_to_empty");
 	}
 	waitUntil( animDone( ANIMCHANNEL_ALL, 0 ) );
 	weaponState( "Idle", CHAINSAW_FIRE_TO_IDLE );
@@ -142,4 +182,23 @@ void weapon_chainsaw::MeleeLoop() {
 void weapon_chainsaw::ExitCinematic() {
 	next_attack = 0;
 	weaponState( "Idle", 0 );
+}
+
+void weapon_chainsaw::useFuel(float amount) {
+	float fuelRemaining = ammoAvailable();
+	if (amount > fuelRemaining) {
+		useAmmo(fuelRemaining);
+	}
+	else {
+		useAmmo(amount);
+	}
+}
+
+void weapon_chainsaw::outOfFuel() {
+	fuel_empty = true;
+	stopSound(SND_CHANNEL_BODY, false);
+	setSkin(skin_stopped);
+	startSound("snd_fuelstarve", SND_CHANNEL_WEAPON, false);
+	weaponOutOfAmmo();
+	// TODO: Disable smoke
 }

@@ -473,9 +473,10 @@ player_chainsaw_attack {
 player_chainsaw_fuelStarve {
 	minDistance	1
 	maxDistance	25	
-	volume		3
+	volume		12
 
-	sound/weapons/chainsaw/fuelstarve.wav
+	sound/weapons/chainsaw/fuelstarve1.wav
+	sound/weapons/chainsaw/fuelstarve2.wav
 }
 
 player_chainsaw_stopAttack {

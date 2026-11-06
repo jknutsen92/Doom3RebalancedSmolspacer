@@ -101,6 +101,8 @@ entityDef weapon_chainsaw {
 	"snd_armor_gain"			"sound_shard_acquire"
 	
 	"skin_invisible"			"skins/chainsaw_invis"
+	"skin_stopped"				"skins/models/weapons/chainsaw/chain_stop.skin"
+	"skin_revved"				"skins/models/weapons/chainsaw/chain_fast.skin"				
 }
 
 entityDef moveable_item_chainsaw {
@@ -124,9 +126,22 @@ model viewmodel_chainsaw {
 
 	anim idle 					models/md5/weapons/chainsaw_view/idle2.md5anim 
 
-	anim idle_empty				
+	anim idle_empty				models/md5/weapons/chainsaw_view/idle_empty.md5anim
 
-	anim melee_dryfire
+	anim idle_to_idle_empty		models/md5/weapons/chainsaw_view/idle_to_idle_empty.md5anim
+
+	anim idle_empty_to_idle 	models/md5/weapons/chainsaw_view/idle_empty_to_idle.md5anim {
+		frame 13					sound_voice2 	player_chainsaw_pull_zip
+		frame 20					sound_weapon 	player_chainsaw_pull
+		frame 26					sound_body2 	player_chainsaw_release
+	}
+
+	anim melee_dryfire			models/md5/weapons/chainsaw_view/melee_dryfire.md5anim {
+		frame 9						sound_voice2 	player_chainsaw_pull_zip
+		frame 16					sound_weapon 	player_chainsaw_pull
+		frame 22					sound_body2 	player_chainsaw_release
+		frame 27					sound_weapon	player_chainsaw_fuelStarve
+	}
 
 	anim melee_start 			models/md5/weapons/chainsaw_view/melee_start.md5anim
 	
@@ -134,21 +149,21 @@ model viewmodel_chainsaw {
 	
 	anim melee_end 				models/md5/weapons/chainsaw_view/melee_end.md5anim
 
-	anim melee_empty
+	anim melee_loop_to_empty	models/md5/weapons/chainsaw_view/melee_loop_to_empty.md5anim
 	
 	anim wallkick				models/md5/weapons/chainsaw_view/wallkick.md5anim
 
 	anim putaway				models/md5/weapons/chainsaw_view/lower.md5anim {
-		frame 1						sound_weapon player_chainsaw_putaway
+		frame 1						sound_weapon 	player_chainsaw_putaway
 	}
 
 	anim raise1					models/md5/weapons/chainsaw_view/newraise.md5anim {
-		frame 3						sound_voice2 player_chainsaw_pull_zip
-		frame 13					sound_weapon player_chainsaw_pull 
-		frame 22					sound_body2 player_chainsaw_release
+		frame 3						sound_voice2 	player_chainsaw_pull_zip
+		frame 13					sound_weapon 	player_chainsaw_pull 
+		frame 22					sound_body2 	player_chainsaw_release
 	}
 
-	anim raise_empty
+	anim raise_empty			models/md5/weapons/chainsaw_view/raise_empty.md5anim
 }
 
 entityDef damage_chainsaw {
@@ -185,4 +200,12 @@ entityDef damage_chainsaw {
 	"snd_glass"			"player_chainsaw_hit_metal"
 	"snd_liquid"		"player_chainsaw_hit_metal"
 	"snd_plastic"		"player_chainsaw_hit_metal"
+}
+
+skin skins/models/weapons/chainsaw/chain_stop {
+	models/weapons/chainsaw/chain		models/weapons/chainsaw/chain_stop
+}
+
+skin skins/models/weapons/chainsaw/chain_fast {
+	models/weapons/chainsaw/chain		models/weapons/chainsaw/chain_fast
 }
