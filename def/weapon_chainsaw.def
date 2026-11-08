@@ -140,7 +140,6 @@ model viewmodel_chainsaw {
 		frame 9						sound_voice2 	player_chainsaw_pull_zip
 		frame 16					sound_weapon 	player_chainsaw_pull
 		frame 22					sound_body2 	player_chainsaw_release
-		frame 27					sound_weapon	player_chainsaw_fuelStarve
 	}
 
 	anim melee_start 			models/md5/weapons/chainsaw_view/melee_start.md5anim
@@ -156,6 +155,8 @@ model viewmodel_chainsaw {
 	anim putaway				models/md5/weapons/chainsaw_view/lower.md5anim {
 		frame 1						sound_weapon 	player_chainsaw_putaway
 	}
+
+	anim putaway_empty			models/md5/weapons/chainsaw_view/lower_empty.md5anim
 
 	anim raise1					models/md5/weapons/chainsaw_view/newraise.md5anim {
 		frame 3						sound_voice2 	player_chainsaw_pull_zip

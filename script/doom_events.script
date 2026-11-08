@@ -860,6 +860,9 @@ scriptEvent	entity	getWorldModel();
 // gets the current state of the projectile.  states are defined in doom_defs.script
 scriptEvent	float	getProjectileState();
 
+// Enables or disables the continuousSmoke property on the weapon (for smoke_muzzle)
+scriptEvent void	setContinuousSmoke(float state);
+
 /***********************************************************************
 
 	combat nodes

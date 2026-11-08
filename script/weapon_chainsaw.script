@@ -69,8 +69,14 @@ void weapon_chainsaw::Raise() {
 }
 
 void weapon_chainsaw::Lower() {
+	float fuelRemaining = ammoAvailable();
 	weaponLowering();
-	playAnim( ANIMCHANNEL_ALL, "putaway" );
+	if (fuelRemaining > 0) {
+		playAnim( ANIMCHANNEL_ALL, "putaway" );
+	}
+	else {
+		playAnim(ANIMCHANNEL_ALL, "putaway_empty");
+	}
 	waitUntil( animDone( ANIMCHANNEL_ALL, 0 ) );
 	weaponHolstered();
 	waitUntil( WEAPON_RAISEWEAPON );
@@ -83,8 +89,12 @@ void weapon_chainsaw::UpdateIdleAnim() {
 		weaponReady();								// Play chainsaw idle hum sound
 		playCycle( ANIMCHANNEL_ALL, "idle" );
 		setSkin(skin_idle);
+		setContinuousSmoke(1);
 	}
 	else {
+		weaponReady();
+		stopSound(SND_CHANNEL_BODY, false);
+		setContinuousSmoke(0);
 		playCycle(ANIMCHANNEL_ALL, "idle_empty");
 	}
 }
@@ -107,7 +117,7 @@ void weapon_chainsaw::Idle() {
 			playAnim(ANIMCHANNEL_ALL, "idle_to_idle_empty");
 			waitUntil(animDone(ANIMCHANNEL_ALL, 0));
 			UpdateIdleAnim();
-		} 
+		}
 
 		if ( WEAPON_LOWERWEAPON ) {
 			weaponState( "Lower", CHAINSAW_IDLE_TO_LOWER );
@@ -143,9 +153,10 @@ void weapon_chainsaw::Fire() {
 	}
 	else {
 		playAnim(ANIMCHANNEL_ALL, "melee_dryfire");
+		outOfFuel();
 		setSkin(skin_idle);
-		// TODO: Enable smoke
 		waitUntil(animDone(ANIMCHANNEL_ALL, 0));
+		setSkin(skin_stopped);
 		weaponState("Idle", CHAINSAW_FIRE_TO_IDLE);
 	}
 }
@@ -195,10 +206,10 @@ void weapon_chainsaw::useFuel(float amount) {
 }
 
 void weapon_chainsaw::outOfFuel() {
+	setContinuousSmoke(0);
 	fuel_empty = true;
 	stopSound(SND_CHANNEL_BODY, false);
 	setSkin(skin_stopped);
 	startSound("snd_fuelstarve", SND_CHANNEL_WEAPON, false);
 	weaponOutOfAmmo();
-	// TODO: Disable smoke
 }
