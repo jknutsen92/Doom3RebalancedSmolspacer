@@ -10,6 +10,7 @@ weapon_bfg.script
 #define BFG_MAXPOWER			4.0
 #define BFG_FIRERATE			4
 #define BFG_FIREDELAY			4
+#define BFG_DRYFIRE_DELAY		0.5
 #define BFG_NUMPROJECTILES		1
 
 // blend times
@@ -84,8 +85,10 @@ void weapon_bfg::Idle() {
 		if ( ( currentTime >= next_attack ) && WEAPON_ATTACK ) {
 			if ( ammoClip > 0 ) {
 				weaponState( "Fire", BFG_IDLE_TO_FIRE );
-			} else if ( ammoAvailable() > 0 ) {
-				if ( autoReload() ) {
+			} else {
+				startSound("snd_noammo", SND_CHANNEL_WEAPON, false);
+				next_attack = currentTime + BFG_DRYFIRE_DELAY;
+				if ( autoReload() && ammoAvailable() ) {
 					netReload();
 					weaponState( "Reload", BFG_IDLE_TO_RELOAD );
 				}

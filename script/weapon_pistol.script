@@ -94,10 +94,10 @@ void weapon_pistol::Idle() {
 			if ( ammoClip > 0 ) {
 				weaponState( "Fire", PISTOL_IDLE_TO_FIRE );
 			} 
-			else if ( ammoAvailable() > 0 ) {
+			else {
 				startSound("snd_pistol_empty", SND_CHANNEL_WEAPON, true);
 				next_attack = sys.getTime() + PISTOL_FIRERATE;
-				if ( autoReload() ) {
+				if ( autoReload() && ammoAvailable()) {
 					netReload();
 					weaponState( "Reload", PISTOL_IDLE_TO_RELOAD );
 				}

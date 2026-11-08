@@ -101,10 +101,10 @@ void weapon_rocketlauncher::Idle() {
 		if ( ( currentTime >= next_attack ) && WEAPON_ATTACK ) {
 			if ( ammoClip > 0 ) {
 				weaponState( "Fire", ROCKETLAUNCHER_IDLE_TO_FIRE );
-			} else if ( ammoAvailable() > 0 ) {
+			} else {
 				startSound("snd_noammo", SND_CHANNEL_WEAPON, true);
 				next_attack = currentTime + ROCKETLAUNCHER_FIREDELAY;
-				if ( autoReload() ) {
+				if ( autoReload() && ammoAvailable()) {
 					netReload();
 					weaponState( "Reload", ROCKETLAUNCHER_IDLE_TO_RELOAD );
 				}

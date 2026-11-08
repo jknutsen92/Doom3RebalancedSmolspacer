@@ -76,8 +76,9 @@ entityDef weapon_bfg {
 
 	"snd_acquire"				"sound_weapon_acquire"
 	"snd_respawn"				"sound_weapon_respawn"
+	"snd_noammo"				"player_bfg_dryfire"
 	"skin_invisible"			"skins/bfg_invis"
-	//"snd_hum"					"player_bfg_idle"
+	"snd_hum"					"player_bfg_idle"
 	"spread"					"0"
 }
 

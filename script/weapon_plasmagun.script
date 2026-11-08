@@ -5,7 +5,7 @@ weapon_plasmagun.script
 ***********************************************************************/
 
 #define PLASMAGUN_FIRERATE			0.10		//0.125 //changed by Tim
-#define PLASMAGUN_DRY_FIRERATE		1.5
+#define PLASMAGUN_DRY_FIRERATE		0.5
 #define PLASMAGUN_LOWAMMO			10
 #define PLASMAGUN_NUMPROJECTILES	1
 
@@ -76,10 +76,10 @@ void weapon_plasmagun::Idle() {
 		if ( ( currentTime >= next_attack ) && WEAPON_ATTACK ) {
 			if ( ammoClip > 0 ) {
 				weaponState( "Fire", PLASMAGUN_IDLE_TO_FIRE );
-			} else if ( ammoAvailable() > 0 ) {
+			} else {
 				startSound("snd_noammo", SND_CHANNEL_WEAPON, true);
 				next_attack = currentTime + PLASMAGUN_DRY_FIRERATE;
-				if ( autoReload() ) {
+				if ( autoReload() && ammoAvailable()) {
 					netReload();
 					weaponState( "Reload", PLASMAGUN_IDLE_TO_RELOAD );
 				}
