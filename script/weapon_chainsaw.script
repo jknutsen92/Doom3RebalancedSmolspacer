@@ -6,7 +6,7 @@ weapon_chainsaw.script
 
 #define CHAINSAW_FIRERATE				0.1
 #define CHAINSAW_IDLE_FUEL_TICK_TIME	5
-#define CHAINSAW_FUEL_TICK_AMOUNT		10
+#define CHAINSAW_FUEL_TICK_AMOUNT		1
 
 // blend times
 #define CHAINSAW_IDLE_TO_LOWER			4
