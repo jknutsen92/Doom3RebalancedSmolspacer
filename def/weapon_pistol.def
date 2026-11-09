@@ -97,7 +97,7 @@ entityDef weapon_pistol {
 	"def_ejectClip"				"debris_pistol_clip"
 	"ejectClipJoint"			"Lloarm1"
 	"ejectClipOffset"			"0 0 -25"
-	// "skin_ejectClipEmpty"		"skins/models/items/bullet_ammo/bullet_small_empty"
+	"skin_ejectClipEmpty"		"skins/models/items/bullet_ammo/bullet_small_empty"
 	
 	"snd_acquire"				"sound_weapon_acquire"
 	"snd_respawn"				"sound_weapon_respawn"

@@ -841,7 +841,7 @@ scriptEvent entity  createProjectile();
 scriptEvent void	ejectBrass();
 
 // Ejects the 'def_ejectClip' idDebris defined in the weapon spawnargs
-scriptEvent void	ejectClip();
+scriptEvent void	ejectClip(string clipSkinName);
 
 scriptEvent	float	melee();
 scriptEvent void	allowDrop( float allow ); // disables/enables owner dropping weapon when killed

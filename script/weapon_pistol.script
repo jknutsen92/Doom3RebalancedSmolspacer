@@ -143,12 +143,12 @@ void weapon_pistol::Reload() {
 	if (ammoInClip() > 0) {
 		playAnim( ANIMCHANNEL_ALL, "reload_noempty" );
 		sys.wait(PISTOL_EJECT_CLIP_DELAY_NOT_EMPTY);
-		ejectClip();
+		ejectClip("");
 	}
 	else {
 		playAnim( ANIMCHANNEL_ALL, "reload_empty" );
 		sys.wait(PISTOL_EJECT_CLIP_DELAY_EMPTY);
-		ejectClip();
+		ejectClip("");
 	}
 	
 	waitUntil( animDone( ANIMCHANNEL_ALL, PISTOL_RELOAD_TO_IDLE ) );

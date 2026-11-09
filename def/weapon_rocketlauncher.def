@@ -88,6 +88,10 @@ entityDef weapon_rocketlauncher {
 	"skin_4"					"models/weapons/3rox.skin"
 	"skin_5"					"models/weapons/4rox.skin"
 	"skin_6"					"models/weapons/5rox.skin"
+
+	"def_ejectClip"				"debris_rocket_clip"
+	"ejectClipJoint"			"origin"
+	"ejectClipOffset"			"0 0 -25"
 	
 	"skin_invisible"			"skins/rocket_invis"
 	

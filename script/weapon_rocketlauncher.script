@@ -7,6 +7,7 @@ weapon_rocketlauncher.script
 #define ROCKETLAUNCHER_LOWAMMO			1
 #define ROCKETLAUNCHER_NUMPROJECTILES	1
 #define ROCKETLAUNCHER_FIREDELAY		1		// was .75 changed again by Tim to 1
+#define ROCKETLAUNCHER_CLIP_EJECT_DELAY	0.69
 
 // blend times
 #define ROCKETLAUNCHER_IDLE_TO_LOWER	4
@@ -142,6 +143,8 @@ void weapon_rocketlauncher::Fire() {
 void weapon_rocketlauncher::Reload() {
 	weaponReloading();
 	playAnim( ANIMCHANNEL_ALL, "reload" );
+	sys.wait(ROCKETLAUNCHER_CLIP_EJECT_DELAY);
+	ejectClip("");
 	waitUntil( animDone( ANIMCHANNEL_ALL, ROCKETLAUNCHER_RELOAD_FRAME ) );
 	addToClip( clipSize() );
 	UpdateSkin();
