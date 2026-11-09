@@ -836,6 +836,13 @@ scriptEvent	void 	weaponLowering();
 scriptEvent	void 	flashlight( float enable );
 scriptEvent	void 	launchProjectiles( float num_projectiles, float spread, float fuseOffset, float launchPower, float dmgPower );
 scriptEvent entity  createProjectile();
+
+// Ejects the 'def_ejectBrass' idDebris defined in the weapon spawnargs 
+scriptEvent void	ejectBrass();
+
+// Ejects the 'def_ejectClip' idDebris defined in the weapon spawnargs
+scriptEvent void	ejectClip();
+
 scriptEvent	float	melee();
 scriptEvent void	allowDrop( float allow ); // disables/enables owner dropping weapon when killed
 scriptEvent float	autoReload();	// ui_autoReload check

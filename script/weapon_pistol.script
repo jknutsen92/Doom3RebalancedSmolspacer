@@ -4,9 +4,11 @@ weapon_pistol.script
 
 ***********************************************************************/
 
-#define PISTOL_FIRERATE			0.25
-#define PISTOL_LOWAMMO			4
-#define PISTOL_NUMPROJECTILES	1
+#define PISTOL_FIRERATE						0.25
+#define PISTOL_LOWAMMO						4
+#define PISTOL_NUMPROJECTILES				1
+#define PISTOL_EJECT_CLIP_DELAY_NOT_EMPTY	0.69
+#define PISTOL_EJECT_CLIP_DELAY_EMPTY		1
 
 // blend times
 #define PISTOL_IDLE_TO_LOWER	2
@@ -140,10 +142,15 @@ void weapon_pistol::Reload() {
 	weaponReloading();
 	if (ammoInClip() > 0) {
 		playAnim( ANIMCHANNEL_ALL, "reload_noempty" );
+		sys.wait(PISTOL_EJECT_CLIP_DELAY_NOT_EMPTY);
+		ejectClip();
 	}
 	else {
 		playAnim( ANIMCHANNEL_ALL, "reload_empty" );
+		sys.wait(PISTOL_EJECT_CLIP_DELAY_EMPTY);
+		ejectClip();
 	}
+	
 	waitUntil( animDone( ANIMCHANNEL_ALL, PISTOL_RELOAD_TO_IDLE ) );
 	addToClip( clipSize() );
 	weaponState( "Idle", PISTOL_RELOAD_TO_IDLE );

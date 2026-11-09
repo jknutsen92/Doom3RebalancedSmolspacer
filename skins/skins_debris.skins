@@ -1,0 +1,3 @@
+skin skins/models/items/bullet_ammo/bullet_small_empty {
+    models/items/bullet_ammo/bullet_small           models/items/bullet_ammo/bullet_small_empty
+}

@@ -1,0 +1,9 @@
+models/items/bullet_ammo/bullet_small_empty {
+    noselfShadow
+    diffusemap	models/weapons/pistol/pistol_empty.tga
+	{
+ 	    blend bumpmap
+        map  addnormals(models/weapons/pistol/pistol_empty_local.tga, heightmap(models/weapons/pistol/pistol_empty_h.tga, 5 ) )
+    }
+    specularmap	models/weapons/pistol/pistol_empty_s.tga
+}

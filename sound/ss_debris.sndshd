@@ -1,0 +1,39 @@
+bullets_small_clatter {
+    minDistance     5
+    maxDistance     15
+    volume          1
+    no_dups
+
+    sound/debris/pistol/bullets_clatter1.wav
+    sound/debris/pistol/bullets_clatter2.wav
+    sound/debris/pistol/bullets_clatter3.wav
+}
+
+clip_small_clatter {
+    minDistance     5
+    maxDistance     15
+    volume          5
+    no_dups
+
+    sound/debris/machinegun/clip_clatter1.wav
+}
+
+cell_small_clatter {
+    minDistance     5
+    maxDistance     15
+    volume          5
+    no_dups
+
+    sound/debris/plasmagun/cell_clatter1.wav
+}
+
+rockets_small_clatter {
+    minDistance     5
+    maxDistance     15
+    volume          5
+    no_dups
+
+    sound/debris/rocketlauncher/rocket_clatter1.wav
+    sound/debris/rocketlauncher/rocket_clatter2.wav
+    sound/debris/rocketlauncher/rocket_clatter3.wav
+}
