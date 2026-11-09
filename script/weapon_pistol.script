@@ -24,6 +24,10 @@ float g_pistol_clip_remaining = 12;
 object weapon_pistol : weapon_base {
 	float		next_attack;
 	float		spread;
+	
+	string		skin_clip_empty;
+	string 		skin_clip_no_empty;
+
 	void		init();
 	
 	void		Lower();
@@ -35,8 +39,10 @@ object weapon_pistol : weapon_base {
 };
 
 void weapon_pistol::init() {
-	next_attack = 0;
-	spread		= getFloatKey( "spread" );
+	next_attack 		= 0;
+	skin_clip_empty		= getKey("skin_ejectClipEmpty");
+	skin_clip_no_empty	= "";
+	spread				= getFloatKey( "spread" );
 	weaponState( "Raise", 0 );
 }
 
@@ -143,12 +149,12 @@ void weapon_pistol::Reload() {
 	if (ammoInClip() > 0) {
 		playAnim( ANIMCHANNEL_ALL, "reload_noempty" );
 		sys.wait(PISTOL_EJECT_CLIP_DELAY_NOT_EMPTY);
-		ejectClip("");
+		ejectClip(skin_clip_no_empty);
 	}
 	else {
 		playAnim( ANIMCHANNEL_ALL, "reload_empty" );
 		sys.wait(PISTOL_EJECT_CLIP_DELAY_EMPTY);
-		ejectClip("");
+		ejectClip(skin_clip_empty);
 	}
 	
 	waitUntil( animDone( ANIMCHANNEL_ALL, PISTOL_RELOAD_TO_IDLE ) );

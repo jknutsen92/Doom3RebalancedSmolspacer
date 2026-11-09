@@ -144,7 +144,7 @@ void weapon_rocketlauncher::Reload() {
 	weaponReloading();
 	playAnim( ANIMCHANNEL_ALL, "reload" );
 	sys.wait(ROCKETLAUNCHER_CLIP_EJECT_DELAY);
-	ejectClip("");
+	ejectClip("skins/models/weapons/" + ammoInClip() + "rox.skin");
 	waitUntil( animDone( ANIMCHANNEL_ALL, ROCKETLAUNCHER_RELOAD_FRAME ) );
 	addToClip( clipSize() );
 	UpdateSkin();
