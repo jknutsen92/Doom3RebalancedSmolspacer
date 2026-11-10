@@ -7,3 +7,12 @@ models/items/bullet_ammo/bullet_small_empty {
     }
     specularmap	models/weapons/pistol/pistol_empty_s.tga
 }
+
+models/items/clip_ammo/clip_small_empty
+{
+	noselfShadow
+	renderbump  -size 512 512 -colorMap -aa 2 -trace .05 models/items/clip_ammo/clip_small_local.tga models/items/clip_ammo/clip_small_hi.lwo
+    diffusemap	models/items/clip_ammo/clip_small_empty.tga
+    bumpmap     models/items/clip_ammo/clip_small_empty_local.tga   	
+    specularmap models/items/clip_ammo/clip_small_empty_s.tga
+}

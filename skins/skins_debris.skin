@@ -1,3 +1,15 @@
 skin skins/models/items/bullet_ammo/bullet_small_empty {
     models/items/bullet_ammo/bullet_small           models/items/bullet_ammo/bullet_small_empty
 }
+
+skin skins/models/items/clip_ammo/clip_small_empty {
+    models/items/clip_ammo/clip_small               models/items/clip_ammo/clip_small_empty
+}
+
+skin skins/models/items/cell_ammo/cells_small_empty {
+    models/weapons/plasmagun/pl_can_blue            models/weapons/plasmagun/pl_can_empty 
+}
+
+skin skins/models/items/cell_ammo/cells_small_bfg {
+    models/weapons/plasmagun/pl_can_blue            models/weapons/plasmagun/pl_can_green
+}

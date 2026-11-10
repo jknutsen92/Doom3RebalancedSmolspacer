@@ -96,6 +96,10 @@ entityDef weapon_plasmagun {
 	"snd_hum"					"player_plasma_idle"
 	"snd_noammo"				"plasma_dryfire"
 	"skin_invisible"			"skins/plasma_invis"
+
+	"def_ejectClip"				"debris_plasmagun_cell"
+	"ejectClipJoint"			"new_Ruparm"
+	"skin_ejectClipEmpty"		"skins/models/items/cell_ammo/cells_small_empty.skin"
 	
 	"spread"					"0"
 }

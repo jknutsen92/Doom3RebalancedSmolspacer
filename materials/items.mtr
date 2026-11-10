@@ -1,0 +1,8 @@
+models/mapobjects/cannister/cannister_fuel
+{
+	noSelfShadow
+	ricochet
+	bumpmap 	models/mapobjects/cannister/cannister_local.tga
+	diffusemap	models/mapobjects/cannister/cannister_fuel.tga
+	specularmap	models/mapobjects/cannister/cannister_s.tga
+}

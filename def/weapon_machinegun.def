@@ -87,6 +87,10 @@ entityDef weapon_machinegun {
 	"def_ejectBrass"			"debris_brass"
 	"ejectBrassDelay"			"10"
 
+	"def_ejectClip"				"debris_machinegun_clip"
+	"ejectClipJoint"			"Cli"
+	"skin_ejectClipEmpty"		"skins/models/items/clip_ammo/clip_small_empty.skin"
+
 	"snd_acquire"				"sound_weapon_acquire"
 	"snd_respawn"				"sound_weapon_respawn"
 	"snd_lowammo" 				"player_machinegun_lowammo"

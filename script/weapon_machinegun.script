@@ -7,6 +7,7 @@ weapon_machinegun.script
 #define MACHINEGUN_FIRERATE			0.1		// ~10 per second
 #define MACHINEGUN_LOWAMMO			10
 #define MACHINEGUN_NUMPROJECTILES	1
+#define MACHINEGUN_CLIP_EJECT_DELAY	0.9
 
 // blend times
 #define MACHINEGUN_IDLE_TO_LOWER	4
@@ -19,6 +20,7 @@ weapon_machinegun.script
 object weapon_machinegun : weapon_base {
 	float		next_attack;
 	float		spread;
+	string 		skin_clip_empty;
 	
 	void		init();
 	
@@ -31,8 +33,9 @@ object weapon_machinegun : weapon_base {
 };
 
 void weapon_machinegun::init() {
-	next_attack = 0;
-	spread		= getFloatKey( "spread" );
+	next_attack 		= 0;
+	spread				= getFloatKey( "spread" );
+	skin_clip_empty 	= getKey("skin_ejectClipEmpty");
 	weaponState( "Raise", 0 );
 }
 
@@ -126,6 +129,8 @@ void weapon_machinegun::Fire() {
 void weapon_machinegun::Reload() {
 	weaponReloading();
 	playAnim( ANIMCHANNEL_ALL, "reload" );
+	sys.wait(MACHINEGUN_CLIP_EJECT_DELAY);
+	ejectClip(skin_clip_empty);
 	waitUntil( animDone( ANIMCHANNEL_ALL, MACHINEGUN_RELOAD_TO_IDLE ) );
 	addToClip( clipSize() );
 	weaponState( "Idle", MACHINEGUN_RELOAD_TO_IDLE );

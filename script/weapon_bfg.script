@@ -12,6 +12,7 @@ weapon_bfg.script
 #define BFG_FIREDELAY			4
 #define BFG_DRYFIRE_DELAY		0.5
 #define BFG_NUMPROJECTILES		1
+#define BFG_CLIP_EJECT_DELAY	0.95
 
 // blend times
 #define BFG_IDLE_TO_LOWER		4
@@ -24,6 +25,9 @@ weapon_bfg.script
 object weapon_bfg : weapon_base {
 	float		spread;	
 	float		next_attack;
+
+	string		skin_clip_empty;
+	string		skin_clip_no_empty;
 	
 	void		init();
 	
@@ -37,8 +41,10 @@ object weapon_bfg : weapon_base {
 };
 
 void weapon_bfg::init() {
-	next_attack = 0;
-	spread = getFloatKey( "spread" );
+	next_attack 		= 0;
+	spread 				= getFloatKey( "spread" );
+	skin_clip_empty		= getKey("skin_ejectClipEmpty");
+	skin_clip_no_empty	= getKey("skin_ejectClip");
 	setGuiParm( "powerlevel", 0 );
 	setGuiParm( "overcharge", 0 );
 	weaponState( "Raise", 0 );
@@ -178,6 +184,13 @@ void weapon_bfg::Fire() {
 void weapon_bfg::Reload() {
 	weaponReloading();
 	playAnim( ANIMCHANNEL_ALL, "reload" );
+	sys.wait(BFG_CLIP_EJECT_DELAY);
+	if (ammoInClip()) {
+		ejectClip(skin_clip_no_empty);
+	}
+	else {
+		ejectClip(skin_clip_empty);
+	}
 	waitUntil( animDone( ANIMCHANNEL_ALL, BFG_RELOAD_TO_IDLE ) );
 	addToClip( clipSize() );
 	weaponState( "Idle", BFG_RELOAD_TO_IDLE );

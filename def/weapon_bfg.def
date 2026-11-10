@@ -74,6 +74,11 @@ entityDef weapon_bfg {
 	"flashRadius"				"32"
 	"silent_fire"				"0"
 
+	"def_ejectClip"				"debris_bfg_cell"
+	"ejectClipJoint"			"Luparm"
+	"skin_ejectClip"			"skins/models/items/cell_ammo/cells_small_bfg.skin"
+	"skin_ejectClipEmpty"		"skins/models/items/cell_ammo/cells_small_empty.skin"
+
 	"snd_acquire"				"sound_weapon_acquire"
 	"snd_respawn"				"sound_weapon_respawn"
 	"snd_noammo"				"player_bfg_dryfire"

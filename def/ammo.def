@@ -299,6 +299,7 @@ entityDef ammo_fuel_small {
 
 	"spawnclass"			"idItem"
 	"model"					"models/mapobjects/cannister/cannister.ase"
+	"skin"					"skins/models/mapobjects/cannister/cannister_fuel"
 	"snd_acquire"			"guisounds_fuel"
 	"snd_respawn"			"sound_item_respawn"
 	"size"					"32 32 32"

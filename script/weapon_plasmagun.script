@@ -8,6 +8,7 @@ weapon_plasmagun.script
 #define PLASMAGUN_DRY_FIRERATE		0.5
 #define PLASMAGUN_LOWAMMO			10
 #define PLASMAGUN_NUMPROJECTILES	1
+#define PLASMAGUN_EJECT_CLIP_DELAY	0.75
 
 // blend times
 #define PLASMAGUN_IDLE_TO_LOWER		4
@@ -20,6 +21,9 @@ weapon_plasmagun.script
 object weapon_plasmagun : weapon_base {
 	float		next_attack;
 	float		spread;
+
+	string 		skin_clip_empty;
+	string		skin_clip_no_empty;
 	
 	void		init();
 	
@@ -32,8 +36,10 @@ object weapon_plasmagun : weapon_base {
 };
 
 void weapon_plasmagun::init() {
-	next_attack = 0;
-	spread		= getFloatKey( "spread" );
+	next_attack 		= 0;
+	spread				= getFloatKey( "spread" );
+	skin_clip_empty		= getKey("skin_ejectClipEmpty");
+	skin_clip_no_empty	= "";	
 	weaponState( "Raise", 0 );
 }
 
@@ -125,6 +131,13 @@ void weapon_plasmagun::Fire() {
 void weapon_plasmagun::Reload() {
 	weaponReloading();
 	playAnim( ANIMCHANNEL_ALL, "reload" );
+	sys.wait(PLASMAGUN_EJECT_CLIP_DELAY);
+	if (ammoInClip()) {
+		ejectClip(skin_clip_no_empty);
+	}
+	else {
+		ejectClip(skin_clip_empty);
+	}
 	waitUntil( animDone( ANIMCHANNEL_ALL, PLASMAGUN_RELOAD_TO_IDLE ) );
 	addToClip( clipSize() );
 	weaponState( "Idle", PLASMAGUN_RELOAD_TO_IDLE );
