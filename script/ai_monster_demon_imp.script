@@ -59,9 +59,6 @@ object monster_demon_imp : monster_base {
 	void		Legs_Run();
 	void		Legs_DodgeLeft();
 	void		Legs_DodgeRight();
-
-	// Callbacks
-	void		OnDamage();
 };
 
 /***********************************************************************
@@ -518,8 +515,4 @@ void monster_demon_imp::path_jump() {
 	waitAction( "leap_attack" );
 
 	stopMove();
-}
-
-void monster_demon_imp::OnDamage() {
-	sys.println("Imp is hurt!");
 }

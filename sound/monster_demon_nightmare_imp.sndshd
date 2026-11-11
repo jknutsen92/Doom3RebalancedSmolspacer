@@ -1,0 +1,118 @@
+monster_demon_nightmare_imp_sight {
+	minDistance	10
+	maxDistance	35
+	volume		9
+	no_dups
+	
+	sound/monsters/nightmare_imp/n_imp_sight_01.wav
+	sound/monsters/nightmare_imp/n_imp_sight_02.wav
+    sound/monsters/nightmare_imp/n_imp_sight_03.wav
+    sound/monsters/nightmare_imp/n_imp_sight_04.wav
+}	
+
+monster_demon_nightmare_imp_sight2 {
+
+	minDistance	10
+	maxDistance	35
+	volume		9
+	no_dups
+	
+	sound/monsters/nightmare_imp/n_sight2_01.wav
+	sound/monsters/nightmare_imp/n_sight2_02.wav
+	sound/monsters/nightmare_imp/n_sight2_03.wav
+}
+
+monster_demon_nightmare_imp_sight8 {
+
+	minDistance	10
+	maxDistance	35
+	volume		3
+
+	sound/monsters/nightmare_imp/n_imp_squeal_test31.wav
+	sound/monsters/nightmare_imp/n_imp_squeal_test32.wav
+    sound/monsters/nightmare_imp/n_imp_squeal_test33.wav
+}
+
+monster_demon_nightmare_imp_chatter {
+	minDistance	9
+	maxDistance	17
+	volume		0
+	no_dups
+
+	sound/monsters/nightmare_imp/n_imp_breath_test21.wav
+	sound/monsters/nightmare_imp/n_imp_breath_test23.wav
+    sound/monsters/nightmare_imp/n_imp_breath_test25.wav
+}
+
+monster_demon_nightmare_imp_chatter_combat {
+	minDistance	10
+	maxDistance	35
+	volume		-1
+
+	sound/monsters/nightmare_imp/n_imp_attack_test1.wav
+    sound/monsters/nightmare_imp/n_imp_attack_test2.wav
+    sound/monsters/nightmare_imp/n_imp_attack_test3.wav
+    sound/monsters/nightmare_imp/n_imp_attack_test4.wav
+}
+
+
+monster_demon_nightmare_imp_pain {
+	minDistance	10
+	maxDistance	35
+	volume		4
+
+	sound/monsters/nightmare_imp/n_imp_pain_test3.wav
+    sound/monsters/nightmare_imp/n_imp_pain_test4.wav
+    sound/monsters/nightmare_imp/n_imp_pain_test5.wav
+}
+
+monster_demon_nightmare_imp_fireball_create {
+	minDistance	6
+	maxDistance	40
+	volume		4
+
+	sound/monsters/nightmare_imp/n_imp_fireball_create_02.wav
+}
+
+monster_demon_nightmare_imp_fireball_throw {
+	minDistance	6
+	maxDistance	35
+	volume		5
+	
+	sound/monsters/nightmare_imp/n_imp_fireball_throw_01.wav
+}
+
+monster_demon_nightmare_imp_attackmelee_1 {
+	minDistance	10
+	maxDistance	35
+	volume		6
+
+	sound/monsters/nightmare_imp/n_imp_attack_test1.wav
+    sound/monsters/nightmare_imp/n_imp_attack_test2.wav
+    sound/monsters/nightmare_imp/n_imp_attack_test3.wav
+    sound/monsters/nightmare_imp/n_imp_attack_test4.wav
+}
+
+monster_demon_nightmare_imp_attackmelee_2 {
+
+	minDistance	10
+	maxDistance	35
+	volume		6
+
+	sound/monsters/nightmare_imp/n_imp_attack_test1.wav
+    sound/monsters/nightmare_imp/n_imp_attack_test2.wav
+    sound/monsters/nightmare_imp/n_imp_attack_test3.wav
+    sound/monsters/nightmare_imp/n_imp_attack_test4.wav
+}
+
+monster_demon_nightmare_imp_die {
+	minDistance	10
+	maxDistance	35
+	volume		5
+	no_dups
+	
+	sound/monsters/nightmare_imp/n_imp_death_01.wav
+    sound/monsters/nightmare_imp/n_imp_death_02.wav
+    sound/monsters/nightmare_imp/n_imp_death_03.wav
+    sound/monsters/nightmare_imp/n_imp_death_04.wav
+}

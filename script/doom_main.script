@@ -38,6 +38,7 @@ This is the main script that is loaded before any level scripts load.
 #include "script/ai_monster_demon_cherub.script"
 #include "script/ai_monster_demon_hellknight.script"
 #include "script/ai_monster_demon_imp.script"
+#include "script/ai_monster_demon_nightmare_imp.script"
 #include "script/ai_monster_demon_maggot.script"
 #include "script/ai_monster_demon_mancubus.script"
 #include "script/ai_monster_demon_pinky.script"
