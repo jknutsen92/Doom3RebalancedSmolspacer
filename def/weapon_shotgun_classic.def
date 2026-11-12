@@ -253,4 +253,5 @@ entityDef projectile_bullet_shotgun_classic {
 	"explode_light_fadetime"	"0"
 
 	"weakpoint_bonus"			"1"
+	"smoke_heated_impact"		"lavasquirt.prt"
 }

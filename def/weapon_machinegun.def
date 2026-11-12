@@ -239,4 +239,5 @@ entityDef projectile_bullet_machinegun {
 	//"snd_impact"				"bullet_impact_metal"
 
 	"weakpoint_bonus"			"1"					// smolspacer - 1 bonus from headshots + feedback
+	"smoke_heated_impact"		"lavasquirt.prt"
 }

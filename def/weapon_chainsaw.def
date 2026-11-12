@@ -102,7 +102,7 @@ entityDef weapon_chainsaw {
 	
 	"skin_invisible"			"skins/chainsaw_invis"
 	"skin_stopped"				"skins/models/weapons/chainsaw/chain_stop.skin"
-	"skin_revved"				"skins/models/weapons/chainsaw/chain_fast.skin"				
+	"skin_revved"				"skins/models/weapons/chainsaw/chain_fast.skin"
 }
 
 entityDef moveable_item_chainsaw {

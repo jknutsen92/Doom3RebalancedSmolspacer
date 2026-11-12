@@ -13,3 +13,75 @@ textures/haze/heat {
 		fragmentMap		2       textures/particles/vpring1_alpha.tga    // the distortion blend map
 	}	
 }
+
+textures/particles/lavaspray1
+{
+	noSelfShadow
+	noshadows
+	translucent
+	discrete
+	twosided
+	nonsolid
+	noimpact
+	qer_editorimage		textures/particles/lavaspray1.tga
+	{
+	    blend  	blend
+	    map    	textures/particles/lavaspray1.tga
+        // vertexcolor
+        color 	0.8, 0.3, 0.05, 1 
+	}
+}
+
+textures/particles/lavaspray2
+{
+	noSelfShadow
+	noshadows
+	translucent
+	discrete
+	twosided
+	nonsolid
+	noimpact
+	qer_editorimage		textures/particles/lavaspray2.tga
+	{
+	    blend  blend
+	    map    textures/particles/lavaspray2.tga
+        // vertexcolor
+        color 	0.8, 0.3, 0.05, 1 
+	}
+}
+
+textures/particles/lavaspray3
+{
+	noSelfShadow
+	noshadows
+	translucent
+	discrete
+	twosided
+	nonsolid
+	noimpact
+	qer_editorimage		textures/particles/lavaspray3.tga
+	{
+	    blend  blend
+	    map    textures/particles/lavaspray3.tga
+        // vertexcolor
+        color 	0.8, 0.3, 0.05, 1
+	}
+}
+
+textures/particles/lavaspray4
+{
+	noSelfShadow
+	noshadows
+	translucent
+	discrete
+	twosided
+	nonsolid
+	noimpact
+	qer_editorimage		textures/particles/lavaspray4.tga
+	{
+	    blend  blend
+	    map    textures/particles/lavaspray4.tga
+        // vertexcolor
+        color 	0.8, 0.3, 0.05, 1
+	}
+}

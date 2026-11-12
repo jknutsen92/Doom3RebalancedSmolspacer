@@ -267,4 +267,5 @@ entityDef projectile_bullet_pistol {
 	"explode_light_fadetime"	"0"
 
 	"weakpoint_bonus"			"1.5"					// smolspacer - 1 bonus from headshots + feedback
+	"smoke_heated_impact"		"lavasquirt.prt"
 }
