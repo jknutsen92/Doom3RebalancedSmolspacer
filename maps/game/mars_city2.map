@@ -111248,7 +111248,7 @@ patchDef2
 "classname" "ammo_bullets_small"
 "name" "ammo_bullets_small_1"
 "inv_item" "4"
-"origin" "-2861 -3111 187"
+"origin" "-2861 -3098 185.344"
 "rotation" "0.882948 -0.469472 0 -0.0653379 -0.122883 0.990268 -0.464903 -0.874355 -0.139173"
 }
 // entity 62
@@ -152122,7 +152122,7 @@ patchDef2
 "classname" "ammo_bullets_small"
 "name" "ammo_bullets_small_2"
 "inv_item" "4"
-"origin" "-2877 -3089 187"
+"origin" "-2867 -3096 185.344"
 "rotation" "0.99863 -0.0523361 0 -0.0072838 -0.138983 0.990268 -0.0518268 -0.988911 -0.139174"
 }
 // entity 2374
@@ -154561,14 +154561,14 @@ patchDef2
 {
 "classname" "ammo_bullets_small"
 "name" "ammo_bullets_small_3"
-"origin" "-1771.22 -1118.06 131.611"
+"origin" "-1771.22 -1118.06 129.611"
 "rotation" "0.870511 -0.492149 0 -0.0857279 -0.151635 -0.984712 0.484625 0.857203 -0.174191"
 }
 // entity 2498
 {
 "classname" "ammo_bullets_small"
 "name" "ammo_bullets_small_4"
-"origin" "-1746.01 -1123.06 131.611"
+"origin" "-1764.01 -1123.06 129.611"
 "rotation" "0.484505 0.874788 0 0.15238 -0.0843965 -0.984712 -0.861414 0.477098 -0.174191"
 }
 // entity 2499
@@ -154658,85 +154658,85 @@ patchDef3
 "classname" "monster_demon_maggot"
 "name" "monster_demon_maggot_window"
 "hide" "1"
-"origin" "-2343.14 -392.773 234.472"
-"rotation" "0.885328 -0.464966 0 0.464966 0.885328 0 0 0 1"
-"teleport" "1"
-"target0" "path_attack_3"
 "not_easy" "1"
 "not_medium" "1"
+"origin" "-2343.14 -392.773 234.472"
+"rotation" "0.885328 -0.464966 0 0.464966 0.885328 0 0 0 1"
+"target0" "path_attack_3"
+"teleport" "1"
 }
 // entity 2502
 {
 "classname" "path_attack"
 "name" "path_attack_3"
-"origin" "-2273 -568 243"
 "angle" "90.000000"
+"origin" "-2273 -568 243"
 }
 // entity 2503
 {
 "classname" "monster_demon_maggot"
 "name" "monster_demon_maggot_2"
 "hide" "1"
+"not_easy" "1"
+"not_medium" "1"
 "origin" "-2221.41 -239.805 234.472"
 "rotation" "-0.188852 -0.982005 0 0.982005 -0.188852 0 0 0 1"
 "target0" "path_attack_3"
 "teleport" "1"
-"not_easy" "1"
-"not_medium" "1"
 }
 // entity 2504
 {
 "classname" "monster_demon_maggot"
 "name" "monster_demon_maggot_3"
 "hide" "1"
+"not_easy" "1"
+"not_medium" "1"
 "origin" "-2101.28 -200.418 234.472"
 "rotation" "-0.48988 -0.87179 0 0.87179 -0.48988 0 0 0 1"
 "target0" "path_attack_3"
 "teleport" "1"
-"not_easy" "1"
-"not_medium" "1"
 }
 // entity 2505
 {
 "classname" "monster_demon_maggot"
 "name" "monster_demon_maggot_4"
 "hide" "1"
+"not_easy" "1"
+"not_medium" "1"
 "origin" "-2305.41 -171.805 234.472"
 "rotation" "-0.188852 -0.982005 0 0.982005 -0.188852 0 0 0 1"
 "target0" "path_attack_3"
 "teleport" "1"
-"not_easy" "1"
-"not_medium" "1"
 }
 // entity 2506
 {
 "classname" "ai_attackcone"
 "name" "ai_attackcone_window"
-"origin" "-2383 -233 233"
 "angle" "-90.000000"
-"offset" "0 96 0"
 "anim" "leanoutleft"
 "fov" "90"
 "max" "800"
+"max_wait" "1.2"
 "min" "100"
 "min_wait" "0.5"
-"max_wait" "1.2"
-"num_shots" "2"
 "not_easy" "1"
 "not_medium" "1"
+"num_shots" "2"
+"offset" "0 96 0"
+"origin" "-2383 -233 233"
 }
 // entity 2507
 {
 "classname" "monster_zsec_machinegun"
 "name" "monster_zsec_window_shooter"
-"origin" "-2364.9 -236.757 232.715"
-"rotation" "0.145828 -0.98931 0 0.98931 0.145828 0 0 0 1"
-"target0" "ai_attackcone_window"
 "hide" "1"
-"trigger" "1"
 "neverdormant" "1"
 "not_easy" "1"
 "not_medium" "1"
+"origin" "-2364.9 -236.757 232.715"
+"rotation" "0.145828 -0.98931 0 0.98931 0.145828 0 0 0 1"
+"target0" "ai_attackcone_window"
+"trigger" "1"
 }
 // entity 2508
 {
@@ -154749,31 +154749,31 @@ patchDef3
 "max_wait" "1.2"
 "min" "100"
 "min_wait" "0.5"
+"not_easy" "1"
+"not_medium" "1"
 "num_shots" "2"
 "offset" "0 -96 0"
 "origin" "-2147 31 232"
-"not_easy" "1"
-"not_medium" "1"
 }
 // entity 2509
 {
 "classname" "monster_zsec_machinegun"
 "name" "monster_zsec_corridor_shooter"
-"origin" "-2110.45 22.254 232.715"
-"rotation" "0 -1 0 1 0 0 0 0 1"
-"trigger" "1"
 "hide" "1"
-"target0" "ai_attackcone_corridor"
 "not_easy" "1"
 "not_medium" "1"
+"origin" "-2110.45 22.254 232.715"
+"rotation" "0 -1 0 1 0 0 0 0 1"
+"target0" "ai_attackcone_corridor"
+"trigger" "1"
 }
 // entity 2510
 {
 "classname" "func_static"
 "name" "func_static_cracked_decal"
+"hide" "1"
 "model" "func_static_cracked_decal"
 "origin" "-2320 -453 315"
-"hide" "1"
 // primitive 0
 {
 patchDef2
@@ -154792,19 +154792,19 @@ patchDef2
 {
 "classname" "func_remove"
 "name" "func_remove_7"
-"origin" "-2364 -473 327"
 "angle" "90.000000"
+"origin" "-2364 -473 327"
 "target0" "func_static_cracked_decal"
 }
 // entity 2512
 {
 "classname" "trigger_once"
 "name" "trigger_once_office_entry"
-"model" "trigger_once_office_entry"
-"origin" "-2300 -520 270"
 "call" "map_marscity2::start_window_sequence"
+"model" "trigger_once_office_entry"
 "not_easy" "1"
 "not_medium" "1"
+"origin" "-2300 -520 270"
 // primitive 0
 {
 brushDef3
@@ -154814,7 +154814,7 @@ brushDef3
 ( 1 0 0 -48 ) ( ( 0.0625 0 -0.3125 ) ( 0 0.0625 0.8125 ) ) "textures/common/trigonce" 0 0 0
 ( 0 0 -1 -79 ) ( ( 0.0625 0 -0.3125 ) ( 0 0.0625 0.25 ) ) "textures/common/trigonce" 0 0 0
 ( 0 -1 0 -64 ) ( ( 0.0625 0 -0.125 ) ( 0 0.0625 0.8125 ) ) "textures/common/trigonce" 0 0 0
-( -1 0 0 -49 ) ( ( 0.06249999999999997 0 -0.6875 ) ( 0 0.0625 0.5625 ) ) "textures/common/trigonce" 0 0 0
+( -1 0 0 -49 ) ( ( 0.0625 0 -0.6875 ) ( 0 0.0625 0.5625 ) ) "textures/common/trigonce" 0 0 0
 }
 }
 }
@@ -154822,12 +154822,12 @@ brushDef3
 {
 "classname" "trigger_once"
 "name" "trigger_once_office_post_armor"
+"call" "map_marscity2::start_ambush_sequence"
 "model" "trigger_once_office_post_armor"
+"not_easy" "1"
+"not_medium" "1"
 "origin" "-2381 -604 270"
 "triggerFirst" "1"
-"call" "map_marscity2::start_ambush_sequence"
-"not_medium" "1"
-"not_easy" "1"
 // primitive 0
 {
 brushDef3
@@ -154836,7 +154836,7 @@ brushDef3
 ( 0 1 0 -100 ) ( ( 0.0625 0 0 ) ( 0 0.0625 0 ) ) "textures/common/trigonce" 0 0 0
 ( 1 0 0 -31 ) ( ( 0.0625 0 0 ) ( 0 0.0625 0 ) ) "textures/common/trigonce" 0 0 0
 ( 0 0 -1 -79 ) ( ( 0.0625 0 0 ) ( 0 0.0625 0 ) ) "textures/common/trigonce" 0 0 0
-( 0 -1 0 -99 ) ( ( 0.0625 0 -0.625 ) ( 0 0.0625 0.9999999999999538 ) ) "textures/common/trigonce" 0 0 0
+( 0 -1 0 -99 ) ( ( 0.0625 0 -0.625 ) ( 0 0.0625 1 ) ) "textures/common/trigonce" 0 0 0
 ( -1 0 0 -31 ) ( ( 0.0625 0 0 ) ( 0 0.0625 0 ) ) "textures/common/trigonce" 0 0 0
 }
 }

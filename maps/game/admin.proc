@@ -1,5 +1,9 @@
 mapProcFile003
 
+model { /* name = */ "trigger_once_boss_fight" /* numSurfaces = */ 0
+
+}
+
 model { /* name = */ "trigger_once_27" /* numSurfaces = */ 0
 
 }

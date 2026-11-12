@@ -130320,7 +130320,7 @@ patchDef2
 "classname" "ammo_bullets_small"
 "name" "ammo_bullets_small_5"
 "inv_item" "4"
-"origin" "605 835 191"
+"origin" "605 829 189.444"
 "rotation" "0.978148 0.207912 0 0.0289358 -0.136132 0.990268 0.205888 -0.968628 -0.139173"
 }
 // entity 218
@@ -132529,7 +132529,7 @@ brushDef3
 "classname" "ammo_bullets_small"
 "name" "ammo_bullets_small_4"
 "inv_item" "4"
-"origin" "1007 601 -205"
+"origin" "1007 601 -206.891"
 "rotation" "0.906308 0.422618 0 0.0441757 -0.0947351 -0.994522 -0.420303 0.901343 -0.104529"
 }
 // entity 295
@@ -138276,7 +138276,8 @@ brushDef3
 "classname" "ammo_bullets_small"
 "name" "ammo_bullets_small_3"
 "inv_item" "4"
-"origin" "-296 280 40"
+"origin" "-286 265 39.9873"
+"rotation" "1 0 0 0 1 0 0 0 1"
 }
 // entity 518
 {
@@ -140710,7 +140711,8 @@ brushDef3
 "classname" "ammo_bullets_small"
 "name" "ammo_bullets_small_2"
 "inv_item" "4"
-"origin" "596 -572 124"
+"origin" "596 -572 125.21"
+"rotation" "1 0 0 0 1 0 0 0 1"
 }
 // entity 591
 {
@@ -174337,7 +174339,7 @@ patchDef2
 "classname" "ammo_bullets_small"
 "name" "ammo_bullets_small_6"
 "inv_item" "4"
-"origin" "311 118 3"
+"origin" "311 118 1.34363"
 "rotation" "0.978148 0.207912 0 0.0289358 -0.136132 0.990268 0.205888 -0.968628 -0.139173"
 }
 // entity 2023
@@ -175315,7 +175317,7 @@ patchDef2
 "classname" "ammo_bullets_small"
 "name" "ammo_bullets_small_9"
 "inv_item" "4"
-"origin" "574 820 191"
+"origin" "595 820 189.444"
 "rotation" "-0.358368 0.93358 0 0.129929 0.0498753 0.990268 0.924495 0.354881 -0.139173"
 }
 // entity 2103
@@ -178814,7 +178816,7 @@ patchDef2
 "classname" "ammo_bullets_small"
 "name" "ammo_bullets_small_10"
 "inv_item" "4"
-"origin" "-857 -3521 515"
+"origin" "-853 -3521 513.344"
 "rotation" "0.978148 0.207912 0 0.0289358 -0.136132 0.990268 0.205888 -0.968628 -0.139173"
 }
 // entity 2303
@@ -179915,7 +179917,7 @@ brushDef3
 "classname" "ammo_bullets_small"
 "name" "ammo_bullets_small_11"
 "inv_item" "4"
-"origin" "403 -503 -189"
+"origin" "403 -503 -190.227"
 "rotation" "0.906308 0.422618 0 0.0441757 -0.0947351 -0.994522 -0.420303 0.901343 -0.104529"
 }
 // entity 2390
@@ -180090,7 +180092,7 @@ brushDef3
 "classname" "ammo_bullets_small"
 "name" "ammo_bullets_small_12"
 "inv_item" "4"
-"origin" "2645 -2205 159"
+"origin" "2645 -2213 157.444"
 "rotation" "0.978148 0.207912 0 0.0289358 -0.136132 0.990268 0.205888 -0.968628 -0.139173"
 }
 // entity 2409
@@ -181882,7 +181884,7 @@ patchDef2
 "inv_item" "4"
 "not_hard" "1"
 "not_medium" "1"
-"origin" "-149 78 3"
+"origin" "-149 85 1.34363"
 "rotation" "-0.997564 -0.0697573 0 -0.00970834 0.138834 0.990268 -0.0690784 0.987856 -0.139173"
 }
 // entity 2511
@@ -181983,7 +181985,7 @@ patchDef2
 "classname" "ammo_bullets_small"
 "name" "ammo_bullets_small_17"
 "inv_item" "4"
-"origin" "-537 -3201 579"
+"origin" "-537 -3207 577.344"
 "rotation" "0.978148 0.207912 0 0.0289358 -0.136132 0.990268 0.205888 -0.968628 -0.139173"
 }
 // entity 2521
@@ -182395,6 +182397,7 @@ patchDef2
 {
 "classname" "trigger_once"
 "name" "trigger_once_3"
+"call" "map_mc_underground::trigger_trite_ambush"
 "model" "trigger_once_3"
 "not_easy" "1"
 "not_medium" "1"
@@ -182404,7 +182407,6 @@ patchDef2
 "target2" "monster_zsec_shotgun_6"
 "target5" "trigger_once_4"
 "triggerFirst" "1"
-"call" "map_mc_underground::trigger_trite_ambush"
 // primitive 0
 {
 brushDef3
@@ -182564,23 +182566,23 @@ brushDef3
 "name" "monster_demon_trite_1"
 "frame" "1"
 "hide" "1"
+"not_easy" "1"
+"not_medium" "1"
 "origin" "2917.36 -1874.72 424.797"
 "rotation" "-0.143232 -0.989688 -0.000775882 0.989143 -0.143127 -0.0333199 0.0328653 -0.00553994 0.999444"
 "trigger_anim" "offwall"
 "turn_on_sight" "0"
-"not_easy" "1"
-"not_medium" "1"
 }
 // entity 2561
 {
 "classname" "monster_demon_trite"
 "name" "monster_demon_trite_2"
-"origin" "2789.73 -1825.91 108.5"
-"rotation" "0 -1 0 1 0 0 0 0 1"
 "hide" "1"
-"trigger_anim" "16hole"
 "not_easy" "1"
 "not_medium" "1"
+"origin" "2789.73 -1825.91 108.5"
+"rotation" "0 -1 0 1 0 0 0 0 1"
+"trigger_anim" "16hole"
 }
 // entity 2562
 {
@@ -182608,10 +182610,10 @@ brushDef3
 {
 "classname" "monster_demon_trite"
 "name" "monster_demon_trite_5"
+"hide" "1"
+"not_easy" "1"
+"not_medium" "1"
 "origin" "2687.32 -2310.14 268"
 "rotation" "-1 0 0 0 -1 0 0 0 1"
-"not_medium" "1"
-"hide" "1"
 "trigger_anim" "196drop"
-"not_easy" "1"
 }

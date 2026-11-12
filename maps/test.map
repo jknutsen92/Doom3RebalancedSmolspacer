@@ -501,21 +501,21 @@ patchDef2
 }
 // entity 21
 {
-"classname" "monster_demon_nightmare_imp"
-"name" "monster_demon_nightmare_imp_1"
-"origin" "-49.596 -3.488 17.6191"
-"rotation" "-1 0 0 0 -1 0 0 0 1"
-}
-// entity 22
-{
 "classname" "path_teleport"
 "name" "path_teleport_1"
 "origin" "-946.75 333.25 16"
 }
-// entity 23
+// entity 22
 {
 "classname" "path_teleport"
 "name" "path_teleport_2"
-"origin" "686.5 -328.25 16"
 "angle" "180.000000"
+"origin" "686.5 -328.25 16"
+}
+// entity 23
+{
+"classname" "monster_demon_pinky"
+"name" "monster_demon_pinky_1"
+"origin" "49.824 7.5382 19.1401"
+"rotation" "-1 0 0 0 -1 0 0 0 1"
 }

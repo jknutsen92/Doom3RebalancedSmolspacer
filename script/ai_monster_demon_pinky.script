@@ -13,7 +13,6 @@ monster_demon_pinky
 #define PINKY_STRING_DELAY			2
 #define PINKY_STRING_TIMEOUT		2
 
-#define PINKY_STUN_BLEND_FRAMES 	4
 #define PINKY_STUN_DAMAGE			35
 #define PINKY_STUN_DAMAGE_TIMEOUT	3
 #define PINKY_STUN_DELAY			5
