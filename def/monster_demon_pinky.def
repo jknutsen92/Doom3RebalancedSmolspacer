@@ -224,6 +224,7 @@ entityDef monster_demon_pinky {
 	"snd_weakpoint_machinegun"		"headshot_auto_metal"
 	"snd_weakpoint_chaingun"		"headshot_auto_metal"
 	"snd_weakpoint_rocket"			"headshot_rocket_metal"
+	"smoke_weakpoint_impact"		"sparks.prt"	
 
 	// smolspacer - might use in conjunction with weakpoint - currently seems to be ignored by the script
 	// "pain_threshold"				""

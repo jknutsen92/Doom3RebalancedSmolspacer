@@ -1677,6 +1677,7 @@ entityDef monster_zombie_commando_cgun {
 	"snd_weakpoint_machinegun"		"headshot_auto_metal"
 	"snd_weakpoint_chaingun"		"headshot_auto_metal"
 	"snd_weakpoint_rocket"			"headshot_rocket_metal"
+	"smoke_weakpoint_impact"		"burstysquirt.prt"
 
 	// Heatblast gibs
 	"heatgib"						"1"

@@ -436,6 +436,7 @@ entityDef monster_demon_imp {
 	"snd_weakpoint_machinegun"		"headshot_auto_flesh"
 	"snd_weakpoint_chaingun"		"headshot_auto_flesh"
 	"snd_weakpoint_rocket"			"headshot_rocket_flesh"
+	"smoke_weakpoint_impact"		"burstysquirt.prt"
 
 	// Heatblast gibs
 	"heatgib"						"1"
@@ -650,6 +651,7 @@ entityDef monster_demon_imp_crawler {
 	"snd_weakpoint_machinegun"		"headshot_auto_flesh"
 	"snd_weakpoint_chaingun"		"headshot_auto_flesh"
 	"snd_weakpoint_rocket"			"headshot_rocket_flesh"
+	"smoke_weakpoint_impact"		"burstysquirt.prt"
 
 	// Heatblast gibs
 	"heatgib"						"1"
@@ -753,8 +755,6 @@ entityDef projectile_impfireball {
 	"debris_count"					"3"
 	"def_debris"					"debris_largeshrapnel"
 	"def_shrapnel"					"debris_shrapnel"
-
-	
 
 	"mtr_explode_light_shader"		"lights/impflash"
 	"explode_light_color"			"3.6 3.0 0.5"

@@ -463,6 +463,7 @@ entityDef monster_zsec_pistol {
 	"snd_weakpoint_machinegun"		"headshot_auto_flesh"
 	"snd_weakpoint_chaingun"		"headshot_auto_flesh"
 	"snd_weakpoint_rocket"			"headshot_rocket_flesh"
+	"smoke_weakpoint_impact"		"burstysquirt.prt"
 }
 
 model model_monster_zsec_pistol_slowfire {

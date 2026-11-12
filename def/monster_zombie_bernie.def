@@ -185,4 +185,5 @@ entityDef monster_zombie_bernie {
 	"snd_weakpoint_machinegun"		"headshot_auto_flesh"
 	"snd_weakpoint_chaingun"		"headshot_auto_flesh"
 	"snd_weakpoint_rocket"			"headshot_rocket_flesh"
+	"smoke_weakpoint_impact"		"burstysquirt.prt"
 }
