@@ -186,3 +186,6 @@ skin skins/monster_demon_hellknight_rez {
 	models/monsters/hellknight/tongue			        models/monsters/hellknight/tongue_rez
 }
 
+skin skins/monster_demon_nightmare_imp_rez {
+	models/monsters/imp/nightmare_imp					models/monsters/imp/nightmare_imp
+}

@@ -4,3 +4,8 @@ entityDef path_patrol {
     "editor_var aas"        "What type of characters are compatible with this patrol grid based on their AAS type: aas48, aas96, aas_mancubus."
     "aas"                   "aas48"
 }
+
+entityDef path_teleport {
+	"inherit"				"path_corner"
+	"editor_usage"			"Character will teleport to this entity if capable of it"
+}

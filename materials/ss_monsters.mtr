@@ -34,4 +34,4 @@ models/monsters/imp/nightmare_imp {
         map     models/monsters/imp/nightmare_imp_s.tga
         color   0.4, 0, 0.4, 1
     }
-}	
+}

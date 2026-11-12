@@ -124,21 +124,21 @@ model monster_demon_nightmare_imp {
 
 	anim melee_attack1				models/md5/monsters/nightmare_imp/slash1.md5anim {
 		frame 1							sound_weapon 	snd_attackmelee_1
-		frame 8							melee 			melee_impLeftClaw
+		frame 8							melee 			melee_nightmare_impLeftClaw
 		frame 10						sound_body 		snd_footstep	
-		frame 17						melee 			melee_impRightClaw
+		frame 17						melee 			melee_nightmare_impRightClaw
 		frame 19						sound_body 		snd_footstep
 	}
 	anim melee_attack2				models/md5/monsters/nightmare_imp/slash2.md5anim {
 		frame 1							sound_weapon 	snd_attackmelee_2
 		frame 4							sound_body 		snd_footstep
-		frame 9							melee 			melee_impLeftClaw	
+		frame 9							melee 			melee_nightmare_impLeftClaw	
 		frame 11						sound_body 		snd_footstep
 		frame 21						sound_body 		snd_footstep
 	}
 	anim melee_attack3				models/md5/monsters/nightmare_imp/slash3.md5anim {
 		frame 1							sound_weapon 	snd_attackmelee_2
-		frame 6							melee 			melee_impRightClaw	
+		frame 6							melee 			melee_nightmare_impRightClaw	
 		frame 10						sound_body 		snd_footstep
 	}
 	anim pain_head					models/md5/monsters/imp/pain_head.md5anim {
@@ -229,7 +229,7 @@ entityDef monster_demon_nightmare_imp {
 	"use_aas"						"aas48"
 	"team"							"1"
 	"rank"							"1"
-	"health"						"450"
+	"health"						"415"
 	"melee_damage" 					"55"
 	"melee_range"					"60"
 	"def_projectile"				"projectile_nightmare_impfireball"
@@ -340,8 +340,54 @@ entityDef nightmare_imp_spawneffect {
 	"cinematic_remove"				"1"
 }
 
+entityDef	melee_nightmare_impLeftClaw {
+	// melee specific parameters
+	"snd_hit"						"monster_demon_imp_melee_hit"
+	"snd_miss"						"monster_demon_imp_melee_miss"
+	"kickDir"						"0 -1 0"
+
+	// damage parameters
+	"damage"						"4"
+
+	"mtr_blob"						"leftSlash"
+	"blob_time"						"300"
+	"blob_x"						"140"
+	"blob_y"						"-100"
+	"blob_width"					"600"
+	"blob_height"					"600"
+
+	"knockback"						"40"
+
+	"kick_time"						"400"
+	"kick_amplitude"				"2"
+
+	"dv_time"						"100"
+}
+
+entityDef	melee_nightmare_impRightClaw {
+	"snd_hit"						"monster_demon_imp_melee_hit"
+	"snd_miss"						"monster_demon_imp_melee_miss"
+	"kickDir"						"0 1 0"
+
+	"damage"						"4"
+
+	"mtr_blob"						"rightSlash"
+	"blob_time"						"300"
+	"blob_x"						"-100"
+	"blob_y"						"-100"
+	"blob_width"					"600"
+	"blob_height"					"600"
+
+	"knockback"						"30"
+
+	"kick_time"						"400"
+	"kick_amplitude"				"2"
+
+	"dv_time"						"100"
+}
+
 entityDef damage_nightmare_impfireball {
-	"damage"						"20"
+	"damage"						"16"
 	"kickDir"						"1 0 0"
 	"push"							"2000"
 
@@ -361,7 +407,7 @@ entityDef damage_nightmare_impfireball {
 
 entityDef	damage_nightmare_impfireball_splash {
 	"damage"						"10"
-	"radius"						"150"
+	"radius"						"75"
 	"push"							"5000"
 }
 

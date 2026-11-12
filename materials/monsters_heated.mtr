@@ -1863,3 +1863,41 @@ models/monsters/zsecurity/zsechead_heated
 		alphaTest 3.6 * (time - parm7)
 	}
 }
+
+models/monsters/imp/nightmare_imp {
+	unsmoothedTangents
+	flesh
+    translucent
+	renderbump  -size 512 512 -aa 3 models/monsters/imp/imp_local.tga models/monsters/imp/work/imp_hp.lwo
+	forceOverlays	
+	bumpmap	    addnormals(models/monsters/imp/imp_local.tga, heightmap(models/monsters/imp/a_imp_b08a, 10 ) )
+	{
+        blend   diffusemap
+        map     models/monsters/imp/nightmare_imp_d.tga
+    }
+    specularmap models/monsters/imp/nightmare_imp_s.tga
+	{
+        blend   add
+        color   0.3 * parm11, 0, 0.06 * parm11, 1
+        map     lights/fullambient.tga
+    }
+    {	// burning corpse effect
+		if	parm7			// only when dead
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/spectre/global_dis.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 1.5 * (time - parm7)
+    }
+	{	// burning corpse effect
+		if parm7			// only when dead
+
+		// draw the fire burn at a negative polygonOffset, so it is behind the other stages
+		privatePolygonOffset	-1		// stage-only polygon offset
+        blend add	
+        blend gl_one, gl_zero
+		
+		map models/monsters/vagary/vagary_dis.tga	// replace this with a monster-specific texture
+		alphaTest 3.6 * (time - parm7)
+	}
+}

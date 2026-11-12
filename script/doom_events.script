@@ -1294,6 +1294,11 @@ scriptEvent float	canReachEnemy();
 // returns the position of the entity within the aas if possible, otherwise just the entity position.
 scriptEvent vector	getReachableEntityPosition( entity ent );
 
+// Returns the path_teleport that is in range and line of sight of the target entity, excluding the current path name. Returns null if none exist
+scriptEvent entity	getTeleportPathNearTarget(entity target, float range, string excludePath);
+
+scriptEvent void	teleportNearTarget(entity target, float maxRange);
+
 /***********************************************************************
 
 	AI - Vagary

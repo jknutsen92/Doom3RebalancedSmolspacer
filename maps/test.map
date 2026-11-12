@@ -80,11 +80,11 @@ brushDef3
 {
 brushDef3
 {
-( 0 0 1 -257 ) ( ( -0.06431461870670319 -7.454306563919271e-18 -0.8399600982666016 ) ( 8.31225066466519e-16 -0.009228227660059929 0.2449607849121094 ) ) "textures/base_wall/gotbpanel2light_global_d3dm3" 0 0 0
-( 1 0 0 72 ) ( ( 1.130131946569546e-18 0.03215730935335159 -0.7922573089599609 ) ( -0.07382582128047943 7.876269193754654e-18 0.005403518676757812 ) ) "textures/base_wall/gotbpanel2light_global_d3dm3" 0 0 0
-( 0 -1 0 -402 ) ( ( 1.412664933211933e-19 0.03215730935335159 -0.7500886917114258 ) ( -0.009228227660059929 7.876269193754654e-18 0.2449610829353333 ) ) "textures/base_wall/gotbpanel2light_global_d3dm3" 0 0 0
-( -1 0 0 -200 ) ( ( 1.130131946569546e-18 0.03215730935335159 -0.648284912109375 ) ( -0.07382582128047943 7.876269193754654e-18 0.4186954498291016 ) ) "textures/base_wall/gotbpanel2light_global_d3dm3" 0 0 0
-( 0 0.8944271802902222 -0.4472135901451111 460.1828002929688 ) ( ( -0.008039327338337898 1.933833275701669e-17 -0.406651496887207 ) ( -7.534170510504701e-17 -0.0330159105360508 0.2006655931472778 ) ) "textures/base_wall/gotbpanel2light_global_d3dm3" 0 0 0
+( 0 0 1 -257 ) ( ( -0.06431461870670319 -7.45430683486657e-18 -0.8399600982666016 ) ( 8.312250889970486e-16 -0.009228227660059929 0.2449607849121094 ) ) "textures/base_wall/gotbpanel2light_global_d3dm3" 0 0 0
+( 1 0 0 72 ) ( ( 1.130131996382971e-18 0.03215730935335159 -0.7922573089599609 ) ( -0.07382582128047943 7.876269036122733e-18 0.005403518676757812 ) ) "textures/base_wall/gotbpanel2light_global_d3dm3" 0 0 0
+( 0 -1 0 -402 ) ( ( 1.412664995478713e-19 0.03215730935335159 -0.7500886917114258 ) ( -0.009228227660059929 7.876269036122733e-18 0.2449610829353333 ) ) "textures/base_wall/gotbpanel2light_global_d3dm3" 0 0 0
+( -1 0 0 -200 ) ( ( 1.130131996382971e-18 0.03215730935335159 -0.648284912109375 ) ( -0.07382582128047943 7.876269036122733e-18 0.4186954498291016 ) ) "textures/base_wall/gotbpanel2light_global_d3dm3" 0 0 0
+( 0 0.8944271802902222 -0.4472135901451111 460.1828002929688 ) ( ( -0.008039327338337898 1.933833294043834e-17 -0.406651496887207 ) ( -7.53417079213632e-17 -0.0330159105360508 0.2006655931472778 ) ) "textures/base_wall/gotbpanel2light_global_d3dm3" 0 0 0
 }
 }
 // primitive 7
@@ -296,162 +296,162 @@ patchDef2
 {
 "classname" "light"
 "name" "light_1"
+"_color" "0.134 0.134 0.134"
 "light_center" "0 0 0"
 "light_radius" "320 168 73"
 "origin" "-136 -361 224"
-"_color" "0.134 0.134 0.134"
 }
 // entity 2
 {
 "classname" "light"
 "name" "light_2"
+"_color" "0.122 0.122 0.122"
 "light_center" "0 0 0"
 "light_radius" "320 168 73"
 "origin" "-136 -361 49"
 "rotation" "-1 0 0 0 1 0 0 0 -1"
-"_color" "0.122 0.122 0.122"
 }
 // entity 3
 {
 "classname" "light"
 "name" "light_3"
+"_color" "0.122 0.122 0.122"
 "light_center" "0 0 0"
 "light_radius" "320 168 73"
 "origin" "534 -361 49"
 "rotation" "-1 0 0 0 1 0 0 0 -1"
-"_color" "0.122 0.122 0.122"
 }
 // entity 4
 {
 "classname" "light"
 "name" "light_4"
+"_color" "0.122 0.122 0.122"
 "light_center" "0 0 0"
 "light_radius" "320 168 73"
 "origin" "-809 -361 49"
 "rotation" "-1 0 0 0 1 0 0 0 -1"
-"_color" "0.122 0.122 0.122"
 }
 // entity 5
 {
 "classname" "light"
 "name" "light_5"
+"_color" "0.122 0.122 0.122"
 "light_center" "0 0 0"
 "light_radius" "320 168 73"
 "origin" "534 -361 224"
-"_color" "0.122 0.122 0.122"
 }
 // entity 6
 {
 "classname" "light"
 "name" "light_6"
+"_color" "0.122 0.122 0.122"
 "light_center" "0 0 0"
 "light_radius" "320 168 73"
 "origin" "-809 -361 224"
-"_color" "0.122 0.122 0.122"
 }
 // entity 7
 {
 "classname" "light"
 "name" "light_7"
+"_color" "0.122 0.122 0.122"
 "light_center" "0 0 0"
 "light_radius" "181 168 73"
 "origin" "712.5 -4.5 49"
 "rotation" "0 -1 0 -1 0 0 0 0 -1"
 "texture" "lights/square"
-"_color" "0.122 0.122 0.122"
 }
 // entity 8
 {
 "classname" "light"
 "name" "light_8"
+"_color" "0.122 0.122 0.122"
 "light_center" "0 0 0"
 "light_radius" "181 168 73"
 "origin" "712.5 -4.5 224"
 "rotation" "0 1 0 -1 0 0 0 0 1"
 "texture" "lights/square"
-"_color" "0.122 0.122 0.122"
 }
 // entity 9
 {
 "classname" "light"
 "name" "light_10"
+"_color" "0.122 0.122 0.122"
 "light_center" "0 0 0"
 "light_radius" "181 168 73"
 "origin" "-972.5 0.5 49"
 "rotation" "0 1 0 1 0 0 0 0 -1"
 "texture" "lights/square"
-"_color" "0.122 0.122 0.122"
 }
 // entity 10
 {
 "classname" "light"
 "name" "light_11"
+"_color" "0.122 0.122 0.122"
 "light_center" "0 0 0"
 "light_radius" "181 168 73"
 "origin" "-972.5 0.5 224"
 "rotation" "0 -1 0 1 0 0 0 0 1"
 "texture" "lights/square"
-"_color" "0.122 0.122 0.122"
 }
 // entity 11
 {
 "classname" "light"
 "name" "light_16"
+"_color" "0.122 0.122 0.122"
 "light_center" "0 0 0"
 "light_radius" "320 168 73"
 "origin" "-133 358 224"
 "rotation" "-1 0 0 0 -1 0 0 0 1"
-"_color" "0.122 0.122 0.122"
 }
 // entity 12
 {
 "classname" "light"
 "name" "light_15"
+"_color" "0.122 0.122 0.122"
 "light_center" "0 0 0"
 "light_radius" "320 168 73"
 "origin" "-133 358 49"
 "rotation" "1 0 0 0 -1 0 0 0 -1"
-"_color" "0.122 0.122 0.122"
 }
 // entity 13
 {
 "classname" "light"
 "name" "light_14"
+"_color" "0.122 0.122 0.122"
 "light_center" "0 0 0"
 "light_radius" "320 168 73"
 "origin" "-803 358 49"
 "rotation" "1 0 0 0 -1 0 0 0 -1"
-"_color" "0.122 0.122 0.122"
 }
 // entity 14
 {
 "classname" "light"
 "name" "light_17"
+"_color" "0.122 0.122 0.122"
 "light_center" "0 0 0"
 "light_radius" "320 168 73"
 "origin" "540 358 49"
 "rotation" "1 0 0 0 -1 0 0 0 -1"
-"_color" "0.122 0.122 0.122"
 }
 // entity 15
 {
 "classname" "light"
 "name" "light_12"
+"_color" "0.122 0.122 0.122"
 "light_center" "0 0 0"
 "light_radius" "320 168 73"
 "origin" "-803 358 224"
 "rotation" "-1 0 0 0 -1 0 0 0 1"
-"_color" "0.122 0.122 0.122"
 }
 // entity 16
 {
 "classname" "light"
 "name" "light_13"
+"_color" "0.122 0.122 0.122"
 "light_center" "0 0 0"
 "light_radius" "320 168 73"
 "origin" "540 358 224"
 "rotation" "-1 0 0 0 -1 0 0 0 1"
-"_color" "0.122 0.122 0.122"
 }
 // entity 17
 {
@@ -465,12 +465,12 @@ patchDef2
 "classname" "light"
 "name" "light_19"
 "_color" "0.686 0.686 0.686"
-"origin" "320 -1 219"
+"light_end" "0 0 -256"
 "light_right" "360 0 0"
+"light_start" "0 0 -6"
 "light_target" "0 0 -256"
 "light_up" "0 360 0"
-"light_end" "0 0 -256"
-"light_start" "0 0 -6"
+"origin" "320 -1 219"
 "texture" "lights/biground1"
 }
 // entity 19
@@ -498,4 +498,24 @@ patchDef2
 "light_up" "0 360 0"
 "origin" "-581.5 -1 219"
 "texture" "lights/biground1"
+}
+// entity 21
+{
+"classname" "monster_demon_nightmare_imp"
+"name" "monster_demon_nightmare_imp_1"
+"origin" "-49.596 -3.488 17.6191"
+"rotation" "-1 0 0 0 -1 0 0 0 1"
+}
+// entity 22
+{
+"classname" "path_teleport"
+"name" "path_teleport_1"
+"origin" "-946.75 333.25 16"
+}
+// entity 23
+{
+"classname" "path_teleport"
+"name" "path_teleport_2"
+"origin" "686.5 -328.25 16"
+"angle" "180.000000"
 }

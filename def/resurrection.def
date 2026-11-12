@@ -26,6 +26,7 @@ entityDef demon_resurrector_score {
     "monster_zombie_commando_cgun"      "51"
     "monster_demon_archvile"            "54"
     "monster_demon_hellknight"          "60"
+    "monster_demon_nightmare_imp"       "61"
 }
 
 // The base score determines the center of the range of monsters that can be selected for resurrection

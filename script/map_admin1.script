@@ -467,14 +467,39 @@ namespace map_admin1
 		}
 	}
 
+	void exit_enable_gui() {
+		$func_static_2042.setGui(1, "guis/doors/admin_pda_door.gui");
+	}
+
+	void start_boss_fight() {
+		if (!uniqueEntityExists("tim_admin_wounded_marine_1")) {
+			sys.println("Marine body destroyed. Skipping..");
+			return;
+		}
+		sys.println("Starting boss fight");
+		// Play evil laughing
+		$player1.startSoundShader("betrugger_laugh_01", SND_CHANNEL_ANY);
+		// disable exit gui
+		$func_static_2042.setGui(1, "guis/demonic/hellfaceflash.gui");
+		// Resurrect nightmare imp
+		sys.setSpawnArg("classname", "monster_demon_nightmare_imp");
+        entity nightmareImp = sys.resurrectRagdoll($tim_admin_wounded_marine_1);
+        thread addSignalFunc(SIG_REMOVED, nightmareImp, "map_admin1::exit_enable_gui");
+	}
+
 	void main()
 	{
-		//$swinglight_mover.sway( 2, 0, '40 15 0' );
 		$swinglight_mover.sway( 50, 0, '20 0 0' );
 		$library_lamp1_swing_anchor.sway( 3, 0, '15 10 0' );
 		$library_lamp1_swing_anchor2.sway( 3.5, 0, '7 5 5' );
-		g_impEscaped = false;
 
+		string g_skill = sys.getcvar("g_skill");
+		if (g_skill == "2" || g_skill == "3") {
+			g_impEscaped = false;
+			$player1.cacheSoundShader("betrugger_laugh_01");
+			sys.cacheEntity("monster_demon_nightmare_imp");
+			$func_static_2042.precacheGui("monster_demon_nightmare_imp");
+		}
 
 		archivers_setup();
 	}

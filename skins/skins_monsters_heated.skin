@@ -328,3 +328,7 @@ skin skins/monsters/zombies/zsecurity_shotgun_head_heated {
 	models/monsters/zsecurity/zsgogs				models/monsters/zsecurity/zsgogs_heated
 	models/monsters/zsecurity/zsechead				models/monsters/zsecurity/zsechead_heated
 }
+
+skin skins/monster_demon_nightmare_imp_heated {
+	models/monsters/imp/nightmare_imp					models/monsters/imp/nightmare_imp_heated
+}

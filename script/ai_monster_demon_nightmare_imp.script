@@ -12,12 +12,14 @@
 #define IMP_ATTACK_BLEND_FRAMES		5
 
 #define IMP_DMG_DODGE_THRESHOLD			35
+#define IMP_DMG_TELEPORT_THRESHOLD		100
 #define IMP_DODGE_TELEPORT_THRESHOLD	2
 #define IMP_VANISH_TIME					0.25
 #define IMP_TELEPORT_TIME				0.5
 #define IMP_TELEPORT_DELAY_MIN			1.5
 #define IMP_TELEPORT_DELAY_MAX			3.33
 #define IMP_TELEPORT_RATE				6.66
+#define IMP_TELEPORT_RANGE_MAX			1250
 
 #define	ATTACK_TELEPORT			ATTACK_SPECIAL1
 
@@ -36,10 +38,13 @@ object monster_demon_nightmare_imp : monster_base {
 
 	float		dmgSinceLastDodge;
 	float 		dodgesSinceLastTeleport;
+	string		lastTeleportPath;
 	
 	// States
 	void		state_Begin();
 	void		state_Idle();
+
+	boolean		WantsToTeleport();
 
 	// attacks
 	float		check_attacks();
@@ -262,6 +267,7 @@ void monster_demon_nightmare_imp::init() {
 	dmgSinceLastDodge 		= 0;
 	dodgesSinceLastTeleport	= 0;
 	teleportFx				= getKey("fx_teleport");
+	lastTeleportPath		= "";
 	// vanishEffect			= NULL;
 	thread addSignalFunc(SIG_DAMAGE, self, "monster_demon_nightmare_imp::OnDamage");
 	setState( "state_Begin" );
@@ -355,14 +361,13 @@ float monster_demon_nightmare_imp::check_attacks() {
 	vector jumpTarget;
 	
 	attack_flags = 0;
-
-	if (dodgesSinceLastTeleport > IMP_DODGE_TELEPORT_THRESHOLD || !canSee(getEnemy())) {
+	currentTime = sys.getTime();
+	if (currentTime >= nextTeleport && WantsToTeleport()) {
 		attack_flags |= ATTACK_TELEPORT;
 		return attack_flags;
 	}
 	
 	canMelee = testMeleeAttack();
-	currentTime = sys.getTime();
 	if ( !canMelee ) {
 		if ( (AI_PAIN || dmgSinceLastDodge > IMP_DMG_DODGE_THRESHOLD) && ( currentTime >= nextDodge ) ) {
 			if ( testAnimMove( "evade_left" ) ) {
@@ -600,8 +605,18 @@ void monster_demon_nightmare_imp::PlayTeleportFx() {
 }
 
 void monster_demon_nightmare_imp::Teleport() {
-	// TODO get teleport location
-	vector destination = '0 0 0';
-	destination = pushPointIntoAAS(destination);
-	setOrigin(destination);
+	entity enemy = getEnemy();
+	entity pathTeleport = getTeleportPathNearTarget(enemy, IMP_TELEPORT_RANGE_MAX, lastTeleportPath);
+	if (pathTeleport) {
+		setOrigin(pathTeleport.getOrigin());
+		lastTeleportPath = pathTeleport.getName();
+	}
+	else {
+		teleportNearTarget(enemy, IMP_TELEPORT_RANGE_MAX);
+		lastTeleportPath = "";
+	}
+}
+
+boolean monster_demon_nightmare_imp::WantsToTeleport() {
+	return dodgesSinceLastTeleport > IMP_DODGE_TELEPORT_THRESHOLD || dmgSinceLastDodge > IMP_DMG_TELEPORT_THRESHOLD || !canSee(getEnemy());
 }

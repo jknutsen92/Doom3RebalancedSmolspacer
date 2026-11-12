@@ -94905,6 +94905,7 @@ patchDef2
 "origin" "322 1626 128"
 "pda_name" "admin_banks"
 "target" "tim_trigger_once_16"
+"target0" "trigger_once_boss_fight"
 }
 // entity 1414
 {
@@ -98893,13 +98894,13 @@ patchDef2
 "classname" "monster_demon_imp"
 "name" "monster_demon_imp_13"
 "attack_path" "1"
+"not_easy" "1"
+"not_medium" "1"
 "origin" "-1474.24 1214.04 33.8581"
 "rotation" "0 -1 0 1 0 0 0 0 1"
 "target0" "path_attack_1"
 "trigger" "1"
 "trigger_anim" "sight"
-"not_easy" "1"
-"not_medium" "1"
 }
 // entity 1654
 {
@@ -98967,10 +98968,10 @@ brushDef3
 "name" "trigger_once_27"
 "anyTouch" "1"
 "call" "map_admin1::imp_escaped"
+"entityname" "tim_monster_demon_imp_14"
 "model" "trigger_once_27"
 "origin" "-1472 1064 56"
 "target" "func_remove_8"
-"entityname" "tim_monster_demon_imp_14"
 // primitive 0
 {
 brushDef3
@@ -98981,6 +98982,29 @@ brushDef3
 ( 1 0 0 -64 ) ( ( 0.03125 0 -0.25 ) ( 0 0.03125 0 ) ) "textures/common/trigentityname_once" 0 0 0
 ( 0 1 0 -12 ) ( ( 0.03125 0 -0.5 ) ( 0 0.03125 0 ) ) "textures/common/trigentityname_once" 0 0 0
 ( -1 0 0 -64 ) ( ( 0.03125 0 -0.75 ) ( 0 0.03125 0 ) ) "textures/common/trigentityname_once" 0 0 0
+}
+}
+}
+// entity 1659
+{
+"classname" "trigger_once"
+"name" "trigger_once_boss_fight"
+"model" "trigger_once_boss_fight"
+"origin" "-640 1280 128"
+"not_easy" "1"
+"not_medium" "1"
+"call" "map_admin1::start_boss_fight"
+"triggerFirst" "1"
+// primitive 0
+{
+brushDef3
+{
+( 0 0 1 -100 ) ( ( 0.0625 0 -0.46875 ) ( 0 0.0625 1.13686837721616e-13 ) ) "textures/common/trigonce" 0 0 0
+( 0 1 0 -55 ) ( ( 0.0625 0 0 ) ( 0 0.0625 0 ) ) "textures/common/trigonce" 0 0 0
+( 1 0 0 -70 ) ( ( 0.0625 0 -0.46875 ) ( 0 0.0625 0 ) ) "textures/common/trigonce" 0 0 0
+( 0 0 -1 -99 ) ( ( 0.0625 0 -0.46875 ) ( 0 0.0625 5.684341886080801e-14 ) ) "textures/common/trigonce" 0 0 0
+( 0 -1 0 -54 ) ( ( 0.0625 0 0 ) ( 0 0.06250000000000001 3.552713678800501e-15 ) ) "textures/common/trigonce" 0 0 0
+( -1 0 0 -70 ) ( ( 0.0625 0 -0.53125 ) ( 0 0.0625 0 ) ) "textures/common/trigonce" 0 0 0
 }
 }
 }
