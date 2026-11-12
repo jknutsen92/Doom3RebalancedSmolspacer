@@ -457,6 +457,8 @@ namespace map_admin1
 		sys.wait(4);
 		sys.println("Triggering imp");
 		if (g_impEscaped) {
+			$func_static_5706.remove();
+			$light_5515.remove();
 			sys.println("Imp flanking");
 			$func_door_1.lock(0);
 			$func_door_2.lock(0);

@@ -50,6 +50,7 @@ entityDef ammo_bullets_small {
 	"model"					"models/items/bullet_ammo/bullet_small.lwo"
 	"clipmodel"				"models/items/bullet_ammo/bullet_small_clip.lwo"
 	"snd_acquire"			"sound/items/clip_pickup_small.wav"
+	"triggersize"			"8"
 	"size"					"32 32 32"
 	"inv_ammo_bullets"		"8"
 	"inv_item"				"4"

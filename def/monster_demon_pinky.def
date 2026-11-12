@@ -181,7 +181,7 @@ entityDef monster_demon_pinky {
 	"use_aas"						"aas96"
 	"team"							"1"
 	"rank"							"1"
-	"health"						"666"
+	"health"						"700"
 	"melee_range"					"60"
 	"mass"							"600"
 	"plasma_heatable"				"1"

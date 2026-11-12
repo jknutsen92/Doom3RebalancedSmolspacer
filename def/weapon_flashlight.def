@@ -93,7 +93,7 @@ model worldmodel_flashlight {
 
 model viewmodel_flashlight {
 	mesh						models/md5/items/flashlight_view/viewflashlight.md5mesh
-	offset						( -7 2 16 )
+	offset						( -6 0 16 )
 
 	anim raise					models/md5/items/flashlight_view/raise.md5anim {
 		frame	1				sound_weapon flashlight_raise

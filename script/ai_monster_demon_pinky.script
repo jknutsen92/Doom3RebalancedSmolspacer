@@ -7,16 +7,16 @@ monster_demon_pinky
 ***********************************************************************/
 
 #define PINKY_ROAR_RATE				5
-#define PINKY_DODGE_RATE			5
+#define PINKY_DODGE_RATE			3
 
 #define	PINKY_ATTACK_STRING			3
 #define PINKY_STRING_DELAY			2
 #define PINKY_STRING_TIMEOUT		2
 
 #define PINKY_STUN_BLEND_FRAMES 	4
-#define PINKY_STUN_DAMAGE			30
+#define PINKY_STUN_DAMAGE			35
 #define PINKY_STUN_DAMAGE_TIMEOUT	3
-#define PINKY_STUN_DELAY			6
+#define PINKY_STUN_DELAY			5
 
 object monster_demon_pinky : monster_base {
 	float		nextDodge;
@@ -25,10 +25,9 @@ object monster_demon_pinky : monster_base {
 
 	float		attackString;
 	float		nextStringTime;
-	float 		stringTimeout;
+	float 		attackStringTimeout;
 
-	float 		turnRate;
-	float 		stunDmgRemaining;
+	float 		dmgSinceLastStun;
 	float		stunDmgTimeout;
 	float 		nextStunTime;
 	
@@ -60,9 +59,8 @@ object monster_demon_pinky : monster_base {
 	void		Legs_DodgeRight();
 	void 		Legs_Stun();
 
-	// helper functions
-	void 		calc_stun();
-	void		stun_timeout();
+	// Event callbacks
+	void 		OnDamage();
 };
 
 /***********************************************************************
@@ -75,9 +73,9 @@ void monster_demon_pinky::Torso_Idle() {
 	idleAnim( ANIMCHANNEL_TORSO, "stand" );
 	
 	// We should only limit bursts of attacks
-	if (stringTimeout && sys.getTime() >= stringTimeout) {
+	if (attackStringTimeout && sys.getTime() >= attackStringTimeout) {
 		attackString = 0;
-		stringTimeout = 0;
+		attackStringTimeout = 0;
 	}
 
 	eachFrame {
@@ -120,7 +118,7 @@ void monster_demon_pinky::Torso_MeleeAttack() {
 
 	// smolspacer - keep the pinky from wrecking players stuck in a corner
 	attackString = attackString + 1;
-	stringTimeout = sys.getTime() + PINKY_STRING_TIMEOUT;
+	attackStringTimeout = sys.getTime() + PINKY_STRING_TIMEOUT;
 	if (attackString >= PINKY_ATTACK_STRING) {
 		attackString = 0;
 		nextStringTime = sys.getTime() + PINKY_STRING_DELAY;
@@ -199,17 +197,13 @@ void monster_demon_pinky::Legs_DodgeRight() {
 }
 
 void monster_demon_pinky::Legs_Stun() {
-	stunDmgRemaining = PINKY_STUN_DAMAGE;
+	dmgSinceLastStun = 0;
 	stunDmgTimeout = 0;
 	stopMove();
-	setTurnRate(0);
 	playAnim(ANIMCHANNEL_LEGS, "stun");
-	while (!animDone(ANIMCHANNEL_LEGS, 4)) {
-		waitFrame();
-	}
-	setTurnRate(turnRate);
-	AI_FORWARD = 1;
+	waitUntil(animDone(ANIMCHANNEL_LEGS, 0));
 	nextStunTime = DelayTime(PINKY_STUN_DELAY);
+	finishAction("stun");
 	animState(ANIMCHANNEL_LEGS, "Legs_Idle", 4);
 }
 
@@ -225,13 +219,13 @@ monster_demon_pinky::init
 =====================
 */
 void monster_demon_pinky::init() {
-	attackString = 0;
-	nextStringTime = 0;
-	stringTimeout = 0;
-	stunDmgRemaining = PINKY_STUN_DAMAGE;
-	stunDmgTimeout = 0;
-	nextStunTime = 0;
-	turnRate = getTurnRate();
+	attackString 		= 0;
+	nextStringTime 		= 0;
+	attackStringTimeout = 0;
+	dmgSinceLastStun 	= 0;
+	stunDmgTimeout 		= 0;
+	nextStunTime		= 0;
+	thread addSignalFunc(SIG_DAMAGE, self, "monster_demon_pinky::OnDamage");
 	setState( "state_Begin" );
 }
 
@@ -307,25 +301,12 @@ float monster_demon_pinky::check_attacks() {
 
 	currentTime = sys.getTime();
 
-	if (AI_DAMAGE && (AI_DAMAGE_LOCATION == 45 || AI_DAMAGE_LOCATION == 46) && currentTime >= nextStunTime) {
-		startSoundShader("snd_pain", SND_CHANNEL_VOICE);
-		calc_stun();
-		// sys.println("Precision shot: " + stunDmgRemaining);
-		if (stunDmgRemaining <= 0) {
-			animState(ANIMCHANNEL_LEGS, "Legs_Stun", 0);
-		}
-	}
-	AI_DAMAGE_VALUE = 0;
-	AI_DAMAGE_LOCATION = -1;
-
-	if (stunDmgRemaining < PINKY_STUN_DAMAGE && currentTime >= stunDmgTimeout) {
-		stun_timeout();
+	if (dmgSinceLastStun && currentTime >= stunDmgTimeout) {
+		stunDmgTimeout = 0;
+		dmgSinceLastStun = 0;
+		sys.println("Stun timeout");
 	}
 
-	if (!getTurnRate()) {
-		setTurnRate(turnRate);
-	}
-	
 	attack_flags = 0;
 	
 	canMelee = testMeleeAttack();
@@ -420,16 +401,18 @@ void monster_demon_pinky::combat_dodge_right() {
 	nextDodge = DelayTime( PINKY_DODGE_RATE );
 }
 
-void monster_demon_pinky::calc_stun() {
-	AI_DAMAGE = false;
-	if (!stunDmgTimeout) {
-		stunDmgTimeout = sys.getTime() + PINKY_STUN_DAMAGE_TIMEOUT;
+void monster_demon_pinky::OnDamage() {
+	float currentTime = sys.getTime();
+	if (AI_DAMAGE_LOCATION >= 44 && AI_DAMAGE_LOCATION <= 46 && currentTime >= nextStunTime) {
+		startSoundShader("snd_pain", SND_CHANNEL_VOICE);
+		dmgSinceLastStun = dmgSinceLastStun + AI_DAMAGE_VALUE;
+		stunDmgTimeout = currentTime + PINKY_STUN_DAMAGE_TIMEOUT;
+		sys.println("Precision shot: " + dmgSinceLastStun + "/" + PINKY_STUN_DAMAGE);
+		if (dmgSinceLastStun >= PINKY_STUN_DAMAGE) {
+			animState(ANIMCHANNEL_LEGS, "Legs_Stun", 0);
+			waitAction("stun");
+		}
 	}
-	stunDmgRemaining = stunDmgRemaining - AI_DAMAGE_VALUE;
-}
-
-void monster_demon_pinky::stun_timeout() {
-	stunDmgTimeout = 0;
-	stunDmgRemaining = PINKY_STUN_DAMAGE;
-	// sys.println("Timeout expired, resetting pinky damage stun");
+	AI_DAMAGE_VALUE = 0;
+	addSignalFunc(SIG_DAMAGE, self, "monster_demon_pinky::OnDamage");
 }
