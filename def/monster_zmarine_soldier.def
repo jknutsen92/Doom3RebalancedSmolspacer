@@ -7,7 +7,7 @@ model model_monster_zmarine_soldier {
 
 entityDef monster_zmarine_soldier {
 	"inherit"					"monster_zsec_shotgun"
-	"scriptobject"				"monster_zombie_security_pistol"
+	"scriptobject"				"monster_zmarine_soldier"
 	"model"						"model_monster_zmarine_soldier"
 	"size"						"40 40 72"
 	"use_aas"					"aas48"

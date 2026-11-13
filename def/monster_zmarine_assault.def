@@ -7,7 +7,7 @@ model model_monster_zmarine_assault {
 
 entityDef monster_zmarine_assault {
 	"inherit"						"monster_zsec_pistol"
-	"scriptobject"					"monster_zombie_security_pistol"
+	"scriptobject"					"monster_zmarine_assault"
 	"size"							"40 40 72"
 	"use_aas"						"aas48"
 	"team"							"1"
@@ -59,8 +59,18 @@ entityDef monster_zmarine_assault {
 	"def_dropDeathItem9"			"moveable_item_shotgun"
 	"dropDeathItem9Joint"			"shotgun"
 
-	"def_dropDeathItem10"			"moveable_item_armor_security"
+	"def_dropDeathItem10"			"moveable_item_armor_shard"
 	"dropDeathItem10Joint"			"Chest"
+
+	"def_dropDeathItem11"			"moveable_item_armor_shard"
+	"dropDeathItem11Joint"			"Waist"
+
+	"def_dropDeathItem12"			"moveable_item_armor_shard"
+	"dropDeathItem12Joint"			"Rloleg"
+
+	"def_dropDeathItem13"			"moveable_item_armor_shard"
+	"dropDeathItem13Joint"			"Belly"
+
 
 	"skin_dropDeath"				"skins/monsters/zombies/zsecurity.skin"
 	"skin_dropDeath_heated"			"skins/env_ragdoll_zsecs_heated.skin"

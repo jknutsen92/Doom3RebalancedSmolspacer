@@ -1,0 +1,8 @@
+entityDef moveable_item_armor_shard {
+	"inherit"					"item_armor_shard"
+	"spawnclass"				"idMoveableItem"
+	"density"					"0.7"
+	"friction"					"0.6"
+	"bouncyness"				"0.3"
+	"nopulse"					"1"
+}
