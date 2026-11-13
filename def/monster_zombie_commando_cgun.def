@@ -1575,7 +1575,7 @@ entityDef monster_zombie_commando_cgun {
 	"use_aas"						"aas48"
 	"team"							"1"
 	"rank"							"1"
-	"health"						"325"
+	"health"						"380"
 	"def_projectile"				"projectile_zombie_commando_cgun"
 	"attack_cone"					"70"
 	"attack_accuracy"				"2"

@@ -35,3 +35,25 @@ models/monsters/imp/nightmare_imp {
         color   0.4, 0, 0.4, 1
     }
 }
+
+models/monsters/zmarine/soldier {
+	noSelfShadow
+	unsmoothedTangents
+	flesh
+	forceOverlays
+	clamp
+	collision
+	{	// burning corpse effect
+		if	parm7			// only when dead
+		// make a burned away alpha test for the normal skin
+		blend	gl_zero, gl_one			// don't draw anything
+		
+		map models/monsters/spectre/dis2.tga	// replace this with a monster-specific texture
+		alphaTest 0.05 + 1.7 * (time - parm7)
+	}
+	renderbump  -size 1024 1024 -trace 0.07 -colorMap -aa 2  models/characters/male_npc/marine/marine_local.tga models/characters/male_npc/marine/marine_hi.lwo
+	forceoverlays
+    diffusemap	  models/characters/male_npc/marine/marine.tga
+	bumpmap		  addnormals(models/characters/male_npc/marine/marine_local.tga, heightmap(models/characters/male_npc/marine/marine_h.tga, 5 ) )
+    specularmap	  models/characters/male_npc/marine/marine_s.tga
+}

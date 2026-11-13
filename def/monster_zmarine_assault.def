@@ -1,0 +1,86 @@
+model model_monster_zmarine_assault {
+	inherit 						model_monster_zsec_shotgun
+	mesh							models/md5/monsters/zombies/zmarine_assault/zmarine_assault.md5mesh
+	channel torso					( *Waist )
+	channel legs					( origin Body Body2 *Hips -*Waist SPINNER )
+}
+
+entityDef monster_zmarine_assault {
+	"inherit"						"monster_zsec_pistol"
+	"scriptobject"					"monster_zombie_security_pistol"
+	"size"							"40 40 72"
+	"use_aas"						"aas48"
+	"team"							"1"
+	"rank"							"1"
+	"health"						"185"
+
+	"def_projectile"				"projectile_bullet_zsec_shotgun"
+	"projectile_spread"				"5"
+	"num_projectiles"				"7"
+	"attack_cone"					"70"
+	"attack_accuracy"				"2"
+	"run_attack"					"1"					// allow shooting while running
+
+	"smoke_weapon"					"cgsmoke.smoke"
+	"smoke_wound_ricochet"			"bulletricochet.prt"
+
+	"mass"							"300"
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"15"
+	"body_skin_heated"				"skins/monsters/zombies/zsecurity_shotgun_heated.skin"
+	"head_skin_heated"				"skins/monsters/zombies/zsecurity_shotgun_head_heated.skin"
+	"heatblast_fx"					"fx/heatblast.fx"
+
+	"skin_dropGib"					"skins/monsters/zombies/securitygib.skin"
+	"def_dropGibItem1"				"moveable_item_head_pork"
+	"dropGibItem1Joint"				"headcontrol"
+
+	"def_dropGibItem2"				"moveable_item_torso_pork"
+	"dropGibItem2Joint"				"Chest"
+
+	"def_dropGibItem3"				"moveable_item_rup_arm_pork"
+	"dropGibItem3Joint"				"Ruparm"
+
+	"def_dropGibItem4"				"moveable_item_left_waist_pork"
+	"dropGibItem4Joint"				"Waist"
+
+	"def_dropGibItem5"				"moveable_item_lup_leg_pork"
+	"dropGibItem5Joint"				"Lupleg"
+
+	"def_dropGibItem6"				"moveable_item_rup_leg_pork"
+	"dropGibItem6Joint"				"Rupleg"
+
+	"def_dropGibItem7"				"moveable_item_rup2_leg_pork"
+	"dropGibItem7Joint"				"Rloleg"
+
+	"def_dropGibItem8"				"moveable_item_pelvis_pork"
+	"dropGibItem8Joint"				"Hips"
+
+	"def_dropDeathItem9"			"moveable_item_shotgun"
+	"dropDeathItem9Joint"			"shotgun"
+
+	"def_dropDeathItem10"			"moveable_item_armor_security"
+	"dropDeathItem10Joint"			"Chest"
+
+	"skin_dropDeath"				"skins/monsters/zombies/zsecurity.skin"
+	"skin_dropDeath_heated"			"skins/env_ragdoll_zsecs_heated.skin"
+
+	"ragdoll"						"monster_zombie_security_shotgun"
+	"model"							"model_monster_zmarine_assault"
+	"def_head"						"head_stump"
+	"head_joint"					"Shoulders"
+
+	"mtr_flashShader"				"muzzleflash"
+	"flashTime"						"0.15"
+	"flashColor"					"1 0.8 0.4"
+	"flashRadius"					"240"
+
+	"armorGibs"						"3"
+	"headshot_weakness"				"1"
+	"snd_weakpoint_pistol"			"headshot_pistol_flesh"
+	"snd_weakpoint_shotgun"			"headshot_shotgun_flesh"
+	"snd_weakpoint_machinegun"		"headshot_auto_flesh"
+	"snd_weakpoint_chaingun"		"headshot_auto_flesh"
+	"snd_weakpoint_rocket"			"headshot_rocket_flesh"
+	"smoke_weakpoint_impact"		"burstysquirt.prt"
+}
