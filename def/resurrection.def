@@ -20,6 +20,9 @@ entityDef demon_resurrector_score {
     "monster_flying_cacodemon"          "35"
     "monster_demon_revenant"            "37"
     "monster_demon_cherub"              "40"
+    "monster_zmarine_medic"             "41"        // I may choose to remove the zmarines
+    "monster_zmarine_soldier"           "42"        // from the resurrector list so that they only
+    "monster_zmarine_assault"           "44"        // show up on veteran+
     "monster_zombie_sawyer"             "45"
     "monster_zombie_commando"           "47"
     "monster_demon_pinky"               "49"

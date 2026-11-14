@@ -26,6 +26,10 @@ monster_zsec_pistol_shield
 #define ZSOLDIER_ATTACK_MIN_SHOOT_TIME		0.5
 #define ZSOLDIER_NOFOVTIME					4
 
+#define ZSOLDIER_MAX_LEADER_DISTANCE		600
+#define ZSOLDIER_FOLLOW_NOCOMBAT_DIST		200	
+// #define ZSOLIDER_SQUAD_UPDATE_POLL_RATE		1.5
+
 #define ATTACK_ZSOLDIER_CROUCHFIRE			ATTACK_SPECIAL1
 
 // start out with a 50/50 chance of stand vs. crouch attacks.
@@ -69,6 +73,21 @@ object monster_zmarine_soldier : monster_zombie_base {
 	void		Legs_DodgeRight();
 	void		Legs_StepLeft();
 	void		Legs_StepRight();
+
+	// Squad mechanics
+	monster_zmarine_soldier		squadLeader;
+	string						leaderName;
+	float 						squadThread;
+
+	monster_zmarine_soldier 	GetSquadmate();
+	monster_zmarine_soldier 	GetSquadLeader();
+	void 						SetSquadLeader(entity squadmate);
+	void						UpdateSquad();
+	boolean						IsSquadLeaderInRange();
+	void						RegroupWithLeader(float range);
+	void 						ExecuteSquadTactics();
+
+	void		destroy();
 };
 
 /***********************************************************************
@@ -418,10 +437,12 @@ monster_zmarine_soldier::init
 =====================
 */
 void monster_zmarine_soldier::init() {
+	squadLeader 	= $null_entity;
+	leaderName 		= "";
 	run_distance	= ZSOLDIER_RUNDISTANCE;
 	walk_turn		= ZSOLDIER_WALKTURN;
 	run_attack		= getIntKey( "run_attack" );
-
+	squadThread 	= thread ExecuteSquadTactics();
 	setState( "state_Begin" );
 }
 
@@ -728,4 +749,99 @@ void monster_zmarine_soldier::combat_dodge_right() {
 	animState( ANIMCHANNEL_LEGS, "Legs_DodgeRight", 2 );	
 	waitAction( "strafe" );
 	nextDodge = DelayTime( ZSOLDIER_DODGE_RATE );
+}
+
+monster_zmarine_soldier monster_zmarine_soldier::GetSquadmate() {
+	// Prefer assaults as squad leaders
+	entity squadmate = sys.findEntityUsingDef($null_entity, "monster_zmarine_assault");
+	if (!squadmate) {
+		// This mechanism means that entities will always be returned in the same order
+		squadmate = sys.findEntityUsingDef($null_entity, "monster_zmarine_soldier");
+	}
+	return squadmate;
+}
+
+monster_zmarine_soldier monster_zmarine_soldier::GetSquadLeader() {
+	return squadLeader;
+}
+
+void monster_zmarine_soldier::SetSquadLeader(entity squadmate) {
+	squadLeader = squadmate;
+	leaderName = squadmate.getName();
+}
+
+void monster_zmarine_soldier::UpdateSquad() {
+	if (!squadLeader || !uniqueEntityExists(leaderName)) {
+		// Search for nearby candidate entities
+		monster_zmarine_soldier squadmate = GetSquadmate();
+		if (!squadmate) {
+			sys.println("No squadmates available for " + getName());
+			return;
+		}
+
+		// If they have a squad leader, adopt that leader
+		entity leader = squadmate.GetSquadLeader();
+		if (leader) {
+			squadLeader = leader;
+			sys.println(getName() + " adopting leader " + squadLeader.getName());
+		}	
+		// If they don't have a squad leader, negotiate for leadership
+		else {
+			// Defer to assault or go by entityNum to avoid race conditions/circular leadership
+			if (getClassname() == "monster_zmarine_assault" || getEntityNum() < squadmate.getEntityNum()) {
+				squadLeader = self;
+				squadmate.SetSquadLeader(self);
+				sys.println(getName() + " self-promoting to leader. " + squadmate.getName() + " ordered to follow");
+			}
+			else {
+				squadLeader = squadmate;
+				squadmate.SetSquadLeader(squadmate);
+				sys.println(getName() + " promoting " + squadmate.getName() + " to leader");
+			}
+		}
+		leaderName = squadLeader.getName();
+	}
+}
+
+boolean monster_zmarine_soldier::IsSquadLeaderInRange() {
+	float distance = sys.vecLength(getOrigin() - squadLeader.getOrigin());
+	if (squadLeader.getEnemy() != $null_entity && distance > ZSOLDIER_MAX_LEADER_DISTANCE) {
+		return false;
+	}
+	else if (distance > ZSOLDIER_FOLLOW_NOCOMBAT_DIST) {
+		return false;
+	}
+	return true;
+}
+
+void monster_zmarine_soldier::RegroupWithLeader(float range) {
+	// vector unitDir = sys.vecNormalize(getOrigin() - squadLeader.getOrigin());
+	// vector goalPos = pushPointIntoAAS(unitDir * range);
+	// // Blocks script execution until movement is complete (or fails)
+	// moveToPosition(goalPos);
+	moveToEntity(squadLeader);
+}
+
+void monster_zmarine_soldier::ExecuteSquadTactics() {
+	while (true) {
+		if (squadLeader != self) {
+			UpdateSquad();
+			if (!IsSquadLeaderInRange()) {
+				if (!squadLeader.getEnemy()) {
+					sys.println("Leader out of range of " + getName() + ". Following " + squadLeader.getName());
+					RegroupWithLeader(ZSOLDIER_FOLLOW_NOCOMBAT_DIST);
+				}
+				else {
+					setEnemy(squadLeader.getEnemy());
+					sys.println("Leader out of range: " + getName() + " Regrouping with " + squadLeader.getName());
+					RegroupWithLeader(ZSOLDIER_MAX_LEADER_DISTANCE);
+				}
+			}
+		}
+		sys.wait(1);
+	}
+}
+
+void monster_zmarine_soldier::destroy() {
+	sys.terminate(squadThread);
 }

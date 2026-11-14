@@ -256,6 +256,12 @@ scriptEvent void	takeDamage(float enable);
 // Adds ent to the entity's target list and returns the index
 scriptEvent float	addTarget(entity ent); 
 
+// Returns this entity's entityNum
+scriptEvent float	getEntityNum();
+
+// Returns the classname (EntityDefName) of the entity
+scriptEvent string	getClassname();
+
 /***********************************************************************
 
 	system events (called via 'sys.')
@@ -511,6 +517,9 @@ scriptEvent float	influenceActive();
 
 // Parses float from string
 scriptEvent float	parseFloat(string floatString);
+
+// Returns entities matching the classname (EntityDefName) in order of entityNumber
+scriptEvent entity	findEntityUsingDef(entity from, string classname);
 
 /***********************************************************************
 
