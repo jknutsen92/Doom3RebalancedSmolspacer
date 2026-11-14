@@ -32,7 +32,7 @@ monster_zsec_pistol_shield
 float zassault_num_stand_attacks = 1;
 float zassault_num_crouch_attacks = 1;
 
-object monster_zmarine_assault : monster_zombie_base {
+object monster_zmarine_assault : monster_zmarine_soldier {
 	boolean		fire;
 	boolean		crouch_fire;
 	boolean		run_attack;
