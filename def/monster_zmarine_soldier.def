@@ -458,6 +458,14 @@ model model_monster_zmarine_soldier {
 		frame 31					sound_weapon monster_machinegun_fire	
 		frame 31						launch_missile barrel
 	}
+
+	anim throw_grenade				models/md5/monsters/zombies/zmarine_soldier/machinegun_throw.md5anim {
+		// frame 10					sound_body		equip sound
+		frame 10					create_grenade	Lhand
+		frame 20					sound_weapon	player_grenade_use
+		frame 35					launch_grenade	Lhand
+		// frame 35					sound_weapon	whoosh sound
+	}
 }
 
 entityDef monster_zmarine_soldier {

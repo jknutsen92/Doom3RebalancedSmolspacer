@@ -28,9 +28,12 @@ monster_zsec_pistol_shield
 
 #define ZSOLDIER_MAX_LEADER_DISTANCE		1200
 #define ZSOLDIER_FOLLOW_NOCOMBAT_DIST		400
-// #define ZSOLIDER_SQUAD_UPDATE_POLL_RATE		1.5
+#define ZSOLIDER_GRENADE_DELAY_MIN			5
+#define ZSOLDIER_GRENADE_DELAY_MAX			9
+#define ZSOLDIER_GRENADE_RANGE_MAX			900
 
 #define ATTACK_ZSOLDIER_CROUCHFIRE			ATTACK_SPECIAL1
+#define ATTACK_ZSOLDIER_THROWGRENADE		ATTACK_SPECIAL2
 
 // start out with a 50/50 chance of stand vs. crouch attacks.
 float zsoldier_num_stand_attacks = 1;
@@ -47,6 +50,7 @@ object monster_zmarine_soldier : monster_zombie_base {
 	boolean		run_attack;
 	float		nextDodge;
 	float		nextAttack;
+	float 		nextGrenadeThrow;
 	float		nextNoFOVAttack;
 	entity		combat_node;
 
@@ -56,6 +60,7 @@ object monster_zmarine_soldier : monster_zombie_base {
 	// attacks
 	float		check_attacks();
 	void		do_attack( float attack_flags );
+	void 		throw_attack();
 	void		crouch_attack();
 	void		stand_attack();
 	void		combat_dodge_left();
@@ -66,6 +71,7 @@ object monster_zmarine_soldier : monster_zombie_base {
 	// torso anim states
 	void		Torso_Idle();
 	void		Torso_Pain();
+	void 		Torso_ThrowAttack();
 	void		Torso_RangeAttack();
 	void		Torso_TurretAttack();
 	void		Torso_CrouchAttack();
@@ -339,6 +345,19 @@ void monster_zmarine_soldier::Torso_CrouchAttack() {
 	animState( ANIMCHANNEL_TORSO, "Torso_Idle", 6 );
 }
 
+void monster_zmarine_soldier::Torso_ThrowAttack() {
+	// Assuming the character is already facing the throw direction
+	playAnim( ANIMCHANNEL_TORSO, "throw_grenade" );
+	while( !animDone( ANIMCHANNEL_TORSO, 0 ) ) {
+		if ( AI_PAIN ) {
+			Torso_Pain();
+		}
+		waitFrame();
+	}
+	finishAction("throw_grenade");
+	animState(ANIMCHANNEL_TORSO, "Torso_Idle", 0);
+}
+
 /***********************************************************************
 
 	Legs animation control
@@ -498,13 +517,20 @@ void monster_zmarine_soldier::do_attack( float attack_flags ) {
 	nextNoFOVAttack = sys.getTime() + ZSOLDIER_NOFOVTIME;
 	if ( attack_flags & ATTACK_DODGE_LEFT ) {
 		combat_dodge_left();
-	} else if ( attack_flags & ATTACK_DODGE_RIGHT ) {
+	}
+	else if ( attack_flags & ATTACK_DODGE_RIGHT ) {
 		combat_dodge_right();
-	} else if ( attack_flags & ATTACK_COMBAT_NODE ) {
+	} 
+	else if ( attack_flags & ATTACK_COMBAT_NODE ) {
 		combat_ainode( combat_node );
-	} else if ( attack_flags & ATTACK_ZSOLDIER_CROUCHFIRE ) {
+	}
+	else if (attack_flags & ATTACK_ZSOLDIER_THROWGRENADE) {
+		throw_attack();
+	}
+	else if ( attack_flags & ATTACK_ZSOLDIER_CROUCHFIRE ) {
 		crouch_attack();
-	} else if ( attack_flags & ATTACK_MISSILE ) {
+	} 
+	else if ( attack_flags & ATTACK_MISSILE ) {
 		stand_attack();
 	}
 }
@@ -517,7 +543,9 @@ monster_zmarine_soldier::check_attacks
 float monster_zmarine_soldier::check_attacks() {
 	float currentTime;
 	float attack_flags;
-	boolean try_attack;
+	float range;
+	boolean try_shooting;
+	boolean try_throwing;
 	boolean reachable;
 	
 	attack_flags = 0;
@@ -546,18 +574,27 @@ float monster_zmarine_soldier::check_attacks() {
 		attack_flags |= ATTACK_COMBAT_NODE;
 	}
 
+	range = enemyRange();
 	reachable = canReachEnemy();
-	if ( AI_ENEMY_IN_FOV && ( !reachable || ( currentTime >= nextAttack ) ) ) {
-		try_attack = true;
-	} else if ( ( sys.getTime() > nextNoFOVAttack ) && AI_ENEMY_VISIBLE && ( !reachable || ( currentTime >= nextAttack ) ) ) {
-		try_attack = true;
-	} else if ( touches( getEnemy() ) ) {
-		try_attack = true;
-	} else {
-		try_attack = false;
+	if (!AI_ENEMY_VISIBLE && squadLeader.getClassname() != "monster_zmarine_assault" && currentTime >= nextGrenadeThrow && range <= ZSOLDIER_GRENADE_RANGE_MAX) {
+		try_shooting = false;
+		try_throwing = true;
+	}
+	else if ( AI_ENEMY_IN_FOV && ( !reachable || ( currentTime >= nextAttack ) ) ) {
+		try_shooting = true;
+	} 
+	else if ( ( sys.getTime() > nextNoFOVAttack ) && AI_ENEMY_VISIBLE && ( !reachable || ( currentTime >= nextAttack ) ) ) {
+		try_shooting = true;
+	} 
+	else if ( touches( getEnemy() ) ) {
+		try_shooting = true;
+	} 
+	else {
+		try_shooting = false;
+		try_throwing = false;
 	}
 
-	if ( try_attack ) {
+	if ( try_shooting ) {
 		// adjust the likelyhood of a crouch vs. stand attack based on the # of each.
 		if ( sys.random( zsoldier_num_stand_attacks + zsoldier_num_crouch_attacks ) < zsoldier_num_stand_attacks ) {
 			if ( canHitEnemyFromAnim( "crouch_range_attack_loop" ) ) {
@@ -567,6 +604,12 @@ float monster_zmarine_soldier::check_attacks() {
 			}
 		} else if ( canHitEnemyFromAnim( "range_attack_loop" ) ) {
 			attack_flags |= ATTACK_MISSILE;
+		}
+	}
+
+	if (try_throwing) {
+		if (canHitEnemyWithGrenade("throw_grenade")) {
+			attack_flags  |= ATTACK_ZSOLDIER_THROWGRENADE;
 		}
 	}
 	
@@ -672,6 +715,17 @@ void monster_zmarine_soldier::stand_attack() {
 	// don't attack for a bit
 	nextAttack = RandomDelay( ZSOLDIER_ATTACK_DELAY_MIN, ZSOLDIER_ATTACK_DELAY_MAX );
 	nextNoFOVAttack = sys.getTime() + ZSOLDIER_NOFOVTIME;
+}
+
+void monster_zmarine_soldier::throw_attack() {
+	stopMove();
+	faceEnemy();
+	sys.println(getName() + " is throwing grenade");
+	animState(ANIMCHANNEL_TORSO, "Torso_ThrowAttack", 0);
+	while( inAnimState( ANIMCHANNEL_TORSO, "Torso_ThrowAttack" ) ) {
+		waitFrame();
+	}
+	nextGrenadeThrow = RandomDelay( ZSOLIDER_GRENADE_DELAY_MIN, ZSOLDIER_GRENADE_DELAY_MAX );
 }
 	
 /*
