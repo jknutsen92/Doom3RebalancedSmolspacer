@@ -609,7 +609,7 @@ void monster_zmarine_soldier::stand_attack() {
 			} else if ( !entityInAttackCone( getEnemy() ) ) {
 				attackTime = 0;
 				break;
-			} else {
+			} else if (squadLeader.getClassname() != "monster_zmarine_assault") {
 				moveToEnemy();
 			}
 			if ( !canHitEnemyFromAnim( "range_attack_loop" ) ) {
@@ -797,39 +797,39 @@ void ReformZmarineSquad() {
 
 	// Prefer assaults as squad leaders so process them first
 	monster_zmarine_soldier squadmate = sys.findEntityUsingDef($null_entity, "monster_zmarine_assault");
-	if (squadmate) {
+	if (squadmate.isLiving()) {
 		sys.println("promoting the first assault trooper " + squadmate.getName() + " to squad leader");
 		g_zsquad_leader = squadmate;
 	}
-	while (squadmate) {
+	while (squadmate.isLiving()) {
 		squadmate.UpdateSquad();
 		squadmate = sys.findEntityUsingDef(squadmate, "monster_zmarine_assault");
 	}
 
 	// Next process the soldiers
 	squadmate = sys.findEntityUsingDef($null_entity, "monster_zmarine_soldier");
-	if (squadmate != $null_entity && g_zsquad_leader == $null_entity) {
+	if (squadmate.isLiving() && g_zsquad_leader == $null_entity) {
 		sys.println("promoting the first soldier " + squadmate.getName() + " to squad leader");
 		g_zsquad_leader = squadmate;
 	}
-	while (squadmate) {
+	while (squadmate.isLiving()) {
 		squadmate.UpdateSquad();
 		squadmate = sys.findEntityUsingDef(squadmate, "monster_zmarine_soldier");
 	}
 
 	// Finally the medics, who should least be in the front lines
 	squadmate = sys.findEntityUsingDef($null_entity, "monster_zmarine_medic");
-	if (squadmate != $null_entity && g_zsquad_leader == $null_entity) {
+	if (squadmate.isLiving() && g_zsquad_leader == $null_entity) {
 		sys.println("promoting the first medic " + squadmate.getName() + " to squad leader");
 		g_zsquad_leader = squadmate;
 	}
-	while (squadmate) {
+	while (squadmate.isLiving()) {
 		squadmate.UpdateSquad();
-		squadmate = sys.findEntityUsingDef(squadmate, "monster_zmarine_soldier");
+		squadmate = sys.findEntityUsingDef(squadmate, "monster_zmarine_medic");
 	}
 
 	if (g_zsquad_leader) {
 		sys.println("Setting squad update handler on " + g_zsquad_leader.getName());
-		thread addSignalFunc(SIG_REMOVED, g_zsquad_leader, "ReformZmarineSquad");
+		thread addSignalFunc(SIG_KILLED, g_zsquad_leader, "ReformZmarineSquad");
 	}
 }

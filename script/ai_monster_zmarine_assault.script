@@ -10,7 +10,7 @@ monster_zsec_pistol_shield
 
 ***********************************************************************/
 
-#define ZASSAULT_RUNDISTANCE				192
+#define ZASSAULT_RUNDISTANCE				120
 #define ZASSAULT_WALKTURN					65
 #define ZASSAULT_DODGE_RATE					1
 #define ZASSAULT_ATTACK_DELAY_MIN			0.5
@@ -25,12 +25,10 @@ monster_zsec_pistol_shield
 #define ZASSAULT_STAND_ATTACK_MIN_LENGTH	3
 #define ZASSAULT_ATTACK_MIN_SHOOT_TIME		0.5
 #define ZASSAULT_NOFOVTIME					4
+#define ZASSAULT_ATTACK_RANGE_MAX			350
 
 #define ATTACK_ZASSAULT_CROUCHFIRE			ATTACK_SPECIAL1
 
-// start out with a 50/50 chance of stand vs. crouch attacks.
-float zassault_num_stand_attacks = 1;
-float zassault_num_crouch_attacks = 1;
 
 object monster_zmarine_assault : monster_zmarine_soldier {
 	boolean		fire;
@@ -477,14 +475,18 @@ void monster_zmarine_assault::do_attack( float attack_flags ) {
 	nextNoFOVAttack = sys.getTime() + ZASSAULT_NOFOVTIME;
 	if ( attack_flags & ATTACK_DODGE_LEFT ) {
 		combat_dodge_left();
-	} else if ( attack_flags & ATTACK_DODGE_RIGHT ) {
+	} 
+	else if ( attack_flags & ATTACK_DODGE_RIGHT ) {
 		combat_dodge_right();
-	} else if ( attack_flags & ATTACK_COMBAT_NODE ) {
+	} 
+	else if ( attack_flags & ATTACK_COMBAT_NODE ) {
 		combat_ainode( combat_node );
-	} else if ( attack_flags & ATTACK_ZASSAULT_CROUCHFIRE ) {
-		crouch_attack();
-	} else if ( attack_flags & ATTACK_MISSILE ) {
+	} 
+	else if ( attack_flags & ATTACK_MISSILE ) {
 		stand_attack();
+	}
+	else if ( attack_flags & ATTACK_ZASSAULT_CROUCHFIRE ) {
+		crouch_attack();
 	}
 }
 
@@ -499,6 +501,8 @@ float monster_zmarine_assault::check_attacks() {
 	boolean try_attack;
 	boolean reachable;
 	
+	float range = enemyRange();
+	entity enemy = getEnemy();
 	attack_flags = 0;
 	
 	currentTime = sys.getTime();
@@ -521,30 +525,31 @@ float monster_zmarine_assault::check_attacks() {
 	}
 
 	combat_node = getCombatNode();
-	if ( combat_node ) {
+	float combatNodeRangeFromEnemy = sys.vecLength(combat_node.getOrigin() - enemy.getOrigin());
+	if ( combat_node != $null_entity && (combatNodeRangeFromEnemy <= ZASSAULT_ATTACK_RANGE_MAX)) {
 		attack_flags |= ATTACK_COMBAT_NODE;
 	}
 
 	reachable = canReachEnemy();
 	if ( AI_ENEMY_IN_FOV && ( !reachable || ( currentTime >= nextAttack ) ) ) {
 		try_attack = true;
-	} else if ( ( sys.getTime() > nextNoFOVAttack ) && AI_ENEMY_VISIBLE && ( !reachable || ( currentTime >= nextAttack ) ) ) {
+	} 
+	else if ( ( sys.getTime() > nextNoFOVAttack ) && AI_ENEMY_VISIBLE && ( !reachable || ( currentTime >= nextAttack ) ) ) {
 		try_attack = true;
-	} else if ( touches( getEnemy() ) ) {
+	} 
+	else if (range <= ZASSAULT_ATTACK_RANGE_MAX) {
 		try_attack = true;
-	} else {
+	}
+	else if ( touches( enemy ) ) {
+		try_attack = true;
+	} 
+	else {
 		try_attack = false;
 	}
 
 	if ( try_attack ) {
 		// adjust the likelyhood of a crouch vs. stand attack based on the # of each.
-		if ( sys.random( zassault_num_stand_attacks + zassault_num_crouch_attacks ) < zassault_num_stand_attacks ) {
-			if ( canHitEnemyFromAnim( "crouch_range_attack_loop" ) ) {
-				attack_flags |= ATTACK_ZASSAULT_CROUCHFIRE;
-			} else if ( canHitEnemyFromAnim( "range_attack_loop" ) ) {
-				attack_flags |= ATTACK_MISSILE;
-			}
-		} else if ( canHitEnemyFromAnim( "range_attack_loop" ) ) {
+		if ( canHitEnemyFromAnim( "range_attack_loop" ) ) {
 			attack_flags |= ATTACK_MISSILE;
 		}
 	}
@@ -565,12 +570,14 @@ void monster_zmarine_assault::stand_attack() {
 	float attack_flags;
 	boolean do_run_attack;
 
-	zassault_num_stand_attacks++;
-
-	if ( sys.random( 10 ) < 6 ) {
+	float range = enemyRange();
+	// if ( sys.random( 10 ) < 6 ) {
+	// 	do_run_attack = run_attack;
+	// } else {
+	// 	do_run_attack = false;
+	// }
+	if (range >= ZASSAULT_ATTACK_RANGE_MAX) {
 		do_run_attack = run_attack;
-	} else {
-		do_run_attack = false;
 	}
 
 	fire = true;
@@ -583,14 +590,17 @@ void monster_zmarine_assault::stand_attack() {
 				break;
 			}
 			lookAtEnemy( 1 );
-			if ( !do_run_attack || ( enemyRange() < 90 ) ) {
-				faceEnemy();
-			} else if ( !entityInAttackCone( getEnemy() ) ) {
-				attackTime = 0;
-				break;
-			} else {
+			if (range >= ZASSAULT_ATTACK_RANGE_MAX) {
 				moveToEnemy();
 			}
+			else if ( !do_run_attack || ( enemyRange() < 90 ) ) {
+				faceEnemy();
+			} 
+			else if ( !entityInAttackCone( getEnemy() ) ) {
+				attackTime = 0;
+				break;
+			} 
+			
 			if ( !canHitEnemyFromAnim( "range_attack_loop" ) ) {
 				break;
 			}
@@ -618,29 +628,29 @@ void monster_zmarine_assault::stand_attack() {
 			break;
 		}
 		
-		left  = testAnimMove( "step_left" );
-		right =	testAnimMove( "step_right" );
-		if ( left && right ) {
-			if ( sys.random( 100 ) < 50 ) {
-				left = false;
-			} else {
-				right = false;
-			}
-		}
+		// left  = testAnimMove( "step_left" );
+		// right =	testAnimMove( "step_right" );
+		// if ( left && right ) {
+		// 	if ( sys.random( 100 ) < 50 ) {
+		// 		left = false;
+		// 	} else {
+		// 		right = false;
+		// 	}
+		// }
 		
-		if ( left ) {
-			animState( ANIMCHANNEL_LEGS, "Legs_StepLeft", 4 );
-			while( inAnimState( ANIMCHANNEL_LEGS, "Legs_StepLeft" ) ) {
-				lookAtEnemy( 1 );
-				waitFrame();
-			}
-		} else if ( right ) {
-			animState( ANIMCHANNEL_LEGS, "Legs_StepRight", 4 );
-			while( inAnimState( ANIMCHANNEL_LEGS, "Legs_StepRight" ) ) {
-				lookAtEnemy( 1 );
-				waitFrame();
-			}
-		}
+		// if ( left ) {
+		// 	animState( ANIMCHANNEL_LEGS, "Legs_StepLeft", 4 );
+		// 	while( inAnimState( ANIMCHANNEL_LEGS, "Legs_StepLeft" ) ) {
+		// 		lookAtEnemy( 1 );
+		// 		waitFrame();
+		// 	}
+		// } else if ( right ) {
+		// 	animState( ANIMCHANNEL_LEGS, "Legs_StepRight", 4 );
+		// 	while( inAnimState( ANIMCHANNEL_LEGS, "Legs_StepRight" ) ) {
+		// 		lookAtEnemy( 1 );
+		// 		waitFrame();
+		// 	}
+		// }
 	}
 	
 	fire = false;
@@ -661,8 +671,6 @@ monster_zmarine_assault::crouch_attack
 void monster_zmarine_assault::crouch_attack() {
 	float attackTime;
 	float attack_flags;
-
-	zassault_num_crouch_attacks++;
 
 	faceEnemy();
 	crouch_fire = true;

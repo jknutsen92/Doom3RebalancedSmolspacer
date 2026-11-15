@@ -103,7 +103,7 @@ entityDef monster_zmarine_medic {
 	"def_dropDeathItem9"			"moveable_item_pistol"
 	"dropDeathItem9Joint"			"pistol"
 
-	"def_dropDeathItem10"			"moveable_item_medkit"
+	"def_dropDeathItem10"			"moveable_item_medkit_zmarine"
 	"dropDeathItem10Joint"			"Waist"
 
 	"skin_dropDeath"				"skins/monsters/zombies/zsecurity.skin"

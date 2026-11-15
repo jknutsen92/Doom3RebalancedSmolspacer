@@ -514,8 +514,8 @@ patchDef2
 }
 // entity 23
 {
-"classname" "monster_demon_pinky"
-"name" "monster_demon_pinky_1"
-"origin" "49.824 7.5382 19.1401"
+"classname" "monster_zmarine_assault"
+"name" "monster_zmarine_assault_1"
+"origin" "328.319 5.2952 16.3957"
 "rotation" "-1 0 0 0 -1 0 0 0 1"
 }

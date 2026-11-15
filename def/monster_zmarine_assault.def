@@ -59,16 +59,16 @@ entityDef monster_zmarine_assault {
 	"def_dropDeathItem9"			"moveable_item_shotgun"
 	"dropDeathItem9Joint"			"shotgun"
 
-	"def_dropDeathItem10"			"moveable_item_armor_shard"
+	"def_dropDeathItem10"			"moveable_item_armor_shard_zmarine"
 	"dropDeathItem10Joint"			"Chest"
 
-	"def_dropDeathItem11"			"moveable_item_armor_shard"
+	"def_dropDeathItem11"			"moveable_item_armor_shard_zmarine"
 	"dropDeathItem11Joint"			"Waist"
 
-	"def_dropDeathItem12"			"moveable_item_armor_shard"
+	"def_dropDeathItem12"			"moveable_item_armor_shard_zmarine"
 	"dropDeathItem12Joint"			"Rloleg"
 
-	"def_dropDeathItem13"			"moveable_item_armor_shard"
+	"def_dropDeathItem13"			"moveable_item_armor_shard_zmarine"
 	"dropDeathItem13Joint"			"Belly"
 
 

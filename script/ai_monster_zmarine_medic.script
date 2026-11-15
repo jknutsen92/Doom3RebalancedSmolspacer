@@ -588,7 +588,7 @@ void monster_zmarine_medic::stand_attack() {
 			} else if ( !entityInAttackCone( getEnemy() ) ) {
 				attackTime = 0;
 				break;
-			} else {
+			} else if (squadLeader.getClassname() != "monster_zmarine_assault") {
 				moveToEnemy();
 			}
 			if ( !canHitEnemyFromAnim( "range_attack_loop" ) ) {

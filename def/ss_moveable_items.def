@@ -1,8 +1,19 @@
-entityDef moveable_item_armor_shard {
+entityDef moveable_item_armor_shard_zmarine {
 	"inherit"					"item_armor_shard"
 	"spawnclass"				"idMoveableItem"
 	"density"					"0.7"
 	"friction"					"0.6"
 	"bouncyness"				"0.3"
 	"nopulse"					"1"
+	"inv_armor"					"7"
+}
+
+entityDef moveable_item_medkit_zmarine {
+	"inherit"					"item_medkit"
+	"spawnclass"				"idMoveableItem"
+	"density"					"0.05"
+	"friction"					"0.3"
+	"bouncyness"				"0.1"
+	"nopulse"					"1"
+	"inv_health"				"40"
 }
