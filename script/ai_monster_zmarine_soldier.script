@@ -608,7 +608,8 @@ float monster_zmarine_soldier::check_attacks() {
 	}
 
 	if (try_throwing) {
-		if (canHitEnemyWithGrenade("throw_grenade")) {
+		sys.println(getName() + " is testing throw");
+		if (canHitEnemyWithGrenade()) {
 			attack_flags  |= ATTACK_ZSOLDIER_THROWGRENADE;
 		}
 	}
