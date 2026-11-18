@@ -12,7 +12,7 @@ entityDef monster_zmarine_assault {
 	"use_aas"						"aas48"
 	"team"							"1"
 	"rank"							"1"
-	"health"						"185"
+	"health"						"150"
 
 	"def_projectile"				"projectile_bullet_zsec_shotgun"
 	"projectile_spread"				"5"

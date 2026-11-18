@@ -13,7 +13,7 @@ entityDef monster_zmarine_medic {
 	"use_aas"						"aas48"
 	"team"							"1"
 	"rank"							"1"
-	"health"						"150"
+	"health"						"105"
 	"def_projectile"				"projectile_bullet_zsec_pistol"
 	"attack_cone"					"75"
 	"attack_accuracy"				"1"
