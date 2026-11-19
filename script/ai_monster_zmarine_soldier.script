@@ -31,6 +31,7 @@ monster_zsec_pistol_shield
 #define ZSOLIDER_GRENADE_DELAY_MIN			5
 #define ZSOLDIER_GRENADE_DELAY_MAX			9
 #define ZSOLDIER_GRENADE_RANGE_MAX			900
+#define ZSOLDIER_THROW_CHECK_DELAY			1
 
 #define ATTACK_ZSOLDIER_CROUCHFIRE			ATTACK_SPECIAL1
 #define ATTACK_ZSOLDIER_THROWGRENADE		ATTACK_SPECIAL2
@@ -39,7 +40,8 @@ monster_zsec_pistol_shield
 float zsoldier_num_stand_attacks = 1;
 float zsoldier_num_crouch_attacks = 1;
 
-entity g_zsquad_leader = $null_entity;
+entity 	g_zsquad_leader = $null_entity;
+float 	g_num_squadmates = 0;
 
 // Called by the first squadmate spawn or on the death of a squad leader
 void ReformZmarineSquad();
@@ -51,6 +53,7 @@ object monster_zmarine_soldier : monster_zombie_base {
 	float		nextDodge;
 	float		nextAttack;
 	float 		nextGrenadeThrow;
+	float 		nextThrowCheck;
 	float		nextNoFOVAttack;
 	entity		combat_node;
 
@@ -456,6 +459,7 @@ monster_zmarine_soldier::init
 =====================
 */
 void monster_zmarine_soldier::init() {
+	g_num_squadmates= g_num_squadmates + 1; 
 	squadLeader 	= $null_entity;
 	run_distance	= ZSOLDIER_RUNDISTANCE;
 	walk_turn		= ZSOLDIER_WALKTURN;
@@ -576,7 +580,7 @@ float monster_zmarine_soldier::check_attacks() {
 
 	range = enemyRange();
 	reachable = canReachEnemy();
-	if (!AI_ENEMY_VISIBLE && squadLeader.getClassname() != "monster_zmarine_assault" && currentTime >= nextGrenadeThrow && range <= ZSOLDIER_GRENADE_RANGE_MAX) {
+	if (!AI_ENEMY_VISIBLE && squadLeader.getClassname() != "monster_zmarine_assault" && currentTime >= nextGrenadeThrow && currentTime >= nextThrowCheck && range <= ZSOLDIER_GRENADE_RANGE_MAX) {
 		try_shooting = false;
 		try_throwing = true;
 	}
@@ -612,6 +616,7 @@ float monster_zmarine_soldier::check_attacks() {
 		if (canHitEnemyWithGrenade()) {
 			attack_flags  |= ATTACK_ZSOLDIER_THROWGRENADE;
 		}
+		nextThrowCheck = currentTime + ZSOLDIER_THROW_CHECK_DELAY;
 	}
 	
 	return attack_flags;
@@ -820,6 +825,11 @@ void monster_zmarine_soldier::UpdateSquad() {
 
 void monster_zmarine_soldier::ExecuteSquadTactics() {
 	while (true) {
+		if (g_num_squadmates < 2) {
+			sys.println(getName() + " is the last survivor. Disbanding squad");
+			return;
+		}
+
 		if (squadLeader != self) {
 			entity leaderEnemy = squadLeader.getEnemy();
 			if (getEnemy() != leaderEnemy) {
@@ -843,10 +853,16 @@ void monster_zmarine_soldier::ExecuteSquadTactics() {
 }
 
 void monster_zmarine_soldier::destroy() {
+	g_num_squadmates = g_num_squadmates - 1;
 	sys.terminate(squadThread);
 }
 
-void ReformZmarineSquad() {
+void ReformZmarineSquad() {	
+	if (g_num_squadmates < 2) {
+		sys.println("Not enough squadmates remaining to reform squad");
+		return;
+	}
+
 	g_zsquad_leader = $null_entity;
 	sys.println("Squad leader is gone. Updating squad");
 
@@ -887,4 +903,6 @@ void ReformZmarineSquad() {
 		sys.println("Setting squad update handler on " + g_zsquad_leader.getName());
 		thread addSignalFunc(SIG_KILLED, g_zsquad_leader, "ReformZmarineSquad");
 	}
+
+	sys.println(g_num_squadmates + " squadmates in squad");
 }
