@@ -615,6 +615,7 @@ float monster_zmarine_soldier::check_attacks() {
 		sys.println(getName() + " is testing throw");
 		if (canHitEnemyWithGrenade()) {
 			attack_flags  |= ATTACK_ZSOLDIER_THROWGRENADE;
+			stopMove();
 		}
 		nextThrowCheck = currentTime + ZSOLDIER_THROW_CHECK_DELAY;
 	}
