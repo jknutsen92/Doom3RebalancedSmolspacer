@@ -613,7 +613,8 @@ float monster_zmarine_soldier::check_attacks() {
 
 	if (try_throwing) {
 		sys.println(getName() + " is testing throw");
-		if (canHitEnemyWithGrenade()) {
+		// Left shoulder is the closest joint to the throw origin
+		if (canHitEnemyWithGrenade("Lshldr")) {
 			attack_flags  |= ATTACK_ZSOLDIER_THROWGRENADE;
 			stopMove();
 		}

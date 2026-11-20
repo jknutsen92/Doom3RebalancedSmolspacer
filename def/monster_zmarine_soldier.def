@@ -554,7 +554,7 @@ entityDef projectile_zmarine_grenade {
 	"maxs"						"3 3 11"
 	"cylinder"					"6"
 	"model" 					"models/weapons/grenades/grenades_world.lwo"
-	"offsetModel"				"0 0 -5"
+	"clipRadiusOverride"		"1"
 
 	"def_damage"				"damage_grenadeDirect"
 	"def_splash_damage"			"damage_grenadeSplash"
@@ -573,7 +573,7 @@ entityDef projectile_zmarine_grenade {
 	"bounceCoefficent"			"0.36"
 	"mass"						"10"
 	// "gravity"					"1066"				// how much gravity affects the trajectory.  gravity direction is same as the entity that fired it.
-	"gravity"					"777"
+	"gravity"					"666"
 	"fuse"						"3"					// how long before the projectile is removed or self-detonates.  Use 0 for beam weapons (velocity == distance).
 						
 	"detonate_on_fuse"			"1"					// whether projectile should detonate when it's fuse runs out

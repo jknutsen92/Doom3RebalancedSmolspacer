@@ -1175,8 +1175,8 @@ scriptEvent	vector	predictEnemyPos( float time );
 
 scriptEvent	float	canHitEnemy();
 
-// Returns true if the character can bounce a grenade into threatening range of the player
-scriptEvent	float	canHitEnemyWithGrenade();
+// Returns true if the character can bounce a grenade into threatening range of the player. Test starts from the joint
+scriptEvent	float	canHitEnemyWithGrenade(string jointname);
 
 scriptEvent	float	canHitEnemyFromAnim( string anim );
 scriptEvent	float	canHitEnemyFromJoint( string jointname );
