@@ -554,14 +554,16 @@ entityDef projectile_zmarine_grenade {
 	"maxs"						"3 3 11"
 	"cylinder"					"6"
 	"model" 					"models/weapons/grenades/grenades_world.lwo"
-	// "clipRadiusOverride"		"6"
+	"clipRadiusOverride"		"6"
+	"max_range"					"900"
+	"ai_obstacle"				"1"					// AI will avoid this up to the blast radius
 
 	"def_damage"				"damage_grenadeDirect"
-	"def_splash_damage"			"damage_grenadeSplash"
+	"def_splash_damage"			"damage_zmarine_grenadeSplash"
 								
 	"launchFromBarrel"			"1"
-	"health"					"10"					// amount of damage projectile can take if damaged (0 means it can't be destroyed)
-	"velocity"					"250 0 1000"			// how fast the projectile leaves the gun (or distance if fuse is 0)
+	"health"					"10"				// amount of damage projectile can take if damaged (0 means it can't be destroyed)
+	"velocity"					"250 0 1000"		// how fast the projectile leaves the gun (or distance if fuse is 0)
 	"angular_velocity"			"5 -15 10"			// how the projectile is rotating when it leaves the gun
 	"thrust"					"0"					// the rate of acceleration (always in the direction of the projectiles model)
 	"thrust_start"				"0"					// when to start accelerating
@@ -570,7 +572,7 @@ entityDef projectile_zmarine_grenade {
 	"angular_friction"			"0.4"
 	"contact_friction"			"0.9"
 	"bounce"					"0.6"
-	"bounceCoefficent"			"0.36"
+	"bounceCoefficent"			"0.44"
 	"mass"						"10"
 	"gravity"					"1066"				// how much gravity affects the trajectory.  gravity direction is same as the entity that fired it.
 	"fuse"						"3"					// how long before the projectile is removed or self-detonates.  Use 0 for beam weapons (velocity == distance).
@@ -615,4 +617,14 @@ entityDef projectile_zmarine_grenade {
 	"snd_bounce"				"player_handgrenade_bounce"
 	"snd_explode"				"rocket_impact"
 	"snd_throw"					"player_handgrenade_throw"	// For precache -- referenced in the script
+}
+
+entityDef damage_zmarine_grenadeSplash {
+	"damage"					"125"
+	"radius"					"300"
+	"knockback"					"80"
+	"push"						"10000"
+	"attackerDamageScale"		"0.2"
+	"attackerPushScale"			"0.2"
+	"gib"						"1"
 }
