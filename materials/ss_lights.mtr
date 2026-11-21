@@ -1,0 +1,12 @@
+lights/grenadeglow
+{
+	noshadows
+	{
+		forceHighQuality
+		map     textures/particles/round001.tga
+		// color   0.7, 0.3, 0.1, 1
+        colored
+		rotate	time * -.1
+		zeroClamp
+	}
+}

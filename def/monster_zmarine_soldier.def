@@ -554,14 +554,14 @@ entityDef projectile_zmarine_grenade {
 	"maxs"						"3 3 11"
 	"cylinder"					"6"
 	"model" 					"models/weapons/grenades/grenades_world.lwo"
-	"clipRadiusOverride"		"1"
+	// "clipRadiusOverride"		"6"
 
 	"def_damage"				"damage_grenadeDirect"
 	"def_splash_damage"			"damage_grenadeSplash"
 								
 	"launchFromBarrel"			"1"
 	"health"					"10"					// amount of damage projectile can take if damaged (0 means it can't be destroyed)
-	"velocity"					"250 0 666"			// how fast the projectile leaves the gun (or distance if fuse is 0)
+	"velocity"					"250 0 1000"			// how fast the projectile leaves the gun (or distance if fuse is 0)
 	"angular_velocity"			"5 -15 10"			// how the projectile is rotating when it leaves the gun
 	"thrust"					"0"					// the rate of acceleration (always in the direction of the projectiles model)
 	"thrust_start"				"0"					// when to start accelerating
@@ -572,8 +572,7 @@ entityDef projectile_zmarine_grenade {
 	"bounce"					"0.6"
 	"bounceCoefficent"			"0.36"
 	"mass"						"10"
-	// "gravity"					"1066"				// how much gravity affects the trajectory.  gravity direction is same as the entity that fired it.
-	"gravity"					"250"
+	"gravity"					"1066"				// how much gravity affects the trajectory.  gravity direction is same as the entity that fired it.
 	"fuse"						"3"					// how long before the projectile is removed or self-detonates.  Use 0 for beam weapons (velocity == distance).
 						
 	"detonate_on_fuse"			"1"					// whether projectile should detonate when it's fuse runs out
@@ -600,10 +599,10 @@ entityDef projectile_zmarine_grenade {
 	"def_debris"				"debris_largeshrapnel"
 	"def_shrapnel"				"debris_shrapnel"
 
-	"mtr_light_shader"			""
-	"light_color"				""
-	"light_radius"				""
-	"light_offset"				""
+	"mtr_light_shader"			"lights/grenadeglow"
+	"light_color"				"0.6, 0.2, 0.1"
+	"light_radius"				"80"
+	"light_offset"				"0 0 0"
 
 	"mtr_explode_light_shader"	"muzzleflash"
 	"explode_light_color"		"1 0.8 0.4"
