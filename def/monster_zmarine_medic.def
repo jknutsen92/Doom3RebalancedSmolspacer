@@ -1,6 +1,7 @@
 model model_monster_zmarine_medic {
 	inherit 						model_monster_zsec_pistol
 	mesh							models/md5/monsters/zombies/zmarine_medic/zmarine_medic.md5mesh
+	skin							skins/models/monsters/zmarine/medic.skin
 	channel torso					( *Waist )
 	channel legs					( origin Body Body2 *Hips -*Waist SPINNER )
 }

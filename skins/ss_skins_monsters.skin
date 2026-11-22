@@ -1,3 +1,9 @@
 skin skins/models/monsters/imp/nightmare_imp {
     models/monsters/imp/imp         models/monsters/imp/nightmare_imp
 }
+
+skin skins/models/monsters/zmarine/soldier {    // Needed to override the zsec skin
+}
+
+skin skins/models/monsters/zmarine/medic {    // Needed to override the zsec skin
+}
