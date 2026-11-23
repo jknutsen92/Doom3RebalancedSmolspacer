@@ -473,6 +473,7 @@ void monster_zmarine_soldier::init() {
 		debugGrenades = false;
 	}
 	g_num_squadmates= g_num_squadmates + 1; 
+	thread addSignalFunc(SIG_KILLED, self, "monster_zmarine_soldier::Killed");
 	squadLeader 	= $null_entity;
 	run_distance	= ZSOLDIER_RUNDISTANCE;
 	walk_turn		= ZSOLDIER_WALKTURN;
@@ -632,12 +633,15 @@ float monster_zmarine_soldier::check_attacks() {
 		float direction = checkImmediateObstacles();
 		if (direction == FORWARD) {
 			playAnim(ANIMCHANNEL_LEGS, "step_back");
+			waitUntil(animDone(ANIMCHANNEL_LEGS, 4));
 		}
 		else if (direction == LEFT) {
 			playAnim(ANIMCHANNEL_LEGS, "step_right");
+			waitUntil(animDone(ANIMCHANNEL_LEGS, 4));
 		}
 		else if (direction == RIGHT) {
 			playAnim(ANIMCHANNEL_LEGS, "step_left");
+			waitUntil(animDone(ANIMCHANNEL_LEGS, 4));
 		}
 		// Left shoulder is the closest joint to the throw origin
 		if (canHitEnemyWithGrenade("Lshldr")) {
@@ -857,22 +861,12 @@ void monster_zmarine_soldier::UpdateSquad() {
 
 void monster_zmarine_soldier::ExecuteSquadTactics() {
 	while (true) {
-		sys.println(getName());
 		if (g_num_squadmates < 2) {
 			if (debugSquad) {
 				sys.println(getName() + " is the last survivor. Disbanding squad");
 			}
 			return;
 		}
-
-		if (!isLiving()) {
-			g_num_squadmates = g_num_squadmates - 1;
-			if (debugSquad) {
-				sys.println(getName() + " is dead. " + g_num_squadmates + " squadmates remaining");
-			}
-			return;
-		}
-
 
 		if (squadLeader != self) {
 			entity leaderEnemy = squadLeader.getEnemy();
@@ -900,6 +894,14 @@ void monster_zmarine_soldier::ExecuteSquadTactics() {
 		}
 		sys.wait(1);
 	}
+}
+
+void monster_zmarine_soldier::Killed() {
+	g_num_squadmates = g_num_squadmates - 1;
+	if (debugSquad) {
+		sys.println(getName() + " is dead. " + g_num_squadmates + " squadmates remaining");
+	}
+	sys.terminate(squadThread);
 }
 
 void ReformZmarineSquad() {	

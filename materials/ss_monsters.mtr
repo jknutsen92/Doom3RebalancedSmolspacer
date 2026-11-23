@@ -82,6 +82,7 @@ models/monsters/zmarine/medic
 	specularmap	models/characters/male_npc/soldier/dsoldier_s.tga
 }
 
+// Work around for UV deformation issue when overriding certain meshes
 models/weapons/machinegun/w_machinegun2
 {
 	ricochet
@@ -93,6 +94,7 @@ models/weapons/machinegun/w_machinegun2
     specularmap	 models/weapons/machinegun/w_machinegun_s.tga
 }
 
+// Work around for UV deformation issue when overriding certain meshes
 models/weapons/pistol/w_pistol2
 {
 	ricochet
