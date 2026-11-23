@@ -855,13 +855,20 @@ void monster_zmarine_soldier::UpdateSquad() {
 	}
 	squadLeader = g_zsquad_leader;
 	if (debugSquad) {
-		sys.println(getName() + " following " + squadLeader.getName());
+		if (squadLeader == self) {
+			sys.println(getName() + " is squad leader");
+		}
+		else {
+			sys.println(getName() + " following " + squadLeader.getName());
+		}
 	}
 }
 
 void monster_zmarine_soldier::ExecuteSquadTactics() {
 	while (true) {
 		if (g_num_squadmates < 2) {
+			squadLeader = $null_entity;
+			g_zsquad_leader = $null_entity;
 			if (debugSquad) {
 				sys.println(getName() + " is the last survivor. Disbanding squad");
 			}
@@ -910,14 +917,14 @@ void ReformZmarineSquad() {
 		debugSquad = true;
 	}
 
+	g_zsquad_leader = $null_entity;
 	if (g_num_squadmates < 2) {
 		if (debugSquad) {
 			sys.println("Not enough squadmates remaining to reform squad");
 		}
 		return;
 	}
-
-	g_zsquad_leader = $null_entity;
+	
 	if (debugSquad) {
 		sys.println("Squad leader is gone. Updating squad");
 	}

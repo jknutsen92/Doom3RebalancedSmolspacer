@@ -708,3 +708,18 @@ void monster_zmarine_assault::combat_dodge_right() {
 	waitAction( "strafe" );
 	nextDodge = DelayTime( ZASSAULT_DODGE_RATE );
 }
+
+void monster_zmarine_assault::UpdateSquad() {
+	if (g_zsquad_leader.getClassname() != "monster_zmarine_assault") {
+		ReformZmarineSquad();
+	}
+	squadLeader = g_zsquad_leader;
+	if (debugSquad) {
+		if (squadLeader == self) {
+			sys.println(getName() + " is squad leader");
+		}
+		else {
+			sys.println(getName() + " following " + squadLeader.getName());
+		}
+	}
+}
