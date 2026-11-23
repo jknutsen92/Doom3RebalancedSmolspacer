@@ -81,3 +81,14 @@ models/monsters/zmarine/medic
     }
 	specularmap	models/characters/male_npc/soldier/dsoldier_s.tga
 }
+
+models/weapons/machinegun/w_machinegun2
+{
+	ricochet
+    noselfShadow
+	renderbump  -size 512 512 -aa 2  models/weapons/machinegun/w_machinegun_local.tga models/weapons/machinegun/w_machinegun_hi.lwo
+
+    diffusemap	models/weapons/machinegun/w_machinegun.tga
+	bumpmap		models/weapons/machinegun/w_machinegun_local.tga		
+    specularmap	 models/weapons/machinegun/w_machinegun_s.tga
+}
