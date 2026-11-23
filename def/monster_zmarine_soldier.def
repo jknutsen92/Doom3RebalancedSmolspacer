@@ -467,6 +467,11 @@ model model_monster_zmarine_soldier {
 		frame 35					launch_grenade	Lhand
 		// frame 35					sound_weapon	whoosh sound
 	}
+
+	anim step_back 					models/md5/monsters/zombies/zmarine_soldier/step_back.md5anim {
+		frame 17						sound_body monster_zombie_security_footstep
+		frame 21						sound_body monster_zombie_security_footstep
+	}
 }
 
 entityDef monster_zmarine_soldier {

@@ -92,3 +92,13 @@ models/weapons/machinegun/w_machinegun2
 	bumpmap		models/weapons/machinegun/w_machinegun_local.tga		
     specularmap	 models/weapons/machinegun/w_machinegun_s.tga
 }
+
+models/weapons/pistol/w_pistol2
+{
+	ricochet
+    noselfShadow
+	renderbump  -size 128 128 -aa 4  models/weapons/pistol/w_pistol_local.tga models/weapons/pistol/w_pistol_hi.lwo
+    diffusemap	models/weapons/pistol/w_pistol.tga
+	bumpmap		models/weapons/pistol/w_pistol_local.tga
+    specularmap	 models/weapons/pistol/w_pistol_s.tga
+}

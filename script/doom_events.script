@@ -1312,6 +1312,10 @@ scriptEvent entity	getTeleportPathNearTarget(entity target, float range, string 
 
 scriptEvent void	teleportNearTarget(entity target, float maxRange);
 
+scriptEvent void 	removeGrenade();
+
+scriptEvent float	checkImmediateObstacles();
+
 /***********************************************************************
 
 	AI - Vagary

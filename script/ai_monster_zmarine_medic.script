@@ -15,18 +15,18 @@ monster_zsec_pistol_shield
 #define ZMEDIC_DODGE_RATE				3
 #define ZMEDIC_ATTACK_DELAY_MIN			0.5
 #define ZMEDIC_ATTACK_DELAY_MAX			2
-#define ZMEDIC_ATTACK_MAX_LENGTH			3
-#define ZMEDIC_ATTACK_MIN_LENGTH			1
+#define ZMEDIC_ATTACK_MAX_LENGTH		3
+#define ZMEDIC_ATTACK_MIN_LENGTH		1
 #define ZMEDIC_WAIT_MIN_LENGTH			0.3
 #define ZMEDIC_WAIT_MAX_LENGTH			1.5
 #define ZMEDIC_CROUCH_ATTACK_MAX_LENGTH	15
 #define ZMEDIC_CROUCH_ATTACK_MIN_LENGTH	3
 #define ZMEDIC_STAND_ATTACK_MAX_LENGTH	15
 #define ZMEDIC_STAND_ATTACK_MIN_LENGTH	3
-#define ZMEDIC_ATTACK_MIN_SHOOT_TIME		0.5
-#define ZMEDIC_NOFOVTIME					4
+#define ZMEDIC_ATTACK_MIN_SHOOT_TIME	0.5
+#define ZMEDIC_NOFOVTIME				4
 
-#define ATTACK_ZMEDIC_CROUCHFIRE			ATTACK_SPECIAL1
+#define ATTACK_ZMEDIC_CROUCHFIRE		ATTACK_SPECIAL1
 
 // start out with a 50/50 chance of stand vs. crouch attacks.
 float zmedic_num_stand_attacks = 1;
@@ -421,7 +421,6 @@ void monster_zmarine_medic::init() {
 	run_distance	= ZMEDIC_RUNDISTANCE;
 	walk_turn		= ZMEDIC_WALKTURN;
 	run_attack		= getIntKey( "run_attack" );
-
 	setState( "state_Begin" );
 }
 

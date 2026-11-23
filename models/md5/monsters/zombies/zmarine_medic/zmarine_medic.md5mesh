@@ -5311,7 +5311,7 @@ mesh {
 }
 
 mesh {
-	shader "models/weapons/pistol/w_pistol"
+	shader "models/weapons/pistol/w_pistol2"
 
 	numverts 76
 	vert 0 ( 0.622281 0.092477 ) 0 1

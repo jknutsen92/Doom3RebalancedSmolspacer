@@ -571,11 +571,6 @@ void monster_zmarine_assault::stand_attack() {
 	boolean do_run_attack;
 
 	float range = enemyRange();
-	// if ( sys.random( 10 ) < 6 ) {
-	// 	do_run_attack = run_attack;
-	// } else {
-	// 	do_run_attack = false;
-	// }
 	if (range >= ZASSAULT_ATTACK_RANGE_MAX) {
 		do_run_attack = run_attack;
 	}
@@ -627,30 +622,6 @@ void monster_zmarine_assault::stand_attack() {
 		if ( !AI_ENEMY_VISIBLE || !canHitEnemyFromAnim( "range_attack_loop" ) ) {
 			break;
 		}
-		
-		// left  = testAnimMove( "step_left" );
-		// right =	testAnimMove( "step_right" );
-		// if ( left && right ) {
-		// 	if ( sys.random( 100 ) < 50 ) {
-		// 		left = false;
-		// 	} else {
-		// 		right = false;
-		// 	}
-		// }
-		
-		// if ( left ) {
-		// 	animState( ANIMCHANNEL_LEGS, "Legs_StepLeft", 4 );
-		// 	while( inAnimState( ANIMCHANNEL_LEGS, "Legs_StepLeft" ) ) {
-		// 		lookAtEnemy( 1 );
-		// 		waitFrame();
-		// 	}
-		// } else if ( right ) {
-		// 	animState( ANIMCHANNEL_LEGS, "Legs_StepRight", 4 );
-		// 	while( inAnimState( ANIMCHANNEL_LEGS, "Legs_StepRight" ) ) {
-		// 		lookAtEnemy( 1 );
-		// 		waitFrame();
-		// 	}
-		// }
 	}
 	
 	fire = false;
