@@ -1,0 +1,6 @@
+monster_zmarine_grenade_throw_callout {
+	minDistance	1
+	maxDistance	15
+
+	sound/xian/monsters/zsec/combat_01.wav
+}

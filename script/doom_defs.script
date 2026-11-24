@@ -170,7 +170,8 @@ This defines some variables needed by the game script.
 #define PROJECTILE_FIZZLED		3
 #define PROJECTILE_EXPLODED		4
 
-#define eachFrame		for( 0; 1; waitFrame() )
-#define waitUntil( x )	while( !( x ) ) { waitFrame(); }
+#define eachFrame		                for( 0; 1; waitFrame() )
+#define waitUntil( x )	                while( !( x ) ) { waitFrame(); }
+#define waitUntilTimeout(x, timestamp)  while (!(x) || sys.getTime() < (timestamp)) { waitFrame(); }
 
 #endif

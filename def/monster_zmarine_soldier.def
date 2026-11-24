@@ -461,11 +461,10 @@ model model_monster_zmarine_soldier {
 	}
 
 	anim throw_grenade				models/md5/monsters/zombies/zmarine_soldier/machinegun_throw.md5anim {
-		// frame 10					sound_body		equip sound
+		// frame 1						sound_voice		monster_zmarine_grenade_throw_callout
 		frame 10					create_grenade	Lhand
 		frame 16					sound_weapon	player_grenade_use
 		frame 24					launch_grenade	Lhand
-		// frame 35					sound_weapon	whoosh sound
 	}
 
 	anim step_back 					models/md5/monsters/zombies/zmarine_soldier/step_back.md5anim {
@@ -484,11 +483,14 @@ entityDef monster_zmarine_soldier {
 	"rank"						"1"
 	"health"					"130"
 	"def_projectile"			"projectile_bullet_zsec_machinegun"
-    "def_grenade"               "projectile_zmarine_grenade"
 	"projectile_spread"			"1"
 	"num_projectiles"			"1"
 	"attack_cone"				"90"
 	"attack_accuracy"			"1"
+
+	"def_grenade"               "projectile_zmarine_grenade"
+	"force_throw"				"1"					// Throw even if the trajectory test fails (helpful if calling from frame command)
+
 	"smoke_weapon"				"cgsmoke.smoke"
 	"smoke_wound_metal"			"bulletricochet.prt"
 	"smoke_wound_ricochet"		"bulletricochet.prt"
@@ -560,7 +562,7 @@ entityDef projectile_zmarine_grenade {
 	"maxs"						"3 3 11"
 	"cylinder"					"6"
 	"model" 					"models/weapons/grenades/grenades_world.lwo"
-	"clipRadiusOverride"		"6"
+	"clipRadiusOverride"		"5"
 	"max_range"					"900"
 	"ai_obstacle"				"1"					// AI will avoid this up to the blast radius
 

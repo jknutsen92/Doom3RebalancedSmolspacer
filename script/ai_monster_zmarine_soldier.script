@@ -565,7 +565,7 @@ float monster_zmarine_soldier::check_attacks() {
 	boolean try_shooting;
 	boolean try_throwing;
 	boolean reachable;
-	
+
 	attack_flags = 0;
 	
 	currentTime = sys.getTime();
@@ -626,22 +626,23 @@ float monster_zmarine_soldier::check_attacks() {
 	}
 
 	if (try_throwing) {
+		setNeverDormant(1);
 		if (debugGrenades) {
 			sys.println(getName() + " is testing throw");
 		}
 		// Step away any nearby obstacles as we line up a throw
 		float direction = checkImmediateObstacles();
-		if (direction == FORWARD) {
+		if (direction == FORWARD && testAnimMove("step_back")) {
 			playAnim(ANIMCHANNEL_LEGS, "step_back");
-			waitUntil(animDone(ANIMCHANNEL_LEGS, 4));
+			waitUntilTimeout(animDone(ANIMCHANNEL_LEGS, 4), currentTime + 1.0);
 		}
-		else if (direction == LEFT) {
+		else if (direction == LEFT && testAnimMove("step_right")) {
 			playAnim(ANIMCHANNEL_LEGS, "step_right");
-			waitUntil(animDone(ANIMCHANNEL_LEGS, 4));
+			waitUntilTimeout(animDone(ANIMCHANNEL_LEGS, 4), currentTime + 1.0);
 		}
-		else if (direction == RIGHT) {
+		else if (direction == RIGHT && testAnimMove("step_left")) {
 			playAnim(ANIMCHANNEL_LEGS, "step_left");
-			waitUntil(animDone(ANIMCHANNEL_LEGS, 4));
+			waitUntilTimeout(animDone(ANIMCHANNEL_LEGS, 4), currentTime + 0.1);
 		}
 		// Left shoulder is the closest joint to the throw origin
 		if (canHitEnemyWithGrenade("Lshldr")) {
@@ -759,6 +760,7 @@ void monster_zmarine_soldier::throw_attack() {
 	if (debugGrenades) {
 		sys.println(getName() + " is preparing to throw");
 	}
+	ignore_lostcombat = true;
 	stopMove();
 	faceEnemy();
 	animState(ANIMCHANNEL_TORSO, "Torso_ThrowAttack", 0);
@@ -766,6 +768,7 @@ void monster_zmarine_soldier::throw_attack() {
 		waitFrame();
 	}
 	nextGrenadeThrow = RandomDelay( ZSOLIDER_GRENADE_DELAY_MIN, ZSOLDIER_GRENADE_DELAY_MAX );
+	setNeverDormant(0);
 }
 	
 /*
@@ -872,7 +875,16 @@ void monster_zmarine_soldier::ExecuteSquadTactics() {
 			if (debugSquad) {
 				sys.println(getName() + " is the last survivor. Disbanding squad");
 			}
-			return;
+			sys.wait(5);
+			continue;
+		}
+		if (squadLeader == $null_entity) {
+			if (debugSquad) {
+				sys.println(getName() + " has no squad leader");
+			}
+			ReformZmarineSquad();
+			sys.wait(3);
+			continue;
 		}
 
 		if (squadLeader != self) {
@@ -898,6 +910,13 @@ void monster_zmarine_soldier::ExecuteSquadTactics() {
 				}
 				moveToEntity(squadLeader);
 			}
+			else if (distance < 100) {
+				stopMove();
+			}
+		}
+		else if (debugSquad) {
+			vector origin = getOrigin();
+			sys.debugBounds('0 1 1', getMins() + origin, getMaxs() + origin, 1.0);
 		}
 		sys.wait(1);
 	}
