@@ -33116,9 +33116,9 @@ patchDef2
 "textures/object/paperdec1"
 ( 3 3 0 0 0 )
 (
-( ( -473.7200012207031 1389.063232421875 136.125 -0.5 0.5 ) ( -479.5903930664062 1385.250366210938 136.125 -0.5 0.75 ) ( -485.4613952636719 1381.438110351562 136.125 -0.5 1 ) )
-( ( -476.4431457519531 1393.25634765625 136.125 -0.25 0.5 ) ( -482.3134765625 1389.443481445312 136.125 -0.25 0.75 ) ( -488.1852111816406 1385.631713867188 136.125 -0.25 1 ) )
-( ( -479.7113037109375 1398.2880859375 136.125 0 0.5 ) ( -485.5821228027344 1394.475708007812 136.125 0 0.75 ) ( -491.452392578125 1390.663330078125 136.125 0 1 ) )
+( ( -466.0145459982144 1388.266431624395 136.125 -0.5 0.5 ) ( -470.1466364600878 1382.616185826246 136.125 -0.5 0.75 ) ( -474.2795143425014 1376.966293619603 136.125 -0.5 1 ) )
+( ( -470.0501184038186 1391.218022189828 136.125 -0.25 0.5 ) ( -474.1821518150898 1385.567798083131 136.125 -0.25 0.75 ) ( -478.3158878363447 1379.918101983884 136.125 -0.25 1 ) )
+( ( -474.893164709338 1394.759794212201 136.125 0 0.5 ) ( -479.0258280570413 1389.109852978708 136.125 0 0.75 ) ( -483.157977949324 1383.460106968281 136.125 0 1 ) )
 )
 }
 }
@@ -134700,10 +134700,10 @@ patchDef3
 "classname" "speaker"
 "name" "speaker_300"
 "origin" "-328 2584 128"
+"s_maxdistance" "0.000000"
 "s_mindistance" "6.000000"
 "s_shader" "sound/influences/duffyhack2.wav"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
 }
 // entity 32
 {
@@ -135627,10 +135627,10 @@ brushDef3
 "noflood" "1"
 "origin" "-384 1024 160"
 "s_global" "1"
-"s_shader" "al1_com04"
-"s_waitfortrigger" "1"
 "s_maxdistance" "0.000000"
 "s_mindistance" "0.000000"
+"s_shader" "al1_com04"
+"s_waitfortrigger" "1"
 }
 // entity 91
 {
@@ -142481,6 +142481,7 @@ brushDef3
 "call" "map_alphalabs1::music_engine"
 "model" "trigger_once_67"
 "origin" "-2096 4104 -96"
+"target0" "monster_zsec_machinegun_2"
 // primitive 0
 {
 brushDef3
@@ -143072,6 +143073,7 @@ brushDef3
 "model" "trigger_once_66"
 "origin" "-1488 4096 112"
 "target" "moveable_base_11"
+"target0" "monster_demon_imp_1"
 // primitive 0
 {
 brushDef3
@@ -143277,10 +143279,10 @@ brushDef3
 "classname" "speaker"
 "name" "speaker_271"
 "origin" "-1160 4684 -68"
+"s_maxdistance" "0.000000"
 "s_mindistance" "3.000000"
 "s_shader" "sound/stress/1shot_metalchirp_03.wav"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
 }
 // entity 184
 {
@@ -143324,10 +143326,10 @@ brushDef3
 "classname" "speaker"
 "name" "speaker_269"
 "origin" "-1408 4894 -86"
-"s_shader" "sound/impact/small_metal_panel/small_metal_panel_2.wav"
-"s_volume" "10"
 "s_maxdistance" "0.000000"
 "s_mindistance" "0.000000"
+"s_shader" "sound/impact/small_metal_panel/small_metal_panel_2.wav"
+"s_volume" "10"
 }
 // entity 188
 {
@@ -144021,11 +144023,11 @@ brushDef3
 "classname" "speaker"
 "name" "speaker_262"
 "origin" "-132 4752 -192"
+"s_maxdistance" "0.000000"
 "s_mindistance" "5.000000"
 "s_shader" "sound/impact/metals/trigger_metal_03.wav"
 "s_volume" "10"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
 }
 // entity 242
 {
@@ -144385,9 +144387,9 @@ brushDef3
 "classname" "speaker"
 "name" "speaker_256"
 "origin" "-768 2760 160"
-"s_shader" "sound/LEVELS/fragchamber/klaxon.wav"
 "s_maxdistance" "0.000000"
 "s_mindistance" "0.000000"
+"s_shader" "sound/LEVELS/fragchamber/klaxon.wav"
 }
 // entity 272
 {
@@ -144964,7 +144966,7 @@ brushDef3
 "classname" "ammo_bullets_small"
 "name" "ammo_bullets_small_1"
 "inv_item" "4"
-"origin" "-471 1401 140"
+"origin" "-471 1389 137.285"
 "rotation" "0.515038 -0.857167 0 -0.104463 -0.0627675 0.992546 -0.850778 -0.511199 -0.12187"
 }
 // entity 318
@@ -145210,10 +145212,10 @@ brushDef3
 "name" "hydrocon2_ring_speaker_down"
 "bind" "hydrocon2_main"
 "origin" "-2320 3392 312"
-"s_shader" "hydrocon_ring_speaker_down"
-"s_waitfortrigger" "1"
 "s_maxdistance" "11.000000"
 "s_mindistance" "2.000000"
+"s_shader" "hydrocon_ring_speaker_down"
+"s_waitfortrigger" "1"
 }
 // entity 333
 {
@@ -174009,10 +174011,10 @@ patchDef2
 "name" "hydrocon1_main_speaker_up"
 "bind" "hydrocon1_main"
 "origin" "-2480 3392 376"
-"s_shader" "hydrocon_main_speaker_up"
-"s_waitfortrigger" "1"
 "s_maxdistance" "11.000000"
 "s_mindistance" "2.000000"
+"s_shader" "hydrocon_main_speaker_up"
+"s_waitfortrigger" "1"
 }
 // entity 1443
 {
@@ -174020,10 +174022,10 @@ patchDef2
 "name" "hydrocon1_main_speaker_down"
 "bind" "hydrocon1_main"
 "origin" "-2464 3408 376"
-"s_shader" "hydrocon_main_speaker_down"
-"s_waitfortrigger" "1"
 "s_maxdistance" "11.000000"
 "s_mindistance" "2.000000"
+"s_shader" "hydrocon_main_speaker_down"
+"s_waitfortrigger" "1"
 }
 // entity 1444
 {
@@ -174031,10 +174033,10 @@ patchDef2
 "name" "hydrocon1_ring_speaker_up"
 "bind" "hydrocon1_main"
 "origin" "-2464 3408 312"
-"s_shader" "hydrocon_ring_speaker_up"
-"s_waitfortrigger" "1"
 "s_maxdistance" "11.000000"
 "s_mindistance" "2.000000"
+"s_shader" "hydrocon_ring_speaker_up"
+"s_waitfortrigger" "1"
 }
 // entity 1445
 {
@@ -174042,10 +174044,10 @@ patchDef2
 "name" "hydrocon1_ring_speaker_down"
 "bind" "hydrocon1_main"
 "origin" "-2480 3392 312"
-"s_shader" "hydrocon_ring_speaker_down"
-"s_waitfortrigger" "1"
 "s_maxdistance" "11.000000"
 "s_mindistance" "2.000000"
+"s_shader" "hydrocon_ring_speaker_down"
+"s_waitfortrigger" "1"
 }
 // entity 1446
 {
@@ -176630,10 +176632,10 @@ patchDef2
 "name" "speaker_hc_up"
 "bind" "hc_door"
 "origin" "-2364 4020 576"
-"s_shader" "al1_pc_up"
-"s_waitfortrigger" "1"
 "s_maxdistance" "15.000001"
 "s_mindistance" "2.000000"
+"s_shader" "al1_pc_up"
+"s_waitfortrigger" "1"
 }
 // entity 1582
 {
@@ -176641,10 +176643,10 @@ patchDef2
 "name" "speaker_hc_down"
 "bind" "hc_door"
 "origin" "-2364 3980 576"
-"s_shader" "al1_pc_down"
-"s_waitfortrigger" "1"
 "s_maxdistance" "15.000001"
 "s_mindistance" "2.000000"
+"s_shader" "al1_pc_down"
+"s_waitfortrigger" "1"
 }
 // entity 1583
 {
@@ -176652,10 +176654,10 @@ patchDef2
 "name" "speaker_hc_bolt"
 "bind" "hc_door"
 "origin" "-2364 4000 576"
-"s_shader" "al1_pc_bolt"
-"s_waitfortrigger" "1"
 "s_maxdistance" "15.000001"
 "s_mindistance" "2.000000"
+"s_shader" "al1_pc_bolt"
+"s_waitfortrigger" "1"
 }
 // entity 1584
 {
@@ -177316,8 +177318,8 @@ brushDef3
 "classname" "ammo_bullets_small"
 "name" "ammo_bullets_small_4"
 "inv_item" "4"
-"origin" "-240 1472 98"
-"rotation" "-0.5 0.866025 -1.03238e-007 1.32534e-015 -1.19209e-007 -1 -0.866025 -0.5 5.96045e-008"
+"origin" "-472 1380 137.207"
+"rotation" "-0.5 0.866025 -1.03238e-07 1.32534e-15 -1.19209e-07 -1 -0.866025 -0.5 5.96045e-08"
 }
 // entity 1631
 {
@@ -177751,10 +177753,10 @@ brushDef3
 "classname" "speaker"
 "name" "speaker_270"
 "origin" "-1530 4896 -86"
-"s_shader" "sound/impact/small_metal_panel/small_metal_panel_2.wav"
-"s_volume" "10"
 "s_maxdistance" "0.000000"
 "s_mindistance" "0.000000"
+"s_shader" "sound/impact/small_metal_panel/small_metal_panel_2.wav"
+"s_volume" "10"
 }
 // entity 1672
 {
@@ -180514,9 +180516,11 @@ patchDef2
 {
 "classname" "func_static"
 "name" "func_static_5604"
-"gui" "guis/screens/powerout.gui"
+"gui" "guis/alphalabs3/vent.gui"
 "model" "func_static_5604"
 "origin" "-1134 3716 50"
+"target0" "tim_func_door_220"
+"target1" "monster_demon_imp_12"
 // primitive 0
 {
 patchDef2
@@ -184718,10 +184722,10 @@ patchDef2
 "classname" "speaker"
 "name" "speaker_301"
 "origin" "-256 2592 128"
+"s_maxdistance" "0.000000"
 "s_mindistance" "6.000000"
 "s_shader" "sound/influences/dream_sequence_example1.wav"
 "s_waitfortrigger" "1"
-"s_maxdistance" "0.000000"
 }
 // entity 2070
 {
@@ -185199,4 +185203,80 @@ patchDef2
 "s_volume" "-11.000000"
 "s_waitfortrigger" "0"
 "wait" "0.000000"
+}
+// entity 2096
+{
+"classname" "moveable_item_armor_security"
+"name" "moveable_item_armor_security_1"
+"origin" "-402.216 1910.46 192.256"
+"rotation" "1 0 0 0 1 0 0 0 1"
+}
+// entity 2097
+{
+"classname" "ammo_clip_small"
+"name" "ammo_clip_small_4"
+"inv_item" "4"
+"origin" "-2122 4199 208"
+"rotation" "-1 6.95492e-08 -2.59561e-07 -2.68718e-07 -0.258819 0.965926 -4.37527e-15 0.965926 0.258819"
+"triggerFirst" "1"
+"not_hard" "1"
+}
+// entity 2098
+{
+"classname" "ammo_clip_small"
+"name" "ammo_clip_small_6"
+"inv_item" "4"
+"origin" "-2130 4199 208"
+"rotation" "-1 6.95492e-08 -2.59561e-07 -2.68718e-07 -0.258819 0.965926 -4.37527e-15 0.965926 0.258819"
+"triggerFirst" "1"
+"not_hard" "1"
+}
+// entity 2099
+{
+"classname" "ammo_shells_small"
+"name" "ammo_shells_small_2"
+"inv_item" "4"
+"origin" "-2164.64 4200 258"
+"rotation" "1 0 0 0 0.224951 -0.97437 0 0.97437 0.224951"
+"triggerFirst" "1"
+"not_hard" "1"
+}
+// entity 2100
+{
+"classname" "ammo_shells_small"
+"name" "ammo_shells_small_3"
+"inv_item" "4"
+"not_hard" "1"
+"origin" "-2164.64 4200 240.098"
+"rotation" "1 0 0 0 0.224951 -0.97437 0 0.97437 0.224951"
+"triggerFirst" "1"
+}
+// entity 2101
+{
+"classname" "monster_demon_imp"
+"name" "monster_demon_imp_1"
+"origin" "-1740 4092 193.858"
+"rotation" "1 0 0 0 1 0 0 0 1"
+"not_easy" "1"
+"not_medium" "1"
+"hide" "1"
+"teleport" "1"
+}
+// entity 2102
+{
+"classname" "monster_zsec_machinegun"
+"name" "monster_zsec_machinegun_2"
+"origin" "-1628.2 4094.7 -127.712"
+"rotation" "-1 0 0 0 -1 0 0 0 1"
+"hide" "1"
+"attack_path" "1"
+"target0" "path_attack_1"
+"enemy" "player1"
+}
+// entity 2103
+{
+"classname" "path_attack"
+"name" "path_attack_1"
+"origin" "-2012 4100 -112"
+"angle" "180.000000"
 }

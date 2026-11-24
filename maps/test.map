@@ -512,10 +512,3 @@ patchDef2
 "angle" "180.000000"
 "origin" "686.5 -328.25 16"
 }
-// entity 23
-{
-"classname" "monster_zmarine_assault"
-"name" "monster_zmarine_assault_1"
-"origin" "328.319 5.2952 16.3957"
-"rotation" "-1 0 0 0 -1 0 0 0 1"
-}
