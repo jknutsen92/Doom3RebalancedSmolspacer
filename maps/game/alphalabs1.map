@@ -33116,9 +33116,9 @@ patchDef2
 "textures/object/paperdec1"
 ( 3 3 0 0 0 )
 (
-( ( -466.0145459982144 1388.266431624395 136.125 -0.5 0.5 ) ( -470.1466364600878 1382.616185826246 136.125 -0.5 0.75 ) ( -474.2795143425014 1376.966293619603 136.125 -0.5 1 ) )
-( ( -470.0501184038186 1391.218022189828 136.125 -0.25 0.5 ) ( -474.1821518150898 1385.567798083131 136.125 -0.25 0.75 ) ( -478.3158878363447 1379.918101983884 136.125 -0.25 1 ) )
-( ( -474.893164709338 1394.759794212201 136.125 0 0.5 ) ( -479.0258280570413 1389.109852978708 136.125 0 0.75 ) ( -483.157977949324 1383.460106968281 136.125 0 1 ) )
+( ( -466.0145568847656 1388.266479492188 136.125 -0.5 0.5 ) ( -470.1466369628906 1382.6162109375 136.125 -0.5 0.75 ) ( -474.2795104980469 1376.96630859375 136.125 -0.5 1 ) )
+( ( -470.0501098632812 1391.218017578125 136.125 -0.25 0.5 ) ( -474.1821594238281 1385.567749023438 136.125 -0.25 0.75 ) ( -478.3158874511719 1379.918090820312 136.125 -0.25 1 ) )
+( ( -474.8931579589844 1394.759765625 136.125 0 0.5 ) ( -479.0258178710938 1389.10986328125 136.125 0 0.75 ) ( -483.1579895019531 1383.460083007812 136.125 0 1 ) )
 )
 }
 }
@@ -141009,6 +141009,7 @@ brushDef3
 "model" "trigger_once_73"
 "origin" "-668 808 112"
 "target" "trigger_relay_69"
+"target0" "target_tip_1"
 // primitive 0
 {
 brushDef3
@@ -142481,7 +142482,8 @@ brushDef3
 "call" "map_alphalabs1::music_engine"
 "model" "trigger_once_67"
 "origin" "-2096 4104 -96"
-"target0" "monster_zsec_machinegun_2"
+"target0" "trigger_relay_2"
+"target1" "mal_func_static_1637"
 // primitive 0
 {
 brushDef3
@@ -143073,7 +143075,7 @@ brushDef3
 "model" "trigger_once_66"
 "origin" "-1488 4096 112"
 "target" "moveable_base_11"
-"target0" "monster_demon_imp_1"
+"target0" "trigger_relay_1"
 // primitive 0
 {
 brushDef3
@@ -185216,30 +185218,30 @@ patchDef2
 "classname" "ammo_clip_small"
 "name" "ammo_clip_small_4"
 "inv_item" "4"
+"not_hard" "1"
 "origin" "-2122 4199 208"
 "rotation" "-1 6.95492e-08 -2.59561e-07 -2.68718e-07 -0.258819 0.965926 -4.37527e-15 0.965926 0.258819"
 "triggerFirst" "1"
-"not_hard" "1"
 }
 // entity 2098
 {
 "classname" "ammo_clip_small"
 "name" "ammo_clip_small_6"
 "inv_item" "4"
+"not_hard" "1"
 "origin" "-2130 4199 208"
 "rotation" "-1 6.95492e-08 -2.59561e-07 -2.68718e-07 -0.258819 0.965926 -4.37527e-15 0.965926 0.258819"
 "triggerFirst" "1"
-"not_hard" "1"
 }
 // entity 2099
 {
 "classname" "ammo_shells_small"
 "name" "ammo_shells_small_2"
 "inv_item" "4"
+"not_hard" "1"
 "origin" "-2164.64 4200 258"
 "rotation" "1 0 0 0 0.224951 -0.97437 0 0.97437 0.224951"
 "triggerFirst" "1"
-"not_hard" "1"
 }
 // entity 2100
 {
@@ -185253,30 +185255,54 @@ patchDef2
 }
 // entity 2101
 {
-"classname" "monster_demon_imp"
-"name" "monster_demon_imp_1"
-"origin" "-1740 4092 193.858"
-"rotation" "1 0 0 0 1 0 0 0 1"
-"not_easy" "1"
-"not_medium" "1"
+"classname" "monster_zsec_machinegun"
+"name" "monster_zsec_machinegun_2"
+"attack_path" "1"
+"enemy" "player1"
 "hide" "1"
-"teleport" "1"
+"origin" "-1628.2 4094.7 -127.712"
+"rotation" "-1 0 0 0 -1 0 0 0 1"
+"target0" "path_attack_1"
+"wait" "2"
 }
 // entity 2102
 {
-"classname" "monster_zsec_machinegun"
-"name" "monster_zsec_machinegun_2"
-"origin" "-1628.2 4094.7 -127.712"
-"rotation" "-1 0 0 0 -1 0 0 0 1"
-"hide" "1"
-"attack_path" "1"
-"target0" "path_attack_1"
-"enemy" "player1"
+"classname" "path_attack"
+"name" "path_attack_1"
+"angle" "180.000000"
+"origin" "-2012 4100 -112"
 }
 // entity 2103
 {
-"classname" "path_attack"
-"name" "path_attack_1"
-"origin" "-2012 4100 -112"
-"angle" "180.000000"
+"classname" "target_tip"
+"name" "target_tip_1"
+"origin" "-744 896 184"
+"text_tip" "You can check your entire inventory at the press of a button. Rebind the Check Inventory key in the Dhewm3 Settings to allow checking your backpack in-game."
+}
+// entity 2104
+{
+"classname" "monster_demon_imp"
+"name" "monster_demon_imp_2"
+"hide" "1"
+"not_easy" "1"
+"not_medium" "1"
+"origin" "-1736 4088 193.858"
+"rotation" "1 0 0 0 1 0 0 0 1"
+"teleport" "1"
+}
+// entity 2105
+{
+"classname" "trigger_relay"
+"name" "trigger_relay_1"
+"origin" "-1716 4176 232"
+"target0" "monster_demon_imp_2"
+"delay" "1.2"
+}
+// entity 2106
+{
+"classname" "trigger_relay"
+"name" "trigger_relay_2"
+"origin" "-1700 4140 -72"
+"target0" "monster_zsec_machinegun_2"
+"delay" "1.2"
 }
