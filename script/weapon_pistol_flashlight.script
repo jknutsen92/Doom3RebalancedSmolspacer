@@ -67,7 +67,8 @@ void weapon_pistol_flashlight::updateLightIntensity() {
 
 void weapon_pistol_flashlight::Raise() {
 	// smolspacer - Match ammo in clip to that of the flashlight pistol
-	setClip(g_pistol_clip_remaining);
+	entity owner = getOwner();
+	setClip(owner.getClipCount(1));
 	
 	weaponRising();
 
@@ -83,8 +84,8 @@ void weapon_pistol_flashlight::Raise() {
 }
 
 void weapon_pistol_flashlight::Lower() {
-	// smolspacer
-	g_pistol_clip_remaining = ammoInClip();
+	entity owner = getOwner();
+	owner.setClipCount(1, ammoInClip());
 
 	weaponLowering();
 	if (ammoInClip() > 0) {						// smolspacer

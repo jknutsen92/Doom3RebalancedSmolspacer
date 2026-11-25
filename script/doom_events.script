@@ -1066,6 +1066,10 @@ scriptEvent void	openPDA();
 // Returns true if the player has the PDA open.
 scriptEvent float	inPDA();
 
+scriptEvent float	getClipCount(float index);
+
+scriptEvent void	setClipCount(float index, float amount);
+
 /***********************************************************************
 
 	path nodes

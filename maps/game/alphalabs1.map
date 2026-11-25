@@ -142483,7 +142483,6 @@ brushDef3
 "model" "trigger_once_67"
 "origin" "-2096 4104 -96"
 "target0" "trigger_relay_2"
-"target1" "mal_func_static_1637"
 // primitive 0
 {
 brushDef3
@@ -143075,7 +143074,7 @@ brushDef3
 "model" "trigger_once_66"
 "origin" "-1488 4096 112"
 "target" "moveable_base_11"
-"target0" "trigger_relay_1"
+"target0" "monster_demon_imp_2"
 // primitive 0
 {
 brushDef3
@@ -185264,6 +185263,8 @@ patchDef2
 "rotation" "-1 0 0 0 -1 0 0 0 1"
 "target0" "path_attack_1"
 "wait" "2"
+"not_easy" "1"
+"not_medium" "1"
 }
 // entity 2102
 {
@@ -185283,26 +185284,45 @@ patchDef2
 {
 "classname" "monster_demon_imp"
 "name" "monster_demon_imp_2"
-"hide" "1"
 "not_easy" "1"
 "not_medium" "1"
-"origin" "-1736 4088 193.858"
+"origin" "-1880 4088 193.858"
 "rotation" "1 0 0 0 1 0 0 0 1"
-"teleport" "1"
+"target0" "path_attack_2"
+"attack_path" "1"
+"neverdormant" "1"
 }
 // entity 2105
 {
 "classname" "trigger_relay"
-"name" "trigger_relay_1"
-"origin" "-1716 4176 232"
-"target0" "monster_demon_imp_2"
+"name" "trigger_relay_2"
 "delay" "1.2"
+"origin" "-1700 4140 -72"
+"target0" "monster_zsec_machinegun_2"
+"not_medium" "1"
+"not_easy" "1"
 }
 // entity 2106
 {
-"classname" "trigger_relay"
-"name" "trigger_relay_2"
-"origin" "-1700 4140 -72"
-"target0" "monster_zsec_machinegun_2"
-"delay" "1.2"
+"classname" "path_attack"
+"name" "path_attack_2"
+"origin" "-1672 4092 200"
+"not_easy" "1"
+"not_medium" "1"
+}
+// entity 2107
+{
+"classname" "func_door"
+"name" "mal_func_static_1"
+"lip" "8"
+"model" "models/mapobjects/doors/techdoor1/techdr1rt.lwo"
+"movedir" "90"
+"origin" "-1804 4088 -128"
+"rotation" "1 0 0 0 1 0 0 0 1"
+"s_occlusion" "0"
+"skin" "skins/techdr1rt_blu.skin"
+"snd_close" "twopart_door_close"
+"snd_open" "twopart_door_open"
+"team" "ud5"
+"time" ".5"
 }
