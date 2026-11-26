@@ -1,5 +1,25 @@
 mapProcFile003
 
+model { /* name = */ "trigger_once_10" /* numSurfaces = */ 0
+
+}
+
+model { /* name = */ "trigger_once_7" /* numSurfaces = */ 0
+
+}
+
+model { /* name = */ "trigger_once_6" /* numSurfaces = */ 0
+
+}
+
+model { /* name = */ "trigger_once_3" /* numSurfaces = */ 0
+
+}
+
+model { /* name = */ "trigger_once_5" /* numSurfaces = */ 0
+
+}
+
 model { /* name = */ "func_static_5711" /* numSurfaces = */ 1
 
 /* surface 0 */ { "textures/base_floor/ghotile3" /* numVerts = */ 27 /* numIndexes = */ 72

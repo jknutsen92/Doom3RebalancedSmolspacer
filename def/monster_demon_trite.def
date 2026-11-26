@@ -398,8 +398,10 @@ entityDef monster_demon_trite {
 	"model"							"monster_demon_trite"
 	"ragdoll"						"monster_demon_trite"
 	
-	"size"							"48 48 40"
-	"use_aas"						"aas48"
+	// "size"							"48 48 40"
+	"size"							"32 32 40"
+	// "use_aas"						"aas48"
+	"use_aas"						"aas32"
 	"team"							"1"
 	"rank"							"1"
 	"health"						"20"

@@ -291,6 +291,42 @@ patchDef2
 )
 }
 }
+// primitive 25
+{
+brushDef3
+{
+( 0 0 1 -80 ) ( ( 0.0078125 0 -0.34375 ) ( 0 0.0078125 -0.09375 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+( 0 1 0 -124 ) ( ( 0.0078125 0 -2.220446049250313e-16 ) ( 0 0.0078125 0 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+( 1 0 0 -360 ) ( ( 0.0078125 0 -0.34375 ) ( 0 0.0078125 0 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+( 0 0 -1 16 ) ( ( 0.0078125 0 -0.34375 ) ( 0 0.0078125 0 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+( 0 -1 0 112 ) ( ( 0.0078125 0 0 ) ( 0 0.0078125 0 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+( -1 0 0 -732 ) ( ( 0.0078125 0 0.34375 ) ( 0 0.0078125 0 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+}
+}
+// primitive 26
+{
+brushDef3
+{
+( 0 0 1 -80 ) ( ( 0.007811999879777431 0 0.4686979949474335 ) ( 0 0.007811999879777431 -0.09375 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+( 0 1 0 -20 ) ( ( 0.007811999879777431 0 2.220446049250313e-16 ) ( 0 0.007811999879777431 5.551115123125783e-17 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+( 1 0 0 -360 ) ( ( 0.007811999879777431 0 0.4686979949474335 ) ( 0 0.007811999879777431 0 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+( 0 0 -1 16 ) ( ( 0.007811999879777431 0 0.4686979949474335 ) ( 0 0.007811999879777431 0 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+( 0 -1 0 8 ) ( ( 0.007811999879777431 0 0 ) ( 0 0.007811999879777431 5.551115123125783e-17 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+( -1 0 0 -732 ) ( ( 0.007811999879777431 0 -0.4686979949474335 ) ( 0 0.007811999879777431 0 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+}
+}
+// primitive 27
+{
+brushDef3
+{
+( 0 0 1 -116 ) ( ( 0.0078125 0 4.163336342344337e-17 ) ( 0 0.0078125 -0.0625 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+( 0 1 0 -124 ) ( ( 0.0078125 0 0.0625 ) ( 0 0.0078125 0.5 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+( 1 0 0 -360 ) ( ( 0.0078125 0 -1.387778780781446e-17 ) ( 0 0.0078125 0.5 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+( 0 0 -1 80 ) ( ( 0.0078125 0 -1.387778780781446e-17 ) ( 0 0.0078125 0.0625 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+( 0 -1 0 8 ) ( ( 0.0078125 0 -0.0625 ) ( 0 0.0078125 0.5 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+( -1 0 0 -732 ) ( ( 0.0078125 0 0.1875 ) ( 0 0.0078125 0.5 ) ) "textures/base_wall/gotbwall4b" 0 0 0
+}
+}
 }
 // entity 1
 {
@@ -514,9 +550,8 @@ patchDef2
 }
 // entity 23
 {
-"classname" "monster_demon_imp"
-"name" "monster_demon_imp_1"
-"origin" "177.803 27.2738 17.8581"
+"classname" "monster_demon_trite"
+"name" "monster_demon_trite_1"
+"origin" "295.32 70.8638 17.4041"
 "rotation" "-1 0 0 0 -1 0 0 0 1"
-"skin" "skins/models/monsters/imp/shadow"
 }

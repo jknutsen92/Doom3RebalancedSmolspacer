@@ -583,10 +583,17 @@ namespace map_alphalabs2 {
 	void scientist_killed() {
 		sys.println("Scientist killed");
 		if (scientist_died_early) {
+			$monster_demon_imp_shadow_1.remove();
+			$monster_demon_imp_shadow_10.remove();
+			$monster_demon_imp_shadow_11.remove();
 			sys.trigger($monster_demon_imp_shadow_2);
 			sys.trigger($monster_demon_imp_shadow_3);
 			sys.trigger($monster_demon_imp_shadow_4);
 			sys.trigger($monster_demon_imp_shadow_5);
+			sys.trigger($monster_demon_imp_shadow_6);
+			sys.trigger($monster_demon_imp_shadow_7);
+			sys.trigger($monster_demon_imp_shadow_8);
+			sys.trigger($monster_demon_imp_shadow_9);
 		}
 	}
 
