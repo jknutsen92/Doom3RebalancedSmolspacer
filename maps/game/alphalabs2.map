@@ -137872,6 +137872,7 @@ patchDef2
 "origin" "1024 2208 -452"
 "target" "trigger_relay_77"
 "triggerFirst" "1"
+"target0" "monster_demon_imp_shadow_1"
 // primitive 0
 {
 brushDef3
@@ -138016,6 +138017,7 @@ brushDef3
 "angle" "180"
 "hide" "2"
 "origin" "1200 2393 -508"
+"not_hard" "1"
 }
 // entity 399
 {
@@ -138488,6 +138490,7 @@ brushDef3
 "model" "point_of_no_return"
 "origin" "1216 1636 -468"
 "target" "alphalabs2_scientist1_1"
+"call" "map_alphalabs2::scientist_reached_point_of_no_return"
 // primitive 0
 {
 brushDef3
@@ -165873,4 +165876,83 @@ patchDef2
 "name" "item_armor_security_9"
 "origin" "-2099.24 1594.77 30.5343"
 "rotation" "0.385372 0.922761 0 -0.922761 0.385372 0 0 0 1"
+}
+// entity 1826
+{
+"classname" "monster_demon_imp"
+"name" "monster_demon_imp_shadow_1"
+"origin" "1197.26 2308.54 -510.142"
+"rotation" "0 -1 0 1 0 0 0 0 1"
+"noDamage" "1"
+"skin" "skins/models/monsters/imp/shadow"
+"not_easy" "1"
+"not_medium" "1"
+"walk_on_trigger" "1"
+"target0" "path_corner_1"
+}
+// entity 1827
+{
+"classname" "path_corner"
+"name" "path_corner_1"
+"origin" "1200 2084 -512"
+"trigger" "func_remove_13"
+"not_easy" "1"
+"not_medium" "1"
+}
+// entity 1828
+{
+"classname" "func_remove"
+"name" "func_remove_13"
+"origin" "1244 2084 -472"
+"target0" "monster_demon_imp_shadow_1"
+"not_easy" "1"
+"not_medium" "1"
+}
+// entity 1829
+{
+"classname" "monster_demon_imp"
+"name" "monster_demon_imp_shadow_2"
+"origin" "1000 1812 -510.142"
+"rotation" "1 0 0 0 1 0 0 0 1"
+"skin" "skins/models/monsters/imp/shadow"
+"hide" "1"
+"health" "85"
+"not_easy" "1"
+"not_medium" "1"
+}
+// entity 1830
+{
+"classname" "monster_demon_imp"
+"name" "monster_demon_imp_shadow_3"
+"health" "85"
+"hide" "1"
+"not_easy" "1"
+"not_medium" "1"
+"origin" "1017.26 2404.54 -510.142"
+"rotation" "0 -1 0 1 0 0 0 0 1"
+"skin" "skins/models/monsters/imp/shadow"
+}
+// entity 1831
+{
+"classname" "monster_demon_imp"
+"name" "monster_demon_imp_shadow_4"
+"health" "85"
+"hide" "1"
+"not_easy" "1"
+"not_medium" "1"
+"origin" "1312.54 1014.74 -510.142"
+"rotation" "0 1 0 -1 0 0 0 0 1"
+"skin" "skins/models/monsters/imp/shadow"
+}
+// entity 1832
+{
+"classname" "monster_demon_imp"
+"name" "monster_demon_imp_shadow_5"
+"health" "85"
+"hide" "1"
+"not_easy" "1"
+"not_medium" "1"
+"origin" "1140.54 1014.74 -510.142"
+"rotation" "0 1 0 -1 0 0 0 0 1"
+"skin" "skins/models/monsters/imp/shadow"
 }

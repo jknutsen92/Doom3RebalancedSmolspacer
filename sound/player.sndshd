@@ -25,6 +25,7 @@ player_cough {
 	maxDistance	25
 	volume		0
 	no_dups
+	soundClass	1
 
 	sound/player/coughs/cough_01.wav
 	sound/player/coughs/cough_02.wav
@@ -161,6 +162,7 @@ player_sounds_hitArmor {
 
 player_sounds_healthpulse {
 	volume -15
+	soundClass	1
 	sound/xian/beeps/1s_beep_02.wav
 }
 
@@ -168,15 +170,16 @@ player_sounds_heartbeat {
 	minDistance	5
 	maxDistance	20
 	volume		0
+	soundClass	1
 
 	sound/player/heartbeat4.wav
-
 }
 
 player_sounds_heartbeat_dying {
 	minDistance	5
 	maxDistance	20
 	volume		0
+	soundClass	1
 
 	sound/player/heartbeat_dying.wav
 }
@@ -194,6 +197,7 @@ player_sounds_objectiveup {
 	minDistance	10
 	maxDistance	10
 	volume		6
+	soundClass	1
 
 	sound/guis/1shot_open.wav
 }
@@ -202,6 +206,7 @@ player_sounds_objectivedown {
 	minDistance	10
 	maxDistance	10
 	volume		6
+	soundClass	1
 
 	sound/guis/1shot_close.wav
 }

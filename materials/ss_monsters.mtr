@@ -104,3 +104,18 @@ models/weapons/pistol/w_pistol2
 	bumpmap		models/weapons/pistol/w_pistol_local.tga
     specularmap	 models/weapons/pistol/w_pistol_s.tga
 }
+
+models/monsters/imp/imp_shadow 
+{
+	noshadows
+	noselfshadow
+	flesh
+	solid
+	collision
+	forceOpaque
+	{
+		blend 	blend
+		map 	_black
+		color	0, 0, 0, 1
+	}
+}

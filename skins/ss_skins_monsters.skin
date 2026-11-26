@@ -9,3 +9,7 @@ skin skins/models/monsters/zmarine/soldier {    // Needed to override the zsec s
 skin skins/models/monsters/zmarine/medic {    // Needed to override the zsec skin
     models/monsters/skeleton/skeleton01         textures/common/nodraw
 }
+
+skin skins/models/monsters/imp/shadow {
+    models/monsters/imp/imp                     models/monsters/imp/imp_shadow
+}
