@@ -7,6 +7,28 @@ entityDef aas_types {
 	"type5"						"aas_sabaoth"	
 	"type6"						"aas_cyberdemon"
 	"type7"						"aas32"
+	"type8"						"aas24"
+}
+
+entityDef aas24 {
+	"mins"						"-12 -12 0"
+	"maxs"						"12 12 32"
+	"usePatches"				"0"
+	"writeBrushMap"				"0"
+	"playerFlood"				"0"
+	"allowSwimReachabilities"	"0"
+	"allowFlyReachabilities"	"1"
+	"fileExtension"				"aas24"
+	"gravity"					"0 0 -1050"
+	"maxStepHeight"				"18"
+	"maxBarrierHeight"			"32"
+	"maxWaterJumpHeight"		"20"
+	"maxFallHeight"				"64"
+	"minFloorCos"				"0.6999999881"
+	"tt_barrierJump"			"100"
+	"tt_startCrouching"			"100"
+	"tt_waterJump"				"100"
+	"tt_startWalkOffLedge"		"100"
 }
 
 entityDef aas32 {

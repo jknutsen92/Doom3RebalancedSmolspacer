@@ -788,7 +788,7 @@ entityDef player_base {
 	"pm_stamina"						"24"
 	"pm_staminathreshold"				"4"
 	"pm_staminarate"					"0.75"
-	"pm_crouchheight"					"32"
+	"pm_crouchheight"					"36"
 	"pm_crouchviewheight"				"32"
 
 	"pm_normalheight"					"74"
@@ -813,7 +813,7 @@ entityDef player_base {
 
 	// ammo
 	"ammo_shells"						"0"
-	"ammo_bullets"						"48"
+	"ammo_bullets"						"48" 
 	"ammo_rockets"						"0"
 	"ammo_cells"						"0"
 	"ammo_grenades"						"0"
@@ -942,8 +942,8 @@ entityDef player_base {
 entityDef player_doommarine {
 	"inherit"							"player_base"
 	"model"								"model_sp_marine"
-	"snd_decompress"					"sound/air_and_vents/decompress.wav"
-	"snd_recompress"					"sound/air_and_vents/recompress.wav"
+	"snd_decompress"					"player_sounds_decompress"
+	"snd_recompress"					"player_sounds_recompress"
 	"snd_airless"						"player_sounds_noAir"
 	"def_head"							"head_player"
 	"head_joint"						"Shoulders"

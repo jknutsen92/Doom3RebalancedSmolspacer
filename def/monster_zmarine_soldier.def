@@ -1,7 +1,7 @@
 model model_monster_zmarine_soldier {
     inherit                     model_monster_zsec_machinegun
     mesh                        models/md5/monsters/zombies/zmarine_soldier/zmarine_soldier.md5mesh
-	skin						skins/models/monsters/zmarine/soldier.skin
+	// skin						skins/models/monsters/zmarine/soldier.skin
     channel torso				( *Waist )
 	channel legs				( origin Body2 *Hips -*Waist SPINNER )
 
@@ -554,6 +554,14 @@ entityDef monster_zmarine_soldier {
 	"snd_weakpoint_chaingun"	"headshot_auto_metal"
 	"snd_weakpoint_rocket"		"headshot_rocket_metal"
 	"smoke_weakpoint_impact"	"sparks.prt"
+
+	"neverdormant"				"1"
+	"use_squad_tactics"			"1"
+	"squad_max_distance"		"1200"				// Max distance from leader before we regroup
+	"squad_follow_distance"		"400"				// Out of combat follow distance
+	"max_grenade_throw_range"	"900"
+	"grenade_throw_delay_min"	"5"
+	"grenade_throw_delay_max"	"9"
 }
 
 entityDef projectile_zmarine_grenade {

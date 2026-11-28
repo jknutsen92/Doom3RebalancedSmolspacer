@@ -26,11 +26,6 @@ monster_zsec_pistol_shield
 #define ZSOLDIER_ATTACK_MIN_SHOOT_TIME		0.5
 #define ZSOLDIER_NOFOVTIME					4
 
-#define ZSOLDIER_MAX_LEADER_DISTANCE		1200
-#define ZSOLDIER_FOLLOW_NOCOMBAT_DIST		400
-#define ZSOLIDER_GRENADE_DELAY_MIN			5
-#define ZSOLDIER_GRENADE_DELAY_MAX			9
-#define ZSOLDIER_GRENADE_RANGE_MAX			900
 #define ZSOLDIER_THROW_CHECK_DELAY			1
 
 #define ATTACK_ZSOLDIER_CROUCHFIRE			ATTACK_SPECIAL1
@@ -42,6 +37,7 @@ float zsoldier_num_crouch_attacks = 1;
 
 entity 	g_zsquad_leader = $null_entity;
 float 	g_num_squadmates = 0;
+float 	g_tight_formation = 0;
 
 // Called by the first squadmate spawn or on the death of a squad leader
 void ReformZmarineSquad();
@@ -52,10 +48,13 @@ object monster_zmarine_soldier : monster_zombie_base {
 	boolean		run_attack;
 	float		nextDodge;
 	float		nextAttack;
-	float 		nextGrenadeThrow;
 	float 		nextThrowCheck;
 	float		nextNoFOVAttack;
 	entity		combat_node;
+	float		grenadeThrowRangeMax;
+	float		grenadeThrowMinDelay;
+	float		grenadeThrowMaxDelay;
+	float 		nextGrenadeThrow;
 	boolean 	debugSquad;
 	boolean 	debugGrenades;
 
@@ -93,6 +92,8 @@ object monster_zmarine_soldier : monster_zombie_base {
 	// Squad mechanics
 	entity		squadLeader;
 	float 		squadThread;
+	float		squadLeaderMaxDistance;
+	float 		squadLeaderFollowDistance;
 
 	void 		SetSquadLeader(entity squadmate);
 	void		UpdateSquad();
@@ -472,14 +473,21 @@ void monster_zmarine_soldier::init() {
 	else {
 		debugGrenades = false;
 	}
-	g_num_squadmates= g_num_squadmates + 1; 
-	thread addSignalFunc(SIG_KILLED, self, "monster_zmarine_soldier::Killed");
-	squadLeader 	= $null_entity;
+	grenadeThrowRangeMax		= getFloatKey("max_grenade_throw_range");
+	grenadeThrowMinDelay		= getFloatKey("grenade_throw_delay_min");
+	grenadeThrowMaxDelay		= getFloatKey("grenade_throw_delay_max");
 	run_distance	= ZSOLDIER_RUNDISTANCE;
 	walk_turn		= ZSOLDIER_WALKTURN;
 	run_attack		= getIntKey( "run_attack" );
-	UpdateSquad();
-	squadThread 	= thread ExecuteSquadTactics();
+	if (getIntKey("use_squad_tactics")) {
+		squadLeaderFollowDistance	= getFloatKey("squad_follow_distance");
+		squadLeaderMaxDistance		= getFloatKey("squad_max_distance");
+		g_num_squadmates			= g_num_squadmates + 1; 
+		squadLeader 				= $null_entity;
+		thread addSignalFunc(SIG_KILLED, self, "monster_zmarine_soldier::Killed");
+		UpdateSquad();
+		squadThread = thread ExecuteSquadTactics();
+	}
 	setState( "state_Begin" );
 }
 
@@ -594,7 +602,7 @@ float monster_zmarine_soldier::check_attacks() {
 
 	range = enemyRange();
 	reachable = canReachEnemy();
-	if (!AI_ENEMY_VISIBLE && squadLeader.getClassname() != "monster_zmarine_assault" && currentTime >= nextGrenadeThrow && currentTime >= nextThrowCheck && range <= ZSOLDIER_GRENADE_RANGE_MAX) {
+	if (!AI_ENEMY_VISIBLE && squadLeader.getClassname() != "monster_zmarine_assault" && currentTime >= nextGrenadeThrow && currentTime >= nextThrowCheck && range <= grenadeThrowRangeMax) {
 		try_shooting = false;
 		try_throwing = true;
 	}
@@ -767,7 +775,7 @@ void monster_zmarine_soldier::throw_attack() {
 	while( inAnimState( ANIMCHANNEL_TORSO, "Torso_ThrowAttack" ) ) {
 		waitFrame();
 	}
-	nextGrenadeThrow = RandomDelay( ZSOLIDER_GRENADE_DELAY_MIN, ZSOLDIER_GRENADE_DELAY_MAX );
+	nextGrenadeThrow = RandomDelay( grenadeThrowMinDelay, grenadeThrowMaxDelay );
 	setNeverDormant(0);
 }
 	
@@ -898,13 +906,13 @@ void monster_zmarine_soldier::ExecuteSquadTactics() {
 
 			float targetRange;
 			float distance = sys.vecLength(getOrigin() - squadLeader.getOrigin());
-			if (leaderEnemy != $null_entity && distance > ZSOLDIER_MAX_LEADER_DISTANCE) {
+			if (leaderEnemy != $null_entity && distance > squadLeaderMaxDistance) {
 				if (debugSquad) {
 					sys.println("Leader out of range: " + getName() + ". Combat regrouping with " + squadLeader.getName());
 				}
 				moveToEntity(squadLeader);
 			}
-			else if (leaderEnemy == $null_entity && distance > ZSOLDIER_FOLLOW_NOCOMBAT_DIST) {
+			else if (g_tight_formation && distance > squadLeaderFollowDistance) {
 				if (debugSquad) {
 					sys.println(getName() + " following leader " + squadLeader.getName());
 				}
@@ -914,9 +922,17 @@ void monster_zmarine_soldier::ExecuteSquadTactics() {
 				stopMove();
 			}
 		}
-		else if (debugSquad) {
-			vector origin = getOrigin();
-			sys.debugBounds('0 1 1', getMins() + origin, getMaxs() + origin, 1.0);
+		else {
+			if (debugSquad) {
+				vector origin = getOrigin();
+				sys.debugBounds('0 1 1', getMins() + origin, getMaxs() + origin, 1.0);
+			}
+			if (stay_on_attackpath || getEnemy() == $null_entity) {
+				g_tight_formation = true;
+			}
+			else {
+				g_tight_formation = false;
+			}
 		}
 		sys.wait(1);
 	}

@@ -322,7 +322,7 @@ bullet_ricochet {
 bullet_impact_metal {
 	minDistance	1
 	maxDistance	25
-	volume -3
+	volume -12
 
 	
 	sound/weapons/impacts/bullet_metal/metalimpact_02.wav
@@ -425,7 +425,7 @@ bullet_impact_flesh {
 shotgun_impact_metal {
 	minDistance	1
 	maxDistance	20
-	volume		-5
+	volume		-6
 
 	sound/weapons/impacts/shotgun_metal/impact_02.wav
 	sound/weapons/impacts/shotgun_metal/impact_07.wav
@@ -1295,7 +1295,7 @@ player_chaingun_fire {
 	maxDistance	30
 	//volume	3
 	// smolspacer
-	volume 		13
+	volume 		35
 	unclamped
 
 	sound/dane/Chain_Gun_Shot_V3/CHAINGUN_SHOT_1v3.wav

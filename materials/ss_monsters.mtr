@@ -42,7 +42,6 @@ models/monsters/zmarine/soldier {
 	clamp
 	forceOverlays
 	flesh
-	collision
  	diffusemap	  models/characters/male_npc/marine/dmarine.tga
 	{	// burning corpse effect
 		if	parm7			// only when dead

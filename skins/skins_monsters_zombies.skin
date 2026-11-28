@@ -147,10 +147,12 @@ skin skins/monsters/zombies/zsecurity {
 	models/characters/male_npc/security/security models/characters/male_npc/security/dsecurity
 	models/monsters/skeleton/skeleton01 textures/common/nodraw
 
-	models/weapons/pistol/w_pistol textures/common/nodraw
-	models/weapons/shotgun/w_shotgun1 textures/common/nodraw
-	models/weapons/machinegun/w_machinegun textures/common/nodraw
-	models/monsters/zsecurity/zsheild textures/common/nodraw
+	models/weapons/pistol/w_pistol 			textures/common/nodraw
+	models/weapons/pistol/w_pistol2 		textures/common/nodraw
+	models/weapons/shotgun/w_shotgun1 		textures/common/nodraw
+	models/weapons/machinegun/w_machinegun 	textures/common/nodraw
+	models/weapons/machinegun/w_machinegun2 textures/common/nodraw
+	models/monsters/zsecurity/zsheild 		textures/common/nodraw
 	models/monsters/zsecurity/zsheild_glass textures/common/nodraw
 }
 

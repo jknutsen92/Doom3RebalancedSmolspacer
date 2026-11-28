@@ -93,4 +93,9 @@ entityDef monster_zmarine_assault {
 	"snd_weakpoint_chaingun"		"headshot_auto_flesh"
 	"snd_weakpoint_rocket"			"headshot_rocket_flesh"
 	"smoke_weakpoint_impact"		"burstysquirt.prt"
+
+	"neverdormant"					"1"
+	"use_squad_tactics"				"1"
+	"squad_max_distance"			"1200"				// Max distance from leader before we regroup
+	"squad_follow_distance"			"400"				// Out of combat follow distance
 }

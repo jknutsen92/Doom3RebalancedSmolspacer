@@ -1,0 +1,111 @@
+model monster_demon_trite_small {
+	inherit							monster_demon_trite
+	mesh							models/md5/monsters/trite_small/trite_small.md5mesh
+	channel torso					( *origin )
+}
+
+entityDef monster_demon_trite_small {
+	"inherit"						"monster_default"
+	"editor_var no_explode"			"Prevent trites from exploding when they can't reach the player."
+	"scriptobject"					"monster_demon_trite"
+	"model"							"monster_demon_trite_small"
+	"ragdoll"						"monster_demon_trite"
+	
+	"size"							"24 24 32"
+	"use_aas"						"aas24"
+	"team"							"1"
+	"rank"							"1"
+	"health"						"20"
+	"melee_range"					"48"
+	"chatter_min"					"5"
+	"chatter_max"					"10"
+	"chatter_combat_min"			"3"
+	"chatter_combat_max"			"7"
+	"turn_rate"						"360"
+	"mass"							"40"
+
+	"plasma_heatable"				"1"
+	"heat_decay_rate"				"1"
+	"body_skin_heated"				"skins/models/monsters/trite_heated.skin"
+	"heatblast_fx"					"fx/heatblast.fx"
+
+	"blockedRadius"					"25"
+	"blockedMoveTime"				"750"
+	"blockedAttackTime"				"750"
+
+	"model_explode"					"trite_boomboom.prt"
+	"def_explode_damage"			"damage_trite_explode"
+		
+	"burnaway"						".01"
+	"smoke_burnParticleSystem"		"trite_burst.prt-mouth"
+	
+	"ik_numLegs"					"6"
+	"ik_footSize"					"0"
+	"ik_minWaistFloorDist"			"16"
+	"ik_waist"						"Body2"
+	"ik_hip1"						"Luparm1"
+	"ik_hip2"						"Ruparm1"
+	"ik_hip3"						"Luparm2"
+	"ik_hip4"						"Ruparm2"
+	"ik_hip5"						"Luparm3"
+	"ik_hip6"						"Ruparm3"
+	"ik_knee1"						"Lloarm1"
+	"ik_knee2"						"Rloarm1"
+	"ik_knee3"						"Lloarm2"
+	"ik_knee4"						"Rloarm2"
+	"ik_knee5"						"Lloarm3"
+	"ik_knee6"						"Rloarm3"
+	"ik_ankle1"						"Lwrist1"
+	"ik_ankle2"						"Rwrist1"
+	"ik_ankle3"						"Lwrist2"
+	"ik_ankle4"						"Rwrist2"
+	"ik_ankle5"						"Lwrist3"
+	"ik_ankle6"						"Rwrist3"
+	"ik_dir1"						"Lknee1"
+	"ik_dir2"						"Rknee1"
+	"ik_dir3"						"Lknee2"
+	"ik_dir4"						"Rknee2"
+	"ik_dir5"						"Lknee3"
+	"ik_dir6"						"Rknee3"
+	"ik_foot1"						"Ltip1"
+	"ik_foot2"						"Rtip1"
+	"ik_foot3"						"Ltip2"
+	"ik_foot4"						"Rtip2"
+	"ik_foot5"						"Ltip3"
+	"ik_foot6"						"Rtip3"
+
+	"damage_zone head"				"*Body2 -*Ruparm1 -*Ruparm2 -*Ruparm3 -*Luparm1 -*Luparm2 -*Luparm3"
+	"damage_zone left_arm"			"*Luparm1"
+	"damage_zone right_arm"			"*Ruparm1"
+	
+	"damage_scale head"				"1"
+	"damage_scale left_arm"			"0.5"
+	"damage_scale right_arm"		"0.5"
+
+	"snd_explode"					"rocket_impact"
+	"snd_chatter"					"monster_demon_trite_chatter"
+	"snd_chatter_combat"			"monster_demon_trite_chatter_combat"
+	"snd_footstep"					"monster_demon_trite_footstep"
+	"snd_sight"						"monster_demon_trite_sight"
+	"snd_melee"						"monster_demon_trite_melee"
+	"snd_pain"						"monster_demon_trite_pain"
+	"snd_death"						"monster_demon_trite_death"
+	"snd_chomp"						"monster_demon_trite_chomp"
+	"snd_startdrop"					"monster_demon_trite_startdrop"
+	"snd_enddrop"					"monster_demon_trite_enddrop"
+	"snd_burn"						"trite_deathsplat"
+
+	"armorGibs"						"2"
+
+	// Heatblast gibs
+	"heatgib"						"1"
+
+	"def_dropGibItem1"				"moveable_item_head_pork"
+	"dropGibItem1Joint"				"Head"
+
+	"def_dropGibItem3"				"moveable_item_rup_arm_pork"
+	"dropGibItem3Joint"				"Ruparm1"
+
+	"def_dropGibItem4"				"moveable_item_rup_arm_pork"
+	"dropGibItem4Joint"				"Luparm1"	
+}

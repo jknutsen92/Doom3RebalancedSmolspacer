@@ -1,7 +1,7 @@
 model model_monster_zmarine_medic {
 	inherit 						model_monster_zsec_pistol
 	mesh							models/md5/monsters/zombies/zmarine_medic/zmarine_medic.md5mesh
-	skin							skins/models/monsters/zmarine/medic.skin
+	// skin							skins/models/monsters/zmarine/medic.skin
 	channel torso					( *Waist )
 	channel legs					( origin Body Body2 *Hips -*Waist SPINNER )
 }
@@ -128,4 +128,9 @@ entityDef monster_zmarine_medic {
 	"snd_weakpoint_chaingun"		"headshot_auto_flesh"
 	"snd_weakpoint_rocket"			"headshot_rocket_flesh"
 	"smoke_weakpoint_impact"		"burstysquirt.prt"
+
+	"neverdormant"					"1"
+	"use_squad_tactics"				"1"
+	"squad_max_distance"			"1200"				// Max distance from leader before we regroup
+	"squad_follow_distance"			"400"				// Out of combat follow distance
 }

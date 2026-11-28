@@ -97,6 +97,26 @@ player_sounds_airGasp {
 	sound/player/gasps/gasp_07.wav
 }
 
+player_sounds_decompress {
+	minDistance	5
+	maxDistance	35
+	volume		19
+	unclamped
+	soundClass	1
+
+	sound/air_and_vents/decompress.wav
+}
+
+player_sounds_recompress {
+	minDistance	5
+	maxDistance	35
+	volume		10
+	unclamped
+	soundClass	1
+
+	sound/air_and_vents/recompress.wav
+}
+
 
 player_sounds_teleport_enter {
 	sound/ed/sfx/multiplayer/teleport_in.wav
@@ -444,4 +464,27 @@ player_sounds_fastlanding {
 	sound/player/jump/land_small_01.wav
 	sound/player/jump/land_small_02.wav
 	sound/player/jump/land_small_03.wav
+}
+
+player_inventory_zip_open {
+    minDistance     3
+    maxDistance     10
+    volume          7
+    no_dups
+
+    sound/player/inventory/zip4.wav
+    sound/player/inventory/zip5.wav
+    sound/player/inventory/zip6.wav
+    sound/player/inventory/zip7.wav
+}
+
+player_inventory_zip_closed {
+    minDistance     3
+    maxDistance     10
+    volume          7
+    no_dups
+
+    sound/player/inventory/zip1.wav
+    sound/player/inventory/zip2.wav
+    sound/player/inventory/zip3.wav
 }
